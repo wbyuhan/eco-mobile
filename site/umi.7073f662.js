@@ -75,7 +75,7 @@
     (l.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (l.p = 'https://yicoding.github.io/eco-mobile/');
+    (l.p = 'https://yicoding.github.io/eco-mobile/site/');
   var i = (window['webpackJsonp'] = window['webpackJsonp'] || []),
     c = i.push.bind(i);
   (i.push = t), (i = i.slice());

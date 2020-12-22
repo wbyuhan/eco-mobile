@@ -2,7 +2,7 @@ import { defineConfig } from 'dumi';
 
 const publicPath =
   process.env.NODE_ENV === 'production'
-    ? 'https://yicoding.github.io/eco-mobile/'
+    ? 'https://yicoding.github.io/eco-mobile/site/'
     : '/';
 
 const manifestLink = `${publicPath}asset-manifest.json`;
