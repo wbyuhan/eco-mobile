@@ -499,7 +499,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/Foo/index.md',
-                updatedTime: 1608621612639,
+                updatedTime: 1608622108e3,
                 slugs: [{ depth: 2, value: 'Foo', heading: 'foo' }],
                 title: 'Foo',
                 group: { path: '/foo', title: 'Foo' },
@@ -512,7 +512,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/index.md',
-                updatedTime: 1608621612633,
+                updatedTime: 1608622108e3,
                 slugs: [
                   {
                     depth: 2,
