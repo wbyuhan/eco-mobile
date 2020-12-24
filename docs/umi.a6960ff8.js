@@ -1,38 +1,38 @@
 (function(e) {
   function t(t) {
     for (
-      var o, l, i = t[0], c = t[1], u = t[2], p = 0, d = [];
-      p < i.length;
-      p++
+      var r, l, i = t[0], c = t[1], u = t[2], d = 0, p = [];
+      d < i.length;
+      d++
     )
-      (l = i[p]),
-        Object.prototype.hasOwnProperty.call(r, l) && r[l] && d.push(r[l][0]),
-        (r[l] = 0);
-    for (o in c) Object.prototype.hasOwnProperty.call(c, o) && (e[o] = c[o]);
+      (l = i[d]),
+        Object.prototype.hasOwnProperty.call(a, l) && a[l] && p.push(a[l][0]),
+        (a[l] = 0);
+    for (r in c) Object.prototype.hasOwnProperty.call(c, r) && (e[r] = c[r]);
     s && s(t);
-    while (d.length) d.shift()();
-    return a.push.apply(a, u || []), n();
+    while (p.length) p.shift()();
+    return o.push.apply(o, u || []), n();
   }
   function n() {
-    for (var e, t = 0; t < a.length; t++) {
-      for (var n = a[t], o = !0, i = 1; i < n.length; i++) {
+    for (var e, t = 0; t < o.length; t++) {
+      for (var n = o[t], r = !0, i = 1; i < n.length; i++) {
         var c = n[i];
-        0 !== r[c] && (o = !1);
+        0 !== a[c] && (r = !1);
       }
-      o && (a.splice(t--, 1), (e = l((l.s = n[0]))));
+      r && (o.splice(t--, 1), (e = l((l.s = n[0]))));
     }
     return e;
   }
-  var o = {},
-    r = { 0: 0 },
-    a = [];
+  var r = {},
+    a = { 0: 0 },
+    o = [];
   function l(t) {
-    if (o[t]) return o[t].exports;
-    var n = (o[t] = { i: t, l: !1, exports: {} });
+    if (r[t]) return r[t].exports;
+    var n = (r[t] = { i: t, l: !1, exports: {} });
     return e[t].call(n.exports, n, n.exports, l), (n.l = !0), n.exports;
   }
   (l.m = e),
-    (l.c = o),
+    (l.c = r),
     (l.d = function(e, t, n) {
       l.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: n });
     }),
@@ -51,13 +51,13 @@
         Object.defineProperty(n, 'default', { enumerable: !0, value: e }),
         2 & t && 'string' != typeof e)
       )
-        for (var o in e)
+        for (var r in e)
           l.d(
             n,
-            o,
+            r,
             function(t) {
               return e[t];
-            }.bind(null, o),
+            }.bind(null, r),
           );
       return n;
     }),
@@ -81,19 +81,19 @@
   (i.push = t), (i = i.slice());
   for (var u = 0; u < i.length; u++) t(i[u]);
   var s = c;
-  a.push([0, 1]), n();
+  o.push([0, 1]), n();
 })({
   '/7QA': function(e, t, n) {
     'use strict';
     n.r(t),
       n.d(t, 'Foo', function() {
-        return a;
+        return o;
       });
-    var o = n('q1tI'),
-      r = n.n(o),
-      a = e => {
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = e => {
         var t = e.title;
-        return r.a.createElement('h1', null, t);
+        return a.a.createElement('h1', null, t);
       };
   },
   0: function(e, t, n) {
@@ -102,41 +102,14 @@
   '9Ihz': function(e, t) {},
   '9kvl': function(e, t, n) {
     'use strict';
-    var o = n('FfOG');
+    var r = n('FfOG');
     n.d(t, 'a', function() {
-      return o['b'];
+      return r['b'];
     });
-    var r = n('bCY9');
+    var a = n('bCY9');
     n.d(t, 'b', function() {
-      return r['a'];
+      return a['a'];
     });
-  },
-  'F+kV': function(e, t, n) {
-    'use strict';
-    n.r(t);
-    var o = n('q1tI'),
-      r = n.n(o);
-    n('B2uJ'), n('+su7'), n('qOys'), n('5Yjd');
-    t['default'] = function() {
-      return r.a.createElement(
-        r.a.Fragment,
-        null,
-        r.a.createElement(
-          'div',
-          { className: 'markdown' },
-          r.a.createElement(
-            'h2',
-            { id: 'hello-eco-mobile' },
-            r.a.createElement(
-              'a',
-              { 'aria-hidden': 'true', href: '#hello-eco-mobile' },
-              r.a.createElement('span', { className: 'icon icon-link' }),
-            ),
-            'Hello eco-mobile!',
-          ),
-        ),
-      );
-    };
   },
   FfOG: function(e, t, n) {
     'use strict';
@@ -144,58 +117,58 @@
       return l;
     }),
       n.d(t, 'b', function() {
-        return a;
+        return o;
       });
-    var o = n('YS25'),
-      r = { basename: '/' };
-    window.routerBase && (r.basename = window.routerBase);
-    var a = Object({ NODE_ENV: 'production' }).__IS_SERVER
+    var r = n('YS25'),
+      a = { basename: '/' };
+    window.routerBase && (a.basename = window.routerBase);
+    var o = Object({ NODE_ENV: 'production' }).__IS_SERVER
         ? null
-        : Object(o['b'])(r),
+        : Object(r['b'])(a),
       l = function() {
         var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-        return e || (a = Object(o['b'])(r)), a;
+        return e || (o = Object(r['b'])(a)), o;
       };
   },
   MWsa: function(e, t, n) {
     'use strict';
     n.r(t);
-    var o = n('wx14'),
-      r = n('q1tI'),
-      a = n.n(r),
+    var r = n('wx14'),
+      a = n('q1tI'),
+      o = n.n(a),
       l = (n('B2uJ'), n('+su7'), n('qOys'), n('5Yjd')),
       i = n.n(l),
-      c = a.a.memo(function() {
+      c = o.a.memo(function() {
         var e = n('TqRt'),
           t = e(n('q1tI')),
-          o = n('/7QA'),
-          r = function() {
-            return t['default'].createElement(o.Foo, { title: 'First Demo' });
+          r = n('/7QA'),
+          a = function() {
+            return t['default'].createElement(r.Foo, { title: 'First Demo' });
           };
-        return t['default'].createElement(r);
+        return t['default'].createElement(a);
       });
     t['default'] = function() {
-      return a.a.createElement(
-        a.a.Fragment,
+      return o.a.createElement(
+        o.a.Fragment,
         null,
-        a.a.createElement(
+        o.a.createElement(
           'div',
           { className: 'markdown' },
-          a.a.createElement(
+          o.a.createElement(
             'h2',
             { id: 'foo' },
-            a.a.createElement(
+            o.a.createElement(
               'a',
               { 'aria-hidden': 'true', href: '#foo' },
-              a.a.createElement('span', { className: 'icon icon-link' }),
+              o.a.createElement('span', { className: 'icon icon-link' }),
             ),
             'Foo',
           ),
-          a.a.createElement('p', null, 'Demo:'),
+          o.a.createElement('p', null, 'Demo:'),
         ),
-        a.a.createElement(
+        o.a.createElement(
           i.a,
-          Object(o['a'])(
+          Object(r['a'])(
             {
               source: {
                 tsx:
@@ -206,16 +179,16 @@
             },
             { dependencies: { 'eco-mobile': '1.0.0' }, files: {} },
           ),
-          a.a.createElement(c, null),
+          o.a.createElement(c, null),
         ),
-        a.a.createElement(
+        o.a.createElement(
           'div',
           { className: 'markdown' },
-          a.a.createElement(
+          o.a.createElement(
             'p',
             null,
             'More skills for writing demo: ',
-            a.a.createElement(
+            o.a.createElement(
               'a',
               {
                 href: 'https://d.umijs.org/guide/demo-principle',
@@ -223,7 +196,7 @@
                 rel: 'noopener noreferrer',
               },
               'https://d.umijs.org/guide/demo-principle',
-              a.a.createElement(
+              o.a.createElement(
                 'svg',
                 {
                   xmlns: 'http://www.w3.org/2000/svg',
@@ -235,12 +208,12 @@
                   height: '15',
                   className: '__dumi-default-external-link-icon',
                 },
-                a.a.createElement('path', {
+                o.a.createElement('path', {
                   fill: 'currentColor',
                   d:
                     'M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z',
                 }),
-                a.a.createElement('polygon', {
+                o.a.createElement('polygon', {
                   fill: 'currentColor',
                   points:
                     '45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9',
@@ -255,10 +228,10 @@
   bCY9: function(e, t, n) {
     'use strict';
     n.d(t, 'a', function() {
-      return r;
+      return a;
     });
-    var o = n('LtsZ'),
-      r = new o['Plugin']({
+    var r = n('LtsZ'),
+      a = new r['Plugin']({
         validKeys: [
           'modifyClientRenderOpts',
           'patchRoutes',
@@ -267,6 +240,62 @@
           'onRouteChange',
         ],
       });
+  },
+  gql7: function(e, t, n) {
+    'use strict';
+    n.r(t);
+    var r = n('q1tI'),
+      a = n.n(r),
+      o = (n('B2uJ'), n('+su7'), n('qOys')),
+      l = n.n(o);
+    n('5Yjd');
+    t['default'] = function() {
+      return a.a.createElement(
+        a.a.Fragment,
+        null,
+        a.a.createElement(
+          'div',
+          { className: 'markdown' },
+          a.a.createElement(
+            'h1',
+            { id: 'eco-mobile' },
+            a.a.createElement(
+              'a',
+              { 'aria-hidden': 'true', href: '#eco-mobile' },
+              a.a.createElement('span', { className: 'icon icon-link' }),
+            ),
+            'eco-mobile',
+          ),
+          a.a.createElement(
+            'h2',
+            { id: 'getting-started' },
+            a.a.createElement(
+              'a',
+              { 'aria-hidden': 'true', href: '#getting-started' },
+              a.a.createElement('span', { className: 'icon icon-link' }),
+            ),
+            'Getting Started',
+          ),
+          a.a.createElement('p', null, 'Install dependencies,'),
+          a.a.createElement(l.a, { code: '$ npm i\n', lang: 'bash' }),
+          a.a.createElement('p', null, 'Start the dev server,'),
+          a.a.createElement(l.a, { code: '$ npm start\n', lang: 'bash' }),
+          a.a.createElement('p', null, 'Build documentation,'),
+          a.a.createElement(l.a, {
+            code: '$ npm run docs:build\n',
+            lang: 'bash',
+          }),
+          a.a.createElement(
+            'p',
+            null,
+            'Build library via ',
+            a.a.createElement('code', null, 'father-build'),
+            ',',
+          ),
+          a.a.createElement(l.a, { code: '$ npm run build\n', lang: 'bash' }),
+        ),
+      );
+    };
   },
   tB8F: function(e, t, n) {
     'use strict';
@@ -451,9 +480,9 @@
       n('vxnP'),
       n('mGGf'),
       n('VWci');
-    var o = n('bCY9'),
-      r = (n('9Ihz'), n('FfOG')),
-      a = n('LtsZ'),
+    var r = n('bCY9'),
+      a = (n('9Ihz'), n('FfOG')),
+      o = n('LtsZ'),
       l = n('zlVK'),
       i = n('VTBJ');
     function c() {
@@ -470,7 +499,7 @@
                     menus: {
                       '*': {
                         '*': [
-                          { path: '/', title: 'Hello eco-mobile!', meta: {} },
+                          { path: '/', title: 'README', meta: { order: null } },
                           {
                             title: 'Foo',
                             path: '/foo',
@@ -494,6 +523,13 @@
             ),
           routes: [
             {
+              path: '/',
+              component: n('gql7').default,
+              exact: !0,
+              meta: { locale: 'en-US', title: 'README', order: null },
+              title: 'README',
+            },
+            {
               path: '/foo',
               component: n('MWsa').default,
               exact: !0,
@@ -506,32 +542,14 @@
               },
               title: 'Foo',
             },
-            {
-              path: '/',
-              component: n('F+kV').default,
-              exact: !0,
-              meta: {
-                filePath: 'docs/index.md',
-                updatedTime: 1608622108e3,
-                slugs: [
-                  {
-                    depth: 2,
-                    value: 'Hello eco-mobile!',
-                    heading: 'hello-eco-mobile',
-                  },
-                ],
-                title: 'Hello eco-mobile!',
-              },
-              title: 'Hello eco-mobile!',
-            },
           ],
           title: 'eco-mobile',
         },
       ];
       return (
-        o['a'].applyPlugins({
+        r['a'].applyPlugins({
           key: 'patchRoutes',
-          type: a['ApplyPluginsType'].event,
+          type: o['ApplyPluginsType'].event,
           args: { routes: e },
         }),
         e
@@ -540,17 +558,17 @@
     var u = function() {
         var e =
           arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-        return o['a'].applyPlugins({
+        return r['a'].applyPlugins({
           key: 'render',
-          type: a['ApplyPluginsType'].compose,
+          type: o['ApplyPluginsType'].compose,
           initialValue: () => {
-            var t = o['a'].applyPlugins({
+            var t = r['a'].applyPlugins({
               key: 'modifyClientRenderOpts',
-              type: a['ApplyPluginsType'].modify,
+              type: o['ApplyPluginsType'].modify,
               initialValue: {
                 routes: e.routes || c(),
-                plugin: o['a'],
-                history: Object(r['a'])(e.hot),
+                plugin: r['a'],
+                history: Object(a['a'])(e.hot),
                 isServer: Object({ NODE_ENV: 'production' }).__IS_SERVER,
                 rootElement: 'root',
                 defaultTitle: 'eco-mobile',
