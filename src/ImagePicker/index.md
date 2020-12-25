@@ -121,6 +121,7 @@ export default () => {
         onChange={onChange}
         multiple
         max={10}
+        mode="cover"
         onUpload={onUpload}
       />
     </div>

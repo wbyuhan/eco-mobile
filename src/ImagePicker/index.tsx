@@ -48,16 +48,15 @@ const ImagePicker = (props: ImagePickerProps) => {
     onFail = noon,
   } = props;
 
-  const ref = useRef(null);
-  const refFilesList = useRef(filesList);
+  const ref = useRef<any>(null);
+  const refFilesList = useRef<Array<Files>>(filesList);
 
   const urlList: string[] = [];
-  refFilesList.current.forEach(item => {
+  refFilesList.current.forEach((item: Files) => {
     if (item.url) {
       urlList.push(item.url);
     }
   });
-  console.log('init refFilesList.current', refFilesList.current);
 
   const s = useStyles();
 
@@ -90,6 +89,9 @@ const ImagePicker = (props: ImagePickerProps) => {
     console.log('files', files);
     const index = refFilesList.current.length;
     const restNum = max - refFilesList.current.length;
+    if (files.length > restNum) {
+      Toast.info(`图片最多不超过${max}张`);
+    }
     const restFileList = Array.from(files).slice(0, restNum);
     const imageParsePromiseList = [];
     for (let i = 0; i < restFileList.length; i++) {
@@ -170,6 +172,19 @@ const ImagePicker = (props: ImagePickerProps) => {
   // 关闭图片预览
   const onClose = () => setOpen(val => !val);
 
+  enum configProp {
+    defaultBorder = 'defaultBorder',
+    defaultBackGround = 'defaultBackGround',
+    defaultDashed = 'defaultDashed',
+  }
+
+  enum objectFitProp {
+    fill = 'fill',
+    cover = 'cover',
+    contain = 'contain',
+    'scale-down' = 'scale-down',
+  }
+
   return (
     <div className={s.root}>
       <input
@@ -191,12 +206,12 @@ const ImagePicker = (props: ImagePickerProps) => {
                   <img
                     alt=""
                     className={classnames(s.img, [
-                      ...config.map((todo: string) => {
-                        return s[todo];
+                      ...config.map(todo => {
+                        return s[todo as configProp];
                       }),
                     ])}
                     src={url}
-                    style={{ objectFit: mode, width, height }}
+                    style={{ objectFit: mode as objectFitProp, width, height }}
                     onClick={() => preview(index)}
                   />
                 )}
@@ -228,8 +243,8 @@ const ImagePicker = (props: ImagePickerProps) => {
             <div
               style={{ width, height }}
               className={classnames(s.childrenEle, [
-                ...config.map((todo: string) => {
-                  return s[todo];
+                ...config.map(todo => {
+                  return s[todo as configProp];
                 }),
               ])}
             />
