@@ -41,7 +41,11 @@
     "eco-mobile"
   ],
   "dependencies": {
-    "react": "^16.12.0"
+    "@wonder-ui/styles": "^1.1.2",
+    "antd-mobile": "^2.3.4",
+    "classnames": "^2.2.6",
+    "react": "^16.12.0",
+    "react-wx-images-viewer": "^1.0.6"
   },
   "devDependencies": {
     "@umijs/test": "^3.0.5",

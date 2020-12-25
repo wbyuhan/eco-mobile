@@ -30,6 +30,7 @@ const umiConfig = {
   },
   links,
   hash: true,
+  extraBabelPlugins: [['import', { libraryName: 'antd-mobile', style: true }]],
 };
 
 if (process.env.NODE_ENV === 'production') {
