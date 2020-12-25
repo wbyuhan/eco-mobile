@@ -1283,7 +1283,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/ImagePicker/index.md',
-                updatedTime: 1608887871e3,
+                updatedTime: 1608891127e3,
                 group: {
                   title: 'ImagePicker \u56fe\u7247\u9009\u62e9\u5668',
                   path: '/image-picker',
