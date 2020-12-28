@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import classnames from 'classnames';
 import WxImageViewer from 'react-wx-images-viewer';
 import { Toast } from 'antd-mobile';
-import { createUseStyles } from '@wonder-ui/styles';
+import { createStyles, withStyles } from '@wonder-ui/styles';
 
 function _slicedToArray(arr, i) {
   return (
@@ -101,12 +101,12 @@ var iconRemove = require('../assets/icon-remove.png');
 
 var iocnLoading = require('../assets/icon-loading.png');
 
-var useStyles = createUseStyles({
+var styles = createStyles({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
   },
-  input: {
+  hidden: {
     display: 'none',
   },
   imgBox: {
@@ -220,6 +220,7 @@ var noon = function noon() {};
 var ImagePicker = function ImagePicker(props) {
   var _props$filesList = props.filesList,
     filesList = _props$filesList === void 0 ? [] : _props$filesList,
+    s = props.classes,
     _props$max = props.max,
     max = _props$max === void 0 ? 1 : _props$max,
     _props$onChange = props.onChange,
@@ -249,7 +250,6 @@ var ImagePicker = function ImagePicker(props) {
       urlList.push(item.url);
     }
   });
-  var s = useStyles();
 
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
@@ -429,7 +429,7 @@ var ImagePicker = function ImagePicker(props) {
       className: s.root,
     },
     /*#__PURE__*/ React.createElement('input', {
-      className: s.input,
+      className: s.hidden,
       ref: ref,
       type: 'file',
       accept: accept,
@@ -551,4 +551,6 @@ var ImagePicker = function ImagePicker(props) {
   );
 };
 
-export { ImagePicker };
+var index = withStyles(styles)(ImagePicker);
+
+export { index as ImagePicker };

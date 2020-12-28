@@ -3,7 +3,8 @@ import classnames from 'classnames';
 import WxImageViewer from 'react-wx-images-viewer';
 import { Toast } from 'antd-mobile';
 
-import useStyles from './styles';
+import styles from './styles';
+import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
 
 const noon = () => {};
 
@@ -29,11 +30,15 @@ interface ImagePickerProps {
   mode?: string; // 图片裁切类型, fill, cover, contain, scale-down
   size?: number; // 图片大小限制，单位: M
   onFail?: (e: any) => any;
+
+  classes: ClassKeysOfStyles<typeof styles>;
+  // classes?: Record<'root' | 'input' | 'imgBox', any>
 }
 
 const ImagePicker = (props: ImagePickerProps) => {
   const {
     filesList = [],
+    classes: s,
     max = 1,
     onChange = noon,
     accept = 'image/*',
@@ -57,8 +62,6 @@ const ImagePicker = (props: ImagePickerProps) => {
       urlList.push(item.url);
     }
   });
-
-  const s = useStyles();
 
   const [isOpen, setOpen] = useState<boolean>(false);
   const [index, setIndex] = useState<number>(0);
@@ -188,7 +191,7 @@ const ImagePicker = (props: ImagePickerProps) => {
   return (
     <div className={s.root}>
       <input
-        className={s.input}
+        className={s.hidden}
         ref={ref}
         type="file"
         accept={accept}
@@ -258,4 +261,4 @@ const ImagePicker = (props: ImagePickerProps) => {
   );
 };
 
-export default ImagePicker;
+export default withStyles(styles)(ImagePicker);

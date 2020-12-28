@@ -1,13 +1,13 @@
-import { createUseStyles } from '@wonder-ui/styles';
+import { createStyles } from '@wonder-ui/styles';
 const iconRemove = require('../assets/icon-remove.png');
 const iocnLoading = require('../assets/icon-loading.png');
 
-const useStyles = createUseStyles({
+const styles = createStyles({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
   },
-  input: {
+  hidden: {
     display: 'none',
   },
   imgBox: {
@@ -116,4 +116,4 @@ const useStyles = createUseStyles({
   },
 });
 
-export default useStyles;
+export default styles;

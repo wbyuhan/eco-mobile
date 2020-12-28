@@ -1,16 +1,16 @@
 (function(e) {
   function n(n) {
     for (
-      var a, i, c = n[0], o = n[1], u = n[2], s = 0, m = [];
-      s < c.length;
-      s++
+      var a, i, c = n[0], o = n[1], u = n[2], m = 0, s = [];
+      m < c.length;
+      m++
     )
-      (i = c[s]),
-        Object.prototype.hasOwnProperty.call(l, i) && l[i] && m.push(l[i][0]),
+      (i = c[m]),
+        Object.prototype.hasOwnProperty.call(l, i) && l[i] && s.push(l[i][0]),
         (l[i] = 0);
     for (a in o) Object.prototype.hasOwnProperty.call(o, a) && (e[a] = o[a]);
     d && d(n);
-    while (m.length) m.shift()();
+    while (s.length) s.shift()();
     return r.push.apply(r, u || []), t();
   }
   function t() {
@@ -87,7 +87,7 @@
     'use strict';
     t.r(n),
       t.d(n, 'ImagePicker', function() {
-        return b;
+        return v;
       });
     t('TttT');
     var a = t('Kl5d'),
@@ -98,13 +98,13 @@
       o = t('TSYQ'),
       u = t.n(o),
       d = t('U0F3'),
-      s = t.n(d),
-      m = t('r8B7'),
+      m = t.n(d),
+      s = t('Wm/2'),
       f = t('lKFj'),
       g = t('x3hr'),
-      p = Object(m['createUseStyles'])({
+      p = Object(s['createStyles'])({
         root: { display: 'flex', flexWrap: 'wrap' },
-        input: { display: 'none' },
+        hidden: { display: 'none' },
         imgBox: {
           position: 'relative',
           overflow: 'hidden',
@@ -195,50 +195,50 @@
           '100%': { transform: 'rotate(360deg)' },
         },
       }),
-      E = p,
-      h = () => {},
+      h = p,
+      E = () => {},
       A = e => {
         var n = e.filesList,
           t = void 0 === n ? [] : n,
-          a = e.max,
-          o = void 0 === a ? 1 : a,
-          d = e.onChange,
-          m = void 0 === d ? h : d,
-          f = e.accept,
-          g = void 0 === f ? 'image/*' : f,
-          p = e.multiple,
+          a = e.classes,
+          o = e.max,
+          d = void 0 === o ? 1 : o,
+          s = e.onChange,
+          f = void 0 === s ? E : s,
+          g = e.accept,
+          p = void 0 === g ? 'image/*' : g,
+          h = e.multiple,
           A = e.width,
-          b = void 0 === A ? '80px' : A,
-          k = e.height,
-          v = void 0 === k ? '80px' : k,
+          v = void 0 === A ? '80px' : A,
+          b = e.height,
+          k = void 0 === b ? '80px' : b,
           C = e.config,
-          I = void 0 === C ? ['defaultBorder'] : C,
+          y = void 0 === C ? ['defaultBorder'] : C,
           B = e.children,
-          y = e.mode,
-          x = void 0 === y ? 'fill' : y,
-          S = e.size,
-          R = e.onUpload,
-          D = void 0 === R ? null : R,
-          w = e.onFail,
-          j = void 0 === w ? h : w,
+          I = e.mode,
+          x = void 0 === I ? 'fill' : I,
+          w = e.size,
+          S = e.onUpload,
+          R = void 0 === S ? null : S,
+          D = e.onFail,
+          j = void 0 === D ? E : D,
           O = Object(i['useRef'])(null),
           Q = Object(i['useRef'])(t),
           L = [];
         Q.current.forEach(e => {
           e.url && L.push(e.url);
         });
-        var F,
+        var N,
           M,
-          J = E(),
-          N = Object(i['useState'])(!1),
-          P = Object(r['default'])(N, 2),
-          U = P[0],
-          z = P[1],
-          T = Object(i['useState'])(0),
-          V = Object(r['default'])(T, 2),
-          W = V[0],
-          K = V[1],
-          q = (e, n) =>
+          F = Object(i['useState'])(!1),
+          J = Object(r['default'])(F, 2),
+          P = J[0],
+          z = J[1],
+          U = Object(i['useState'])(0),
+          T = Object(r['default'])(U, 2),
+          V = T[0],
+          W = T[1],
+          K = (e, n) =>
             new Promise((t, a) => {
               var l = new FileReader();
               (l.onload = l => {
@@ -249,44 +249,44 @@
               }),
                 l.readAsDataURL(e);
             }),
-          G = e => {
+          q = e => {
             var n = e.target,
               t = n.files;
             if (!t || !t.length) return (n.value = '');
             var a = Q.current.length,
-              r = o - Q.current.length;
+              r = d - Q.current.length;
             t.length > r &&
               l.a.info(
                 '\u56fe\u7247\u6700\u591a\u4e0d\u8d85\u8fc7'.concat(
-                  o,
+                  d,
                   '\u5f20',
                 ),
               );
             for (
-              var i = Array.from(t).slice(0, r), c = [], u = 0;
-              u < i.length;
-              u++
+              var i = Array.from(t).slice(0, r), c = [], o = 0;
+              o < i.length;
+              o++
             )
-              c.push(q(i[u], u));
+              c.push(K(i[o], o));
             Promise.all(c)
               .then(e => {
-                D && e.forEach(e => (e.loading = !0));
+                R && e.forEach(e => (e.loading = !0));
                 var t = e.filter(e =>
-                  S && e.file.size > 1024 * S * 1024
+                  w && e.file.size > 1024 * w * 1024
                     ? l.a.info(
                         '\u56fe\u7247\u5927\u5c0f\u4e0d\u80fd\u8d85\u8fc7'.concat(
-                          S,
+                          w,
                           'M',
                         ),
                       )
                     : e,
                 );
-                if (((Q.current = Q.current.concat(t)), m(Q.current), D))
+                if (((Q.current = Q.current.concat(t)), f(Q.current), R))
                   for (
                     var r = function(e) {
                         var n = Q.current[e];
                         e >= a &&
-                          D(n.file)
+                          R(n.file)
                             .then(n => {
                               (Q.current[e] = Object.assign(
                                 {},
@@ -296,7 +296,7 @@
                               )),
                                 (Q.current = [...Q.current]),
                                 setTimeout(() => {
-                                  m(Q.current);
+                                  f(Q.current);
                                 }, 10);
                             })
                             .catch(n => {
@@ -309,7 +309,7 @@
                               }),
                                 (Q.current = [...Q.current]),
                                 setTimeout(() => {
-                                  m(Q.current);
+                                  f(Q.current);
                                 }, 10);
                             });
                       },
@@ -324,22 +324,22 @@
                 j(e), (n.value = '');
               });
           },
-          Y = () => {
+          G = () => {
             O && O.current && O.current.click();
           },
+          Y = e => {
+            Q.current.splice(e, 1), (Q.current = [...Q.current]), f(Q.current);
+          },
           H = e => {
-            Q.current.splice(e, 1), (Q.current = [...Q.current]), m(Q.current);
+            W(e), Z();
           },
-          Z = e => {
-            K(e), X();
-          },
-          X = () => z(e => !e);
+          Z = () => z(e => !e);
         return (
           (function(e) {
             (e['defaultBorder'] = 'defaultBorder'),
               (e['defaultBackGround'] = 'defaultBackGround'),
               (e['defaultDashed'] = 'defaultDashed');
-          })(F || (F = {})),
+          })(N || (N = {})),
           (function(e) {
             (e['fill'] = 'fill'),
               (e['cover'] = 'cover'),
@@ -348,85 +348,344 @@
           })(M || (M = {})),
           c.a.createElement(
             'div',
-            { className: J.root },
+            { className: a.root },
             c.a.createElement('input', {
-              className: J.input,
+              className: a.hidden,
               ref: O,
               type: 'file',
-              accept: g,
-              multiple: p,
-              onChange: G,
+              accept: p,
+              multiple: h,
+              onChange: q,
             }),
             t &&
               t.length > 0 &&
               t.map((e, n) => {
                 var t = e.url,
-                  a = e.loading,
-                  l = e.name,
-                  r = e.errorTip;
+                  l = e.loading,
+                  r = e.name,
+                  i = e.errorTip;
                 return c.a.createElement(
                   'div',
-                  { key: n, className: J.parent },
+                  { key: n, className: a.parent },
                   c.a.createElement(
                     'div',
-                    { className: J.imgBox },
+                    { className: a.imgBox },
                     t &&
                       c.a.createElement('img', {
                         alt: '',
-                        className: u()(J.img, [...I.map(e => J[e])]),
+                        className: u()(a.img, [...y.map(e => a[e])]),
                         src: t,
-                        style: { objectFit: x, width: b, height: v },
-                        onClick: () => Z(n),
+                        style: { objectFit: x, width: v, height: k },
+                        onClick: () => H(n),
                       }),
-                    r &&
+                    i &&
                       c.a.createElement(
                         'div',
                         {
-                          className: J.errorTip,
-                          style: { width: b, height: v },
+                          className: a.errorTip,
+                          style: { width: v, height: k },
                         },
-                        r,
+                        i,
                       ),
                     c.a.createElement('i', {
-                      className: J.iconRemove,
-                      onClick: () => H(n),
+                      className: a.iconRemove,
+                      onClick: () => Y(n),
                     }),
-                    a &&
+                    l &&
                       c.a.createElement(
                         'div',
-                        { className: J.loadingBox },
-                        c.a.createElement('i', { className: J.loading }),
+                        { className: a.loadingBox },
+                        c.a.createElement('i', { className: a.loading }),
                       ),
                   ),
-                  l &&
+                  r &&
                     c.a.createElement(
                       'div',
-                      { className: J.name, style: { width: b } },
-                      l,
+                      { className: a.name, style: { width: v } },
+                      r,
                     ),
                 );
               }),
-            t.length >= o
+            t.length >= d
               ? null
               : c.a.createElement(
                   'div',
-                  { className: J.parent, onClick: Y },
+                  { className: a.parent, onClick: G },
                   B ||
                     c.a.createElement('div', {
-                      style: { width: b, height: v },
-                      className: u()(J.childrenEle, [...I.map(e => J[e])]),
+                      style: { width: v, height: k },
+                      className: u()(a.childrenEle, [...y.map(e => a[e])]),
                     }),
                 ),
-            U && c.a.createElement(s.a, { onClose: X, index: W, urls: L }),
+            P && c.a.createElement(m.a, { onClose: Z, index: V, urls: L }),
           )
         );
       },
-      b = A;
+      v = Object(s['withStyles'])(h)(A);
   },
   0: function(e, n, t) {
     e.exports = t('tB8F');
   },
-  '4ChA': function(e, n, t) {
+  '9Ihz': function(e, n) {},
+  '9kvl': function(e, n, t) {
+    'use strict';
+    var a = t('FfOG');
+    t.d(n, 'a', function() {
+      return a['b'];
+    });
+    var l = t('bCY9');
+    t.d(n, 'b', function() {
+      return l['a'];
+    });
+  },
+  FfOG: function(e, n, t) {
+    'use strict';
+    t.d(n, 'a', function() {
+      return i;
+    }),
+      t.d(n, 'b', function() {
+        return r;
+      });
+    var a = t('YS25'),
+      l = { basename: '/' };
+    window.routerBase && (l.basename = window.routerBase);
+    var r = Object({ NODE_ENV: 'production' }).__IS_SERVER
+        ? null
+        : Object(a['b'])(l),
+      i = function() {
+        var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
+        return e || (r = Object(a['b'])(l)), r;
+      };
+  },
+  bCY9: function(e, n, t) {
+    'use strict';
+    t.d(n, 'a', function() {
+      return l;
+    });
+    var a = t('LtsZ'),
+      l = new a['Plugin']({
+        validKeys: [
+          'modifyClientRenderOpts',
+          'patchRoutes',
+          'rootContainer',
+          'render',
+          'onRouteChange',
+        ],
+      });
+  },
+  gql7: function(e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('q1tI'),
+      l = t.n(a),
+      r = (t('B2uJ'), t('+su7'), t('qOys')),
+      i = t.n(r);
+    t('5Yjd');
+    n['default'] = function() {
+      return l.a.createElement(
+        l.a.Fragment,
+        null,
+        l.a.createElement(
+          'div',
+          { className: 'markdown' },
+          l.a.createElement(
+            'h1',
+            { id: 'eco-mobile' },
+            l.a.createElement(
+              'a',
+              { 'aria-hidden': 'true', href: '#eco-mobile' },
+              l.a.createElement('span', { className: 'icon icon-link' }),
+            ),
+            'eco-mobile',
+          ),
+          l.a.createElement(
+            'p',
+            null,
+            '\u57fa\u4e8e',
+            l.a.createElement('code', null, 'react'),
+            '\u7684\u79fb\u52a8\u7aef\u6269\u5c55\u7ec4\u4ef6',
+          ),
+          l.a.createElement(
+            'p',
+            null,
+            l.a.createElement(
+              'a',
+              {
+                href: 'https://yicoding.github.io/eco-mobile',
+                target: '_blank',
+                rel: 'noopener noreferrer',
+              },
+              '\u67e5\u770b\u6587\u6863\u548c\u793a\u4f8b',
+              l.a.createElement(
+                'svg',
+                {
+                  xmlns: 'http://www.w3.org/2000/svg',
+                  'aria-hidden': !0,
+                  x: '0px',
+                  y: '0px',
+                  viewBox: '0 0 100 100',
+                  width: '15',
+                  height: '15',
+                  className: '__dumi-default-external-link-icon',
+                },
+                l.a.createElement('path', {
+                  fill: 'currentColor',
+                  d:
+                    'M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z',
+                }),
+                l.a.createElement('polygon', {
+                  fill: 'currentColor',
+                  points:
+                    '45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9',
+                }),
+              ),
+            ),
+          ),
+          l.a.createElement(
+            'h2',
+            { id: '\u4f7f\u7528' },
+            l.a.createElement(
+              'a',
+              { 'aria-hidden': 'true', href: '#\u4f7f\u7528' },
+              l.a.createElement('span', { className: 'icon icon-link' }),
+            ),
+            '\u4f7f\u7528',
+          ),
+          l.a.createElement(
+            'h3',
+            { id: 'npm-\u6216-yarn-\u5b89\u88c5' },
+            l.a.createElement(
+              'a',
+              { 'aria-hidden': 'true', href: '#npm-\u6216-yarn-\u5b89\u88c5' },
+              l.a.createElement('span', { className: 'icon icon-link' }),
+            ),
+            'npm \u6216 yarn \u5b89\u88c5',
+          ),
+          l.a.createElement(i.a, {
+            code: 'npm install eco-mobile --save\n',
+            lang: 'shell',
+          }),
+          l.a.createElement('br', null),
+          l.a.createElement(i.a, {
+            code: 'yarn add eco-mobile\n',
+            lang: 'shell',
+          }),
+          l.a.createElement(
+            'h3',
+            { id: '\u6309\u9700\u52a0\u8f7d' },
+            l.a.createElement(
+              'a',
+              { 'aria-hidden': 'true', href: '#\u6309\u9700\u52a0\u8f7d' },
+              l.a.createElement('span', { className: 'icon icon-link' }),
+            ),
+            '\u6309\u9700\u52a0\u8f7d',
+          ),
+          l.a.createElement(
+            'ul',
+            null,
+            l.a.createElement(
+              'li',
+              null,
+              '\u4f7f\u7528 ',
+              l.a.createElement(
+                'a',
+                {
+                  href: 'https://www.npmjs.com/package/doly-cli',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                },
+                'doly',
+                l.a.createElement(
+                  'svg',
+                  {
+                    xmlns: 'http://www.w3.org/2000/svg',
+                    'aria-hidden': !0,
+                    x: '0px',
+                    y: '0px',
+                    viewBox: '0 0 100 100',
+                    width: '15',
+                    height: '15',
+                    className: '__dumi-default-external-link-icon',
+                  },
+                  l.a.createElement('path', {
+                    fill: 'currentColor',
+                    d:
+                      'M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z',
+                  }),
+                  l.a.createElement('polygon', {
+                    fill: 'currentColor',
+                    points:
+                      '45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9',
+                  }),
+                ),
+              ),
+              ' \u6216 ',
+              l.a.createElement(
+                'a',
+                {
+                  href: 'https://umijs.org/zh-CN',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                },
+                'umi',
+                l.a.createElement(
+                  'svg',
+                  {
+                    xmlns: 'http://www.w3.org/2000/svg',
+                    'aria-hidden': !0,
+                    x: '0px',
+                    y: '0px',
+                    viewBox: '0 0 100 100',
+                    width: '15',
+                    height: '15',
+                    className: '__dumi-default-external-link-icon',
+                  },
+                  l.a.createElement('path', {
+                    fill: 'currentColor',
+                    d:
+                      'M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z',
+                  }),
+                  l.a.createElement('polygon', {
+                    fill: 'currentColor',
+                    points:
+                      '45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9',
+                  }),
+                ),
+              ),
+              ' \u811a\u624b\u67b6\uff0c\u5728\u914d\u7f6e\u6587\u4ef6\u4e2d\u7684 ',
+              l.a.createElement('code', null, 'extraBabelPlugins'),
+              ' \u6dfb\u52a0\uff1a',
+            ),
+          ),
+          l.a.createElement(i.a, {
+            code:
+              "[\n  'import',\n  {\n    libraryName: 'eco-mobile',\n    libraryDirectory: 'es',\n    style: true,\n  },\n  'eco-mobile',\n];\n",
+            lang: 'javascript',
+          }),
+          l.a.createElement(
+            'ul',
+            null,
+            l.a.createElement(
+              'li',
+              null,
+              '\u81ea\u5b9a\u4e49\u914d\u7f6e\u7684 ',
+              l.a.createElement('code', null, 'webpack'),
+              ' \u9879\u76ee\uff0c\u8bf7\u5b89\u88c5 [babel-plugin-import] \uff0c\u5c06\u4e0a\u9762\u914d\u7f6e\u6dfb\u52a0\u5230 ',
+              l.a.createElement('code', null, 'babel'),
+              ' \u7684 ',
+              l.a.createElement('code', null, 'plugins'),
+              ' \u4e2d\u3002',
+            ),
+          ),
+        ),
+      );
+    };
+  },
+  lKFj: function(e, n) {
+    e.exports =
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAA1VBMVEUAAAAAAAAAAAAAAADR0dEAAAAfHx8LCwsAAAAAAAAAAAAAAAAAAAAAAAAAAADf3997e3szMzPMzMy1tbVISEgAAADo6OiYmJjHx8e7u7tra2tVVVUAAAAAAADz8/Ovr6+np6eMjIz5+fnj4+OSkpJEREQAAAAAAADs7OzBwcGioqJnZ2daWlqFhYUAAAAAAAAAAAAAAAAAAAD29vbV1dV2dnbZ2dmcnJwAAAAAAAAAAAAAAAAAAAD8/PxycnI5OTmrq6uJiYleXl4sLCwaGhoAAAD///+V/CgOAAAARnRSTlOnpgAI6TavqoqgkkJyXz7wybTo3rki9NPl4MS9hG3529nO/fLRuC0U9uLWwr7MfGhQKA/668ft1Jp4Wkob/sW12s3Asq1V68RYCwAABsBJREFUeNrt3WtX2kAQxvHJhGAIBNGCV7BqBbwVAVvvtrW2+f4fqWovZgy42ezOcTOnz+nb9viD5G/IiRU8IfsPcW3/Ia4NLjwZg8iTMTmQ0JMx6HoyBpeejEHDkzE48WQMYk/GYOzJGNQ9GYPAkzGY6P8VF5b9qm6kQHwpEKxJgURSICMpkBMpkJ9SIHUpkIEUyFAKBGtSIKEUSEMK5EoKpCkF0pEC8aVAMJICaUiBjKVABlIgQykQjKRAGnYg58nzKqtQbF8Pk+e904SM7UCOk/RahRwLZ0lq55qQgR0I7BDJZhHIQULeEE2IbwkC20lqK/faDPoPLC/oQrBrCUJf0Ioug76lH5ZAGxLbglTP6KGht40ktd1j0IcEtiDQ3k9S00tX+5TGogBkag0CR0l6nzUc1Q/0NSgCwdAaBO6S1G410rVMj8pikLggRJ2ual7HOxqsgpDAIoSmazmnYzUTrEIQ3yak+kk/XS0SrE0oCsGRRQj0tdO1mUlEUcjYAKJK1xdQ7X6Fyg0gHasQ+EiOlDYoRo7F92ACwcgqBA7JufsDXt06DZYZJDaAqL+4/OjFJTCDBJYhVXq45D0MTzfBEII1A4g6XXswb98zwTKENEwg6nRtzPtou0W95pCmEUSdrj7M2sIiPQItQHwziDpdM2u0lqS2tmADgg1tiHm63meDZQ5p2odUK0lq3+Dl9pLUtjbBDsS3D4E+ufbYAbovmWBZgWDPEKJO1xH9aHtLg2UNEphC1N/uvqaPuxUaLHsQvDCFqC9AUl2q0GDZhMQcEJquNfLRlgTLImTCAqHp2iYfbUmw7EEwNIao0/WRfLQlwbIHuWaBwBHJ0/fMR9s9sA2ZMkCy6VqC+y0aLOsQ7DFAsumCMxosBsiACULTdaAKljkEQyYITRcNFgvkmgdC00WDxQPxa0wQONqd5dgDJgjGDBCaLhosNsgNA4SkiwaLD4I9BghJFwkWI2TCB6lWMsFihOCIDQJ7BLIOvJCADfI5oTvkhWCXCXK8lbzYR15IkweytJi83O4RKwRDDsjCWpLdSp8VUueAvE9mrVLlhGBoH7KazN46K6RuHdJK5u2QCaJ+S8yDdU4kdzwQdbiMg7VObwXdbjBCsGsTsrD88jGuCklXmxESWITQYO1XM7dLP1X5IHhpD0KD9fvl79N0MUIm1iCtmY9BbCTpbfNB8MQShAZrdc4jqXd8kKENCA0WfVToG5FssEHwpxqiH6z01mi62CAYWYC8o4/TUeQiTRcbpKmG6Adr/sMCB+YQvQQXD5bi8Y1tNkjHEHJ8Su7FKaU7XBC8MoIsfVDfizun6TKDaJ7vxYK1nOde136bCxKoIfrBovtE08UEwV5RCA3W7fyX+n6fpIsLMqwVhLRyH/ybNF1MEKzrQ2iw1Dn6QtPFBMk+/aQfrG9ad1I3eCDZg0s7WGuan7zaPBCs60PeaTz1m71+PKtyQLLl0gzWbhvUqy6SdDFBphdZiHmw6Pq7JF08EAy0IMe7Ra6fjmi6eCAYU4ilYNHd0feRBUJvc9kLFt02TRcPpJMbQp8n+wEaO6DpYoFgPQtRX5af9g1+4PiAAULvDtkMFt3XfZIuBgg5TewFS/HRd4cH0qkRiCJYilfU4B01gdCbKraCpT7HttosELxSQFqawVJXb50Hgo3XIZuV5+1VoeBalee1mCB+6Ln9v3BonPBCIBhIgeC1FAjGUiDYAxdmAYIjcGA2INMQ3n42IHgTwZvPCgQ7NdCcoxAcgObchPiIAejNTQji20tsQPynP03QmZOQP6uDxhyF+Ii+nsRRiAPviZ1qOXCezIOUrl32quVrfT9xEkI2qEGeOQpJvyedCHLMUQjZTQjquQnx6Z/pCJRzE5JZz3v7AdqYA7+eDNDKrj3NuQrBoOZpzVkIdkJPZ+5C0G94GnMYovfbJpyGYDP/ieI2BDtdL+cch2Du34rlPCTvb5NyH5Lz8CoBJN8FSykgGFx4qpUDglPl9XBJIIh1xbeU0kBw+PoVS3kgijelTBAcvnKmlAqCGETenJUMMv+KuHQQ7Fx6s1Y+CGJz1vFVRsjMnzEtJwSHmav7kkIQJy9OldJCEANyeV9iCGIzdceo1BDE+j9KySHPlNJDEJtP54oACGIw8jwREMRJTwgE8SauyYAg+tehDMjDBj0hEMTpdSgD8rBJfCED8rCgJwSC6DcbMiC/LTURkMcFcSQD8rDOeCQD8jA/iEMRkMdNg7grAvI4fzBuRBIgTxs+aiRAnuZ3mleNsFZ+yL93p/7zZBTVSg/5O/9mEtTH8UnjshtG0e9LtV/ecN8DtBa8vQAAAABJRU5ErkJggg==';
+  },
+  mZby: function(e, n, t) {
     'use strict';
     t.r(n);
     var a = t('wx14'),
@@ -595,7 +854,7 @@
             },
             {
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.0' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.4' },
               files: {},
             },
           ),
@@ -629,7 +888,7 @@
                   "import React, { useState } from 'react';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = arr => {\n    console.log('onChange', arr);\n    setFilesList(arr);\n  }; // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n\n  const onUpload = () =>\n    new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({\n            fssid: rate.toString().slice(-6),\n          });\n        }\n\n        reject('\u4e0a\u4f20\u5931\u8d25\uff0c\u8bf7\u91cd\u8bd5~');\n      }, 3000);\n    });\n\n  return (\n    <div>\n      <ImagePicker\n        filesList={filesList}\n        onChange={onChange}\n        multiple\n        max={10}\n        mode=\"cover\"\n        onUpload={onUpload}\n      />\n    </div>\n  );\n};\n",
               },
             },
-            { dependencies: { 'eco-mobile': '1.0.0' }, files: {} },
+            { dependencies: { 'eco-mobile': '1.0.4' }, files: {} },
           ),
           r.a.createElement(u, null),
         ),
@@ -933,113 +1192,6 @@
       );
     };
   },
-  '9Ihz': function(e, n) {},
-  '9kvl': function(e, n, t) {
-    'use strict';
-    var a = t('FfOG');
-    t.d(n, 'a', function() {
-      return a['b'];
-    });
-    var l = t('bCY9');
-    t.d(n, 'b', function() {
-      return l['a'];
-    });
-  },
-  FfOG: function(e, n, t) {
-    'use strict';
-    t.d(n, 'a', function() {
-      return i;
-    }),
-      t.d(n, 'b', function() {
-        return r;
-      });
-    var a = t('YS25'),
-      l = { basename: '/' };
-    window.routerBase && (l.basename = window.routerBase);
-    var r = Object({ NODE_ENV: 'production' }).__IS_SERVER
-        ? null
-        : Object(a['b'])(l),
-      i = function() {
-        var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-        return e || (r = Object(a['b'])(l)), r;
-      };
-  },
-  bCY9: function(e, n, t) {
-    'use strict';
-    t.d(n, 'a', function() {
-      return l;
-    });
-    var a = t('LtsZ'),
-      l = new a['Plugin']({
-        validKeys: [
-          'modifyClientRenderOpts',
-          'patchRoutes',
-          'rootContainer',
-          'render',
-          'onRouteChange',
-        ],
-      });
-  },
-  gql7: function(e, n, t) {
-    'use strict';
-    t.r(n);
-    var a = t('q1tI'),
-      l = t.n(a),
-      r = (t('B2uJ'), t('+su7'), t('qOys')),
-      i = t.n(r);
-    t('5Yjd');
-    n['default'] = function() {
-      return l.a.createElement(
-        l.a.Fragment,
-        null,
-        l.a.createElement(
-          'div',
-          { className: 'markdown' },
-          l.a.createElement(
-            'h1',
-            { id: 'eco-mobile' },
-            l.a.createElement(
-              'a',
-              { 'aria-hidden': 'true', href: '#eco-mobile' },
-              l.a.createElement('span', { className: 'icon icon-link' }),
-            ),
-            'eco-mobile',
-          ),
-          l.a.createElement(
-            'h2',
-            { id: 'getting-started' },
-            l.a.createElement(
-              'a',
-              { 'aria-hidden': 'true', href: '#getting-started' },
-              l.a.createElement('span', { className: 'icon icon-link' }),
-            ),
-            'Getting Started',
-          ),
-          l.a.createElement('p', null, 'Install dependencies,'),
-          l.a.createElement(i.a, { code: '$ npm i\n', lang: 'bash' }),
-          l.a.createElement('p', null, 'Start the dev server,'),
-          l.a.createElement(i.a, { code: '$ npm start\n', lang: 'bash' }),
-          l.a.createElement('p', null, 'Build documentation,'),
-          l.a.createElement(i.a, {
-            code: '$ npm run docs:build\n',
-            lang: 'bash',
-          }),
-          l.a.createElement(
-            'p',
-            null,
-            'Build library via ',
-            l.a.createElement('code', null, 'father-build'),
-            ',',
-          ),
-          l.a.createElement(i.a, { code: '$ npm run build\n', lang: 'bash' }),
-        ),
-      );
-    };
-  },
-  lKFj: function(e, n) {
-    e.exports =
-      'data:image/png;base64,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';
-  },
   tB8F: function(e, n, t) {
     'use strict';
     t.r(n);
@@ -1274,11 +1426,11 @@
             },
             {
               path: '/image-picker',
-              component: t('4ChA').default,
+              component: t('mZby').default,
               exact: !0,
               meta: {
-                filePath: 'src/ImagePicker/index.md',
-                updatedTime: 1608891127e3,
+                filePath: 'src/image-picker/index.md',
+                updatedTime: 1608890891369,
                 group: {
                   title: 'ImagePicker \u56fe\u7247\u9009\u62e9\u5668',
                   path: '/image-picker',

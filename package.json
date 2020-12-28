@@ -1,7 +1,6 @@
 {
-  "private": false,
   "name": "eco-mobile",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "基于react的移动端扩展组件",
   "scripts": {
     "start": "dumi dev",
@@ -43,7 +42,7 @@
     "eco-mobile"
   ],
   "dependencies": {
-    "@wonder-ui/styles": "^1.1.2",
+    "@wonder-ui/styles": "^2.0.0-beta.8",
     "antd-mobile": "^2.3.4",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "classnames": "^2.2.6",

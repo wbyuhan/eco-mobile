@@ -1,8 +1,8 @@
-declare const useStyles: (
-  props?: any,
-) => Record<
+declare const styles: import('@wonder-ui/styles').Styles<
+  import('@wonder-ui/styles').DefaultTheme,
+  any,
   | 'root'
-  | 'input'
+  | 'hidden'
   | 'imgBox'
   | 'img'
   | 'errorTip'
@@ -15,7 +15,6 @@ declare const useStyles: (
   | 'defaultBorder'
   | 'loadingBox'
   | 'loading'
-  | '@keyframes myRound',
-  string
+  | '@keyframes myRound'
 >;
-export default useStyles;
+export default styles;

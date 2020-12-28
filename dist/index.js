@@ -6,7 +6,7 @@ var React = require('react');
 var classnames = require('classnames');
 var WxImageViewer = require('react-wx-images-viewer');
 var antdMobile = require('antd-mobile');
-var styles = require('@wonder-ui/styles');
+var styles$1 = require('@wonder-ui/styles');
 
 function _interopDefaultLegacy(e) {
   return e && typeof e === 'object' && 'default' in e ? e : { default: e };
@@ -113,12 +113,12 @@ var iconRemove = require('../assets/icon-remove.png');
 
 var iocnLoading = require('../assets/icon-loading.png');
 
-var useStyles = styles.createUseStyles({
+var styles = styles$1.createStyles({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
   },
-  input: {
+  hidden: {
     display: 'none',
   },
   imgBox: {
@@ -232,6 +232,7 @@ var noon = function noon() {};
 var ImagePicker = function ImagePicker(props) {
   var _props$filesList = props.filesList,
     filesList = _props$filesList === void 0 ? [] : _props$filesList,
+    s = props.classes,
     _props$max = props.max,
     max = _props$max === void 0 ? 1 : _props$max,
     _props$onChange = props.onChange,
@@ -261,7 +262,6 @@ var ImagePicker = function ImagePicker(props) {
       urlList.push(item.url);
     }
   });
-  var s = useStyles();
 
   var _useState = React.useState(false),
     _useState2 = _slicedToArray(_useState, 2),
@@ -441,7 +441,7 @@ var ImagePicker = function ImagePicker(props) {
       className: s.root,
     },
     /*#__PURE__*/ React__default['default'].createElement('input', {
-      className: s.input,
+      className: s.hidden,
       ref: ref,
       type: 'file',
       accept: accept,
@@ -566,4 +566,6 @@ var ImagePicker = function ImagePicker(props) {
   );
 };
 
-exports.ImagePicker = ImagePicker;
+var index = styles$1.withStyles(styles)(ImagePicker);
+
+exports.ImagePicker = index;

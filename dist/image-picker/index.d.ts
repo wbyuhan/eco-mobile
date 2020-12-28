@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './styles';
+import { ClassKeysOfStyles } from '@wonder-ui/styles';
 interface Files {
   url: string;
   loading?: boolean;
@@ -20,6 +22,11 @@ interface ImagePickerProps {
   mode?: string;
   size?: number;
   onFail?: (e: any) => any;
+  classes: ClassKeysOfStyles<typeof styles>;
 }
-declare const ImagePicker: (props: ImagePickerProps) => JSX.Element;
-export default ImagePicker;
+declare const _default: React.ForwardRefExoticComponent<Pick<
+  any,
+  string | number | symbol
+> &
+  React.RefAttributes<(props: ImagePickerProps) => JSX.Element>>;
+export default _default;
