@@ -43,7 +43,9 @@
   "dependencies": {
     "@wonder-ui/styles": "^1.1.2",
     "antd-mobile": "^2.3.4",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "classnames": "^2.2.6",
+    "compression-webpack-plugin": "^6.1.1",
     "react": "^16.12.0",
     "react-wx-images-viewer": "^1.0.6"
   },

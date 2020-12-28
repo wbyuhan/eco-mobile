@@ -100,8 +100,8 @@
       d = t('U0F3'),
       s = t.n(d),
       m = t('r8B7'),
-      g = t('lKFj'),
-      f = t('x3hr'),
+      f = t('lKFj'),
+      g = t('x3hr'),
       p = Object(m['createUseStyles'])({
         root: { display: 'flex', flexWrap: 'wrap' },
         input: { display: 'none' },
@@ -132,7 +132,7 @@
           right: 0,
           top: 0,
           zIndex: 99,
-          backgroundImage: 'url('.concat(g, ')'),
+          backgroundImage: 'url('.concat(f, ')'),
           backgroundSize: '100% 100%',
         },
         parent: { overflow: 'hidden' },
@@ -186,7 +186,7 @@
         loading: {
           width: '35px',
           height: '35px',
-          backgroundImage: 'url('.concat(f, ')'),
+          backgroundImage: 'url('.concat(g, ')'),
           backgroundSize: '100% 100%',
           animation: '$myRound 1s linear infinite',
         },
@@ -204,8 +204,8 @@
           o = void 0 === a ? 1 : a,
           d = e.onChange,
           m = void 0 === d ? h : d,
-          g = e.accept,
-          f = void 0 === g ? 'image/*' : g,
+          f = e.accept,
+          g = void 0 === f ? 'image/*' : f,
           p = e.multiple,
           A = e.width,
           b = void 0 === A ? '80px' : A,
@@ -253,7 +253,6 @@
             var n = e.target,
               t = n.files;
             if (!t || !t.length) return (n.value = '');
-            console.log('files', t);
             var a = Q.current.length,
               r = o - Q.current.length;
             t.length > r &&
@@ -272,18 +271,15 @@
             Promise.all(c)
               .then(e => {
                 D && e.forEach(e => (e.loading = !0));
-                var t = e.filter(
-                  e => (
-                    console.log('item.size', e.file.size),
-                    S && e.file.size > 1024 * S * 1024
-                      ? l.a.info(
-                          '\u56fe\u7247\u5927\u5c0f\u4e0d\u80fd\u8d85\u8fc7'.concat(
-                            S,
-                            'M',
-                          ),
-                        )
-                      : e
-                  ),
+                var t = e.filter(e =>
+                  S && e.file.size > 1024 * S * 1024
+                    ? l.a.info(
+                        '\u56fe\u7247\u5927\u5c0f\u4e0d\u80fd\u8d85\u8fc7'.concat(
+                          S,
+                          'M',
+                        ),
+                      )
+                    : e,
                 );
                 if (((Q.current = Q.current.concat(t)), m(Q.current), D))
                   for (
@@ -335,7 +331,7 @@
             Q.current.splice(e, 1), (Q.current = [...Q.current]), m(Q.current);
           },
           Z = e => {
-            console.log('index', e), K(e), X();
+            K(e), X();
           },
           X = () => z(e => !e);
         return (
@@ -357,7 +353,7 @@
               className: J.input,
               ref: O,
               type: 'file',
-              accept: f,
+              accept: g,
               multiple: p,
               onChange: G,
             }),
@@ -456,10 +452,9 @@
               t = n[0],
               u = n[1],
               d = function(e) {
-                console.log('onChange', e),
-                  e.forEach(function(e) {
-                    return (e.name = '\u793a\u4f8b\u56fe');
-                  }),
+                e.forEach(function(e) {
+                  return (e.name = '\u793a\u4f8b\u56fe');
+                }),
                   u(e);
               };
             return c['default'].createElement(
@@ -530,7 +525,7 @@
               t = n[0],
               i = n[1],
               c = function(e) {
-                console.log('onChange', e), i(e);
+                i(e);
               },
               o = function() {
                 return new Promise(function(e, n) {
