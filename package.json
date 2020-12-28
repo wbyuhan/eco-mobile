@@ -1,7 +1,8 @@
 {
-  "private": true,
+  "private": false,
   "name": "eco-mobile",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "description": "基于react的移动端扩展组件",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -37,6 +38,7 @@
     "react",
     "react-components",
     "antd",
+    "antd-mobile",
     "ant-design-mobile",
     "eco-mobile"
   ],
