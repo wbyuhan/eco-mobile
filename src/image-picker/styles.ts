@@ -1,6 +1,7 @@
 import { createStyles } from '@wonder-ui/styles';
-const iconRemove = require('../assets/icon-remove.png');
-const iocnLoading = require('../assets/icon-loading.png');
+import { iconRemove, iconLoading } from '../assets/base64';
+// const iconRemove = require('../assets/icon-remove.png');
+// const iconLoading = require('../assets/icon-loading.png');
 
 const styles = createStyles({
   root: {
@@ -102,7 +103,7 @@ const styles = createStyles({
   loading: {
     width: '35px',
     height: '35px',
-    backgroundImage: `url(${iocnLoading})`,
+    backgroundImage: `url(${iconLoading})`,
     backgroundSize: '100% 100%',
     animation: '$myRound 1s linear infinite',
   },

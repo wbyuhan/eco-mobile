@@ -854,7 +854,7 @@
             },
             {
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.4' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.5' },
               files: {},
             },
           ),
@@ -888,7 +888,7 @@
                   "import React, { useState } from 'react';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = arr => {\n    console.log('onChange', arr);\n    setFilesList(arr);\n  }; // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n\n  const onUpload = () =>\n    new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({\n            fssid: rate.toString().slice(-6),\n          });\n        }\n\n        reject('\u4e0a\u4f20\u5931\u8d25\uff0c\u8bf7\u91cd\u8bd5~');\n      }, 3000);\n    });\n\n  return (\n    <div>\n      <ImagePicker\n        filesList={filesList}\n        onChange={onChange}\n        multiple\n        max={10}\n        mode=\"cover\"\n        onUpload={onUpload}\n      />\n    </div>\n  );\n};\n",
               },
             },
-            { dependencies: { 'eco-mobile': '1.0.4' }, files: {} },
+            { dependencies: { 'eco-mobile': '1.0.5' }, files: {} },
           ),
           r.a.createElement(u, null),
         ),
@@ -1430,7 +1430,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/image-picker/index.md',
-                updatedTime: 1608890891369,
+                updatedTime: 1609135696e3,
                 group: {
                   title: 'ImagePicker \u56fe\u7247\u9009\u62e9\u5668',
                   path: '/image-picker',
