@@ -27,7 +27,7 @@ yarn add eco-mobile
   'import',
   {
     libraryName: 'eco-mobile',
-    libraryDirectory: 'es',
+    libraryDirectory: 'dist',
     style: true,
   },
   'eco-mobile',
