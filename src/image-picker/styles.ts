@@ -2,6 +2,7 @@ import { createStyles } from '@wonder-ui/styles';
 import { iconRemove, iconLoading } from '../assets/base64';
 // const iconRemove = require('../assets/icon-remove.png');
 // const iconLoading = require('../assets/icon-loading.png');
+// const iconLoading2 = require('../assets/2.png');
 
 const styles = createStyles({
   root: {
