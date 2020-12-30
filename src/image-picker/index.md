@@ -20,7 +20,7 @@ export default () => {
   interface Files {
     url: string; // 图片url
     loading: boolean; // 图片是否加载中
-    previewUrl?: string; // 预览图url
+    errorTip?: string; // 错误提示
     name?: string; // 图片名称
     [index: string]: any;
   }
@@ -89,7 +89,7 @@ export default () => {
   interface Files {
     url: string; // 图片url
     loading: boolean; // 图片是否加载中
-    previewUrl?: string; // 预览图url
+    errorTip?: string; // 错误提示
     name?: string; // 图片名称
     [index: string]: any;
   }
@@ -97,6 +97,7 @@ export default () => {
   // 数组改变
   const onChange = (arr: Array<Files>) => {
     console.log('onChange', arr);
+    arr.forEach((item, index) => (item.name = `示例图${index}`));
     setFilesList(arr);
   };
 
@@ -124,6 +125,121 @@ export default () => {
         mode="cover"
         onUpload={onUpload}
       />
+    </div>
+  );
+};
+```
+
+## 自定义选择器(子组件)
+
+```tsx
+import React, { useState } from 'react';
+import { createUseStyles } from '@wonder-ui/styles';
+
+import { Flex, WingBlank } from 'antd-mobile';
+import { ImagePicker } from 'eco-mobile';
+
+const iconIdCard = require('./icon-idcard.png');
+const iconIdCardBack = require('./icon-idcard-back.png');
+const iconPhoto = require('./icon-photo.png');
+
+const styles = createUseStyles({
+  root: {
+    width: '375px',
+    boxSizing: 'border-box',
+    padding: '20px',
+    border: '1px solid #ddd',
+    display: 'flex',
+  },
+  item: {
+    flex: 1,
+    '&:first-child': {
+      marginRight: '30px',
+    },
+  },
+  children: {
+    background: '#e8f1fc',
+    height: '102px',
+    position: 'relative',
+  },
+  img: {
+    width: '89px',
+    height: '57px',
+  },
+  iconPhoto: {
+    width: '32px',
+    height: '28px',
+    display: 'block',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 2,
+  },
+});
+
+export default () => {
+  const s = styles();
+
+  interface Files {
+    url: string; // 图片url
+    loading: boolean; // 图片是否加载中
+    errorTip?: string; // 错误提示
+    name?: string; // 图片名称
+    [index: string]: any;
+  }
+
+  const [idCard, setIdCard] = useState<Array<Files>>([
+    { name: '身份证人像面' },
+  ]);
+  const [idCardBack, setIdCardBack] = useState<Array<Files>>([
+    { name: '身份证国徽面' },
+  ]);
+
+  // 人像面改变
+  const onChangeIdCard = (arr: Array<Files>) => {
+    console.log('onChange', arr);
+    arr.forEach((item, index) => (item.name = '身份证人像面'));
+    setIdCard(arr);
+  };
+
+  // 国徽面改变
+  const onChangeIdCardBack = (arr: Array<Files>) => {
+    console.log('onChange', arr);
+    arr.forEach((item, index) => (item.name = '身份证国徽面'));
+    setIdCardBack(arr);
+  };
+
+  return (
+    <div className={s.root}>
+      <div className={s.item}>
+        <ImagePicker
+          filesList={idCard}
+          onChange={onChangeIdCard}
+          mode="cover"
+          width="100%"
+          height="102px"
+        >
+          <Flex className={s.children} justify="center">
+            <img className={s.img} alt="" src={iconIdCard} />
+            <img alt="" className={s.iconPhoto} src={iconPhoto} />
+          </Flex>
+        </ImagePicker>
+      </div>
+      <div className={s.item}>
+        <ImagePicker
+          filesList={idCardBack}
+          onChange={onChangeIdCardBack}
+          mode="cover"
+          width="100%"
+          height="102px"
+        >
+          <Flex className={s.children} justify="center">
+            <img className={s.img} alt="" src={iconIdCardBack} />
+            <img alt="" className={s.iconPhoto} src={iconPhoto} />
+          </Flex>
+        </ImagePicker>
+      </div>
     </div>
   );
 };

@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
+import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
 import classnames from 'classnames';
 import WxImageViewer from 'react-wx-images-viewer';
 import { Toast } from 'antd-mobile';
 
 import styles from './styles';
-import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
 
 const noon = () => {};
 
@@ -31,14 +31,14 @@ interface ImagePickerProps {
   size?: number; // 图片大小限制，单位: M
   onFail?: (e: any) => any;
 
-  classes: ClassKeysOfStyles<typeof styles>;
+  classes?: Partial<ClassKeysOfStyles<typeof styles>>;
   // classes?: Record<'root' | 'input' | 'imgBox', any>
 }
 
 const ImagePicker = (props: ImagePickerProps) => {
   const {
     filesList = [],
-    classes: s,
+    classes: s = {},
     max = 1,
     onChange = noon,
     accept = 'image/*',
@@ -49,7 +49,7 @@ const ImagePicker = (props: ImagePickerProps) => {
     children,
     mode = 'fill',
     size,
-    onUpload = null,
+    onUpload,
     onFail = noon,
   } = props;
 
@@ -62,6 +62,18 @@ const ImagePicker = (props: ImagePickerProps) => {
       urlList.push(item.url);
     }
   });
+
+  // 有效个数
+  const validLength = useMemo(() => {
+    let num = 0;
+    for (let i = 0; i < filesList.length; i++) {
+      const { url, errorTip } = filesList[i];
+      if (url || errorTip) {
+        num++;
+      }
+    }
+    return num;
+  }, [filesList]);
 
   const [isOpen, setOpen] = useState<boolean>(false);
   const [index, setIndex] = useState<number>(0);
@@ -90,8 +102,7 @@ const ImagePicker = (props: ImagePickerProps) => {
       return (fileSelectorEl.value = '');
     }
     console.log('files', files);
-    const index = refFilesList.current.length;
-    const restNum = max - refFilesList.current.length;
+    const restNum = max - validLength;
     if (files.length > restNum) {
       Toast.info(`图片最多不超过${max}张`);
     }
@@ -100,6 +111,10 @@ const ImagePicker = (props: ImagePickerProps) => {
     for (let i = 0; i < restFileList.length; i++) {
       imageParsePromiseList.push(parseFile(restFileList[i], i));
     }
+    refFilesList.current = refFilesList.current.filter(
+      item => item.url || item.errorTip,
+    ); // 过滤有效值
+    const index = refFilesList.current.length;
     Promise.all(imageParsePromiseList)
       .then((imageItems: any[]) => {
         if (onUpload) {
@@ -160,6 +175,17 @@ const ImagePicker = (props: ImagePickerProps) => {
 
   // 删除图片
   const onRemove = (index: number) => {
+    let ableDelete = true;
+    for (let i = 0; i < refFilesList.current.length; i++) {
+      const { loading } = refFilesList.current[i];
+      if (loading) {
+        ableDelete = false;
+        break;
+      }
+    }
+    if (!ableDelete) {
+      return Toast.info('图片上传中，请稍后操作');
+    }
     refFilesList.current.splice(index, 1);
     refFilesList.current = [...refFilesList.current];
     onChange(refFilesList.current);
@@ -202,55 +228,76 @@ const ImagePicker = (props: ImagePickerProps) => {
         filesList.length > 0 &&
         filesList.map((item: Files, index: number) => {
           const { url, loading, name, errorTip } = item;
-          return (
-            <div key={index} className={s.parent}>
-              <div className={s.imgBox}>
-                {url && (
-                  <img
-                    alt=""
-                    className={classnames(s.img, [
-                      ...config.map(todo => {
-                        return s[todo as configProp];
-                      }),
-                    ])}
-                    src={url}
-                    style={{ objectFit: mode as objectFitProp, width, height }}
-                    onClick={() => preview(index)}
-                  />
-                )}
-                {errorTip && (
-                  <div className={s.errorTip} style={{ width, height }}>
-                    {errorTip}
-                  </div>
-                )}
-                <i className={s.iconRemove} onClick={() => onRemove(index)} />
-                {loading && (
-                  <div className={s.loadingBox}>
-                    <i className={s.loading} />
+          if (url || errorTip) {
+            return (
+              <div
+                key={index}
+                className={classnames(s.parent, {
+                  [s.noMargin as string]: max === 1 || filesList.length < 1,
+                })}
+                style={{ width }}
+              >
+                <div className={s.imgBox}>
+                  {url && (
+                    <img
+                      alt=""
+                      className={s.img}
+                      src={url}
+                      style={{
+                        objectFit: mode as objectFitProp,
+                        width,
+                        height,
+                      }}
+                      onClick={() => preview(index)}
+                    />
+                  )}
+                  {errorTip && (
+                    <div className={s.errorTip} style={{ width, height }}>
+                      {errorTip}
+                    </div>
+                  )}
+                  <i className={s.iconRemove} onClick={() => onRemove(index)} />
+                  {loading && (
+                    <div className={s.loadingBox}>
+                      <i className={s.loading} />
+                    </div>
+                  )}
+                </div>
+                {name && (
+                  <div className={s.name} style={{ width }}>
+                    {name}
                   </div>
                 )}
               </div>
-              {name && (
-                <div className={s.name} style={{ width }}>
-                  {name}
-                </div>
-              )}
-            </div>
-          );
+            );
+          }
         })}
-      {filesList.length >= max ? null : (
-        <div className={s.parent} onClick={inputClick}>
+      {validLength < max && (
+        <div
+          className={classnames(s.parent, {
+            [s.noMargin as string]: max === 1 || filesList.length < 1,
+          })}
+          style={{ width }}
+          onClick={inputClick}
+        >
           {children ? (
             children
           ) : (
-            <div
-              style={{ width, height }}
-              className={classnames(s.childrenEle, [
-                ...config.map(todo => {
-                  return s[todo as configProp];
-                }),
-              ])}
-            />
+            <div>
+              <div
+                style={{ width, height }}
+                className={classnames(s.childrenEle, [
+                  ...config.map(todo => {
+                    return s[todo as configProp];
+                  }),
+                ])}
+              />
+            </div>
+          )}
+          {max === 1 && filesList[0] && filesList[0].name && (
+            <div className={s.name} style={{ width }}>
+              {filesList[0].name}
+            </div>
           )}
         </div>
       )}

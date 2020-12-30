@@ -1,8 +1,5 @@
 import { createStyles } from '@wonder-ui/styles';
 import { iconRemove, iconLoading } from '../assets/base64';
-// const iconRemove = require('../assets/icon-remove.png');
-// const iconLoading = require('../assets/icon-loading.png');
-// const iconLoading2 = require('../assets/2.png');
 
 const styles = createStyles({
   root: {
@@ -16,11 +13,11 @@ const styles = createStyles({
     position: 'relative',
     overflow: 'hidden',
     borderRadius: '5px',
-    margin: '0 8px 8px 0',
   },
   img: {
     display: 'block',
     boxSizing: 'border-box',
+    borderRadius: '5px',
   },
   errorTip: {
     display: 'flex',
@@ -47,6 +44,10 @@ const styles = createStyles({
   },
   parent: {
     overflow: 'hidden',
+    margin: '0 8px 8px 0',
+  },
+  noMargin: {
+    margin: 0,
   },
   name: {
     textAlign: 'center',
@@ -54,6 +55,8 @@ const styles = createStyles({
     marginBottom: '10px',
     color: '#999',
     fontSize: '12px',
+    lineHeight: 1.4,
+    marginTop: '8px',
   },
   childrenEle: {
     position: 'relative',

@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './styles';
 import { ClassKeysOfStyles } from '@wonder-ui/styles';
+import styles from './styles';
 interface Files {
   url: string;
   loading?: boolean;
@@ -22,11 +22,45 @@ interface ImagePickerProps {
   mode?: string;
   size?: number;
   onFail?: (e: any) => any;
-  classes: ClassKeysOfStyles<typeof styles>;
+  classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
 declare const _default: React.ForwardRefExoticComponent<Pick<
-  any,
-  string | number | symbol
+  ImagePickerProps & {
+    theme?: unknown;
+  } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
+      unknown,
+      | 'root'
+      | 'hidden'
+      | 'imgBox'
+      | 'img'
+      | 'errorTip'
+      | 'iconRemove'
+      | 'parent'
+      | 'noMargin'
+      | 'name'
+      | 'childrenEle'
+      | 'defaultDashed'
+      | 'defaultBackGround'
+      | 'defaultBorder'
+      | 'loadingBox'
+      | 'loading'
+      | '@keyframes myRound'
+    >,
+  | 'height'
+  | 'width'
+  | 'size'
+  | 'multiple'
+  | 'children'
+  | 'theme'
+  | 'classes'
+  | 'filesList'
+  | 'max'
+  | 'onChange'
+  | 'onUpload'
+  | 'accept'
+  | 'config'
+  | 'mode'
+  | 'onFail'
 > &
   React.RefAttributes<(props: ImagePickerProps) => JSX.Element>>;
 export default _default;

@@ -1,7 +1,7 @@
 {
-  "umi.js": "https://yicoding.github.io/eco-mobile/umi.00f49721.js",
-  "vendors.css": "https://yicoding.github.io/eco-mobile/vendors.972a7e7d.chunk.css",
-  "vendors.js": "https://yicoding.github.io/eco-mobile/vendors.48072099.async.js",
+  "umi.js": "https://yicoding.github.io/eco-mobile/umi.de36f6e7.js",
+  "vendors.css": "https://yicoding.github.io/eco-mobile/vendors.c07d2ae7.chunk.css",
+  "vendors.js": "https://yicoding.github.io/eco-mobile/vendors.cb35f15f.async.js",
   "index.html": "https://yicoding.github.io/eco-mobile/index.html",
   "static/KaTeX_AMS-Regular.woff": "https://yicoding.github.io/eco-mobile/static/KaTeX_AMS-Regular.b1489df1.woff",
   "static/KaTeX_AMS-Regular.woff2": "https://yicoding.github.io/eco-mobile/static/KaTeX_AMS-Regular.d4531cf7.woff2",
@@ -63,7 +63,7 @@
   "static/KaTeX_Typewriter-Regular.woff2": "https://yicoding.github.io/eco-mobile/static/KaTeX_Typewriter-Regular.4f31d033.woff2",
   "static/KaTeX_Typewriter-Regular.ttf": "https://yicoding.github.io/eco-mobile/static/KaTeX_Typewriter-Regular.b1d1af1a.ttf",
   "static/KaTeX_Typewriter-Regular.woff": "https://yicoding.github.io/eco-mobile/static/KaTeX_Typewriter-Regular.d3c8e68f.woff",
-  "umi.00f49721.js.gz": "https://yicoding.github.io/eco-mobile/umi.00f49721.js.gz",
-  "vendors.48072099.async.js.gz": "https://yicoding.github.io/eco-mobile/vendors.48072099.async.js.gz",
-  "vendors.972a7e7d.chunk.css.gz": "https://yicoding.github.io/eco-mobile/vendors.972a7e7d.chunk.css.gz"
+  "umi.de36f6e7.js.gz": "https://yicoding.github.io/eco-mobile/umi.de36f6e7.js.gz",
+  "vendors.c07d2ae7.chunk.css.gz": "https://yicoding.github.io/eco-mobile/vendors.c07d2ae7.chunk.css.gz",
+  "vendors.cb35f15f.async.js.gz": "https://yicoding.github.io/eco-mobile/vendors.cb35f15f.async.js.gz"
 }

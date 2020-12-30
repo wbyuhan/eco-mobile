@@ -1,6 +1,6 @@
 declare const styles: import('@wonder-ui/styles').Styles<
   import('@wonder-ui/styles').DefaultTheme,
-  any,
+  {},
   | 'root'
   | 'hidden'
   | 'imgBox'
@@ -8,6 +8,7 @@ declare const styles: import('@wonder-ui/styles').Styles<
   | 'errorTip'
   | 'iconRemove'
   | 'parent'
+  | 'noMargin'
   | 'name'
   | 'childrenEle'
   | 'defaultDashed'

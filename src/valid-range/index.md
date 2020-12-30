@@ -9,17 +9,106 @@ group:
 
 ```tsx
 import React, { useState } from 'react';
-import { createUseStyles } from '@wonder-ui/styles';
 
-import { WhiteSpace, Flex, WingBlank } from 'antd-mobile';
 import { ValidRange } from 'eco-mobile';
 
 export default () => {
+  const [values, setValues] = useState<Array<string | undefined>>([]);
+
+  // 日期改变
+  const onChange = (arr: Array<string | undefined>, type: string) => {
+    console.log('onChange', arr, type);
+    setValues(arr);
+  };
+
+  return <ValidRange values={values} onChange={onChange} />;
+};
+```
+
+## 更改默认项
+
+```tsx
+import React, { useState } from 'react';
+
+import { Button, WhiteSpace } from 'antd-mobile';
+import { ValidRange } from 'eco-mobile';
+
+export default () => {
+  const [values, setValues] = useState<Array<string | undefined>>([
+    '2011-12-01',
+    '2020-07-20',
+  ]);
+
+  // 日期改变
+  const onChange = (arr: Array<string | undefined>, type: string) => {
+    console.log('onChange', arr, type);
+    setValues(arr);
+  };
+
+  // 外部填充
+  const onFill = () => {
+    setValues(['2020-11-10', '2020-12-30']);
+  };
+
   return (
-    <Flex direction="row" wrap="wrap">
-      <ValidRange />
-    </Flex>
+    <div>
+      <ValidRange
+        values={values}
+        onChange={onChange}
+        labels={['开始营业时间:', '结束营业时间:']}
+        placeholders={['请选择', '请选择']}
+        titles={['开始日期', '结束日期']}
+        forerverTxt="永久"
+        foreverDate="2999-12-31"
+        minDate={new Date(2010, 0, 1, 23, 59, 59)}
+        maxDate={new Date(2020, 9, 28, 23, 59, 59)}
+      />
+      <WhiteSpace />
+      <Button onClick={onFill} inline type="primary" size="small">
+        外部填充
+      </Button>
+    </div>
   );
+};
+```
+
+## 外部处理日期 toast 提示
+
+```tsx
+import React, { useState } from 'react';
+
+import { Toast } from 'antd-mobile';
+import { ValidRange } from 'eco-mobile';
+import moment from 'moment';
+
+export default () => {
+  const [values, setValues] = useState<Array<string | undefined>>([]);
+
+  // 日期改变
+  const onChange = (arr: Array<string | undefined>, type: string) => {
+    console.log('onChange', arr, type);
+    const today = moment().format('YYYY-MM-DD');
+    if (type === 'start') {
+      // 开始日期
+      if (arr[0] > arr[1]) {
+        return Toast.info('起始日期不能大于结束日期');
+      }
+      if (arr[0] > today) {
+        return Toast.info('起始日期不能大于今天');
+      }
+    } else if (type === 'end') {
+      // 结束日期
+      if (arr[1] < arr[0]) {
+        return Toast.info('结束日期不能小于起始日期');
+      }
+      if (arr[1] < today) {
+        return Toast.info('结束日期不能小于今天');
+      }
+    }
+    setValues(arr);
+  };
+
+  return <ValidRange values={values} onChange={onChange} />;
 };
 ```
 
@@ -27,18 +116,14 @@ export default () => {
 
 ### ValidRange
 
-| 属性      | 说明                                                                                                                                                                  | 类型                         | 默认值          |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | --------------- |
-| filesList | 图片文件数组,元素为对象,包含属性 `url`: 图片路径(`必选`), `loading`: 图片加载状态, `errorTip`: 图片加载失败提示文案,`name`: 图片底部显示的名称,以及业务需要的其它属性 | `Array`                      | `[]`            |
-| max       | 最大上传文件数量                                                                                                                                                      | `number`                     | `1`             |
-| onChange  | files 值发生变化触发的回调函数                                                                                                                                        | `(arr: Array<Files>) => any` | -               |
-| onUpload  | 图片实时上传方法                                                                                                                                                      | `(file) => Promise`          | -               |
-| accept    | 图片类型                                                                                                                                                              | `string`                     | `image/*`       |
-| multiple  | 是否多选                                                                                                                                                              | `boolean`                    | `false`         |
-| width     | 图片宽度                                                                                                                                                              | `string`                     | `80px`          |
-| height    | 图片高度                                                                                                                                                              | `string`                     | `80px`          |
-| config    | 图片的额外扩展项,`defaultBorder`: 显示实线边框, `defaultBackGround`: 显示默认背景色, `defaultDashed`: 显示虚线边框                                                    | `string[]`                   | `defaultBorder` |
-| children  | 选择图片元素                                                                                                                                                          | `React.ReactNode`            | `default`       |
-| mode      | 图片裁切类型(同 css 中`object-fit`属性), `fill`, `cover`, `contain`, `scale-down`                                                                                     | `string`                     | `fill`          |
-| size      | 单个图片限制大小，单位 M                                                                                                                                              | `number`                     | -               |
-| onFail    | 图片选择失败                                                                                                                                                          | `(msg: string): void`        | -               |
+| 属性         | 说明                     | 类型                    | 默认值                                 |
+| ------------ | ------------------------ | ----------------------- | -------------------------------------- |
+| values       | 开始结束日期             | `Array`                 | `[]`                                   |
+| onChange     | 日期改变回调             | `(values, type) => any` | -                                      |
+| labels       | 开始结束标签名           | `Array`                 | `['证件起始日期:', '证件终止日期:']`   |
+| titles       | 开始结束日期弹窗标题     | `Array`                 | `['起始日期', '终止日期']`             |
+| placeholders | 开始结束日期 placeholder | `Array`                 | `['请选择起始日期', '请选择终止日期']` |
+| forerverTxt  | checked 的文本显示       | `string`                | `长期`                                 |
+| foreverDate  | checked 的日期显示       | `Array`                 | `9999-12-31`                           |
+| minDate      | 最小可选日期             | `Date`                  | `new Date(1980, 0, 1, 23, 59, 59)`     |
+| maxDate      | 最大可选日期             | `Date`                  | `new Date(2100, 11, 30, 23, 59, 59)`   |

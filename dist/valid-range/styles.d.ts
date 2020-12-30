@@ -1,20 +1,11 @@
 declare const styles: import('@wonder-ui/styles').Styles<
   import('@wonder-ui/styles').DefaultTheme,
-  any,
+  {},
   | 'root'
-  | 'hidden'
-  | 'imgBox'
-  | 'img'
-  | 'errorTip'
-  | 'iconRemove'
-  | 'parent'
-  | 'name'
-  | 'childrenEle'
-  | 'defaultDashed'
-  | 'defaultBackGround'
-  | 'defaultBorder'
-  | 'loadingBox'
-  | 'loading'
-  | '@keyframes myRound'
+  | 'datePicker'
+  | 'dateValue'
+  | 'forerverBox'
+  | 'iconCheck'
+  | 'iconChecked'
 >;
 export default styles;

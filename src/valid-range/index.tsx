@@ -1,264 +1,124 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { List, DatePicker, Flex } from 'antd-mobile';
 import classnames from 'classnames';
-import WxImageViewer from 'react-wx-images-viewer';
-import { Toast } from 'antd-mobile';
+import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
+import { formatDate } from '@/utils/tools';
 
 import styles from './styles';
-import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
+
+const { Item } = List;
 
 const noon = () => {};
 
-interface Files {
-  url: string; // 图片url
-  loading?: boolean; // 图片是否加载中
-  errorTip?: string; // 错误提示
-  name?: string; // 图片名称
-  [index: string]: any;
+interface ValidRangeProps {
+  classes?: Partial<ClassKeysOfStyles<typeof styles>>;
+  values?: Array<string | undefined>;
+  onChange?: (values: Array<string | undefined>, type?: string) => any;
+  labels?: string[];
+  titles?: string[];
+  placeholders?: string[];
+  forerverTxt?: string;
+  foreverDate?: string;
+  minDate?: Date;
+  maxDate?: Date;
 }
 
-interface ValidRange {
-  filesList: Array<Files>; // 图片列表
-  max?: number; // 图片最大个数
-  onChange?: (arr: Array<Files>) => any; // 图片列表改变
-  onUpload?: (file: any) => Promise<object | undefined>; // 图片上传方法
-  accept?: string; // 选择的图片类型
-  multiple?: boolean; // 是否多选
-  width?: string; // 图片宽度，默认80px
-  height?: string; // 图片高度，默认80px
-  config?: string[]; // 图片的额外扩展项,defaultBackGround: 显示默认背景色, defaultDashed: 显示虚线边框, defaultBorder: 显示实线边框
-  children?: React.ReactNode; // 选择图片元素，默认为+
-  mode?: string; // 图片裁切类型, fill, cover, contain, scale-down
-  size?: number; // 图片大小限制，单位: M
-  onFail?: (e: any) => any;
-
-  classes: ClassKeysOfStyles<typeof styles>;
-  // classes?: Record<'root' | 'input' | 'imgBox', any>
-}
-
-const ImagePicker = (props: ValidRange) => {
+const ValidRange = (props: ValidRangeProps) => {
   const {
-    filesList = [],
-    classes: s,
-    max = 1,
+    classes: s = {},
+    values = [],
     onChange = noon,
-    accept = 'image/*',
-    multiple,
-    width = '80px',
-    height = '80px',
-    config = ['defaultBorder'],
-    children,
-    mode = 'fill',
-    size,
-    onUpload = null,
-    onFail = noon,
+    labels = ['证件起始日期:', '证件终止日期:'],
+    titles = ['起始日期', '终止日期'],
+    placeholders = ['请选择起始日期', '请选择终止日期'],
+    forerverTxt = '长期',
+    foreverDate = '9999-12-31',
+    minDate = new Date(1980, 0, 1, 23, 59, 59),
+    maxDate = new Date(2100, 11, 30, 23, 59, 59),
   } = props;
 
-  const ref = useRef<any>(null);
-  const refFilesList = useRef<Array<Files>>(filesList);
+  const [check, setCheck] = useState<boolean>(false);
 
-  const urlList: string[] = [];
-  refFilesList.current.forEach((item: Files) => {
-    if (item.url) {
-      urlList.push(item.url);
+  // 监听日期
+  useEffect(() => {
+    setCheck(values[1] === foreverDate);
+  }, [values[1], foreverDate]);
+
+  // 转换时间
+  const judeDate = (val: string | undefined) => {
+    if (!val) return;
+    return new Date(val);
+  };
+
+  // 切换
+  const onCheckHandle = () => {
+    const arr = [values[0], check ? '' : foreverDate];
+    const type = check ? 'unCheck' : 'check';
+    onChange(arr, type);
+    setCheck(val => !val);
+  };
+
+  // 开始日期改变
+  const onChangeHandle = (date: Date, type: string) => {
+    const val = formatDate(date);
+    let arr = [];
+    if (type === 'start') {
+      arr = [val, values[1]];
+    } else {
+      arr = [values[0], val];
     }
-  });
-
-  const [isOpen, setOpen] = useState<boolean>(false);
-  const [index, setIndex] = useState<number>(0);
-
-  // 图片处理
-  const parseFile = (file: any, index: number) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = e => {
-        const dataURL = (e.target as any).result;
-        if (!dataURL) {
-          reject(`Fail to get the ${index} image`);
-          return;
-        }
-        resolve({ url: dataURL, file });
-      };
-      reader.readAsDataURL(file);
-    });
+    onChange(arr, type);
   };
-
-  // 图片改变
-  const onChangeHandle = (e: any) => {
-    const fileSelectorEl = e.target;
-    const { files } = fileSelectorEl;
-    if (!files || !files.length) {
-      return (fileSelectorEl.value = '');
-    }
-    console.log('files', files);
-    const index = refFilesList.current.length;
-    const restNum = max - refFilesList.current.length;
-    if (files.length > restNum) {
-      Toast.info(`图片最多不超过${max}张`);
-    }
-    const restFileList = Array.from(files).slice(0, restNum);
-    const imageParsePromiseList = [];
-    for (let i = 0; i < restFileList.length; i++) {
-      imageParsePromiseList.push(parseFile(restFileList[i], i));
-    }
-    Promise.all(imageParsePromiseList)
-      .then((imageItems: any[]) => {
-        if (onUpload) {
-          imageItems.forEach((item: Files) => (item.loading = true));
-        }
-        const filterList = imageItems.filter((item: Files) => {
-          console.log('item.size', item.file.size);
-          if (size && item.file.size > size * 1024 * 1024) {
-            return Toast.info(`图片大小不能超过${size}M`);
-          }
-          return item;
-        });
-        refFilesList.current = refFilesList.current.concat(filterList);
-        onChange(refFilesList.current);
-        if (onUpload) {
-          for (let i = 0; i < refFilesList.current.length; i++) {
-            const item = refFilesList.current[i];
-            if (i >= index) {
-              onUpload(item.file)
-                .then((res: any) => {
-                  refFilesList.current[i] = Object.assign(
-                    {},
-                    refFilesList.current[i],
-                    res,
-                    { loading: false },
-                  );
-                  refFilesList.current = [...refFilesList.current];
-                  setTimeout(() => {
-                    onChange(refFilesList.current);
-                  }, 10);
-                })
-                .catch(err => {
-                  refFilesList.current[i] = {
-                    url: '',
-                    loading: false,
-                    errorTip: err || '上传失败，请重试',
-                  };
-                  refFilesList.current = [...refFilesList.current];
-                  setTimeout(() => {
-                    onChange(refFilesList.current);
-                  }, 10);
-                });
-            }
-          }
-        }
-        fileSelectorEl.value = '';
-      })
-      .catch(error => {
-        onFail(error);
-        fileSelectorEl.value = '';
-      });
-  };
-
-  // 选择图片
-  const inputClick = () => {
-    ref && ref.current && ref.current.click();
-  };
-
-  // 删除图片
-  const onRemove = (index: number) => {
-    refFilesList.current.splice(index, 1);
-    refFilesList.current = [...refFilesList.current];
-    onChange(refFilesList.current);
-  };
-
-  // 预览图片
-  const preview = (index: number) => {
-    console.log('index', index);
-    setIndex(index);
-    onClose();
-  };
-
-  // 关闭图片预览
-  const onClose = () => setOpen(val => !val);
-
-  enum configProp {
-    defaultBorder = 'defaultBorder',
-    defaultBackGround = 'defaultBackGround',
-    defaultDashed = 'defaultDashed',
-  }
-
-  enum objectFitProp {
-    fill = 'fill',
-    cover = 'cover',
-    contain = 'contain',
-    'scale-down' = 'scale-down',
-  }
 
   return (
     <div className={s.root}>
-      <input
-        className={s.hidden}
-        ref={ref}
-        type="file"
-        accept={accept}
-        multiple={multiple}
-        onChange={onChangeHandle}
-      />
-      {filesList &&
-        filesList.length > 0 &&
-        filesList.map((item: Files, index: number) => {
-          const { url, loading, name, errorTip } = item;
-          return (
-            <div key={index} className={s.parent}>
-              <div className={s.imgBox}>
-                {url && (
-                  <img
-                    alt=""
-                    className={classnames(s.img, [
-                      ...config.map(todo => {
-                        return s[todo as configProp];
-                      }),
-                    ])}
-                    src={url}
-                    style={{ objectFit: mode as objectFitProp, width, height }}
-                    onClick={() => preview(index)}
-                  />
-                )}
-                {errorTip && (
-                  <div className={s.errorTip} style={{ width, height }}>
-                    {errorTip}
-                  </div>
-                )}
-                <i className={s.iconRemove} onClick={() => onRemove(index)} />
-                {loading && (
-                  <div className={s.loadingBox}>
-                    <i className={s.loading} />
-                  </div>
-                )}
-              </div>
-              {name && (
-                <div className={s.name} style={{ width }}>
-                  {name}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      {filesList.length >= max ? null : (
-        <div className={s.parent} onClick={inputClick}>
-          {children ? (
-            children
-          ) : (
-            <div
-              style={{ width, height }}
-              className={classnames(s.childrenEle, [
-                ...config.map(todo => {
-                  return s[todo as configProp];
-                }),
-              ])}
-            />
-          )}
+      <List>
+        <div className={classnames({ [s.dateValue as string]: values[0] })}>
+          <DatePicker
+            mode="date"
+            title={titles[0]}
+            extra={placeholders[0]}
+            value={judeDate(values[0])}
+            onChange={date => onChangeHandle(date, 'start')}
+            minDate={minDate}
+            maxDate={maxDate}
+          >
+            <Item arrow="horizontal">{labels[0]}</Item>
+          </DatePicker>
         </div>
-      )}
-      {isOpen && (
-        <WxImageViewer onClose={onClose} index={index} urls={urlList} />
-      )}
+        <Flex>
+          <div
+            className={classnames(s.datePicker, {
+              [s.dateValue as string]: values[1] && values[1] !== foreverDate,
+            })}
+          >
+            <DatePicker
+              mode="date"
+              title={titles[1]}
+              extra={placeholders[1]}
+              value={
+                values[1] === foreverDate ? undefined : judeDate(values[1])
+              }
+              onChange={date => onChangeHandle(date, 'end')}
+              minDate={minDate}
+              maxDate={maxDate}
+            >
+              <Item arrow="horizontal">{labels[1]} </Item>
+            </DatePicker>
+          </div>
+          <Flex className={s.forerverBox}>
+            <i
+              className={classnames(s.iconCheck, {
+                [s.iconChecked as string]: check,
+              })}
+              onClick={onCheckHandle}
+            />
+            <span>{forerverTxt}</span>
+          </Flex>
+        </Flex>
+      </List>
     </div>
   );
 };
 
-export default withStyles(styles)(ImagePicker);
+export default withStyles(styles)(ValidRange);

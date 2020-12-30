@@ -1,32 +1,41 @@
 import React from 'react';
-import styles from './styles';
 import { ClassKeysOfStyles } from '@wonder-ui/styles';
-interface Files {
-  url: string;
-  loading?: boolean;
-  errorTip?: string;
-  name?: string;
-  [index: string]: any;
-}
-interface ValidRange {
-  filesList: Array<Files>;
-  max?: number;
-  onChange?: (arr: Array<Files>) => any;
-  onUpload?: (file: any) => Promise<object | undefined>;
-  accept?: string;
-  multiple?: boolean;
-  width?: string;
-  height?: string;
-  config?: string[];
-  children?: React.ReactNode;
-  mode?: string;
-  size?: number;
-  onFail?: (e: any) => any;
-  classes: ClassKeysOfStyles<typeof styles>;
+import styles from './styles';
+interface ValidRangeProps {
+  classes?: Partial<ClassKeysOfStyles<typeof styles>>;
+  values?: Array<string | undefined>;
+  onChange?: (values: Array<string | undefined>, type?: string) => any;
+  labels?: string[];
+  titles?: string[];
+  placeholders?: string[];
+  forerverTxt?: string;
+  foreverDate?: string;
+  minDate?: Date;
+  maxDate?: Date;
 }
 declare const _default: React.ForwardRefExoticComponent<Pick<
-  any,
-  string | number | symbol
+  ValidRangeProps & {
+    theme?: unknown;
+  } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
+      unknown,
+      | 'root'
+      | 'datePicker'
+      | 'dateValue'
+      | 'forerverBox'
+      | 'iconCheck'
+      | 'iconChecked'
+    >,
+  | 'theme'
+  | 'classes'
+  | 'values'
+  | 'onChange'
+  | 'labels'
+  | 'titles'
+  | 'placeholders'
+  | 'forerverTxt'
+  | 'foreverDate'
+  | 'minDate'
+  | 'maxDate'
 > &
-  React.RefAttributes<(props: ValidRange) => JSX.Element>>;
+  React.RefAttributes<(props: ValidRangeProps) => JSX.Element>>;
 export default _default;
