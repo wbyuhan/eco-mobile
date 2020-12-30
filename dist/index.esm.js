@@ -661,11 +661,15 @@ function formatDate(val) {
       ? arguments[1]
       : 'YYYY-MM-DD';
   return moment(val).format(format);
-}
+} // 转换日期
+
+var judeDate = function judeDate(val) {
+  if (!val) return;
+  return new Date(val);
+};
 
 var styles$1 = createStyles({
   root: {
-    width: '375px',
     '& .am-list-item': {
       '& .am-list-line': {
         paddingRight: '8px',
@@ -776,12 +780,7 @@ var ValidRange = function ValidRange(props) {
       setCheck(values[1] === foreverDate);
     },
     [values[1], foreverDate],
-  ); // 转换时间
-
-  var judeDate = function judeDate(val) {
-    if (!val) return;
-    return new Date(val);
-  }; // 切换
+  ); // 切换
 
   var onCheckHandle = function onCheckHandle() {
     var arr = [values[0], check ? '' : foreverDate];
@@ -790,7 +789,7 @@ var ValidRange = function ValidRange(props) {
     setCheck(function(val) {
       return !val;
     });
-  }; // 开始日期改变
+  }; // 日期改变
 
   var onChangeHandle = function onChangeHandle(date, type) {
     var val = formatDate(date);
@@ -900,4 +899,189 @@ var ValidRange = function ValidRange(props) {
 
 var index$1 = withStyles(styles$1)(ValidRange);
 
-export { index as ImagePicker, index$1 as ValidRange };
+var styles$2 = createStyles({
+  root: {
+    '& .am-list-item': {
+      border: '1px solid #F0F0F0',
+      minHeight: '36px',
+      paddingLeft: '10px',
+      '& .am-list-line': {
+        '& .am-list-extra': {
+          flex: 1,
+          fontSize: '14px !important',
+          whiteSpace: 'normal',
+          textAlign: 'left !important',
+        },
+      },
+    },
+  },
+  label: {
+    color: '#666',
+    fontSize: '14px',
+  },
+  tip: {
+    color: '#999',
+    fontSize: '12px',
+  },
+  dateBox: {
+    marginTop: '10px',
+  },
+  splitTxt: {
+    margin: '0 10px',
+    color: '#666',
+  },
+  datePicker: {
+    flex: 1,
+  },
+  dateValue: {
+    '& .am-list-extra': {
+      color: '#323232 !important',
+    },
+  },
+});
+
+var Item$1 = _List.Item;
+
+var noon$2 = function noon() {};
+
+var DateRange = function DateRange(props) {
+  var _props$classes = props.classes,
+    s = _props$classes === void 0 ? {} : _props$classes,
+    _props$label = props.label,
+    label = _props$label === void 0 ? '自定义日期' : _props$label,
+    _props$tip = props.tip,
+    tip = _props$tip === void 0 ? '时间范围最长30天' : _props$tip,
+    _props$values = props.values,
+    values = _props$values === void 0 ? [] : _props$values,
+    _props$onChange = props.onChange,
+    onChange = _props$onChange === void 0 ? noon$2 : _props$onChange,
+    _props$titles = props.titles,
+    titles =
+      _props$titles === void 0 ? ['起始日期', '终止日期'] : _props$titles,
+    _props$placeholders = props.placeholders,
+    placeholders =
+      _props$placeholders === void 0
+        ? ['请选择起始日期', '请选择终止日期']
+        : _props$placeholders,
+    _props$minDate = props.minDate,
+    minDate =
+      _props$minDate === void 0
+        ? new Date(1980, 0, 1, 23, 59, 59)
+        : _props$minDate,
+    _props$maxDate = props.maxDate,
+    maxDate =
+      _props$maxDate === void 0
+        ? new Date(2100, 11, 30, 23, 59, 59)
+        : _props$maxDate,
+    _props$splitTxt = props.splitTxt,
+    splitTxt = _props$splitTxt === void 0 ? '至' : _props$splitTxt; // 日期改变
+
+  var onChangeHandle = function onChangeHandle(date, type) {
+    var val = formatDate(date);
+    var arr = [];
+
+    if (type === 'start') {
+      arr = [val, values[1]];
+    } else {
+      arr = [values[0], val];
+    }
+
+    onChange(arr, type);
+  };
+
+  return /*#__PURE__*/ React.createElement(
+    'div',
+    {
+      className: s.root,
+    },
+    /*#__PURE__*/ React.createElement(
+      _Flex,
+      {
+        justify: 'between',
+      },
+      /*#__PURE__*/ React.createElement(
+        'span',
+        {
+          className: s.label,
+        },
+        label,
+      ),
+      /*#__PURE__*/ React.createElement(
+        'span',
+        {
+          className: s.tip,
+        },
+        tip,
+      ),
+    ),
+    /*#__PURE__*/ React.createElement(
+      _Flex,
+      {
+        className: s.dateBox,
+      },
+      /*#__PURE__*/ React.createElement(
+        'div',
+        {
+          className: classnames(
+            s.datePicker,
+            _defineProperty({}, s.dateValue, values[0]),
+          ),
+        },
+        /*#__PURE__*/ React.createElement(
+          _DatePicker,
+          {
+            mode: 'date',
+            title: titles[0],
+            extra: placeholders[0],
+            value: judeDate(values[0]),
+            onChange: function onChange(date) {
+              return onChangeHandle(date, 'start');
+            },
+            minDate: minDate,
+            maxDate: maxDate,
+          },
+          /*#__PURE__*/ React.createElement(Item$1, {
+            arrow: 'down',
+          }),
+        ),
+      ),
+      /*#__PURE__*/ React.createElement(
+        'span',
+        {
+          className: s.splitTxt,
+        },
+        splitTxt,
+      ),
+      /*#__PURE__*/ React.createElement(
+        'div',
+        {
+          className: classnames(
+            s.datePicker,
+            _defineProperty({}, s.dateValue, values[1]),
+          ),
+        },
+        /*#__PURE__*/ React.createElement(
+          _DatePicker,
+          {
+            mode: 'date',
+            title: titles[1],
+            extra: placeholders[1],
+            value: judeDate(values[1]),
+            onChange: function onChange(date) {
+              return onChangeHandle(date, 'end');
+            },
+            minDate: minDate,
+            maxDate: maxDate,
+          },
+          /*#__PURE__*/ React.createElement(Item$1, {
+            arrow: 'down',
+          }),
+        ),
+      ),
+    ),
+  );
+};
+
+var index$2 = withStyles(styles$2)(DateRange);
+
+export { index$2 as DateRange, index as ImagePicker, index$1 as ValidRange };

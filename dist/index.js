@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 require('antd-mobile/lib/toast/style/css');
 var _Toast = require('antd-mobile/lib/toast');
 var React = require('react');
-var styles$2 = require('@wonder-ui/styles');
+var styles$3 = require('@wonder-ui/styles');
 var classnames = require('classnames');
 var WxImageViewer = require('react-wx-images-viewer');
 require('antd-mobile/lib/flex/style/css');
@@ -144,7 +144,7 @@ var iconRemove =
 var iconCheck =
   'data:image/png;base64,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';
 
-var styles = styles$2.createStyles({
+var styles = styles$3.createStyles({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -669,7 +669,7 @@ var ImagePicker = function ImagePicker(props) {
   );
 };
 
-var index = styles$2.withStyles(styles)(ImagePicker);
+var index = styles$3.withStyles(styles)(ImagePicker);
 
 /**
  * 格式化日期
@@ -681,11 +681,15 @@ function formatDate(val) {
       ? arguments[1]
       : 'YYYY-MM-DD';
   return moment__default['default'](val).format(format);
-}
+} // 转换日期
 
-var styles$1 = styles$2.createStyles({
+var judeDate = function judeDate(val) {
+  if (!val) return;
+  return new Date(val);
+};
+
+var styles$1 = styles$3.createStyles({
   root: {
-    width: '375px',
     '& .am-list-item': {
       '& .am-list-line': {
         paddingRight: '8px',
@@ -796,12 +800,7 @@ var ValidRange = function ValidRange(props) {
       setCheck(values[1] === foreverDate);
     },
     [values[1], foreverDate],
-  ); // 转换时间
-
-  var judeDate = function judeDate(val) {
-    if (!val) return;
-    return new Date(val);
-  }; // 切换
+  ); // 切换
 
   var onCheckHandle = function onCheckHandle() {
     var arr = [values[0], check ? '' : foreverDate];
@@ -810,7 +809,7 @@ var ValidRange = function ValidRange(props) {
     setCheck(function(val) {
       return !val;
     });
-  }; // 开始日期改变
+  }; // 日期改变
 
   var onChangeHandle = function onChangeHandle(date, type) {
     var val = formatDate(date);
@@ -924,7 +923,193 @@ var ValidRange = function ValidRange(props) {
   );
 };
 
-var index$1 = styles$2.withStyles(styles$1)(ValidRange);
+var index$1 = styles$3.withStyles(styles$1)(ValidRange);
 
+var styles$2 = styles$3.createStyles({
+  root: {
+    '& .am-list-item': {
+      border: '1px solid #F0F0F0',
+      minHeight: '36px',
+      paddingLeft: '10px',
+      '& .am-list-line': {
+        '& .am-list-extra': {
+          flex: 1,
+          fontSize: '14px !important',
+          whiteSpace: 'normal',
+          textAlign: 'left !important',
+        },
+      },
+    },
+  },
+  label: {
+    color: '#666',
+    fontSize: '14px',
+  },
+  tip: {
+    color: '#999',
+    fontSize: '12px',
+  },
+  dateBox: {
+    marginTop: '10px',
+  },
+  splitTxt: {
+    margin: '0 10px',
+    color: '#666',
+  },
+  datePicker: {
+    flex: 1,
+  },
+  dateValue: {
+    '& .am-list-extra': {
+      color: '#323232 !important',
+    },
+  },
+});
+
+var Item$1 = _List__default['default'].Item;
+
+var noon$2 = function noon() {};
+
+var DateRange = function DateRange(props) {
+  var _props$classes = props.classes,
+    s = _props$classes === void 0 ? {} : _props$classes,
+    _props$label = props.label,
+    label = _props$label === void 0 ? '自定义日期' : _props$label,
+    _props$tip = props.tip,
+    tip = _props$tip === void 0 ? '时间范围最长30天' : _props$tip,
+    _props$values = props.values,
+    values = _props$values === void 0 ? [] : _props$values,
+    _props$onChange = props.onChange,
+    onChange = _props$onChange === void 0 ? noon$2 : _props$onChange,
+    _props$titles = props.titles,
+    titles =
+      _props$titles === void 0 ? ['起始日期', '终止日期'] : _props$titles,
+    _props$placeholders = props.placeholders,
+    placeholders =
+      _props$placeholders === void 0
+        ? ['请选择起始日期', '请选择终止日期']
+        : _props$placeholders,
+    _props$minDate = props.minDate,
+    minDate =
+      _props$minDate === void 0
+        ? new Date(1980, 0, 1, 23, 59, 59)
+        : _props$minDate,
+    _props$maxDate = props.maxDate,
+    maxDate =
+      _props$maxDate === void 0
+        ? new Date(2100, 11, 30, 23, 59, 59)
+        : _props$maxDate,
+    _props$splitTxt = props.splitTxt,
+    splitTxt = _props$splitTxt === void 0 ? '至' : _props$splitTxt; // 日期改变
+
+  var onChangeHandle = function onChangeHandle(date, type) {
+    var val = formatDate(date);
+    var arr = [];
+
+    if (type === 'start') {
+      arr = [val, values[1]];
+    } else {
+      arr = [values[0], val];
+    }
+
+    onChange(arr, type);
+  };
+
+  return /*#__PURE__*/ React__default['default'].createElement(
+    'div',
+    {
+      className: s.root,
+    },
+    /*#__PURE__*/ React__default['default'].createElement(
+      _Flex__default['default'],
+      {
+        justify: 'between',
+      },
+      /*#__PURE__*/ React__default['default'].createElement(
+        'span',
+        {
+          className: s.label,
+        },
+        label,
+      ),
+      /*#__PURE__*/ React__default['default'].createElement(
+        'span',
+        {
+          className: s.tip,
+        },
+        tip,
+      ),
+    ),
+    /*#__PURE__*/ React__default['default'].createElement(
+      _Flex__default['default'],
+      {
+        className: s.dateBox,
+      },
+      /*#__PURE__*/ React__default['default'].createElement(
+        'div',
+        {
+          className: classnames__default['default'](
+            s.datePicker,
+            _defineProperty({}, s.dateValue, values[0]),
+          ),
+        },
+        /*#__PURE__*/ React__default['default'].createElement(
+          _DatePicker__default['default'],
+          {
+            mode: 'date',
+            title: titles[0],
+            extra: placeholders[0],
+            value: judeDate(values[0]),
+            onChange: function onChange(date) {
+              return onChangeHandle(date, 'start');
+            },
+            minDate: minDate,
+            maxDate: maxDate,
+          },
+          /*#__PURE__*/ React__default['default'].createElement(Item$1, {
+            arrow: 'down',
+          }),
+        ),
+      ),
+      /*#__PURE__*/ React__default['default'].createElement(
+        'span',
+        {
+          className: s.splitTxt,
+        },
+        splitTxt,
+      ),
+      /*#__PURE__*/ React__default['default'].createElement(
+        'div',
+        {
+          className: classnames__default['default'](
+            s.datePicker,
+            _defineProperty({}, s.dateValue, values[1]),
+          ),
+        },
+        /*#__PURE__*/ React__default['default'].createElement(
+          _DatePicker__default['default'],
+          {
+            mode: 'date',
+            title: titles[1],
+            extra: placeholders[1],
+            value: judeDate(values[1]),
+            onChange: function onChange(date) {
+              return onChangeHandle(date, 'end');
+            },
+            minDate: minDate,
+            maxDate: maxDate,
+          },
+          /*#__PURE__*/ React__default['default'].createElement(Item$1, {
+            arrow: 'down',
+          }),
+        ),
+      ),
+    ),
+  );
+};
+
+var index$2 = styles$3.withStyles(styles$2)(DateRange);
+
+exports.DateRange = index$2;
 exports.ImagePicker = index;
 exports.ValidRange = index$1;

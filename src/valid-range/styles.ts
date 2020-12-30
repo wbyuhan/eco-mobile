@@ -3,7 +3,6 @@ import { iconCheck } from '../assets/base64';
 
 const styles = createStyles({
   root: {
-    width: '375px',
     '& .am-list-item': {
       '& .am-list-line': {
         paddingRight: '8px',

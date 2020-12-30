@@ -11,8 +11,17 @@ group:
 import React, { useState } from 'react';
 
 import { ValidRange } from 'eco-mobile';
+import { createUseStyles } from '@wonder-ui/styles';
+
+const styles = createUseStyles({
+  root: {
+    width: '375px',
+  },
+});
 
 export default () => {
+  const s = styles();
+
   const [values, setValues] = useState<Array<string | undefined>>([]);
 
   // 日期改变
@@ -21,7 +30,11 @@ export default () => {
     setValues(arr);
   };
 
-  return <ValidRange values={values} onChange={onChange} />;
+  return (
+    <div className={s.root}>
+      <ValidRange values={values} onChange={onChange} />
+    </div>
+  );
 };
 ```
 
@@ -32,8 +45,17 @@ import React, { useState } from 'react';
 
 import { Button, WhiteSpace } from 'antd-mobile';
 import { ValidRange } from 'eco-mobile';
+import { createUseStyles } from '@wonder-ui/styles';
+
+const styles = createUseStyles({
+  root: {
+    width: '375px',
+  },
+});
 
 export default () => {
+  const s = styles();
+
   const [values, setValues] = useState<Array<string | undefined>>([
     '2011-12-01',
     '2020-07-20',
@@ -51,7 +73,7 @@ export default () => {
   };
 
   return (
-    <div>
+    <div className={s.root}>
       <ValidRange
         values={values}
         onChange={onChange}
@@ -80,8 +102,17 @@ import React, { useState } from 'react';
 import { Toast } from 'antd-mobile';
 import { ValidRange } from 'eco-mobile';
 import moment from 'moment';
+import { createUseStyles } from '@wonder-ui/styles';
+
+const styles = createUseStyles({
+  root: {
+    width: '375px',
+  },
+});
 
 export default () => {
+  const s = styles();
+
   const [values, setValues] = useState<Array<string | undefined>>([]);
 
   // 日期改变
@@ -108,7 +139,11 @@ export default () => {
     setValues(arr);
   };
 
-  return <ValidRange values={values} onChange={onChange} />;
+  return (
+    <div className={s.root}>
+      <ValidRange values={values} onChange={onChange} />
+    </div>
+  );
 };
 ```
 

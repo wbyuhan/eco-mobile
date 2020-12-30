@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { List, DatePicker, Flex } from 'antd-mobile';
 import classnames from 'classnames';
 import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
-import { formatDate } from '@/utils/tools';
+import { formatDate, judeDate } from '@/utils/tools';
 
 import styles from './styles';
 
@@ -44,12 +44,6 @@ const ValidRange = (props: ValidRangeProps) => {
     setCheck(values[1] === foreverDate);
   }, [values[1], foreverDate]);
 
-  // 转换时间
-  const judeDate = (val: string | undefined) => {
-    if (!val) return;
-    return new Date(val);
-  };
-
   // 切换
   const onCheckHandle = () => {
     const arr = [values[0], check ? '' : foreverDate];
@@ -58,7 +52,7 @@ const ValidRange = (props: ValidRangeProps) => {
     setCheck(val => !val);
   };
 
-  // 开始日期改变
+  // 日期改变
   const onChangeHandle = (date: Date, type: string) => {
     const val = formatDate(date);
     let arr = [];

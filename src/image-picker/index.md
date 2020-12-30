@@ -9,7 +9,6 @@ group:
 
 ```tsx
 import React, { useState } from 'react';
-import { createUseStyles } from '@wonder-ui/styles';
 
 import { WhiteSpace, Flex, WingBlank } from 'antd-mobile';
 import { ImagePicker } from 'eco-mobile';
@@ -79,7 +78,6 @@ export default () => {
 
 ```tsx
 import React, { useState } from 'react';
-import { createUseStyles } from '@wonder-ui/styles';
 
 import { ImagePicker } from 'eco-mobile';
 
@@ -116,16 +114,14 @@ export default () => {
   };
 
   return (
-    <div>
-      <ImagePicker
-        filesList={filesList}
-        onChange={onChange}
-        multiple
-        max={10}
-        mode="cover"
-        onUpload={onUpload}
-      />
-    </div>
+    <ImagePicker
+      filesList={filesList}
+      onChange={onChange}
+      multiple
+      max={10}
+      mode="cover"
+      onUpload={onUpload}
+    />
   );
 };
 ```
