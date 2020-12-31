@@ -120,18 +120,10 @@ export default () => {
     console.log('onChange', arr, type);
     const today = moment().format('YYYY-MM-DD');
     if (type === 'start') {
-      // 开始日期
-      if (arr[0] > arr[1]) {
-        return Toast.info('起始日期不能大于结束日期');
-      }
       if (arr[0] > today) {
         return Toast.info('起始日期不能大于今天');
       }
     } else if (type === 'end') {
-      // 结束日期
-      if (arr[1] < arr[0]) {
-        return Toast.info('结束日期不能小于起始日期');
-      }
       if (arr[1] < today) {
         return Toast.info('结束日期不能小于今天');
       }

@@ -828,8 +828,20 @@ var ValidRange = function ValidRange(props) {
     var arr = [];
 
     if (type === 'start') {
+      if (val > values[1]) {
+        return _Toast__default['default'].info(
+          ''.concat(titles[0], '\u4E0D\u80FD\u5927\u4E8E').concat(titles[1]),
+        );
+      }
+
       arr = [val, values[1]];
     } else {
+      if (val < values[0]) {
+        return _Toast__default['default'].info(
+          ''.concat(titles[1], '\u4E0D\u80FD\u5C0F\u4E8E').concat(titles[0]),
+        );
+      }
+
       arr = [values[0], val];
     }
 
@@ -1019,8 +1031,20 @@ var DateRange = function DateRange(props) {
     var arr = [];
 
     if (type === 'start') {
+      if (val > values[1]) {
+        return _Toast__default['default'].info(
+          ''.concat(titles[0], '\u4E0D\u80FD\u5927\u4E8E').concat(titles[1]),
+        );
+      }
+
       arr = [val, values[1]];
     } else {
+      if (val < values[0]) {
+        return _Toast__default['default'].info(
+          ''.concat(titles[1], '\u4E0D\u80FD\u5C0F\u4E8E').concat(titles[0]),
+        );
+      }
+
       arr = [values[0], val];
     }
 

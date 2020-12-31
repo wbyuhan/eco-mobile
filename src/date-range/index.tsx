@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, DatePicker, Flex } from 'antd-mobile';
+import { List, DatePicker, Flex, Toast } from 'antd-mobile';
 import classnames from 'classnames';
 import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
 import { formatDate, judeDate } from '@/utils/tools';
@@ -42,8 +42,14 @@ const DateRange = (props: DateRangeProps) => {
     const val = formatDate(date);
     let arr = [];
     if (type === 'start') {
+      if (val > (values[1] as string)) {
+        return Toast.info(`${titles[0]}不能大于${titles[1]}`);
+      }
       arr = [val, values[1]];
     } else {
+      if (val < (values[0] as string)) {
+        return Toast.info(`${titles[1]}不能小于${titles[0]}`);
+      }
       arr = [values[0], val];
     }
     onChange(arr, type);
