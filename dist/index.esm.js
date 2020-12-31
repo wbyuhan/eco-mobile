@@ -515,6 +515,18 @@ var ImagePicker = function ImagePicker(props) {
           errorTip = item.errorTip;
 
         if (url || errorTip) {
+          var currentArr = filesList.slice(0, index + 1);
+          var errorNum = 0;
+
+          for (var i = 0; i < currentArr.length; i++) {
+            var _errorTip = currentArr[i].errorTip;
+
+            if (_errorTip) {
+              errorNum++;
+            }
+          }
+
+          var currentIndex = index - errorNum;
           return /*#__PURE__*/ React.createElement(
             'div',
             {
@@ -547,7 +559,7 @@ var ImagePicker = function ImagePicker(props) {
                     height: height,
                   },
                   onClick: function onClick() {
-                    return preview(index);
+                    return preview(currentIndex);
                   },
                 }),
               errorTip &&
