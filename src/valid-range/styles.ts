@@ -1,5 +1,5 @@
 import { createStyles } from '@wonder-ui/styles';
-import { iconCheck } from '../assets/base64';
+import { iconCheck } from '../assets/icon';
 
 const styles = createStyles({
   root: {

@@ -1,5 +1,5 @@
 import { createStyles } from '@wonder-ui/styles';
-import { iconRemove, iconLoading } from '../assets/base64';
+import { iconRemove, iconLoading } from '../assets/icon';
 
 const styles = createStyles({
   root: {

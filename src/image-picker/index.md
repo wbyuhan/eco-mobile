@@ -135,9 +135,9 @@ import { createUseStyles } from '@wonder-ui/styles';
 import { Flex, WingBlank } from 'antd-mobile';
 import { ImagePicker } from 'eco-mobile';
 
-const iconIdCard = require('./icon-idcard.png');
-const iconIdCardBack = require('./icon-idcard-back.png');
-const iconPhoto = require('./icon-photo.png');
+const iconIdCard = require('../assets/images/icon-idcard.png');
+const iconIdCardBack = require('../assets/images/icon-idcard-back.png');
+const iconPhoto = require('../assets/images/icon-photo.png');
 
 const styles = createUseStyles({
   root: {
