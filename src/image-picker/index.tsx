@@ -229,6 +229,15 @@ const ImagePicker = (props: ImagePickerProps) => {
         filesList.map((item: Files, index: number) => {
           const { url, loading, name, errorTip } = item;
           if (url || errorTip) {
+            const currentArr = filesList.slice(0, index + 1);
+            let errorNum = 0;
+            for (let i = 0; i < currentArr.length; i++) {
+              const { errorTip } = currentArr[i];
+              if (errorTip) {
+                errorNum++;
+              }
+            }
+            const currentIndex = index - errorNum;
             return (
               <div
                 key={index}
@@ -248,7 +257,7 @@ const ImagePicker = (props: ImagePickerProps) => {
                         width,
                         height,
                       }}
-                      onClick={() => preview(index)}
+                      onClick={() => preview(currentIndex)}
                     />
                   )}
                   {errorTip && (

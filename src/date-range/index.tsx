@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { List, DatePicker, Flex } from 'antd-mobile';
 import classnames from 'classnames';
 import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
