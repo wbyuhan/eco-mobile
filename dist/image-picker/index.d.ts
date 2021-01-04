@@ -3,6 +3,7 @@ import { ClassKeysOfStyles } from '@wonder-ui/styles';
 import styles from './styles';
 interface Files {
   url: string;
+  preview?: string;
   loading?: boolean;
   errorTip?: string;
   name?: string;
@@ -16,12 +17,15 @@ interface ImagePickerProps {
   accept?: string;
   multiple?: boolean;
   width?: string;
-  height?: string;
+  height?: string | number;
   config?: string[];
   children?: React.ReactNode;
   mode?: string;
   size?: number;
   onFail?: (e: any) => any;
+  resize?: boolean;
+  disabledPreview?: boolean;
+  onGetPreviewUrl?: (index: number) => Promise<string>;
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
 declare const _default: React.ForwardRefExoticComponent<Pick<
@@ -30,6 +34,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
       unknown,
       | 'root'
+      | 'justifyContent'
       | 'hidden'
       | 'imgBox'
       | 'img'
@@ -47,6 +52,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
       | '@keyframes myRound'
     >,
   | 'height'
+  | 'resize'
   | 'width'
   | 'size'
   | 'multiple'
@@ -61,6 +67,8 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'config'
   | 'mode'
   | 'onFail'
+  | 'disabledPreview'
+  | 'onGetPreviewUrl'
 > &
   React.RefAttributes<(props: ImagePickerProps) => JSX.Element>>;
 export default _default;

@@ -29,6 +29,42 @@ var _DatePicker__default = /*#__PURE__*/ _interopDefaultLegacy(_DatePicker);
 var _List__default = /*#__PURE__*/ _interopDefaultLegacy(_List);
 var moment__default = /*#__PURE__*/ _interopDefaultLegacy(moment);
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function() {
+    var self = this,
+      args = arguments;
+    return new Promise(function(resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, 'next', value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, 'throw', err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
+
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -149,6 +185,9 @@ var styles = styles$3.createStyles({
     display: 'flex',
     flexWrap: 'wrap',
   },
+  justifyContent: {
+    justifyContent: 'space-between',
+  },
   hidden: {
     display: 'none',
   },
@@ -156,13 +195,17 @@ var styles = styles$3.createStyles({
     position: 'relative',
     overflow: 'hidden',
     borderRadius: '5px',
+    boxSizing: 'border-box',
   },
   img: {
     display: 'block',
     boxSizing: 'border-box',
     borderRadius: '5px',
+    width: '100%',
+    height: '100%',
   },
   errorTip: {
+    height: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -288,14 +331,20 @@ var ImagePicker = function ImagePicker(props) {
     _props$mode = props.mode,
     mode = _props$mode === void 0 ? 'fill' : _props$mode,
     size = props.size,
+    disabledPreview = props.disabledPreview,
     onUpload = props.onUpload,
     _props$onFail = props.onFail,
-    onFail = _props$onFail === void 0 ? noon : _props$onFail;
+    onFail = _props$onFail === void 0 ? noon : _props$onFail,
+    onGetPreviewUrl = props.onGetPreviewUrl,
+    resize = props.resize;
   var ref = React.useRef(null);
+  var refDom = React.useRef(null);
   var refFilesList = React.useRef(filesList);
   var urlList = [];
   refFilesList.current.forEach(function(item) {
-    if (item.url) {
+    if (item.preview) {
+      urlList.push(item.preview);
+    } else if (item.url) {
       urlList.push(item.url);
     }
   }); // 有效个数
@@ -327,7 +376,17 @@ var ImagePicker = function ImagePicker(props) {
   var _useState3 = React.useState(0),
     _useState4 = _slicedToArray(_useState3, 2),
     index = _useState4[0],
-    setIndex = _useState4[1]; // 图片处理
+    setIndex = _useState4[1];
+
+  var _useState5 = React.useState(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    realHeight = _useState6[0],
+    setRealHeight = _useState6[1]; // init
+
+  React.useEffect(function() {
+    var calcWidth = getComputedStyle(refDom.current).width;
+    setRealHeight(calcWidth);
+  }, []); // 图片处理
 
   var parseFile = function parseFile(file, index) {
     return new Promise(function(resolve, reject) {
@@ -342,8 +401,8 @@ var ImagePicker = function ImagePicker(props) {
         }
 
         resolve({
-          url: dataURL,
           file: file,
+          url: dataURL,
         });
       };
 
@@ -382,7 +441,7 @@ var ImagePicker = function ImagePicker(props) {
     var index = refFilesList.current.length;
     Promise.all(imageParsePromiseList)
       .then(function(imageItems) {
-        if (onUpload) {
+        if (typeof onUpload === 'function') {
           imageItems.forEach(function(item) {
             return (item.loading = true);
           });
@@ -405,39 +464,34 @@ var ImagePicker = function ImagePicker(props) {
         refFilesList.current = refFilesList.current.concat(filterList);
         onChange(refFilesList.current);
 
-        if (onUpload) {
+        if (typeof onUpload === 'function') {
           var _loop = function _loop(_i) {
             var item = refFilesList.current[_i];
 
             if (_i >= index) {
-              onUpload(item.file)
+              onUpload(item)
                 .then(function(res) {
-                  refFilesList.current[_i] = Object.assign(
-                    {},
-                    refFilesList.current[_i],
-                    res,
-                    {
-                      loading: false,
-                    },
-                  );
+                  Object.assign(item, res, {
+                    loading: false,
+                  });
                   refFilesList.current = _toConsumableArray(
                     refFilesList.current,
                   );
                   setTimeout(function() {
-                    onChange(refFilesList.current);
+                    return onChange(refFilesList.current);
                   }, 10);
                 })
                 .catch(function(err) {
-                  refFilesList.current[_i] = {
+                  Object.assign(item, {
                     url: '',
                     loading: false,
-                    errorTip: err || '上传失败，请重试',
-                  };
+                    errorTip: err || '上传失败',
+                  });
                   refFilesList.current = _toConsumableArray(
                     refFilesList.current,
                   );
                   setTimeout(function() {
-                    onChange(refFilesList.current);
+                    return onChange(refFilesList.current);
                   }, 10);
                 });
             }
@@ -481,11 +535,62 @@ var ImagePicker = function ImagePicker(props) {
     onChange(refFilesList.current);
   }; // 预览图片
 
-  var preview = function preview(index) {
-    console.log('index', index);
-    setIndex(index);
-    onClose();
-  }; // 关闭图片预览
+  var onPreview = /*#__PURE__*/ (function() {
+    var _ref = _asyncToGenerator(
+      /*#__PURE__*/ regeneratorRuntime.mark(function _callee(
+        currentIndex,
+        index,
+      ) {
+        var preview;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch ((_context.prev = _context.next)) {
+              case 0:
+                if (!disabledPreview) {
+                  _context.next = 2;
+                  break;
+                }
+
+                return _context.abrupt('return');
+
+              case 2:
+                if (
+                  !(
+                    !refFilesList.current[index].preview &&
+                    typeof onGetPreviewUrl === 'function'
+                  )
+                ) {
+                  _context.next = 9;
+                  break;
+                }
+
+                _context.next = 5;
+                return onGetPreviewUrl(index);
+
+              case 5:
+                preview = _context.sent;
+                refFilesList.current[index].preview = preview;
+                refFilesList.current = _toConsumableArray(refFilesList.current);
+                onChange(refFilesList.current);
+
+              case 9:
+                console.log('currentIndex', currentIndex);
+                setIndex(currentIndex);
+                onClose();
+
+              case 12:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }),
+    );
+
+    return function onPreview(_x, _x2) {
+      return _ref.apply(this, arguments);
+    };
+  })(); // 关闭图片预览
 
   var onClose = function onClose() {
     return setOpen(function(val) {
@@ -508,12 +613,39 @@ var ImagePicker = function ImagePicker(props) {
     objectFitProp['cover'] = 'cover';
     objectFitProp['contain'] = 'contain';
     objectFitProp['scale-down'] = 'scale-down';
-  })(objectFitProp || (objectFitProp = {}));
+  })(objectFitProp || (objectFitProp = {})); // 计算高度
 
+  var calcHeight = resize ? realHeight : height; // 定义占位元素个数
+
+  var spaceNum = 0;
+
+  if (resize) {
+    var rowNum = Math.floor(100 / parseFloat(width));
+
+    if (filesList && filesList.length > 0 && rowNum > 1) {
+      var restNum = filesList.length % rowNum;
+
+      if (restNum > 0 && restNum < rowNum - 1) {
+        spaceNum = rowNum - restNum - 1;
+      }
+    }
+  } // parent样式
+
+  var classParent = classnames__default['default'](
+    s.parent,
+    _defineProperty(
+      {},
+      s.noMargin,
+      max === 1 || filesList.length < 1 || resize,
+    ),
+  );
   return /*#__PURE__*/ React__default['default'].createElement(
     'div',
     {
-      className: s.root,
+      className: classnames__default['default'](
+        s.root,
+        _defineProperty({}, s.justifyContent, resize),
+      ),
     },
     /*#__PURE__*/ React__default['default'].createElement('input', {
       className: s.hidden,
@@ -548,14 +680,7 @@ var ImagePicker = function ImagePicker(props) {
             'div',
             {
               key: index,
-              className: classnames__default['default'](
-                s.parent,
-                _defineProperty(
-                  {},
-                  s.noMargin,
-                  max === 1 || filesList.length < 1,
-                ),
-              ),
+              className: classParent,
               style: {
                 width: width,
               },
@@ -563,7 +688,19 @@ var ImagePicker = function ImagePicker(props) {
             /*#__PURE__*/ React__default['default'].createElement(
               'div',
               {
-                className: s.imgBox,
+                className: classnames__default['default'].apply(
+                  void 0,
+                  [s.imgBox].concat(
+                    _toConsumableArray(
+                      config.map(function(todo) {
+                        return s[todo];
+                      }),
+                    ),
+                  ),
+                ),
+                style: {
+                  height: calcHeight,
+                },
               },
               url &&
                 /*#__PURE__*/ React__default['default'].createElement('img', {
@@ -572,11 +709,9 @@ var ImagePicker = function ImagePicker(props) {
                   src: url,
                   style: {
                     objectFit: mode,
-                    width: width,
-                    height: height,
                   },
                   onClick: function onClick() {
-                    return preview(currentIndex);
+                    return onPreview(currentIndex, index);
                   },
                 }),
               errorTip &&
@@ -584,10 +719,6 @@ var ImagePicker = function ImagePicker(props) {
                   'div',
                   {
                     className: s.errorTip,
-                    style: {
-                      width: width,
-                      height: height,
-                    },
                   },
                   errorTip,
                 ),
@@ -613,9 +744,6 @@ var ImagePicker = function ImagePicker(props) {
                 'div',
                 {
                   className: s.name,
-                  style: {
-                    width: width,
-                  },
                 },
                 name,
               ),
@@ -626,35 +754,28 @@ var ImagePicker = function ImagePicker(props) {
       /*#__PURE__*/ React__default['default'].createElement(
         'div',
         {
-          className: classnames__default['default'](
-            s.parent,
-            _defineProperty({}, s.noMargin, max === 1 || filesList.length < 1),
-          ),
+          className: classParent,
           style: {
             width: width,
           },
+          ref: refDom,
           onClick: inputClick,
         },
         children
           ? children
-          : /*#__PURE__*/ React__default['default'].createElement(
-              'div',
-              null,
-              /*#__PURE__*/ React__default['default'].createElement('div', {
-                style: {
-                  width: width,
-                  height: height,
-                },
-                className: classnames__default['default'](
-                  s.childrenEle,
-                  _toConsumableArray(
-                    config.map(function(todo) {
-                      return s[todo];
-                    }),
-                  ),
+          : /*#__PURE__*/ React__default['default'].createElement('div', {
+              style: {
+                height: calcHeight,
+              },
+              className: classnames__default['default'](
+                s.childrenEle,
+                _toConsumableArray(
+                  config.map(function(todo) {
+                    return s[todo];
+                  }),
                 ),
-              }),
-            ),
+              ),
+            }),
         max === 1 &&
           filesList[0] &&
           filesList[0].name &&
@@ -669,6 +790,16 @@ var ImagePicker = function ImagePicker(props) {
             filesList[0].name,
           ),
       ),
+    spaceNum > 0 &&
+      new Array(spaceNum).fill(spaceNum).map(function(item, index) {
+        return /*#__PURE__*/ React__default['default'].createElement('div', {
+          key: index,
+          className: classParent,
+          style: {
+            width: width,
+          },
+        });
+      }),
     isOpen &&
       /*#__PURE__*/ React__default['default'].createElement(
         WxImageViewer__default['default'],

@@ -6,6 +6,9 @@ const styles = createStyles({
     display: 'flex',
     flexWrap: 'wrap',
   },
+  justifyContent: {
+    justifyContent: 'space-between',
+  },
   hidden: {
     display: 'none',
   },
@@ -13,13 +16,17 @@ const styles = createStyles({
     position: 'relative',
     overflow: 'hidden',
     borderRadius: '5px',
+    boxSizing: 'border-box',
   },
   img: {
     display: 'block',
     boxSizing: 'border-box',
     borderRadius: '5px',
+    width: '100%',
+    height: '100%',
   },
   errorTip: {
+    height: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
