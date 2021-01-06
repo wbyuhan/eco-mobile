@@ -22,7 +22,7 @@ interface ImagePickerProps {
   children?: React.ReactNode;
   mode?: string;
   size?: number;
-  onFail?: (e: any) => any;
+  onFail?: (e: any) => void;
   resize?: boolean;
   disabledPreview?: boolean;
   onGetPreviewUrl?: (index: number) => Promise<string>;

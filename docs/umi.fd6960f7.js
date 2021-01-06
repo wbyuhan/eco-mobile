@@ -1161,7 +1161,7 @@
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};",
+                  "import React, { useState } from 'react';\n\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
                 jsx:
                   "import React, { useState } from 'react';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [values, setValues] = useState([]); // \u65e5\u671f\u6539\u53d8\n\n  const onChange = (arr, type) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
               },
@@ -1201,7 +1201,7 @@
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([\n    '2011-12-01',\n    '2020-07-20',\n  ]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  // \u5916\u90e8\u586b\u5145\n  const onFill = () => {\n    setValues(['2020-11-10', '2020-12-30']);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange\n        values={values}\n        onChange={onChange}\n        labels={['\u5f00\u59cb\u8425\u4e1a\u65f6\u95f4:', '\u7ed3\u675f\u8425\u4e1a\u65f6\u95f4:']}\n        placeholders={['\u8bf7\u9009\u62e9', '\u8bf7\u9009\u62e9']}\n        titles={['\u5f00\u59cb\u65e5\u671f', '\u7ed3\u675f\u65e5\u671f']}\n        forerverTxt=\"\u6c38\u4e45\"\n        foreverDate=\"2999-12-31\"\n        minDate={new Date(2010, 0, 1, 23, 59, 59)}\n        maxDate={new Date(2020, 9, 28, 23, 59, 59)}\n      />\n      <WhiteSpace />\n      <Button onClick={onFill} inline type=\"primary\" size=\"small\">\n        \u5916\u90e8\u586b\u5145\n      </Button>\n    </div>\n  );\n};",
+                  "import React, { useState } from 'react';\n\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([\n    '2011-12-01',\n    '2020-07-20',\n  ]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  // \u5916\u90e8\u586b\u5145\n  const onFill = () => {\n    setValues(['2020-11-10', '2020-12-30']);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange\n        values={values}\n        onChange={onChange}\n        labels={['\u5f00\u59cb\u8425\u4e1a\u65f6\u95f4:', '\u7ed3\u675f\u8425\u4e1a\u65f6\u95f4:']}\n        placeholders={['\u8bf7\u9009\u62e9', '\u8bf7\u9009\u62e9']}\n        titles={['\u5f00\u59cb\u65e5\u671f', '\u7ed3\u675f\u65e5\u671f']}\n        forerverTxt=\"\u6c38\u4e45\"\n        foreverDate=\"2999-12-31\"\n        minDate={new Date(2010, 0, 1, 23, 59, 59)}\n        maxDate={new Date(2020, 9, 28, 23, 59, 59)}\n      />\n      <WhiteSpace />\n      <Button onClick={onFill} inline type=\"primary\" size=\"small\">\n        \u5916\u90e8\u586b\u5145\n      </Button>\n    </div>\n  );\n};\n",
                 jsx:
                   "import React, { useState } from 'react';\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [values, setValues] = useState(['2011-12-01', '2020-07-20']); // \u65e5\u671f\u6539\u53d8\n\n  const onChange = (arr, type) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  }; // \u5916\u90e8\u586b\u5145\n\n  const onFill = () => {\n    setValues(['2020-11-10', '2020-12-30']);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange\n        values={values}\n        onChange={onChange}\n        labels={['\u5f00\u59cb\u8425\u4e1a\u65f6\u95f4:', '\u7ed3\u675f\u8425\u4e1a\u65f6\u95f4:']}\n        placeholders={['\u8bf7\u9009\u62e9', '\u8bf7\u9009\u62e9']}\n        titles={['\u5f00\u59cb\u65e5\u671f', '\u7ed3\u675f\u65e5\u671f']}\n        forerverTxt=\"\u6c38\u4e45\"\n        foreverDate=\"2999-12-31\"\n        minDate={new Date(2010, 0, 1, 23, 59, 59)}\n        maxDate={new Date(2020, 9, 28, 23, 59, 59)}\n      />\n      <WhiteSpace />\n      <Button onClick={onFill} inline type=\"primary\" size=\"small\">\n        \u5916\u90e8\u586b\u5145\n      </Button>\n    </div>\n  );\n};\n",
               },
@@ -1244,7 +1244,7 @@
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { Toast } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport moment from 'moment';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    const today = moment().format('YYYY-MM-DD');\n    if (type === 'start') {\n      if ((arr[0] as string) > today) {\n        return Toast.info('\u8d77\u59cb\u65e5\u671f\u4e0d\u80fd\u5927\u4e8e\u4eca\u5929');\n      }\n    } else if (type === 'end') {\n      if ((arr[1] as string) < today) {\n        return Toast.info('\u7ed3\u675f\u65e5\u671f\u4e0d\u80fd\u5c0f\u4e8e\u4eca\u5929');\n      }\n    }\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};",
+                  "import React, { useState } from 'react';\n\nimport { Toast } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport moment from 'moment';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    const today = moment().format('YYYY-MM-DD');\n    if (type === 'start') {\n      if ((arr[0] as string) > today) {\n        return Toast.info('\u8d77\u59cb\u65e5\u671f\u4e0d\u80fd\u5927\u4e8e\u4eca\u5929');\n      }\n    } else if (type === 'end') {\n      if ((arr[1] as string) < today) {\n        return Toast.info('\u7ed3\u675f\u65e5\u671f\u4e0d\u80fd\u5c0f\u4e8e\u4eca\u5929');\n      }\n    }\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
                 jsx:
                   "import React, { useState } from 'react';\nimport { Toast } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport moment from 'moment';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [values, setValues] = useState([]); // \u65e5\u671f\u6539\u53d8\n\n  const onChange = (arr, type) => {\n    console.log('onChange', arr, type);\n    const today = moment().format('YYYY-MM-DD');\n\n    if (type === 'start') {\n      if (arr[0] > today) {\n        return Toast.info('\u8d77\u59cb\u65e5\u671f\u4e0d\u80fd\u5927\u4e8e\u4eca\u5929');\n      }\n    } else if (type === 'end') {\n      if (arr[1] < today) {\n        return Toast.info('\u7ed3\u675f\u65e5\u671f\u4e0d\u80fd\u5c0f\u4e8e\u4eca\u5929');\n      }\n    }\n\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
               },
@@ -1910,7 +1910,7 @@
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { DateRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n    padding: '20px',\n    boxSizing: 'border-box',\n    background: '#fff',\n    boxShadow: '0 3px 5px 0 #ccc',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <DateRange values={values} onChange={onChange} />\n    </div>\n  );\n};",
+                  "import React, { useState } from 'react';\n\nimport { DateRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n    padding: '20px',\n    boxSizing: 'border-box',\n    background: '#fff',\n    boxShadow: '0 3px 5px 0 #ccc',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <DateRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
                 jsx:
                   "import React, { useState } from 'react';\nimport { DateRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n    padding: '20px',\n    boxSizing: 'border-box',\n    background: '#fff',\n    boxShadow: '0 3px 5px 0 #ccc',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [values, setValues] = useState([]); // \u65e5\u671f\u6539\u53d8\n\n  const onChange = (arr, type) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <DateRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
               },
@@ -2772,7 +2772,11 @@
                 r.a.createElement(
                   'td',
                   null,
-                  r.a.createElement('code', null, '(arr: Array<Files>) => any'),
+                  r.a.createElement(
+                    'code',
+                    null,
+                    '(arr: Array<Files>) => void',
+                  ),
                 ),
                 r.a.createElement('td', null, '-'),
               ),
@@ -3019,7 +3023,7 @@
                 r.a.createElement(
                   'td',
                   null,
-                  r.a.createElement('code', null, '(msg: string): void'),
+                  r.a.createElement('code', null, '(msg: string)=> void'),
                 ),
                 r.a.createElement('td', null, '-'),
               ),
@@ -3291,7 +3295,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/date-range/index.md',
-                updatedTime: 1609323868e3,
+                updatedTime: 1609900402e3,
                 group: {
                   title: 'DateRange \u65e5\u671f\u8303\u56f4',
                   path: '/date-range',
@@ -3320,7 +3324,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/image-picker/index.md',
-                updatedTime: 1609755078e3,
+                updatedTime: 1609900402e3,
                 group: {
                   title: 'ImagePicker \u56fe\u7247\u9009\u62e9\u5668',
                   path: '/image-picker',
@@ -3368,7 +3372,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/valid-range/index.md',
-                updatedTime: 1609383631e3,
+                updatedTime: 1609900402e3,
                 group: {
                   title: 'ValidRange \u8bc1\u4ef6\u6709\u6548\u671f',
                   path: '/valid-range',
