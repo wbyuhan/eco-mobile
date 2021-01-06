@@ -2,6 +2,7 @@ declare module '*.css';
 declare module '*.less';
 declare module 'classnames';
 declare module 'react-wx-images-viewer';
+declare module 'eco-mobile';
 declare module '*.svg';
 declare module '*.png';
 declare module '*.jpg';

@@ -20,7 +20,7 @@ interface Files {
 interface ImagePickerProps {
   filesList: Array<Files>; // 图片列表
   max?: number; // 图片最大个数
-  onChange?: (arr: Array<Files>) => any; // 图片列表改变
+  onChange?: (arr: Array<Files>) => void; // 图片列表改变
   onUpload?: (file: any) => Promise<object | undefined>; // 图片上传方法
   accept?: string; // 选择的图片类型
   multiple?: boolean; // 是否多选
@@ -35,13 +35,12 @@ interface ImagePickerProps {
   disabledPreview?: boolean; // 是否禁用预览图片
   onGetPreviewUrl?: (index: number) => Promise<string>; // 获取预览图片方法
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
-  // classes?: Record<'root' | 'input' | 'imgBox', any>
 }
 
 const ImagePicker = (props: ImagePickerProps) => {
   const {
-    filesList = [],
     classes: s = {},
+    filesList = [],
     max = 1,
     onChange = noon,
     accept = 'image/*',
@@ -241,11 +240,15 @@ const ImagePicker = (props: ImagePickerProps) => {
     const rowNum = Math.floor(100 / parseFloat(width));
     if (filesList && filesList.length > 0 && rowNum > 1) {
       const restNum = filesList.length % rowNum;
-      if (restNum > 0 && restNum < rowNum - 1) {
+      if (restNum >= 0 && restNum <= rowNum - 1) {
         spaceNum = rowNum - restNum - 1;
+        if (filesList.length === max) {
+          spaceNum += 1;
+        }
       }
     }
   }
+  console.log('spaceNum', spaceNum);
 
   // parent样式
   const classParent = classnames(s.parent, {

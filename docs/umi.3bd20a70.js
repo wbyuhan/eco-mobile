@@ -1,13 +1,13 @@
 (function(e) {
   function n(n) {
     for (
-      var a, i, o = n[0], c = n[1], s = n[2], m = 0, u = [];
-      m < o.length;
+      var a, o, i = n[0], c = n[1], s = n[2], m = 0, u = [];
+      m < i.length;
       m++
     )
-      (i = o[m]),
-        Object.prototype.hasOwnProperty.call(l, i) && l[i] && u.push(l[i][0]),
-        (l[i] = 0);
+      (o = i[m]),
+        Object.prototype.hasOwnProperty.call(l, o) && l[o] && u.push(l[o][0]),
+        (l[o] = 0);
     for (a in c) Object.prototype.hasOwnProperty.call(c, a) && (e[a] = c[a]);
     d && d(n);
     while (u.length) u.shift()();
@@ -15,44 +15,44 @@
   }
   function t() {
     for (var e, n = 0; n < r.length; n++) {
-      for (var t = r[n], a = !0, o = 1; o < t.length; o++) {
-        var c = t[o];
+      for (var t = r[n], a = !0, i = 1; i < t.length; i++) {
+        var c = t[i];
         0 !== l[c] && (a = !1);
       }
-      a && (r.splice(n--, 1), (e = i((i.s = t[0]))));
+      a && (r.splice(n--, 1), (e = o((o.s = t[0]))));
     }
     return e;
   }
   var a = {},
     l = { 0: 0 },
     r = [];
-  function i(n) {
+  function o(n) {
     if (a[n]) return a[n].exports;
     var t = (a[n] = { i: n, l: !1, exports: {} });
-    return e[n].call(t.exports, t, t.exports, i), (t.l = !0), t.exports;
+    return e[n].call(t.exports, t, t.exports, o), (t.l = !0), t.exports;
   }
-  (i.m = e),
-    (i.c = a),
-    (i.d = function(e, n, t) {
-      i.o(e, n) || Object.defineProperty(e, n, { enumerable: !0, get: t });
+  (o.m = e),
+    (o.c = a),
+    (o.d = function(e, n, t) {
+      o.o(e, n) || Object.defineProperty(e, n, { enumerable: !0, get: t });
     }),
-    (i.r = function(e) {
+    (o.r = function(e) {
       'undefined' !== typeof Symbol &&
         Symbol.toStringTag &&
         Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
         Object.defineProperty(e, '__esModule', { value: !0 });
     }),
-    (i.t = function(e, n) {
-      if ((1 & n && (e = i(e)), 8 & n)) return e;
+    (o.t = function(e, n) {
+      if ((1 & n && (e = o(e)), 8 & n)) return e;
       if (4 & n && 'object' === typeof e && e && e.__esModule) return e;
       var t = Object.create(null);
       if (
-        (i.r(t),
+        (o.r(t),
         Object.defineProperty(t, 'default', { enumerable: !0, value: e }),
         2 & n && 'string' != typeof e)
       )
         for (var a in e)
-          i.d(
+          o.d(
             t,
             a,
             function(n) {
@@ -61,7 +61,7 @@
           );
       return t;
     }),
-    (i.n = function(e) {
+    (o.n = function(e) {
       var n =
         e && e.__esModule
           ? function() {
@@ -70,16 +70,16 @@
           : function() {
               return e;
             };
-      return i.d(n, 'a', n), n;
+      return o.d(n, 'a', n), n;
     }),
-    (i.o = function(e, n) {
+    (o.o = function(e, n) {
       return Object.prototype.hasOwnProperty.call(e, n);
     }),
-    (i.p = 'https://yicoding.github.io/eco-mobile/');
-  var o = (window['webpackJsonp'] = window['webpackJsonp'] || []),
-    c = o.push.bind(o);
-  (o.push = n), (o = o.slice());
-  for (var s = 0; s < o.length; s++) n(o[s]);
+    (o.p = 'https://yicoding.github.io/eco-mobile/');
+  var i = (window['webpackJsonp'] = window['webpackJsonp'] || []),
+    c = i.push.bind(i);
+  (i.push = n), (i = i.slice());
+  for (var s = 0; s < i.length; s++) n(i[s]);
   var d = c;
   r.push([0, 1]), t();
 })({
@@ -92,29 +92,28 @@
   },
   '2YZa': function(e, n, t) {
     'use strict';
-    t.r(n),
-      t.d(n, 'ImagePicker', function() {
-        return y;
-      }),
-      t.d(n, 'ValidRange', function() {
+    t.d(n, 'b', function() {
+      return y;
+    }),
+      t.d(n, 'c', function() {
         return M;
       }),
-      t.d(n, 'DateRange', function() {
+      t.d(n, 'a', function() {
         return q;
       });
     var a = t('o0o1'),
       l = t.n(a),
       r = t('HaE+'),
-      i = (t('TttT'), t('Kl5d')),
-      o = t.n(i),
+      o = (t('TttT'), t('Kl5d')),
+      i = t.n(o),
       c = t('ODXe'),
       s = t('q1tI'),
       d = t.n(s),
       m = t('Wm/2'),
       u = t('TSYQ'),
-      f = t.n(u),
-      g = t('U0F3'),
-      p = t.n(g),
+      g = t.n(u),
+      p = t('U0F3'),
+      f = t.n(p),
       h =
         'data:image/png;base64,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',
       E =
@@ -148,9 +147,7 @@
           border: '1px solid #d56161',
           boxSizing: 'border-box',
           borderRadius: '5px',
-          padding: '0 8px',
-          wordBreak: 'keep-all',
-          textAlign: 'center',
+          padding: '0 3px',
         },
         iconRemove: {
           width: '20px',
@@ -163,7 +160,7 @@
           backgroundSize: '100% 100%',
         },
         parent: { overflow: 'hidden', margin: '0 8px 8px 0' },
-        noMargin: { margin: 0 },
+        noMargin: { margin: '0 0 8px 0' },
         name: {
           textAlign: 'center',
           wordBreak: 'break-all',
@@ -227,22 +224,22 @@
       }),
       b = A,
       x = () => {},
-      k = e => {
-        var n = e.filesList,
-          t = void 0 === n ? [] : n,
-          a = e.classes,
-          i = void 0 === a ? {} : a,
+      j = e => {
+        var n = e.classes,
+          t = void 0 === n ? {} : n,
+          a = e.filesList,
+          o = void 0 === a ? [] : a,
           m = e.max,
           u = void 0 === m ? 1 : m,
-          g = e.onChange,
-          h = void 0 === g ? x : g,
+          p = e.onChange,
+          h = void 0 === p ? x : p,
           E = e.accept,
           v = void 0 === E ? 'image/*' : E,
           A = e.multiple,
           b = e.width,
-          k = void 0 === b ? '80px' : b,
+          j = void 0 === b ? '80px' : b,
           y = e.height,
-          j = void 0 === y ? '80px' : y,
+          k = void 0 === y ? '80px' : y,
           C = e.config,
           D = void 0 === C ? ['defaultBorder'] : C,
           w = e.children,
@@ -250,39 +247,39 @@
           I = void 0 === S ? 'fill' : S,
           P = e.size,
           T = e.disabledPreview,
-          B = e.onUpload,
-          R = e.onFail,
-          N = void 0 === R ? x : R,
-          V = e.onGetPreviewUrl,
-          O = e.resize,
-          U = Object(s['useRef'])(null),
+          O = e.onUpload,
+          B = e.onFail,
+          N = void 0 === B ? x : B,
+          R = e.onGetPreviewUrl,
+          U = e.resize,
+          V = Object(s['useRef'])(null),
           z = Object(s['useRef'])(null),
-          M = Object(s['useRef'])(t),
+          M = Object(s['useRef'])(o),
           L = [];
         M.current.forEach(e => {
           e.preview ? L.push(e.preview) : e.url && L.push(e.url);
         });
-        var Q = Object(s['useMemo'])(() => {
-            for (var e = 0, n = 0; n < t.length; n++) {
-              var a = t[n],
-                l = a.url,
-                r = a.errorTip;
-              (l || r) && e++;
+        var F = Object(s['useMemo'])(() => {
+            for (var e = 0, n = 0; n < o.length; n++) {
+              var t = o[n],
+                a = t.url,
+                l = t.errorTip;
+              (a || l) && e++;
             }
             return e;
-          }, [t]),
-          F = Object(s['useState'])(!1),
-          J = Object(c['default'])(F, 2),
+          }, [o]),
+          Q = Object(s['useState'])(!1),
+          J = Object(c['a'])(Q, 2),
           Y = J[0],
           q = J[1],
-          W = Object(s['useState'])(0),
-          X = Object(c['default'])(W, 2),
-          K = X[0],
-          H = X[1],
-          Z = Object(s['useState'])(''),
-          G = Object(c['default'])(Z, 2),
-          _ = G[0],
-          $ = G[1];
+          K = Object(s['useState'])(0),
+          W = Object(c['a'])(K, 2),
+          X = W[0],
+          H = W[1],
+          G = Object(s['useState'])(''),
+          Z = Object(c['a'])(G, 2),
+          _ = Z[0],
+          $ = Z[1];
         Object(s['useEffect'])(() => {
           var e = getComputedStyle(z.current).width;
           $(e);
@@ -304,28 +301,28 @@
             var n = e.target,
               t = n.files;
             if (!t || !t.length) return (n.value = '');
-            var a = u - Q;
+            var a = u - F;
             t.length > a &&
-              o.a.info(
+              i.a.info(
                 '\u56fe\u7247\u6700\u591a\u4e0d\u8d85\u8fc7'.concat(
                   u,
                   '\u5f20',
                 ),
               );
             for (
-              var l = Array.from(t).slice(0, a), r = [], i = 0;
-              i < l.length;
-              i++
+              var l = Array.from(t).slice(0, a), r = [], o = 0;
+              o < l.length;
+              o++
             )
-              r.push(te(l[i], i));
+              r.push(te(l[o], o));
             M.current = M.current.filter(e => e.url || e.errorTip);
             var c = M.current.length;
             Promise.all(r)
               .then(e => {
-                'function' === typeof B && e.forEach(e => (e.loading = !0));
+                'function' === typeof O && e.forEach(e => (e.loading = !0));
                 var t = e.filter(e =>
                   P && e.file.size > 1024 * P * 1024
-                    ? o.a.info(
+                    ? i.a.info(
                         '\u56fe\u7247\u5927\u5c0f\u4e0d\u80fd\u8d85\u8fc7'.concat(
                           P,
                           'M',
@@ -336,13 +333,13 @@
                 if (
                   ((M.current = M.current.concat(t)),
                   h(M.current),
-                  'function' === typeof B)
+                  'function' === typeof O)
                 )
                   for (
                     var a = function(e) {
                         var n = M.current[e];
                         e >= c &&
-                          B(n)
+                          O(n)
                             .then(e => {
                               Object.assign(n, e, { loading: !1 }),
                                 (M.current = [...M.current]),
@@ -370,7 +367,7 @@
               });
           },
           le = () => {
-            U && U.current && U.current.click();
+            V && V.current && V.current.click();
           },
           re = e => {
             for (var n = !0, t = 0; t < M.current.length; t++) {
@@ -381,12 +378,12 @@
               }
             }
             if (!n)
-              return o.a.info(
+              return i.a.info(
                 '\u56fe\u7247\u4e0a\u4f20\u4e2d\uff0c\u8bf7\u7a0d\u540e\u64cd\u4f5c',
               );
             M.current.splice(e, 1), (M.current = [...M.current]), h(M.current);
           },
-          ie = (function() {
+          oe = (function() {
             var e = Object(r['a'])(
               l.a.mark(function e(n, t) {
                 var a;
@@ -400,18 +397,18 @@
                         }
                         return e.abrupt('return');
                       case 2:
-                        if (M.current[t].preview || 'function' !== typeof V) {
+                        if (M.current[t].preview || 'function' !== typeof R) {
                           e.next = 9;
                           break;
                         }
-                        return (e.next = 5), V(t);
+                        return (e.next = 5), R(t);
                       case 5:
                         (a = e.sent),
                           (M.current[t].preview = a),
                           (M.current = [...M.current]),
                           h(M.current);
                       case 9:
-                        H(n), oe();
+                        H(n), ie();
                       case 11:
                       case 'end':
                         return e.stop();
@@ -423,7 +420,7 @@
               return e.apply(this, arguments);
             };
           })(),
-          oe = () => q(e => !e);
+          ie = () => q(e => !e);
         (function(e) {
           (e['defaultBorder'] = 'defaultBorder'),
             (e['defaultBackGround'] = 'defaultBackGround'),
@@ -435,93 +432,95 @@
               (e['contain'] = 'contain'),
               (e['scale-down'] = 'scale-down');
           })(ne || (ne = {}));
-        var ce = O ? _ : j,
+        var ce = U ? _ : k,
           se = 0;
-        if (O) {
-          var de = Math.floor(100 / parseFloat(k));
-          if (t && t.length > 0 && de > 1) {
-            var me = t.length % de;
-            me > 0 && me < de - 1 && (se = de - me - 1);
+        if (U) {
+          var de = Math.floor(100 / parseFloat(j));
+          if (o && o.length > 0 && de > 1) {
+            var me = o.length % de;
+            me >= 0 &&
+              me <= de - 1 &&
+              ((se = de - me - 1), o.length === u && (se += 1));
           }
         }
-        var ue = f()(i.parent, { [i.noMargin]: 1 === u || t.length < 1 || O });
+        var ue = g()(t.parent, { [t.noMargin]: 1 === u || o.length < 1 || U });
         return d.a.createElement(
           'div',
-          { className: f()(i.root, { [i.justifyContent]: O }) },
+          { className: g()(t.root, { [t.justifyContent]: U }) },
           d.a.createElement('input', {
-            className: i.hidden,
-            ref: U,
+            className: t.hidden,
+            ref: V,
             type: 'file',
             accept: v,
             multiple: A,
             onChange: ae,
           }),
-          t &&
-            t.length > 0 &&
-            t.map((e, n) => {
+          o &&
+            o.length > 0 &&
+            o.map((e, n) => {
               var a = e.url,
                 l = e.loading,
                 r = e.name,
-                o = e.errorTip;
-              if (a || o) {
+                i = e.errorTip;
+              if (a || i) {
                 for (
-                  var c = t.slice(0, n + 1), s = 0, m = 0;
+                  var c = o.slice(0, n + 1), s = 0, m = 0;
                   m < c.length;
                   m++
                 ) {
                   var u = c[m].errorTip;
                   u && s++;
                 }
-                var g = n - s;
+                var p = n - s;
                 return d.a.createElement(
                   'div',
-                  { key: n, className: ue, style: { width: k } },
+                  { key: n, className: ue, style: { width: j } },
                   d.a.createElement(
                     'div',
                     {
-                      className: f()(i.imgBox, ...D.map(e => i[e])),
+                      className: g()(t.imgBox, ...D.map(e => t[e])),
                       style: { height: ce },
                     },
                     a &&
                       d.a.createElement('img', {
                         alt: '',
-                        className: i.img,
+                        className: t.img,
                         src: a,
                         style: { objectFit: I },
-                        onClick: () => ie(g, n),
+                        onClick: () => oe(p, n),
                       }),
-                    o && d.a.createElement('div', { className: i.errorTip }, o),
+                    i && d.a.createElement('div', { className: t.errorTip }, i),
                     d.a.createElement('i', {
-                      className: i.iconRemove,
+                      className: t.iconRemove,
                       onClick: () => re(n),
                     }),
                     l &&
                       d.a.createElement(
                         'div',
-                        { className: i.loadingBox },
-                        d.a.createElement('i', { className: i.loading }),
+                        { className: t.loadingBox },
+                        d.a.createElement('i', { className: t.loading }),
                       ),
                   ),
-                  r && d.a.createElement('div', { className: i.name }, r),
+                  r && d.a.createElement('div', { className: t.name }, r),
                 );
               }
             }),
-          Q < u &&
+          F < u &&
             d.a.createElement(
               'div',
-              { className: ue, style: { width: k }, ref: z, onClick: le },
+              { className: ue, style: { width: j }, ref: z, onClick: le },
               w ||
                 d.a.createElement('div', {
                   style: { height: ce },
-                  className: f()(i.childrenEle, [...D.map(e => i[e])]),
+                  className: g()(t.childrenEle, [...D.map(e => t[e])]),
                 }),
               1 === u &&
-                t[0] &&
-                t[0].name &&
+                o[0] &&
+                o[0].name &&
                 d.a.createElement(
                   'div',
-                  { className: i.name, style: { width: k } },
-                  t[0].name,
+                  { className: t.name, style: { width: j } },
+                  o[0].name,
                 ),
             ),
           se > 0 &&
@@ -531,29 +530,29 @@
                 d.a.createElement('div', {
                   key: n,
                   className: ue,
-                  style: { width: k },
+                  style: { width: j },
                 }),
               ),
-          Y && d.a.createElement(p.a, { onClose: oe, index: K, urls: L }),
+          Y && d.a.createElement(f.a, { onClose: ie, index: X, urls: L }),
         );
       },
-      y = Object(m['withStyles'])(b)(k),
-      j = (t('ZyjE'), t('4IZf')),
-      C = t.n(j),
+      y = Object(m['withStyles'])(b)(j),
+      k = (t('ZyjE'), t('4IZf')),
+      C = t.n(k),
       D = (t('DNw3'), t('rxJx')),
       w = t.n(D),
       S = (t('cn7L'), t('jeTP')),
       I = t.n(S),
       P = t('wd/R'),
       T = t.n(P);
-    function B(e) {
+    function O(e) {
       var n =
         arguments.length > 1 && void 0 !== arguments[1]
           ? arguments[1]
           : 'YYYY-MM-DD';
       return T()(e).format(n);
     }
-    var R = e => {
+    var B = e => {
         if (e) return new Date(e);
       },
       N = Object(m['createStyles'])({
@@ -611,16 +610,16 @@
           backgroundSize: '100% 100%',
         },
       }),
-      V = N,
-      O = I.a.Item,
-      U = () => {},
+      R = N,
+      U = I.a.Item,
+      V = () => {},
       z = e => {
         var n = e.classes,
           t = void 0 === n ? {} : n,
           a = e.values,
           l = void 0 === a ? [] : a,
           r = e.onChange,
-          i = void 0 === r ? U : r,
+          o = void 0 === r ? V : r,
           m = e.labels,
           u =
             void 0 === m
@@ -629,11 +628,11 @@
                   '\u8bc1\u4ef6\u7ec8\u6b62\u65e5\u671f:',
                 ]
               : m,
-          g = e.titles,
-          p =
-            void 0 === g
+          p = e.titles,
+          f =
+            void 0 === p
               ? ['\u8d77\u59cb\u65e5\u671f', '\u7ec8\u6b62\u65e5\u671f']
-              : g,
+              : p,
           h = e.placeholders,
           E =
             void 0 === h
@@ -646,39 +645,39 @@
           A = void 0 === v ? '\u957f\u671f' : v,
           b = e.foreverDate,
           x = void 0 === b ? '9999-12-31' : b,
-          k = e.minDate,
-          y = void 0 === k ? new Date(1980, 0, 1, 23, 59, 59) : k,
-          j = e.maxDate,
-          D = void 0 === j ? new Date(2100, 11, 30, 23, 59, 59) : j,
+          j = e.minDate,
+          y = void 0 === j ? new Date(1980, 0, 1, 23, 59, 59) : j,
+          k = e.maxDate,
+          D = void 0 === k ? new Date(2100, 11, 30, 23, 59, 59) : k,
           S = Object(s['useState'])(!1),
-          P = Object(c['default'])(S, 2),
+          P = Object(c['a'])(S, 2),
           T = P[0],
           N = P[1];
         Object(s['useEffect'])(() => {
           N(l[1] === x);
         }, [l[1], x]);
-        var V = () => {
+        var R = () => {
             var e = [l[0], T ? '' : x],
               n = T ? 'unCheck' : 'check';
-            i(e, n), N(e => !e);
+            o(e, n), N(e => !e);
           },
           z = (e, n) => {
-            var t = B(e),
+            var t = O(e),
               a = [];
             if ('start' === n) {
               if (t > l[1])
-                return o.a.info(
-                  ''.concat(p[0], '\u4e0d\u80fd\u5927\u4e8e').concat(p[1]),
+                return i.a.info(
+                  ''.concat(f[0], '\u4e0d\u80fd\u5927\u4e8e').concat(f[1]),
                 );
               a = [t, l[1]];
             } else {
               if (t < l[0])
-                return o.a.info(
-                  ''.concat(p[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(p[0]),
+                return i.a.info(
+                  ''.concat(f[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(f[0]),
                 );
               a = [l[0], t];
             }
-            i(a, n);
+            o(a, n);
           };
         return d.a.createElement(
           'div',
@@ -688,19 +687,19 @@
             null,
             d.a.createElement(
               'div',
-              { className: f()({ [t.dateValue]: l[0] }) },
+              { className: g()({ [t.dateValue]: l[0] }) },
               d.a.createElement(
                 w.a,
                 {
                   mode: 'date',
-                  title: p[0],
+                  title: f[0],
                   extra: E[0],
-                  value: R(l[0]),
+                  value: B(l[0]),
                   onChange: e => z(e, 'start'),
                   minDate: y,
                   maxDate: D,
                 },
-                d.a.createElement(O, { arrow: 'horizontal' }, u[0]),
+                d.a.createElement(U, { arrow: 'horizontal' }, u[0]),
               ),
             ),
             d.a.createElement(
@@ -709,7 +708,7 @@
               d.a.createElement(
                 'div',
                 {
-                  className: f()(t.datePicker, {
+                  className: g()(t.datePicker, {
                     [t.dateValue]: l[1] && l[1] !== x,
                   }),
                 },
@@ -717,22 +716,22 @@
                   w.a,
                   {
                     mode: 'date',
-                    title: p[1],
+                    title: f[1],
                     extra: E[1],
-                    value: l[1] === x ? void 0 : R(l[1]),
+                    value: l[1] === x ? void 0 : B(l[1]),
                     onChange: e => z(e, 'end'),
                     minDate: y,
                     maxDate: D,
                   },
-                  d.a.createElement(O, { arrow: 'horizontal' }, u[1], ' '),
+                  d.a.createElement(U, { arrow: 'horizontal' }, u[1], ' '),
                 ),
               ),
               d.a.createElement(
                 C.a,
                 { className: t.forerverBox },
                 d.a.createElement('i', {
-                  className: f()(t.iconCheck, { [t.iconChecked]: T }),
-                  onClick: V,
+                  className: g()(t.iconCheck, { [t.iconChecked]: T }),
+                  onClick: R,
                 }),
                 d.a.createElement('span', null, A),
               ),
@@ -740,7 +739,7 @@
           ),
         );
       },
-      M = Object(m['withStyles'])(V)(z),
+      M = Object(m['withStyles'])(R)(z),
       L = Object(m['createStyles'])({
         root: {
           '& .am-list-item': {
@@ -764,8 +763,8 @@
         datePicker: { flex: 1 },
         dateValue: { '& .am-list-extra': { color: '#323232 !important' } },
       }),
-      Q = L,
-      F = I.a.Item,
+      F = L,
+      Q = I.a.Item,
       J = () => {},
       Y = e => {
         var n = e.classes,
@@ -773,16 +772,16 @@
           a = e.label,
           l = void 0 === a ? '\u81ea\u5b9a\u4e49\u65e5\u671f' : a,
           r = e.tip,
-          i = void 0 === r ? '\u65f6\u95f4\u8303\u56f4\u6700\u957f30\u5929' : r,
+          o = void 0 === r ? '\u65f6\u95f4\u8303\u56f4\u6700\u957f30\u5929' : r,
           c = e.values,
           s = void 0 === c ? [] : c,
           m = e.onChange,
           u = void 0 === m ? J : m,
-          g = e.titles,
-          p =
-            void 0 === g
+          p = e.titles,
+          f =
+            void 0 === p
               ? ['\u8d77\u59cb\u65e5\u671f', '\u7ec8\u6b62\u65e5\u671f']
-              : g,
+              : p,
           h = e.placeholders,
           E =
             void 0 === h
@@ -795,21 +794,21 @@
           A = void 0 === v ? new Date(1980, 0, 1, 23, 59, 59) : v,
           b = e.maxDate,
           x = void 0 === b ? new Date(2100, 11, 30, 23, 59, 59) : b,
-          k = e.splitTxt,
-          y = void 0 === k ? '\u81f3' : k,
-          j = (e, n) => {
-            var t = B(e),
+          j = e.splitTxt,
+          y = void 0 === j ? '\u81f3' : j,
+          k = (e, n) => {
+            var t = O(e),
               a = [];
             if ('start' === n) {
               if (t > s[1])
-                return o.a.info(
-                  ''.concat(p[0], '\u4e0d\u80fd\u5927\u4e8e').concat(p[1]),
+                return i.a.info(
+                  ''.concat(f[0], '\u4e0d\u80fd\u5927\u4e8e').concat(f[1]),
                 );
               a = [t, s[1]];
             } else {
               if (t < s[0])
-                return o.a.info(
-                  ''.concat(p[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(p[0]),
+                return i.a.info(
+                  ''.concat(f[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(f[0]),
                 );
               a = [s[0], t];
             }
@@ -822,50 +821,50 @@
             C.a,
             { justify: 'between' },
             d.a.createElement('span', { className: t.label }, l),
-            d.a.createElement('span', { className: t.tip }, i),
+            d.a.createElement('span', { className: t.tip }, o),
           ),
           d.a.createElement(
             C.a,
             { className: t.dateBox },
             d.a.createElement(
               'div',
-              { className: f()(t.datePicker, { [t.dateValue]: s[0] }) },
+              { className: g()(t.datePicker, { [t.dateValue]: s[0] }) },
               d.a.createElement(
                 w.a,
                 {
                   mode: 'date',
-                  title: p[0],
+                  title: f[0],
                   extra: E[0],
-                  value: R(s[0]),
-                  onChange: e => j(e, 'start'),
+                  value: B(s[0]),
+                  onChange: e => k(e, 'start'),
                   minDate: A,
                   maxDate: x,
                 },
-                d.a.createElement(F, { arrow: 'down' }),
+                d.a.createElement(Q, { arrow: 'down' }),
               ),
             ),
             d.a.createElement('span', { className: t.splitTxt }, y),
             d.a.createElement(
               'div',
-              { className: f()(t.datePicker, { [t.dateValue]: s[1] }) },
+              { className: g()(t.datePicker, { [t.dateValue]: s[1] }) },
               d.a.createElement(
                 w.a,
                 {
                   mode: 'date',
-                  title: p[1],
+                  title: f[1],
                   extra: E[1],
-                  value: R(s[1]),
-                  onChange: e => j(e, 'end'),
+                  value: B(s[1]),
+                  onChange: e => k(e, 'end'),
                   minDate: A,
                   maxDate: x,
                 },
-                d.a.createElement(F, { arrow: 'down' }),
+                d.a.createElement(Q, { arrow: 'down' }),
               ),
             ),
           ),
         );
       },
-      q = Object(m['withStyles'])(Q)(Y);
+      q = Object(m['withStyles'])(F)(Y);
   },
   '9Ihz': function(e, n) {},
   '9kvl': function(e, n, t) {
@@ -879,14 +878,202 @@
       return l['a'];
     });
   },
+  CK2m: function(e, n, t) {
+    'use strict';
+    t.r(n);
+    t('ZyjE');
+    var a = t('4IZf'),
+      l = t.n(a),
+      r = t('ODXe'),
+      o = t('q1tI'),
+      i = t.n(o),
+      c = t('Wm/2'),
+      s = t('2YZa'),
+      d = t('okqA'),
+      m = t('19b6'),
+      u = t('CWFq'),
+      g = Object(c['createUseStyles'])({
+        root: { boxSizing: 'border-box', display: 'flex' },
+        item: { flex: 1, '&:first-child': { marginRight: '10px' } },
+        children: {
+          background: '#e8f1fc',
+          height: '90px',
+          position: 'relative',
+        },
+        img: { width: '89px', height: '57px' },
+        iconPhoto: {
+          width: '32px',
+          height: '28px',
+          display: 'block',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 2,
+        },
+      });
+    n['default'] = () => {
+      var e = g(),
+        n = Object(o['useState'])([]),
+        t = Object(r['a'])(n, 2),
+        a = t[0],
+        c = t[1],
+        p = Object(o['useState'])([]),
+        f = Object(r['a'])(p, 2),
+        h = f[0],
+        E = f[1],
+        v = e =>
+          new Promise((e, n) => {
+            var t = Math.random();
+            setTimeout(() => {
+              if (t > 0.3) return e({ fssid: t.toString().slice(-6) });
+              n('\u4e0a\u4f20\u5931\u8d25');
+            }, 3e3);
+          }),
+        A = e => {
+          c(e);
+        },
+        b = e => {
+          E(e);
+        };
+      return i.a.createElement(
+        'div',
+        { className: e.root },
+        i.a.createElement(
+          'div',
+          { className: e.item },
+          i.a.createElement(
+            s['b'],
+            {
+              filesList: a,
+              onChange: A,
+              mode: 'cover',
+              width: '100%',
+              height: '90px',
+              onUpload: v,
+            },
+            i.a.createElement(
+              l.a,
+              { className: e.children, justify: 'center' },
+              i.a.createElement('img', { className: e.img, alt: '', src: d }),
+              i.a.createElement('img', {
+                alt: '',
+                className: e.iconPhoto,
+                src: u,
+              }),
+            ),
+          ),
+        ),
+        i.a.createElement(
+          'div',
+          { className: e.item },
+          i.a.createElement(
+            s['b'],
+            {
+              filesList: h,
+              onChange: b,
+              mode: 'cover',
+              width: '100%',
+              height: '90px',
+              onUpload: v,
+            },
+            i.a.createElement(
+              l.a,
+              { className: e.children, justify: 'center' },
+              i.a.createElement('img', { className: e.img, alt: '', src: m }),
+              i.a.createElement('img', {
+                alt: '',
+                className: e.iconPhoto,
+                src: u,
+              }),
+            ),
+          ),
+        ),
+      );
+    };
+  },
   CWFq: function(e, n) {
     e.exports =
       'data:image/png;base64,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';
   },
+  FKBv: function(e, n, t) {
+    'use strict';
+    t.r(n);
+    t('ZyjE');
+    var a = t('4IZf'),
+      l = t.n(a),
+      r = (t('ca75'), t('JMAg')),
+      o = t.n(r),
+      i = (t('dlV3'), t('4cdd')),
+      c = t.n(i),
+      s = t('ODXe'),
+      d = t('q1tI'),
+      m = t.n(d),
+      u = t('2YZa');
+    n['default'] = () => {
+      var e = Object(d['useState'])([]),
+        n = Object(s['a'])(e, 2),
+        t = n[0],
+        a = n[1],
+        r = e => {
+          a(e);
+        };
+      return m.a.createElement(
+        l.a,
+        { direction: 'row', wrap: 'wrap' },
+        m.a.createElement(
+          o.a,
+          null,
+          m.a.createElement(u['b'], { filesList: t, onChange: r }),
+          m.a.createElement(c.a, null),
+        ),
+        m.a.createElement(
+          o.a,
+          null,
+          m.a.createElement(u['b'], {
+            filesList: t,
+            onChange: r,
+            config: ['defaultBackGround'],
+          }),
+          m.a.createElement(c.a, null),
+        ),
+        m.a.createElement(
+          o.a,
+          null,
+          m.a.createElement(u['b'], {
+            filesList: t,
+            onChange: r,
+            config: ['defaultDashed'],
+          }),
+          m.a.createElement(c.a, null),
+        ),
+        m.a.createElement(
+          o.a,
+          null,
+          m.a.createElement(u['b'], {
+            filesList: t,
+            onChange: r,
+            config: ['defaultBorder', 'defaultBackGround'],
+          }),
+          m.a.createElement(c.a, null),
+        ),
+        m.a.createElement(
+          o.a,
+          null,
+          m.a.createElement(u['b'], {
+            filesList: t,
+            onChange: r,
+            config: ['defaultDashed', 'defaultBackGround'],
+          }),
+          m.a.createElement(c.a, null),
+        ),
+      );
+    };
+  },
   FfOG: function(e, n, t) {
     'use strict';
     t.d(n, 'a', function() {
-      return i;
+      return o;
     }),
       t.d(n, 'b', function() {
         return r;
@@ -897,7 +1084,7 @@
     var r = Object({ NODE_ENV: 'production' }).__IS_SERVER
         ? null
         : Object(a['b'])(l),
-      i = function() {
+      o = function() {
         var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
         return e || (r = Object(a['b'])(l)), r;
       };
@@ -908,130 +1095,34 @@
     var a = t('wx14'),
       l = t('q1tI'),
       r = t.n(l),
-      i = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
-      o = t.n(i),
+      o = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
+      i = t.n(o),
       c = r.a.memo(function() {
-        var e = t('284h'),
-          n = t('TqRt'),
-          a = n(t('ODXe')),
-          l = e(t('q1tI')),
-          r = t('2YZa'),
-          i = t('Wm/2'),
-          o = (0, i.createUseStyles)({ root: { width: '375px' } }),
-          c = function() {
-            var e = o(),
-              n = (0, l.useState)([]),
-              t = (0, a['default'])(n, 2),
-              i = t[0],
-              c = t[1],
-              s = function(e, n) {
-                c(e);
-              };
-            return l['default'].createElement(
-              'div',
-              { className: e.root },
-              l['default'].createElement(r.ValidRange, {
-                values: i,
-                onChange: s,
-              }),
-            );
+        var e = t('TqRt'),
+          n = e(t('q1tI')),
+          a = e(t('UI3I')),
+          l = function() {
+            return n['default'].createElement(a['default'], null);
           };
-        return l['default'].createElement(c);
+        return n['default'].createElement(l);
       }),
       s = r.a.memo(function() {
-        var e = t('284h'),
-          n = t('TqRt');
-        t('BXRl');
-        var a = n(t('LajT'));
-        t('dlV3');
-        var l = n(t('4cdd')),
-          r = n(t('ODXe')),
-          i = e(t('q1tI')),
-          o = (t('9ibs'), t('2YZa')),
-          c = t('Wm/2'),
-          s = (0, c.createUseStyles)({ root: { width: '375px' } }),
-          d = function() {
-            var e = s(),
-              n = (0, i.useState)(['2011-12-01', '2020-07-20']),
-              t = (0, r['default'])(n, 2),
-              c = t[0],
-              d = t[1],
-              m = function(e, n) {
-                d(e);
-              },
-              u = function() {
-                d(['2020-11-10', '2020-12-30']);
-              };
-            return i['default'].createElement(
-              'div',
-              { className: e.root },
-              i['default'].createElement(o.ValidRange, {
-                values: c,
-                onChange: m,
-                labels: [
-                  '\u5f00\u59cb\u8425\u4e1a\u65f6\u95f4:',
-                  '\u7ed3\u675f\u8425\u4e1a\u65f6\u95f4:',
-                ],
-                placeholders: ['\u8bf7\u9009\u62e9', '\u8bf7\u9009\u62e9'],
-                titles: [
-                  '\u5f00\u59cb\u65e5\u671f',
-                  '\u7ed3\u675f\u65e5\u671f',
-                ],
-                forerverTxt: '\u6c38\u4e45',
-                foreverDate: '2999-12-31',
-                minDate: new Date(2010, 0, 1, 23, 59, 59),
-                maxDate: new Date(2020, 9, 28, 23, 59, 59),
-              }),
-              i['default'].createElement(l['default'], null),
-              i['default'].createElement(
-                a['default'],
-                { onClick: u, inline: !0, type: 'primary', size: 'small' },
-                '\u5916\u90e8\u586b\u5145',
-              ),
-            );
+        var e = t('TqRt'),
+          n = e(t('q1tI')),
+          a = e(t('aGEZ')),
+          l = function() {
+            return n['default'].createElement(a['default'], null);
           };
-        return i['default'].createElement(d);
+        return n['default'].createElement(l);
       }),
       d = r.a.memo(function() {
-        var e = t('284h'),
-          n = t('TqRt');
-        t('TttT');
-        var a = n(t('Kl5d')),
-          l = n(t('ODXe')),
-          r = e(t('q1tI')),
-          i = (t('9ibs'), t('2YZa')),
-          o = n(t('wd/R')),
-          c = t('Wm/2'),
-          s = (0, c.createUseStyles)({ root: { width: '375px' } }),
-          d = function() {
-            var e = s(),
-              n = (0, r.useState)([]),
-              t = (0, l['default'])(n, 2),
-              c = t[0],
-              d = t[1],
-              m = function(e, n) {
-                var t = (0, o['default'])().format('YYYY-MM-DD');
-                if ('start' === n) {
-                  if (e[0] > t)
-                    return a['default'].info(
-                      '\u8d77\u59cb\u65e5\u671f\u4e0d\u80fd\u5927\u4e8e\u4eca\u5929',
-                    );
-                } else if ('end' === n && e[1] < t)
-                  return a['default'].info(
-                    '\u7ed3\u675f\u65e5\u671f\u4e0d\u80fd\u5c0f\u4e8e\u4eca\u5929',
-                  );
-                d(e);
-              };
-            return r['default'].createElement(
-              'div',
-              { className: e.root },
-              r['default'].createElement(i.ValidRange, {
-                values: c,
-                onChange: m,
-              }),
-            );
+        var e = t('TqRt'),
+          n = e(t('q1tI')),
+          a = e(t('YYIF')),
+          l = function() {
+            return n['default'].createElement(a['default'], null);
           };
-        return r['default'].createElement(d);
+        return n['default'].createElement(l);
       });
     n['default'] = function() {
       return r.a.createElement(
@@ -1065,7 +1156,7 @@
           ),
         ),
         r.a.createElement(
-          o.a,
+          i.a,
           Object(a['a'])(
             {
               source: {
@@ -1076,8 +1167,9 @@
               },
             },
             {
+              path: '/_demos/base-2',
               dependencies: {
-                'eco-mobile': '1.0.22',
+                'eco-mobile': '1.0.26',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1104,7 +1196,7 @@
           ),
         ),
         r.a.createElement(
-          o.a,
+          i.a,
           Object(a['a'])(
             {
               source: {
@@ -1115,10 +1207,11 @@
               },
             },
             {
+              path: '/_demos/extend',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.22',
+                'eco-mobile': '1.0.26',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1146,21 +1239,22 @@
           ),
         ),
         r.a.createElement(
-          o.a,
+          i.a,
           Object(a['a'])(
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { Toast } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport moment from 'moment';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    const today = moment().format('YYYY-MM-DD');\n    if (type === 'start') {\n      if (arr[0] > today) {\n        return Toast.info('\u8d77\u59cb\u65e5\u671f\u4e0d\u80fd\u5927\u4e8e\u4eca\u5929');\n      }\n    } else if (type === 'end') {\n      if (arr[1] < today) {\n        return Toast.info('\u7ed3\u675f\u65e5\u671f\u4e0d\u80fd\u5c0f\u4e8e\u4eca\u5929');\n      }\n    }\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};",
+                  "import React, { useState } from 'react';\n\nimport { Toast } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport moment from 'moment';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    const today = moment().format('YYYY-MM-DD');\n    if (type === 'start') {\n      if ((arr[0] as string) > today) {\n        return Toast.info('\u8d77\u59cb\u65e5\u671f\u4e0d\u80fd\u5927\u4e8e\u4eca\u5929');\n      }\n    } else if (type === 'end') {\n      if ((arr[1] as string) < today) {\n        return Toast.info('\u7ed3\u675f\u65e5\u671f\u4e0d\u80fd\u5c0f\u4e8e\u4eca\u5929');\n      }\n    }\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};",
                 jsx:
                   "import React, { useState } from 'react';\nimport { Toast } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport moment from 'moment';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [values, setValues] = useState([]); // \u65e5\u671f\u6539\u53d8\n\n  const onChange = (arr, type) => {\n    console.log('onChange', arr, type);\n    const today = moment().format('YYYY-MM-DD');\n\n    if (type === 'start') {\n      if (arr[0] > today) {\n        return Toast.info('\u8d77\u59cb\u65e5\u671f\u4e0d\u80fd\u5927\u4e8e\u4eca\u5929');\n      }\n    } else if (type === 'end') {\n      if (arr[1] < today) {\n        return Toast.info('\u7ed3\u675f\u65e5\u671f\u4e0d\u80fd\u5c0f\u4e8e\u4eca\u5929');\n      }\n    }\n\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
               },
             },
             {
+              path: '/_demos/out',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.22',
+                'eco-mobile': '1.0.26',
                 moment: '2.29.1',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
@@ -1410,6 +1504,39 @@
             ),
           ),
         ),
+      );
+    };
+  },
+  M4Bu: function(e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('ODXe'),
+      l = t('q1tI'),
+      r = t.n(l),
+      o = t('2YZa'),
+      i = t('Wm/2'),
+      c = Object(i['createUseStyles'])({
+        root: {
+          width: '375px',
+          padding: '20px',
+          boxSizing: 'border-box',
+          background: '#fff',
+          boxShadow: '0 3px 5px 0 #ccc',
+        },
+      });
+    n['default'] = () => {
+      var e = c(),
+        n = Object(l['useState'])([]),
+        t = Object(a['a'])(n, 2),
+        i = t[0],
+        s = t[1],
+        d = (e, n) => {
+          s(e);
+        };
+      return r.a.createElement(
+        'div',
+        { className: e.root },
+        r.a.createElement(o['a'], { values: i, onChange: d }),
       );
     };
   },
@@ -1704,49 +1831,47 @@
       (e.exports = l),
       (l.id = 'RnhZ');
   },
+  UI3I: function(e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('ODXe'),
+      l = t('q1tI'),
+      r = t.n(l),
+      o = t('2YZa'),
+      i = t('Wm/2'),
+      c = Object(i['createUseStyles'])({ root: { width: '375px' } });
+    n['default'] = () => {
+      var e = c(),
+        n = Object(l['useState'])([]),
+        t = Object(a['a'])(n, 2),
+        i = t[0],
+        s = t[1],
+        d = (e, n) => {
+          s(e);
+        };
+      return r.a.createElement(
+        'div',
+        { className: e.root },
+        r.a.createElement(o['c'], { values: i, onChange: d }),
+      );
+    };
+  },
   W6FN: function(e, n, t) {
     'use strict';
     t.r(n);
     var a = t('wx14'),
       l = t('q1tI'),
       r = t.n(l),
-      i = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
-      o = t.n(i),
+      o = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
+      i = t.n(o),
       c = r.a.memo(function() {
-        var e = t('284h'),
-          n = t('TqRt'),
-          a = n(t('ODXe')),
-          l = e(t('q1tI')),
-          r = t('2YZa'),
-          i = t('Wm/2'),
-          o = (0, i.createUseStyles)({
-            root: {
-              width: '375px',
-              padding: '20px',
-              boxSizing: 'border-box',
-              background: '#fff',
-              boxShadow: '0 3px 5px 0 #ccc',
-            },
-          }),
-          c = function() {
-            var e = o(),
-              n = (0, l.useState)([]),
-              t = (0, a['default'])(n, 2),
-              i = t[0],
-              c = t[1],
-              s = function(e, n) {
-                c(e);
-              };
-            return l['default'].createElement(
-              'div',
-              { className: e.root },
-              l['default'].createElement(r.DateRange, {
-                values: i,
-                onChange: s,
-              }),
-            );
+        var e = t('TqRt'),
+          n = e(t('q1tI')),
+          a = e(t('M4Bu')),
+          l = function() {
+            return n['default'].createElement(a['default'], null);
           };
-        return l['default'].createElement(c);
+        return n['default'].createElement(l);
       });
     n['default'] = function() {
       return r.a.createElement(
@@ -1780,7 +1905,7 @@
           ),
         ),
         r.a.createElement(
-          o.a,
+          i.a,
           Object(a['a'])(
             {
               source: {
@@ -1791,8 +1916,9 @@
               },
             },
             {
+              path: '/_demos/base',
               dependencies: {
-                'eco-mobile': '1.0.22',
+                'eco-mobile': '1.0.26',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -2040,6 +2166,98 @@
       );
     };
   },
+  YYIF: function(e, n, t) {
+    'use strict';
+    t.r(n);
+    t('TttT');
+    var a = t('Kl5d'),
+      l = t.n(a),
+      r = t('ODXe'),
+      o = t('q1tI'),
+      i = t.n(o),
+      c = t('2YZa'),
+      s = t('wd/R'),
+      d = t.n(s),
+      m = t('Wm/2'),
+      u = Object(m['createUseStyles'])({ root: { width: '375px' } });
+    n['default'] = () => {
+      var e = u(),
+        n = Object(o['useState'])([]),
+        t = Object(r['a'])(n, 2),
+        a = t[0],
+        s = t[1],
+        m = (e, n) => {
+          var t = d()().format('YYYY-MM-DD');
+          if ('start' === n) {
+            if (e[0] > t)
+              return l.a.info(
+                '\u8d77\u59cb\u65e5\u671f\u4e0d\u80fd\u5927\u4e8e\u4eca\u5929',
+              );
+          } else if ('end' === n && e[1] < t)
+            return l.a.info(
+              '\u7ed3\u675f\u65e5\u671f\u4e0d\u80fd\u5c0f\u4e8e\u4eca\u5929',
+            );
+          s(e);
+        };
+      return i.a.createElement(
+        'div',
+        { className: e.root },
+        i.a.createElement(c['c'], { values: a, onChange: m }),
+      );
+    };
+  },
+  aGEZ: function(e, n, t) {
+    'use strict';
+    t.r(n);
+    t('BXRl');
+    var a = t('LajT'),
+      l = t.n(a),
+      r = (t('dlV3'), t('4cdd')),
+      o = t.n(r),
+      i = t('ODXe'),
+      c = t('q1tI'),
+      s = t.n(c),
+      d = t('2YZa'),
+      m = t('Wm/2'),
+      u = Object(m['createUseStyles'])({ root: { width: '375px' } });
+    n['default'] = () => {
+      var e = u(),
+        n = Object(c['useState'])(['2011-12-01', '2020-07-20']),
+        t = Object(i['a'])(n, 2),
+        a = t[0],
+        r = t[1],
+        m = (e, n) => {
+          r(e);
+        },
+        g = () => {
+          r(['2020-11-10', '2020-12-30']);
+        };
+      return s.a.createElement(
+        'div',
+        { className: e.root },
+        s.a.createElement(d['c'], {
+          values: a,
+          onChange: m,
+          labels: [
+            '\u5f00\u59cb\u8425\u4e1a\u65f6\u95f4:',
+            '\u7ed3\u675f\u8425\u4e1a\u65f6\u95f4:',
+          ],
+          placeholders: ['\u8bf7\u9009\u62e9', '\u8bf7\u9009\u62e9'],
+          titles: ['\u5f00\u59cb\u65e5\u671f', '\u7ed3\u675f\u65e5\u671f'],
+          forerverTxt: '\u6c38\u4e45',
+          foreverDate: '2999-12-31',
+          minDate: new Date(2010, 0, 1, 23, 59, 59),
+          maxDate: new Date(2020, 9, 28, 23, 59, 59),
+        }),
+        s.a.createElement(o.a, null),
+        s.a.createElement(
+          l.a,
+          { onClick: g, inline: !0, type: 'primary', size: 'small' },
+          '\u5916\u90e8\u586b\u5145',
+        ),
+      );
+    };
+  },
   bCY9: function(e, n, t) {
     'use strict';
     t.d(n, 'a', function() {
@@ -2056,13 +2274,59 @@
         ],
       });
   },
+  cazh: function(e, n, t) {
+    'use strict';
+    t.r(n);
+    t('TttT');
+    var a = t('Kl5d'),
+      l = t.n(a),
+      r = t('ODXe'),
+      o = t('q1tI'),
+      i = t.n(o),
+      c = t('2YZa');
+    n['default'] = () => {
+      var e = Object(o['useState'])([]),
+        n = Object(r['a'])(e, 2),
+        t = n[0],
+        a = n[1],
+        s = e => {
+          a(e);
+        },
+        d = e =>
+          new Promise((e, n) => {
+            var t = Math.random();
+            setTimeout(() => {
+              if (t > 0.3) return e({ fssid: t.toString().slice(-6) });
+              n('\u4e0a\u4f20\u5931\u8d25');
+            }, 3e3);
+          }),
+        m = e =>
+          new Promise((n, a) => {
+            l.a.loading('Loading...'),
+              setTimeout(() => {
+                l.a.hide(), n(t[e].url);
+              }, 1e3);
+          });
+      return i.a.createElement(c['b'], {
+        filesList: t,
+        onChange: s,
+        multiple: !0,
+        max: 12,
+        mode: 'cover',
+        onUpload: d,
+        resize: !0,
+        width: '22%',
+        onGetPreviewUrl: m,
+      });
+    };
+  },
   gql7: function(e, n, t) {
     'use strict';
     t.r(n);
     var a = t('q1tI'),
       l = t.n(a),
       r = (t('B2uJ'), t('+su7'), t('qOys')),
-      i = t.n(r);
+      o = t.n(r);
     t('5Yjd');
     n['default'] = function() {
       return l.a.createElement(
@@ -2144,17 +2408,50 @@
             ),
             'npm \u6216 yarn \u5b89\u88c5',
           ),
-          l.a.createElement(i.a, {
+          l.a.createElement(o.a, {
             code: 'npm install eco-mobile --save\n',
             lang: 'shell',
           }),
           l.a.createElement('br', null),
-          l.a.createElement(i.a, {
+          l.a.createElement(o.a, {
             code: 'yarn add eco-mobile\n',
             lang: 'shell',
           }),
         ),
       );
+    };
+  },
+  jQK9: function(e, n, t) {
+    'use strict';
+    t.r(n);
+    var a = t('ODXe'),
+      l = t('q1tI'),
+      r = t.n(l),
+      o = t('2YZa');
+    n['default'] = () => {
+      var e = Object(l['useState'])([]),
+        n = Object(a['a'])(e, 2),
+        t = n[0],
+        i = n[1],
+        c = e => {
+          e.forEach((e, n) => (e.name = '\u793a\u4f8b\u56fe'.concat(n))), i(e);
+        },
+        s = e =>
+          new Promise((e, n) => {
+            var t = Math.random();
+            setTimeout(() => {
+              if (t > 0.3) return e({ fssid: t.toString().slice(-6) });
+              n('\u4e0a\u4f20\u5931\u8d25');
+            }, 3e3);
+          });
+      return r.a.createElement(o['b'], {
+        filesList: t,
+        onChange: c,
+        multiple: !0,
+        max: 10,
+        mode: 'cover',
+        onUpload: s,
+      });
     };
   },
   mZby: function(e, n, t) {
@@ -2163,305 +2460,43 @@
     var a = t('wx14'),
       l = t('q1tI'),
       r = t.n(l),
-      i = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
-      o = t.n(i),
+      o = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
+      i = t.n(o),
       c = r.a.memo(function() {
-        var e = t('284h'),
-          n = t('TqRt');
-        t('ZyjE');
-        var a = n(t('4IZf'));
-        t('ca75');
-        var l = n(t('JMAg'));
-        t('dlV3');
-        var r = n(t('4cdd')),
-          i = n(t('ODXe')),
-          o = e(t('q1tI')),
-          c = (t('9ibs'), t('2YZa')),
-          s = function() {
-            var e = (0, o.useState)([]),
-              n = (0, i['default'])(e, 2),
-              t = n[0],
-              s = n[1],
-              d = function(e) {
-                s(e);
-              };
-            return o['default'].createElement(
-              a['default'],
-              { direction: 'row', wrap: 'wrap' },
-              o['default'].createElement(
-                l['default'],
-                null,
-                o['default'].createElement(c.ImagePicker, {
-                  filesList: t,
-                  onChange: d,
-                }),
-                o['default'].createElement(r['default'], null),
-              ),
-              o['default'].createElement(
-                l['default'],
-                null,
-                o['default'].createElement(c.ImagePicker, {
-                  filesList: t,
-                  onChange: d,
-                  config: ['defaultBackGround'],
-                }),
-                o['default'].createElement(r['default'], null),
-              ),
-              o['default'].createElement(
-                l['default'],
-                null,
-                o['default'].createElement(c.ImagePicker, {
-                  filesList: t,
-                  onChange: d,
-                  config: ['defaultDashed'],
-                }),
-                o['default'].createElement(r['default'], null),
-              ),
-              o['default'].createElement(
-                l['default'],
-                null,
-                o['default'].createElement(c.ImagePicker, {
-                  filesList: t,
-                  onChange: d,
-                  config: ['defaultBorder', 'defaultBackGround'],
-                }),
-                o['default'].createElement(r['default'], null),
-              ),
-              o['default'].createElement(
-                l['default'],
-                null,
-                o['default'].createElement(c.ImagePicker, {
-                  filesList: t,
-                  onChange: d,
-                  config: ['defaultDashed', 'defaultBackGround'],
-                }),
-                o['default'].createElement(r['default'], null),
-              ),
-            );
+        var e = t('TqRt'),
+          n = e(t('q1tI')),
+          a = e(t('FKBv')),
+          l = function() {
+            return n['default'].createElement(a['default'], null);
           };
-        return o['default'].createElement(s);
+        return n['default'].createElement(l);
       }),
       s = r.a.memo(function() {
-        var e = t('284h'),
-          n = t('TqRt'),
-          a = n(t('ODXe')),
-          l = e(t('q1tI')),
-          r = t('2YZa'),
-          i = function() {
-            var e = (0, l.useState)([]),
-              n = (0, a['default'])(e, 2),
-              t = n[0],
-              i = n[1],
-              o = function(e) {
-                e.forEach(function(e, n) {
-                  return (e.name = '\u793a\u4f8b\u56fe'.concat(n));
-                }),
-                  i(e);
-              },
-              c = function() {
-                return new Promise(function(e, n) {
-                  var t = Math.random();
-                  setTimeout(function() {
-                    if (t > 0.3) return e({ fssid: t.toString().slice(-6) });
-                    n('\u4e0a\u4f20\u5931\u8d25');
-                  }, 3e3);
-                });
-              };
-            return l['default'].createElement(r.ImagePicker, {
-              filesList: t,
-              onChange: o,
-              multiple: !0,
-              max: 10,
-              mode: 'cover',
-              onUpload: c,
-            });
+        var e = t('TqRt'),
+          n = e(t('q1tI')),
+          a = e(t('jQK9')),
+          l = function() {
+            return n['default'].createElement(a['default'], null);
           };
-        return l['default'].createElement(i);
+        return n['default'].createElement(l);
       }),
       d = r.a.memo(function() {
-        var e = t('284h'),
-          n = t('TqRt');
-        t('ZyjE');
-        var a = n(t('4IZf')),
-          l = n(t('ODXe')),
-          r = e(t('q1tI')),
-          i = t('Wm/2'),
-          o = (t('9ibs'), t('2YZa')),
-          c = t('okqA'),
-          s = t('19b6'),
-          d = t('CWFq'),
-          m = (0, i.createUseStyles)({
-            root: { boxSizing: 'border-box', display: 'flex' },
-            item: { flex: 1, '&:first-child': { marginRight: '10px' } },
-            children: {
-              background: '#e8f1fc',
-              height: '90px',
-              position: 'relative',
-            },
-            img: { width: '89px', height: '57px' },
-            iconPhoto: {
-              width: '32px',
-              height: '28px',
-              display: 'block',
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              zIndex: 2,
-            },
-          }),
-          u = function() {
-            var e = m(),
-              n = (0, r.useState)([
-                { name: '\u8eab\u4efd\u8bc1\u4eba\u50cf\u9762' },
-              ]),
-              t = (0, l['default'])(n, 2),
-              i = t[0],
-              u = t[1],
-              f = (0, r.useState)([
-                { name: '\u8eab\u4efd\u8bc1\u56fd\u5fbd\u9762' },
-              ]),
-              g = (0, l['default'])(f, 2),
-              p = g[0],
-              h = g[1],
-              E = function() {
-                return new Promise(function(e, n) {
-                  var t = Math.random();
-                  setTimeout(function() {
-                    if (t > 0.3) return e({ fssid: t.toString().slice(-6) });
-                    n('\u4e0a\u4f20\u5931\u8d25');
-                  }, 3e3);
-                });
-              },
-              v = function(e) {
-                0 === e.length && e.push({}),
-                  e.forEach(function(e, n) {
-                    return (e.name = '\u8eab\u4efd\u8bc1\u4eba\u50cf\u9762');
-                  }),
-                  u(e);
-              },
-              A = function(e) {
-                0 === e.length && e.push({}),
-                  e.forEach(function(e, n) {
-                    return (e.name = '\u8eab\u4efd\u8bc1\u56fd\u5fbd\u9762');
-                  }),
-                  h(e);
-              };
-            return r['default'].createElement(
-              'div',
-              { className: e.root },
-              r['default'].createElement(
-                'div',
-                { className: e.item },
-                r['default'].createElement(
-                  o.ImagePicker,
-                  {
-                    filesList: i,
-                    onChange: v,
-                    mode: 'cover',
-                    width: '100%',
-                    height: '90px',
-                    onUpload: E,
-                  },
-                  r['default'].createElement(
-                    a['default'],
-                    { className: e.children, justify: 'center' },
-                    r['default'].createElement('img', {
-                      className: e.img,
-                      alt: '',
-                      src: c,
-                    }),
-                    r['default'].createElement('img', {
-                      alt: '',
-                      className: e.iconPhoto,
-                      src: d,
-                    }),
-                  ),
-                ),
-              ),
-              r['default'].createElement(
-                'div',
-                { className: e.item },
-                r['default'].createElement(
-                  o.ImagePicker,
-                  {
-                    filesList: p,
-                    onChange: A,
-                    mode: 'cover',
-                    width: '100%',
-                    height: '102px',
-                    onUpload: E,
-                  },
-                  r['default'].createElement(
-                    a['default'],
-                    { className: e.children, justify: 'center' },
-                    r['default'].createElement('img', {
-                      className: e.img,
-                      alt: '',
-                      src: s,
-                    }),
-                    r['default'].createElement('img', {
-                      alt: '',
-                      className: e.iconPhoto,
-                      src: d,
-                    }),
-                  ),
-                ),
-              ),
-            );
+        var e = t('TqRt'),
+          n = e(t('q1tI')),
+          a = e(t('CK2m')),
+          l = function() {
+            return n['default'].createElement(a['default'], null);
           };
-        return r['default'].createElement(u);
+        return n['default'].createElement(l);
       }),
       m = r.a.memo(function() {
-        var e = t('284h'),
-          n = t('TqRt');
-        t('TttT');
-        var a = n(t('Kl5d')),
-          l = n(t('ODXe')),
-          r = e(t('q1tI')),
-          i = (t('9ibs'), t('2YZa')),
-          o = function() {
-            var e = (0, r.useState)([]),
-              n = (0, l['default'])(e, 2),
-              t = n[0],
-              o = n[1],
-              c = function(e) {
-                e.forEach(function(e, n) {
-                  return (e.name = '\u793a\u4f8b\u56fe'.concat(n));
-                }),
-                  o(e);
-              },
-              s = function(e) {
-                return new Promise(function(e, n) {
-                  var t = Math.random();
-                  setTimeout(function() {
-                    if (t > 0.3) return e({ fssid: t.toString().slice(-6) });
-                    n('\u4e0a\u4f20\u5931\u8d25');
-                  }, 3e3);
-                });
-              },
-              d = function(e) {
-                return new Promise(function(n, l) {
-                  Math.random();
-                  a['default'].loading('Loading...'),
-                    setTimeout(function() {
-                      a['default'].hide(), n(t[e].url);
-                    }, 1e3);
-                });
-              };
-            return r['default'].createElement(i.ImagePicker, {
-              filesList: t,
-              onChange: c,
-              multiple: !0,
-              max: 10,
-              mode: 'cover',
-              onUpload: s,
-              resize: !0,
-              width: '18%',
-              onGetPreviewUrl: d,
-            });
+        var e = t('TqRt'),
+          n = e(t('q1tI')),
+          a = e(t('cazh')),
+          l = function() {
+            return n['default'].createElement(a['default'], null);
           };
-        return r['default'].createElement(o);
+        return n['default'].createElement(l);
       });
     n['default'] = function() {
       return r.a.createElement(
@@ -2495,19 +2530,20 @@
           ),
         ),
         r.a.createElement(
-          o.a,
+          i.a,
           Object(a['a'])(
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]);\n\n  interface Files {\n    url: string; // \u56fe\u7247url\n    loading: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n    errorTip?: string; // \u9519\u8bef\u63d0\u793a\n    name?: string; // \u56fe\u7247\u540d\u79f0\n    [index: string]: any;\n  }\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    console.log('onChange', arr);\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};",
+                  "import React, { useState } from 'react';\n\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\ninterface Files {\n  url: string; // \u56fe\u7247url\n  preview?: string; // \u9884\u89c8\u56fe\n  loading?: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n  errorTip?: string; // \u9519\u8bef\u63d0\u793a\n  name?: string; // \u56fe\u7247\u540d\u79f0\n  [index: string]: any;\n}\n\nexport default () => {\n  const [filesList, setFilesList] = useState<Array<Files>>([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
                 jsx:
-                  "import React, { useState } from 'react';\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = arr => {\n    console.log('onChange', arr);\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} config={['defaultBackGround']} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} config={['defaultDashed']} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
+                  "import React, { useState } from 'react';\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]); // \u6570\u7ec4\u6539\u53d8\n\n  const onChange = arr => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} config={['defaultBackGround']} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} config={['defaultDashed']} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
               },
             },
             {
+              path: '/_demos/base-1',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.22' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.26' },
               files: {},
             },
           ),
@@ -2531,17 +2567,21 @@
           ),
         ),
         r.a.createElement(
-          o.a,
+          i.a,
           Object(a['a'])(
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]);\n\n  interface Files {\n    url: string; // \u56fe\u7247url\n    loading: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n    errorTip?: string; // \u9519\u8bef\u63d0\u793a\n    name?: string; // \u56fe\u7247\u540d\u79f0\n    [index: string]: any;\n  }\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    console.log('onChange', arr);\n    arr.forEach((item, index) => (item.name = `\u793a\u4f8b\u56fe${index}`));\n    setFilesList(arr);\n  };\n\n  // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n  const onUpload = () => {\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({ fssid: rate.toString().slice(-6) });\n        }\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n  };\n\n  return (\n    <ImagePicker\n      filesList={filesList}\n      onChange={onChange}\n      multiple\n      max={10}\n      mode=\"cover\"\n      onUpload={onUpload}\n    />\n  );\n};",
+                  "import React, { useState } from 'react';\n\nimport { ImagePicker } from 'eco-mobile';\n\ninterface Files {\n  url: string; // \u56fe\u7247url\n  preview?: string; // \u9884\u89c8\u56fe\n  loading?: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n  errorTip?: string; // \u9519\u8bef\u63d0\u793a\n  name?: string; // \u56fe\u7247\u540d\u79f0\n  [index: string]: any;\n}\n\nexport default () => {\n  const [filesList, setFilesList] = useState<Array<Files>>([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    console.log('onChange', arr);\n    arr.forEach((item, index) => (item.name = `\u793a\u4f8b\u56fe${index}`));\n    setFilesList(arr);\n  };\n\n  // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n  const onUpload = (item: any): Promise<object | undefined> => {\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({ fssid: rate.toString().slice(-6) });\n        }\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n  };\n\n  return (\n    <ImagePicker\n      filesList={filesList}\n      onChange={onChange}\n      multiple\n      max={10}\n      mode=\"cover\"\n      onUpload={onUpload}\n    />\n  );\n};\n",
                 jsx:
-                  "import React, { useState } from 'react';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = arr => {\n    console.log('onChange', arr);\n    arr.forEach((item, index) => (item.name = `\u793a\u4f8b\u56fe${index}`));\n    setFilesList(arr);\n  }; // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n\n  const onUpload = () =>\n    new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({\n            fssid: rate.toString().slice(-6),\n          });\n        }\n\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n\n  return (\n    <ImagePicker\n      filesList={filesList}\n      onChange={onChange}\n      multiple\n      max={10}\n      mode=\"cover\"\n      onUpload={onUpload}\n    />\n  );\n};\n",
+                  "import React, { useState } from 'react';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]); // \u6570\u7ec4\u6539\u53d8\n\n  const onChange = arr => {\n    console.log('onChange', arr);\n    arr.forEach((item, index) => (item.name = `\u793a\u4f8b\u56fe${index}`));\n    setFilesList(arr);\n  }; // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n\n  const onUpload = item =>\n    new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({\n            fssid: rate.toString().slice(-6),\n          });\n        }\n\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n\n  return (\n    <ImagePicker\n      filesList={filesList}\n      onChange={onChange}\n      multiple\n      max={10}\n      mode=\"cover\"\n      onUpload={onUpload}\n    />\n  );\n};\n",
               },
             },
-            { dependencies: { 'eco-mobile': '1.0.22' }, files: {} },
+            {
+              path: '/_demos/on-upload',
+              dependencies: { 'eco-mobile': '1.0.26' },
+              files: {},
+            },
           ),
           r.a.createElement(s, null),
         ),
@@ -2563,24 +2603,25 @@
           ),
         ),
         r.a.createElement(
-          o.a,
+          i.a,
           Object(a['a'])(
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nimport { Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nconst iconIdCard = require('../assets/images/icon-idcard.png');\nconst iconIdCardBack = require('../assets/images/icon-idcard-back.png');\nconst iconPhoto = require('../assets/images/icon-photo.png');\n\nconst styles = createUseStyles({\n  root: {\n    boxSizing: 'border-box',\n    display: 'flex',\n  },\n  item: {\n    flex: 1,\n    '&:first-child': {\n      marginRight: '10px',\n    },\n  },\n  children: {\n    background: '#e8f1fc',\n    height: '90px',\n    position: 'relative',\n  },\n  img: {\n    width: '89px',\n    height: '57px',\n  },\n  iconPhoto: {\n    width: '32px',\n    height: '28px',\n    display: 'block',\n    position: 'absolute',\n    top: '50%',\n    left: '50%',\n    transform: 'translate(-50%, -50%)',\n    zIndex: 2,\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  interface Files {\n    url: string; // \u56fe\u7247url\n    loading: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n    errorTip?: string; // \u9519\u8bef\u63d0\u793a\n    name?: string; // \u56fe\u7247\u540d\u79f0\n    [index: string]: any;\n  }\n\n  const [idCard, setIdCard] = useState<Array<Files>>([\n    { name: '\u8eab\u4efd\u8bc1\u4eba\u50cf\u9762' },\n  ]);\n  const [idCardBack, setIdCardBack] = useState<Array<Files>>([\n    { name: '\u8eab\u4efd\u8bc1\u56fd\u5fbd\u9762' },\n  ]);\n\n  // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n  const onUpload = () => {\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({ fssid: rate.toString().slice(-6) });\n        }\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n  };\n\n  // \u4eba\u50cf\u9762\u6539\u53d8\n  const onChangeIdCard = (arr: Array<Files>) => {\n    console.log('onChange', arr);\n    if (arr.length === 0) {\n      arr.push({});\n    }\n    arr.forEach((item, index) => (item.name = '\u8eab\u4efd\u8bc1\u4eba\u50cf\u9762'));\n    setIdCard(arr);\n  };\n\n  // \u56fd\u5fbd\u9762\u6539\u53d8\n  const onChangeIdCardBack = (arr: Array<Files>) => {\n    console.log('onChange', arr);\n    if (arr.length === 0) {\n      arr.push({});\n    }\n    arr.forEach((item, index) => (item.name = '\u8eab\u4efd\u8bc1\u56fd\u5fbd\u9762'));\n    setIdCardBack(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <div className={s.item}>\n        <ImagePicker\n          filesList={idCard}\n          onChange={onChangeIdCard}\n          mode=\"cover\"\n          width=\"100%\"\n          height=\"90px\"\n          onUpload={onUpload}\n        >\n          <Flex className={s.children} justify=\"center\">\n            <img className={s.img} alt=\"\" src={iconIdCard} />\n            <img alt=\"\" className={s.iconPhoto} src={iconPhoto} />\n          </Flex>\n        </ImagePicker>\n      </div>\n      <div className={s.item}>\n        <ImagePicker\n          filesList={idCardBack}\n          onChange={onChangeIdCardBack}\n          mode=\"cover\"\n          width=\"100%\"\n          height=\"102px\"\n          onUpload={onUpload}\n        >\n          <Flex className={s.children} justify=\"center\">\n            <img className={s.img} alt=\"\" src={iconIdCardBack} />\n            <img alt=\"\" className={s.iconPhoto} src={iconPhoto} />\n          </Flex>\n        </ImagePicker>\n      </div>\n    </div>\n  );\n};",
+                  "import React, { useState } from 'react';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nimport { Flex } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nconst iconIdCard = require('../../assets/images/icon-idcard.png');\nconst iconIdCardBack = require('../../assets/images/icon-idcard-back.png');\nconst iconPhoto = require('../../assets/images/icon-photo.png');\n\nconst styles = createUseStyles({\n  root: {\n    boxSizing: 'border-box',\n    display: 'flex',\n  },\n  item: {\n    flex: 1,\n    '&:first-child': {\n      marginRight: '10px',\n    },\n  },\n  children: {\n    background: '#e8f1fc',\n    height: '90px',\n    position: 'relative',\n  },\n  img: {\n    width: '89px',\n    height: '57px',\n  },\n  iconPhoto: {\n    width: '32px',\n    height: '28px',\n    display: 'block',\n    position: 'absolute',\n    top: '50%',\n    left: '50%',\n    transform: 'translate(-50%, -50%)',\n    zIndex: 2,\n  },\n});\n\ninterface Files {\n  url: string; // \u56fe\u7247url\n  preview?: string; // \u9884\u89c8\u56fe\n  loading?: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n  errorTip?: string; // \u9519\u8bef\u63d0\u793a\n  name?: string; // \u56fe\u7247\u540d\u79f0\n  [index: string]: any;\n}\n\nexport default () => {\n  const s = styles();\n\n  const [idCard, setIdCard] = useState<Array<Files>>([]);\n  const [idCardBack, setIdCardBack] = useState<Array<Files>>([]);\n\n  // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n  const onUpload = (item: any): Promise<object | undefined> => {\n    console.log('onUpload', item);\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({ fssid: rate.toString().slice(-6) });\n        }\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n  };\n\n  // \u4eba\u50cf\u9762\u6539\u53d8\n  const onChangeIdCard = (arr: Array<Files>) => {\n    setIdCard(arr);\n  };\n\n  // \u56fd\u5fbd\u9762\u6539\u53d8\n  const onChangeIdCardBack = (arr: Array<Files>) => {\n    setIdCardBack(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <div className={s.item}>\n        <ImagePicker\n          filesList={idCard}\n          onChange={onChangeIdCard}\n          mode=\"cover\"\n          width=\"100%\"\n          height=\"90px\"\n          onUpload={onUpload}\n        >\n          <Flex className={s.children} justify=\"center\">\n            <img className={s.img} alt=\"\" src={iconIdCard} />\n            <img alt=\"\" className={s.iconPhoto} src={iconPhoto} />\n          </Flex>\n        </ImagePicker>\n      </div>\n      <div className={s.item}>\n        <ImagePicker\n          filesList={idCardBack}\n          onChange={onChangeIdCardBack}\n          mode=\"cover\"\n          width=\"100%\"\n          height=\"90px\"\n          onUpload={onUpload}\n        >\n          <Flex className={s.children} justify=\"center\">\n            <img className={s.img} alt=\"\" src={iconIdCardBack} />\n            <img alt=\"\" className={s.iconPhoto} src={iconPhoto} />\n          </Flex>\n        </ImagePicker>\n      </div>\n    </div>\n  );\n};\n",
                 jsx:
-                  "import React, { useState } from 'react';\nimport { createUseStyles } from '@wonder-ui/styles';\nimport { Flex } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nconst iconIdCard = require('../assets/images/icon-idcard.png');\n\nconst iconIdCardBack = require('../assets/images/icon-idcard-back.png');\n\nconst iconPhoto = require('../assets/images/icon-photo.png');\n\nconst styles = createUseStyles({\n  root: {\n    boxSizing: 'border-box',\n    display: 'flex',\n  },\n  item: {\n    flex: 1,\n    '&:first-child': {\n      marginRight: '10px',\n    },\n  },\n  children: {\n    background: '#e8f1fc',\n    height: '90px',\n    position: 'relative',\n  },\n  img: {\n    width: '89px',\n    height: '57px',\n  },\n  iconPhoto: {\n    width: '32px',\n    height: '28px',\n    display: 'block',\n    position: 'absolute',\n    top: '50%',\n    left: '50%',\n    transform: 'translate(-50%, -50%)',\n    zIndex: 2,\n  },\n});\nexport default () => {\n  const s = styles();\n  const [idCard, setIdCard] = useState([\n    {\n      name: '\u8eab\u4efd\u8bc1\u4eba\u50cf\u9762',\n    },\n  ]);\n  const [idCardBack, setIdCardBack] = useState([\n    {\n      name: '\u8eab\u4efd\u8bc1\u56fd\u5fbd\u9762',\n    },\n  ]); // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n\n  const onUpload = () =>\n    new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({\n            fssid: rate.toString().slice(-6),\n          });\n        }\n\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    }); // \u4eba\u50cf\u9762\u6539\u53d8\n\n  const onChangeIdCard = arr => {\n    console.log('onChange', arr);\n\n    if (arr.length === 0) {\n      arr.push({});\n    }\n\n    arr.forEach((item, index) => (item.name = '\u8eab\u4efd\u8bc1\u4eba\u50cf\u9762'));\n    setIdCard(arr);\n  }; // \u56fd\u5fbd\u9762\u6539\u53d8\n\n  const onChangeIdCardBack = arr => {\n    console.log('onChange', arr);\n\n    if (arr.length === 0) {\n      arr.push({});\n    }\n\n    arr.forEach((item, index) => (item.name = '\u8eab\u4efd\u8bc1\u56fd\u5fbd\u9762'));\n    setIdCardBack(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <div className={s.item}>\n        <ImagePicker\n          filesList={idCard}\n          onChange={onChangeIdCard}\n          mode=\"cover\"\n          width=\"100%\"\n          height=\"90px\"\n          onUpload={onUpload}\n        >\n          <Flex className={s.children} justify=\"center\">\n            <img className={s.img} alt=\"\" src={iconIdCard} />\n            <img alt=\"\" className={s.iconPhoto} src={iconPhoto} />\n          </Flex>\n        </ImagePicker>\n      </div>\n      <div className={s.item}>\n        <ImagePicker\n          filesList={idCardBack}\n          onChange={onChangeIdCardBack}\n          mode=\"cover\"\n          width=\"100%\"\n          height=\"102px\"\n          onUpload={onUpload}\n        >\n          <Flex className={s.children} justify=\"center\">\n            <img className={s.img} alt=\"\" src={iconIdCardBack} />\n            <img alt=\"\" className={s.iconPhoto} src={iconPhoto} />\n          </Flex>\n        </ImagePicker>\n      </div>\n    </div>\n  );\n};\n",
+                  "import React, { useState } from 'react';\nimport { createUseStyles } from '@wonder-ui/styles';\nimport { Flex } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nconst iconIdCard = require('../../assets/images/icon-idcard.png');\n\nconst iconIdCardBack = require('../../assets/images/icon-idcard-back.png');\n\nconst iconPhoto = require('../../assets/images/icon-photo.png');\n\nconst styles = createUseStyles({\n  root: {\n    boxSizing: 'border-box',\n    display: 'flex',\n  },\n  item: {\n    flex: 1,\n    '&:first-child': {\n      marginRight: '10px',\n    },\n  },\n  children: {\n    background: '#e8f1fc',\n    height: '90px',\n    position: 'relative',\n  },\n  img: {\n    width: '89px',\n    height: '57px',\n  },\n  iconPhoto: {\n    width: '32px',\n    height: '28px',\n    display: 'block',\n    position: 'absolute',\n    top: '50%',\n    left: '50%',\n    transform: 'translate(-50%, -50%)',\n    zIndex: 2,\n  },\n});\nexport default () => {\n  const s = styles();\n  const [idCard, setIdCard] = useState([]);\n  const [idCardBack, setIdCardBack] = useState([]); // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n\n  const onUpload = item => {\n    console.log('onUpload', item);\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({\n            fssid: rate.toString().slice(-6),\n          });\n        }\n\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n  }; // \u4eba\u50cf\u9762\u6539\u53d8\n\n  const onChangeIdCard = arr => {\n    setIdCard(arr);\n  }; // \u56fd\u5fbd\u9762\u6539\u53d8\n\n  const onChangeIdCardBack = arr => {\n    setIdCardBack(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <div className={s.item}>\n        <ImagePicker\n          filesList={idCard}\n          onChange={onChangeIdCard}\n          mode=\"cover\"\n          width=\"100%\"\n          height=\"90px\"\n          onUpload={onUpload}\n        >\n          <Flex className={s.children} justify=\"center\">\n            <img className={s.img} alt=\"\" src={iconIdCard} />\n            <img alt=\"\" className={s.iconPhoto} src={iconPhoto} />\n          </Flex>\n        </ImagePicker>\n      </div>\n      <div className={s.item}>\n        <ImagePicker\n          filesList={idCardBack}\n          onChange={onChangeIdCardBack}\n          mode=\"cover\"\n          width=\"100%\"\n          height=\"90px\"\n          onUpload={onUpload}\n        >\n          <Flex className={s.children} justify=\"center\">\n            <img className={s.img} alt=\"\" src={iconIdCardBack} />\n            <img alt=\"\" className={s.iconPhoto} src={iconPhoto} />\n          </Flex>\n        </ImagePicker>\n      </div>\n    </div>\n  );\n};\n",
               },
             },
             {
+              path: '/_demos/id-card',
               compact: !0,
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'eco-mobile': '1.0.22',
+                'eco-mobile': '1.0.26',
               },
               files: {},
             },
@@ -2609,19 +2650,20 @@
           ),
         ),
         r.a.createElement(
-          o.a,
+          i.a,
           Object(a['a'])(
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { Toast } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]);\n\n  interface Files {\n    url: string; // \u56fe\u7247url\n    loading: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n    errorTip?: string; // \u9519\u8bef\u63d0\u793a\n    name?: string; // \u56fe\u7247\u540d\u79f0\n    [index: string]: any;\n  }\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    console.log('onChange', arr);\n    arr.forEach((item, index) => (item.name = `\u793a\u4f8b\u56fe${index}`));\n    setFilesList(arr);\n  };\n\n  // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n  const onUpload = item => {\n    console.log('item', item);\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({ fssid: rate.toString().slice(-6) });\n        }\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n  };\n\n  // \u67e5\u770b\u5927\u56fe\u65b9\u6cd5\n  const onGetPreviewUrl = index => {\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      Toast.loading('Loading...');\n      setTimeout(() => {\n        Toast.hide();\n        resolve(filesList[index].url);\n      }, 1000);\n    });\n  };\n\n  return (\n    <ImagePicker\n      filesList={filesList}\n      onChange={onChange}\n      multiple\n      max={10}\n      mode=\"cover\"\n      onUpload={onUpload}\n      resize\n      width=\"18%\"\n      onGetPreviewUrl={onGetPreviewUrl}\n    />\n  );\n};",
+                  "import React, { useState } from 'react';\n\nimport { Toast } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\ninterface Files {\n  url: string; // \u56fe\u7247url\n  preview?: string; // \u9884\u89c8\u56fe\n  loading?: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n  errorTip?: string; // \u9519\u8bef\u63d0\u793a\n  name?: string; // \u56fe\u7247\u540d\u79f0\n  [index: string]: any;\n}\n\nexport default () => {\n  const [filesList, setFilesList] = useState<Array<Files>>([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    console.log('onChange', arr);\n    setFilesList(arr);\n  };\n\n  // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n  const onUpload = (item: any): Promise<object | undefined> => {\n    console.log('item', item);\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({ fssid: rate.toString().slice(-6) });\n        }\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n  };\n\n  // \u67e5\u770b\u5927\u56fe\u65b9\u6cd5\n  const onGetPreviewUrl = (index: number): Promise<string> => {\n    return new Promise((resolve, reject) => {\n      Toast.loading('Loading...');\n      setTimeout(() => {\n        Toast.hide();\n        resolve(filesList[index].url);\n      }, 1000);\n    });\n  };\n\n  return (\n    <ImagePicker\n      filesList={filesList}\n      onChange={onChange}\n      multiple\n      max={12}\n      mode=\"cover\"\n      onUpload={onUpload}\n      resize\n      width=\"22%\"\n      onGetPreviewUrl={onGetPreviewUrl}\n    />\n  );\n};\n",
                 jsx:
-                  "import React, { useState } from 'react';\nimport { Toast } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = arr => {\n    console.log('onChange', arr);\n    arr.forEach((item, index) => (item.name = `\u793a\u4f8b\u56fe${index}`));\n    setFilesList(arr);\n  }; // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n\n  const onUpload = item => {\n    console.log('item', item);\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({\n            fssid: rate.toString().slice(-6),\n          });\n        }\n\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n  }; // \u67e5\u770b\u5927\u56fe\u65b9\u6cd5\n\n  const onGetPreviewUrl = index =>\n    new Promise((resolve, reject) => {\n      const rate = Math.random();\n      Toast.loading('Loading...');\n      setTimeout(() => {\n        Toast.hide();\n        resolve(filesList[index].url);\n      }, 1000);\n    });\n\n  return (\n    <ImagePicker\n      filesList={filesList}\n      onChange={onChange}\n      multiple\n      max={10}\n      mode=\"cover\"\n      onUpload={onUpload}\n      resize\n      width=\"18%\"\n      onGetPreviewUrl={onGetPreviewUrl}\n    />\n  );\n};\n",
+                  "import React, { useState } from 'react';\nimport { Toast } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]); // \u6570\u7ec4\u6539\u53d8\n\n  const onChange = arr => {\n    console.log('onChange', arr);\n    setFilesList(arr);\n  }; // \u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5\n\n  const onUpload = item => {\n    console.log('item', item);\n    return new Promise((resolve, reject) => {\n      const rate = Math.random();\n      setTimeout(() => {\n        if (rate > 0.3) {\n          // \u6210\u529f\n          return resolve({\n            fssid: rate.toString().slice(-6),\n          });\n        }\n\n        reject('\u4e0a\u4f20\u5931\u8d25');\n      }, 3000);\n    });\n  }; // \u67e5\u770b\u5927\u56fe\u65b9\u6cd5\n\n  const onGetPreviewUrl = index =>\n    new Promise((resolve, reject) => {\n      Toast.loading('Loading...');\n      setTimeout(() => {\n        Toast.hide();\n        resolve(filesList[index].url);\n      }, 1000);\n    });\n\n  return (\n    <ImagePicker\n      filesList={filesList}\n      onChange={onChange}\n      multiple\n      max={12}\n      mode=\"cover\"\n      onUpload={onUpload}\n      resize\n      width=\"22%\"\n      onGetPreviewUrl={onGetPreviewUrl}\n    />\n  );\n};\n",
               },
             },
             {
+              path: '/_demos/resize',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.22' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.26' },
               files: {},
             },
           ),
@@ -2677,9 +2719,9 @@
                   null,
                   '\u56fe\u7247\u6587\u4ef6\u6570\u7ec4,\u5143\u7d20\u4e3a\u5bf9\u8c61,\u5305\u542b\u5c5e\u6027 ',
                   r.a.createElement('code', null, 'url'),
-                  ': \u56fe\u7247\u8def\u5f84(',
-                  r.a.createElement('code', null, '\u5fc5\u9009'),
-                  '), ',
+                  ': \u56fe\u7247\u8def\u5f84(\u5fc5\u586b), ',
+                  r.a.createElement('code', null, 'preview'),
+                  ': \u56fe\u7247\u9884\u89c8\u56fe, ',
                   r.a.createElement('code', null, 'loading'),
                   ': \u56fe\u7247\u52a0\u8f7d\u72b6\u6001, ',
                   r.a.createElement('code', null, 'errorTip'),
@@ -2743,10 +2785,26 @@
                   null,
                   '\u56fe\u7247\u5b9e\u65f6\u4e0a\u4f20\u65b9\u6cd5',
                 ),
+                r.a.createElement('td', null, '`(file) => Promise<object'),
+                r.a.createElement('td', null, 'undefined>`'),
+              ),
+              r.a.createElement(
+                'tr',
+                null,
+                r.a.createElement('td', null, 'onGetPreviewUrl'),
                 r.a.createElement(
                   'td',
                   null,
-                  r.a.createElement('code', null, '(file) => Promise'),
+                  '\u83b7\u53d6\u9884\u89c8\u56fe\u7247\u65b9\u6cd5',
+                ),
+                r.a.createElement(
+                  'td',
+                  null,
+                  r.a.createElement(
+                    'code',
+                    null,
+                    '(index: number) => Promise<string>',
+                  ),
                 ),
                 r.a.createElement('td', null, '-'),
               ),
@@ -3161,17 +3219,25 @@
     var a = t('bCY9'),
       l = (t('9Ihz'), t('FfOG')),
       r = t('HyNC'),
-      i = t('zlVK'),
-      o = t('VTBJ');
+      o = t('zlVK'),
+      i = t('VTBJ');
     function c() {
       var e = [
+        { path: '/_demos/base', component: t('M4Bu').default, exact: !0 },
+        { path: '/_demos/base-1', component: t('FKBv').default, exact: !0 },
+        { path: '/_demos/on-upload', component: t('jQK9').default, exact: !0 },
+        { path: '/_demos/id-card', component: t('CK2m').default, exact: !0 },
+        { path: '/_demos/resize', component: t('cazh').default, exact: !0 },
+        { path: '/_demos/base-2', component: t('UI3I').default, exact: !0 },
+        { path: '/_demos/extend', component: t('aGEZ').default, exact: !0 },
+        { path: '/_demos/out', component: t('YYIF').default, exact: !0 },
         {
           path: '/',
           component: e =>
             t('q1tI').createElement(
               t('09U7').default,
-              Object(o['a'])(
-                Object(o['a'])(
+              Object(i['a'])(
+                Object(i['a'])(
                   {},
                   {
                     menus: {
@@ -3254,7 +3320,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/image-picker/index.md',
-                updatedTime: 1609384996e3,
+                updatedTime: 1609755078e3,
                 group: {
                   title: 'ImagePicker \u56fe\u7247\u9009\u62e9\u5668',
                   path: '/image-picker',
@@ -3369,7 +3435,7 @@
                 defaultTitle: 'eco-mobile',
               },
             });
-            return Object(i['renderClient'])(n);
+            return Object(o['renderClient'])(n);
           },
           args: e,
         });

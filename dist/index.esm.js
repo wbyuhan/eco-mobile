@@ -197,9 +197,7 @@ var styles = createStyles({
     border: '1px solid #d56161',
     boxSizing: 'border-box',
     borderRadius: '5px',
-    padding: '0 8px',
-    wordBreak: 'keep-all',
-    textAlign: 'center',
+    padding: '0 3px',
   },
   iconRemove: {
     width: '20px',
@@ -216,7 +214,7 @@ var styles = createStyles({
     margin: '0 8px 8px 0',
   },
   noMargin: {
-    margin: 0,
+    margin: '0 0 8px 0',
   },
   name: {
     textAlign: 'center',
@@ -293,10 +291,10 @@ var styles = createStyles({
 var noon = function noon() {};
 
 var ImagePicker = function ImagePicker(props) {
-  var _props$filesList = props.filesList,
-    filesList = _props$filesList === void 0 ? [] : _props$filesList,
-    _props$classes = props.classes,
+  var _props$classes = props.classes,
     s = _props$classes === void 0 ? {} : _props$classes,
+    _props$filesList = props.filesList,
+    filesList = _props$filesList === void 0 ? [] : _props$filesList,
     _props$max = props.max,
     max = _props$max === void 0 ? 1 : _props$max,
     _props$onChange = props.onChange,
@@ -608,11 +606,17 @@ var ImagePicker = function ImagePicker(props) {
     if (filesList && filesList.length > 0 && rowNum > 1) {
       var restNum = filesList.length % rowNum;
 
-      if (restNum > 0 && restNum < rowNum - 1) {
+      if (restNum >= 0 && restNum <= rowNum - 1) {
         spaceNum = rowNum - restNum - 1;
+
+        if (filesList.length === max) {
+          spaceNum += 1;
+        }
       }
     }
-  } // parent样式
+  }
+
+  console.log('spaceNum', spaceNum); // parent样式
 
   var classParent = classnames(
     s.parent,

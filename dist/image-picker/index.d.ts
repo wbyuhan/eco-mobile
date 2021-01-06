@@ -12,7 +12,7 @@ interface Files {
 interface ImagePickerProps {
   filesList: Array<Files>;
   max?: number;
-  onChange?: (arr: Array<Files>) => any;
+  onChange?: (arr: Array<Files>) => void;
   onUpload?: (file: any) => Promise<object | undefined>;
   accept?: string;
   multiple?: boolean;
