@@ -6,6 +6,9 @@ import { createUseStyles } from '@wonder-ui/styles';
 const styles = createUseStyles({
   root: {
     width: '375px',
+    boxSizing: 'border-box',
+    padding: '0 16px 10px 9px',
+    background: '#fff',
   },
 });
 

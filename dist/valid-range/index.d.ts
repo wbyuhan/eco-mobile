@@ -19,6 +19,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
       unknown,
       | 'root'
+      | 'itemEnd'
       | 'datePicker'
       | 'dateValue'
       | 'forerverBox'

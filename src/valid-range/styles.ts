@@ -3,22 +3,38 @@ import { iconCheck } from '../assets/icon';
 
 const styles = createStyles({
   root: {
-    '& .am-list-item': {
-      '& .am-list-line': {
-        paddingRight: '8px',
-        '& .am-list-content, & .am-list-extra': {
-          fontSize: '15px !important',
+    '& .am-list': {
+      '& .am-list-body': {
+        '&:before': {
+          display: 'none',
         },
-        '& .am-list-content': {
-          width: '112px',
-          marginRight: '0px',
-          flex: 'initial',
+        '& .am-list-item': {
+          '& .am-list-line': {
+            paddingRight: '8px',
+            '& .am-list-content, & .am-list-extra': {
+              fontSize: '15px !important',
+            },
+            '& .am-list-content': {
+              color: '#333333',
+              width: '102px',
+              marginRight: '0px',
+              flex: 'initial',
+            },
+            '& .am-list-extra': {
+              color: 'rgba(51,51,51,0.40)',
+              flex: 1,
+              whiteSpace: 'normal',
+              textAlign: 'left !important',
+            },
+          },
         },
-        '& .am-list-extra': {
-          flex: 1,
-          whiteSpace: 'normal',
-          textAlign: 'left !important',
-        },
+      },
+    },
+  },
+  itemEnd: {
+    '& .am-list-line': {
+      '&:after': {
+        display: 'none !important',
       },
     },
   },
@@ -27,7 +43,7 @@ const styles = createStyles({
   },
   dateValue: {
     '& .am-list-extra': {
-      color: '#323232 !important',
+      color: '#757575 !important',
     },
   },
   forerverBox: {
@@ -35,7 +51,9 @@ const styles = createStyles({
     marginRight: '5px',
     position: 'relative',
     paddingLeft: '8px',
-    fontSize: '12px',
+    fontSize: '15px',
+    color: '#757570',
+    overflow: 'initial',
     '&:before': {
       content: '""',
       display: 'block',
@@ -43,23 +61,34 @@ const styles = createStyles({
       left: 0,
       top: '50%',
       transform: 'translateY(-50%)',
-      height: '15px',
+      height: '30px',
       width: '1px',
-      background: '#ddd',
+      background: '#F6F6F6',
     },
   },
   iconCheck: {
-    width: '15px',
-    height: '15px',
-    border: '1px solid #999',
+    width: '14px',
+    height: '14px',
+    border: '1px solid #538DED',
     borderRadius: '50%',
     marginRight: '5px',
     boxSizing: 'border-box',
+    position: 'relative',
   },
   iconChecked: {
-    border: 0,
-    backgroundImage: `url(${iconCheck})`,
-    backgroundSize: '100% 100%',
+    '&:after': {
+      content: '""',
+      display: 'block',
+      width: '7px',
+      height: '7px',
+      background: '#538DED',
+      borderRadius: '50%',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: 2,
+    },
   },
 });
 

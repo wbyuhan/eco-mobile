@@ -28,7 +28,7 @@ const ValidRange = (props: ValidRangeProps) => {
     classes: s = {},
     values = [],
     onChange = noon,
-    labels = ['证件起始日期:', '证件终止日期:'],
+    labels = ['证件起始日期', '证件终止日期'],
     titles = ['起始日期', '终止日期'],
     placeholders = ['请选择起始日期', '请选择终止日期'],
     forerverTxt = '长期',
@@ -103,15 +103,16 @@ const ValidRange = (props: ValidRangeProps) => {
               minDate={minDate}
               maxDate={maxDate}
             >
-              <Item arrow="horizontal">{labels[1]} </Item>
+              <Item className={s.itemEnd} arrow="horizontal">
+                {labels[1]}{' '}
+              </Item>
             </DatePicker>
           </div>
-          <Flex className={s.forerverBox}>
+          <Flex className={s.forerverBox} onClick={onCheckHandle}>
             <i
               className={classnames(s.iconCheck, {
                 [s.iconChecked as string]: check,
               })}
-              onClick={onCheckHandle}
             />
             <span>{forerverTxt}</span>
           </Flex>

@@ -160,8 +160,6 @@ var iconLoading =
   'data:image/png;base64,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';
 var iconRemove =
   'data:image/png;base64,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';
-var iconCheck =
-  'data:image/png;base64,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';
 
 var styles = createStyles({
   root: {
@@ -817,22 +815,38 @@ var judeDate = function judeDate(val) {
 
 var styles$1 = createStyles({
   root: {
-    '& .am-list-item': {
-      '& .am-list-line': {
-        paddingRight: '8px',
-        '& .am-list-content, & .am-list-extra': {
-          fontSize: '15px !important',
+    '& .am-list': {
+      '& .am-list-body': {
+        '&:before': {
+          display: 'none',
         },
-        '& .am-list-content': {
-          width: '112px',
-          marginRight: '0px',
-          flex: 'initial',
+        '& .am-list-item': {
+          '& .am-list-line': {
+            paddingRight: '8px',
+            '& .am-list-content, & .am-list-extra': {
+              fontSize: '15px !important',
+            },
+            '& .am-list-content': {
+              color: '#333333',
+              width: '102px',
+              marginRight: '0px',
+              flex: 'initial',
+            },
+            '& .am-list-extra': {
+              color: 'rgba(51,51,51,0.40)',
+              flex: 1,
+              whiteSpace: 'normal',
+              textAlign: 'left !important',
+            },
+          },
         },
-        '& .am-list-extra': {
-          flex: 1,
-          whiteSpace: 'normal',
-          textAlign: 'left !important',
-        },
+      },
+    },
+  },
+  itemEnd: {
+    '& .am-list-line': {
+      '&:after': {
+        display: 'none !important',
       },
     },
   },
@@ -841,7 +855,7 @@ var styles$1 = createStyles({
   },
   dateValue: {
     '& .am-list-extra': {
-      color: '#323232 !important',
+      color: '#757575 !important',
     },
   },
   forerverBox: {
@@ -849,7 +863,9 @@ var styles$1 = createStyles({
     marginRight: '5px',
     position: 'relative',
     paddingLeft: '8px',
-    fontSize: '12px',
+    fontSize: '15px',
+    color: '#757570',
+    overflow: 'initial',
     '&:before': {
       content: '""',
       display: 'block',
@@ -857,23 +873,34 @@ var styles$1 = createStyles({
       left: 0,
       top: '50%',
       transform: 'translateY(-50%)',
-      height: '15px',
+      height: '30px',
       width: '1px',
-      background: '#ddd',
+      background: '#F6F6F6',
     },
   },
   iconCheck: {
-    width: '15px',
-    height: '15px',
-    border: '1px solid #999',
+    width: '14px',
+    height: '14px',
+    border: '1px solid #538DED',
     borderRadius: '50%',
     marginRight: '5px',
     boxSizing: 'border-box',
+    position: 'relative',
   },
   iconChecked: {
-    border: 0,
-    backgroundImage: 'url('.concat(iconCheck, ')'),
-    backgroundSize: '100% 100%',
+    '&:after': {
+      content: '""',
+      display: 'block',
+      width: '7px',
+      height: '7px',
+      background: '#538DED',
+      borderRadius: '50%',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: 2,
+    },
   },
 });
 
@@ -891,7 +918,7 @@ var ValidRange = function ValidRange(props) {
     _props$labels = props.labels,
     labels =
       _props$labels === void 0
-        ? ['证件起始日期:', '证件终止日期:']
+        ? ['证件起始日期', '证件终止日期']
         : _props$labels,
     _props$titles = props.titles,
     titles =
@@ -1030,6 +1057,7 @@ var ValidRange = function ValidRange(props) {
             /*#__PURE__*/ React.createElement(
               Item,
               {
+                className: s.itemEnd,
                 arrow: 'horizontal',
               },
               labels[1],
@@ -1041,13 +1069,13 @@ var ValidRange = function ValidRange(props) {
           _Flex,
           {
             className: s.forerverBox,
+            onClick: onCheckHandle,
           },
           /*#__PURE__*/ React.createElement('i', {
             className: classnames(
               s.iconCheck,
               _defineProperty({}, s.iconChecked, check),
             ),
-            onClick: onCheckHandle,
           }),
           /*#__PURE__*/ React.createElement('span', null, forerverTxt),
         ),
