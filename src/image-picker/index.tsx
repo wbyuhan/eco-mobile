@@ -9,11 +9,11 @@ import styles from './styles';
 const noon = () => {};
 
 interface Files {
-  url: string; // 图片url
-  preview?: string; // 预览图
-  loading?: boolean; // 图片是否加载中
-  errorTip?: string; // 错误提示
-  name?: string; // 图片名称
+  url: string | null; // 图片url
+  preview?: string | null; // 预览图
+  loading?: boolean | null; // 图片是否加载中
+  errorTip?: string | null; // 错误提示
+  name?: string | null; // 图片名称
   [index: string]: any;
 }
 
@@ -24,6 +24,7 @@ interface ImagePickerProps {
   onUpload?: (file: any) => Promise<object | undefined>; // 图片上传方法
   accept?: string; // 选择的图片类型
   multiple?: boolean; // 是否多选
+  capture?: string; // 图片选择的方式
   width?: string; // 图片宽度，默认80px
   height?: string | number; // 图片高度，默认80px
   config?: string[]; // 图片的额外扩展项,defaultBackGround: 显示默认背景色, defaultDashed: 显示虚线边框, defaultBorder: 显示实线边框
@@ -45,6 +46,7 @@ const ImagePicker = (props: ImagePickerProps) => {
     onChange = noon,
     accept = 'image/*',
     multiple,
+    capture,
     width = '80px',
     height = '80px',
     config = ['defaultBorder'],
@@ -89,9 +91,11 @@ const ImagePicker = (props: ImagePickerProps) => {
 
   // init
   useEffect(() => {
-    const calcWidth = getComputedStyle(refDom.current).width;
-    setRealHeight(calcWidth);
-  }, []);
+    if (resize) {
+      const calcWidth = getComputedStyle(refDom.current).width;
+      setRealHeight(calcWidth);
+    }
+  }, [resize]);
 
   // 图片处理
   const parseFile = (file: any, index: number) => {
@@ -150,16 +154,25 @@ const ImagePicker = (props: ImagePickerProps) => {
             if (i >= index) {
               onUpload(item)
                 .then((res: any) => {
-                  Object.assign(item, res, { loading: false });
+                  refFilesList.current[i] = Object.assign(
+                    {},
+                    refFilesList.current[i],
+                    res,
+                    { loading: false },
+                  );
                   refFilesList.current = [...refFilesList.current];
                   setTimeout(() => onChange(refFilesList.current), 10);
                 })
                 .catch(err => {
-                  Object.assign(item, {
-                    url: '',
-                    loading: false,
-                    errorTip: err || '上传失败',
-                  });
+                  refFilesList.current[i] = Object.assign(
+                    {},
+                    refFilesList.current[i],
+                    {
+                      url: '',
+                      loading: false,
+                      errorTip: err || '上传失败',
+                    },
+                  );
                   refFilesList.current = [...refFilesList.current];
                   setTimeout(() => onChange(refFilesList.current), 10);
                 });
@@ -265,6 +278,7 @@ const ImagePicker = (props: ImagePickerProps) => {
         type="file"
         accept={accept}
         multiple={multiple}
+        capture={capture}
         onChange={onChangeHandle}
       />
       {filesList &&

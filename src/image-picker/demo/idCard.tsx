@@ -13,7 +13,6 @@ const iconPhoto = require('../../assets/images/icon-photo.png');
 
 const styles = createUseStyles({
   root: {
-    boxSizing: 'border-box',
     display: 'flex',
   },
   item: {
@@ -44,11 +43,11 @@ const styles = createUseStyles({
 });
 
 interface Files {
-  url: string; // 图片url
-  preview?: string; // 预览图
-  loading?: boolean; // 图片是否加载中
-  errorTip?: string; // 错误提示
-  name?: string; // 图片名称
+  url: string | null; // 图片url
+  preview?: string | null; // 预览图
+  loading?: boolean | null; // 图片是否加载中
+  errorTip?: string | null; // 错误提示
+  name?: string | null; // 图片名称
   [index: string]: any;
 }
 
@@ -75,6 +74,7 @@ export default () => {
 
   // 人像面改变
   const onChangeIdCard = (arr: Array<Files>) => {
+    console.log('onChangeIdCard', arr);
     setIdCard(arr);
   };
 

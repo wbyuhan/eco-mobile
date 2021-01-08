@@ -300,6 +300,7 @@ var ImagePicker = function ImagePicker(props) {
     _props$accept = props.accept,
     accept = _props$accept === void 0 ? 'image/*' : _props$accept,
     multiple = props.multiple,
+    capture = props.capture,
     _props$width = props.width,
     width = _props$width === void 0 ? '80px' : _props$width,
     _props$height = props.height,
@@ -362,10 +363,15 @@ var ImagePicker = function ImagePicker(props) {
     realHeight = _useState6[0],
     setRealHeight = _useState6[1]; // init
 
-  useEffect(function() {
-    var calcWidth = getComputedStyle(refDom.current).width;
-    setRealHeight(calcWidth);
-  }, []); // 图片处理
+  useEffect(
+    function() {
+      if (resize) {
+        var calcWidth = getComputedStyle(refDom.current).width;
+        setRealHeight(calcWidth);
+      }
+    },
+    [resize],
+  ); // 图片处理
 
   var parseFile = function parseFile(file, index) {
     return new Promise(function(resolve, reject) {
@@ -450,9 +456,14 @@ var ImagePicker = function ImagePicker(props) {
             if (_i >= index) {
               onUpload(item)
                 .then(function(res) {
-                  Object.assign(item, res, {
-                    loading: false,
-                  });
+                  refFilesList.current[_i] = Object.assign(
+                    {},
+                    refFilesList.current[_i],
+                    res,
+                    {
+                      loading: false,
+                    },
+                  );
                   refFilesList.current = _toConsumableArray(
                     refFilesList.current,
                   );
@@ -461,11 +472,15 @@ var ImagePicker = function ImagePicker(props) {
                   }, 10);
                 })
                 .catch(function(err) {
-                  Object.assign(item, {
-                    url: '',
-                    loading: false,
-                    errorTip: err || '上传失败',
-                  });
+                  refFilesList.current[_i] = Object.assign(
+                    {},
+                    refFilesList.current[_i],
+                    {
+                      url: '',
+                      loading: false,
+                      errorTip: err || '上传失败',
+                    },
+                  );
                   refFilesList.current = _toConsumableArray(
                     refFilesList.current,
                   );
@@ -638,6 +653,7 @@ var ImagePicker = function ImagePicker(props) {
       type: 'file',
       accept: accept,
       multiple: multiple,
+      capture: capture,
       onChange: onChangeHandle,
     }),
     filesList &&

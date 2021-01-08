@@ -2,11 +2,11 @@ import React from 'react';
 import { ClassKeysOfStyles } from '@wonder-ui/styles';
 import styles from './styles';
 interface Files {
-  url: string;
-  preview?: string;
-  loading?: boolean;
-  errorTip?: string;
-  name?: string;
+  url: string | null;
+  preview?: string | null;
+  loading?: boolean | null;
+  errorTip?: string | null;
+  name?: string | null;
   [index: string]: any;
 }
 interface ImagePickerProps {
@@ -16,6 +16,7 @@ interface ImagePickerProps {
   onUpload?: (file: any) => Promise<object | undefined>;
   accept?: string;
   multiple?: boolean;
+  capture?: string;
   width?: string;
   height?: string | number;
   config?: string[];
@@ -64,6 +65,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'onChange'
   | 'onUpload'
   | 'accept'
+  | 'capture'
   | 'config'
   | 'mode'
   | 'onFail'
