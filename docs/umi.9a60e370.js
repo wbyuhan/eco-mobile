@@ -96,7 +96,7 @@
       return j;
     }),
       t.d(n, 'c', function() {
-        return M;
+        return L;
       }),
       t.d(n, 'a', function() {
         return J;
@@ -112,8 +112,8 @@
       m = t('Wm/2'),
       u = t('TSYQ'),
       f = t.n(u),
-      p = t('U0F3'),
-      g = t.n(p),
+      g = t('U0F3'),
+      p = t.n(g),
       h =
         'data:image/png;base64,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',
       E =
@@ -229,8 +229,8 @@
           o = void 0 === a ? [] : a,
           m = e.max,
           u = void 0 === m ? 1 : m,
-          p = e.onChange,
-          h = void 0 === p ? A : p,
+          g = e.onChange,
+          h = void 0 === g ? A : g,
           E = e.accept,
           v = void 0 === E ? 'image/*' : E,
           b = e.multiple,
@@ -241,8 +241,8 @@
           C = e.config,
           w = void 0 === C ? ['defaultBorder'] : C,
           I = e.children,
-          S = e.mode,
-          D = void 0 === S ? 'fill' : S,
+          D = e.mode,
+          S = void 0 === D ? 'fill' : D,
           P = e.size,
           B = e.disabledPreview,
           O = e.onUpload,
@@ -251,10 +251,10 @@
           z = e.onGetPreviewUrl,
           U = e.resize,
           T = Object(s['useRef'])(null),
-          M = Object(s['useRef'])(null),
-          L = Object(s['useRef'])(o),
+          L = Object(s['useRef'])(null),
+          M = Object(s['useRef'])(o),
           V = [];
-        L.current.forEach(e => {
+        M.current.forEach(e => {
           e.preview ? V.push(e.preview) : e.url && V.push(e.url);
         });
         var F = Object(s['useMemo'])(() => {
@@ -279,7 +279,7 @@
           _ = G[0],
           $ = G[1];
         Object(s['useEffect'])(() => {
-          var e = getComputedStyle(M.current).width;
+          var e = getComputedStyle(L.current).width;
           $(e);
         }, []);
         var ee,
@@ -313,8 +313,8 @@
               o++
             )
               r.push(te(l[o], o));
-            L.current = L.current.filter(e => e.url || e.errorTip);
-            var c = L.current.length;
+            M.current = M.current.filter(e => e.url || e.errorTip);
+            var c = M.current.length;
             Promise.all(r)
               .then(e => {
                 'function' === typeof O && e.forEach(e => (e.loading = !0));
@@ -329,19 +329,19 @@
                     : e,
                 );
                 if (
-                  ((L.current = L.current.concat(t)),
-                  h(L.current),
+                  ((M.current = M.current.concat(t)),
+                  h(M.current),
                   'function' === typeof O)
                 )
                   for (
                     var a = function(e) {
-                        var n = L.current[e];
+                        var n = M.current[e];
                         e >= c &&
                           O(n)
                             .then(e => {
                               Object.assign(n, e, { loading: !1 }),
-                                (L.current = [...L.current]),
-                                setTimeout(() => h(L.current), 10);
+                                (M.current = [...M.current]),
+                                setTimeout(() => h(M.current), 10);
                             })
                             .catch(e => {
                               Object.assign(n, {
@@ -349,12 +349,12 @@
                                 loading: !1,
                                 errorTip: e || '\u4e0a\u4f20\u5931\u8d25',
                               }),
-                                (L.current = [...L.current]),
-                                setTimeout(() => h(L.current), 10);
+                                (M.current = [...M.current]),
+                                setTimeout(() => h(M.current), 10);
                             });
                       },
                       l = 0;
-                    l < L.current.length;
+                    l < M.current.length;
                     l++
                   )
                     a(l);
@@ -368,8 +368,8 @@
             T && T.current && T.current.click();
           },
           re = e => {
-            for (var n = !0, t = 0; t < L.current.length; t++) {
-              var a = L.current[t].loading;
+            for (var n = !0, t = 0; t < M.current.length; t++) {
+              var a = M.current[t].loading;
               if (a) {
                 n = !1;
                 break;
@@ -379,7 +379,7 @@
               return i.a.info(
                 '\u56fe\u7247\u4e0a\u4f20\u4e2d\uff0c\u8bf7\u7a0d\u540e\u64cd\u4f5c',
               );
-            L.current.splice(e, 1), (L.current = [...L.current]), h(L.current);
+            M.current.splice(e, 1), (M.current = [...M.current]), h(M.current);
           },
           oe = (function() {
             var e = Object(r['a'])(
@@ -395,16 +395,16 @@
                         }
                         return e.abrupt('return');
                       case 2:
-                        if (L.current[t].preview || 'function' !== typeof z) {
+                        if (M.current[t].preview || 'function' !== typeof z) {
                           e.next = 9;
                           break;
                         }
                         return (e.next = 5), z(t);
                       case 5:
                         (a = e.sent),
-                          (L.current[t].preview = a),
-                          (L.current = [...L.current]),
-                          h(L.current);
+                          (M.current[t].preview = a),
+                          (M.current = [...M.current]),
+                          h(M.current);
                       case 9:
                         W(n), ie();
                       case 11:
@@ -469,7 +469,7 @@
                   var u = c[m].errorTip;
                   u && s++;
                 }
-                var p = n - s;
+                var g = n - s;
                 return d.a.createElement(
                   'div',
                   { key: n, className: ue, style: { width: j } },
@@ -484,8 +484,8 @@
                         alt: '',
                         className: t.img,
                         src: a,
-                        style: { objectFit: D },
-                        onClick: () => oe(p, n),
+                        style: { objectFit: S },
+                        onClick: () => oe(g, n),
                       }),
                     i && d.a.createElement('div', { className: t.errorTip }, i),
                     d.a.createElement('i', {
@@ -506,7 +506,7 @@
           F < u &&
             d.a.createElement(
               'div',
-              { className: ue, style: { width: j }, ref: M, onClick: le },
+              { className: ue, style: { width: j }, ref: L, onClick: le },
               I ||
                 d.a.createElement('div', {
                   style: { height: ce },
@@ -531,7 +531,7 @@
                   style: { width: j },
                 }),
               ),
-          J && d.a.createElement(g.a, { onClose: ie, index: H, urls: V }),
+          J && d.a.createElement(p.a, { onClose: ie, index: H, urls: V }),
         );
       },
       j = Object(m['withStyles'])(b)(x),
@@ -540,9 +540,9 @@
       C = (t('DNw3'), t('rxJx')),
       w = t.n(C),
       I = (t('cn7L'), t('jeTP')),
-      S = t.n(I),
-      D = t('wd/R'),
-      P = t.n(D);
+      D = t.n(I),
+      S = t('wd/R'),
+      P = t.n(S);
     function B(e) {
       var n =
         arguments.length > 1 && void 0 !== arguments[1]
@@ -557,10 +557,11 @@
         root: {
           '& .am-list': {
             '& .am-list-body': {
-              '&:before': { display: 'none' },
+              '&:before, &:after': { display: 'none' },
               '& .am-list-item': {
+                paddingLeft: 0,
                 '& .am-list-line': {
-                  paddingRight: '8px',
+                  paddingRight: 0,
                   '& .am-list-content, & .am-list-extra': {
                     fontSize: '15px !important',
                   },
@@ -588,9 +589,9 @@
         dateValue: { '& .am-list-extra': { color: '#757575 !important' } },
         forerverBox: {
           whiteSpace: 'nowrap',
-          marginRight: '5px',
+          margin: '0 2px 0 13px',
           position: 'relative',
-          paddingLeft: '8px',
+          paddingLeft: '12px',
           fontSize: '15px',
           color: '#757570',
           overflow: 'initial',
@@ -611,7 +612,7 @@
           height: '14px',
           border: '1px solid #538DED',
           borderRadius: '50%',
-          marginRight: '5px',
+          marginRight: '4px',
           boxSizing: 'border-box',
           position: 'relative',
         },
@@ -632,7 +633,7 @@
         },
       }),
       R = N,
-      z = S.a.Item,
+      z = D.a.Item,
       U = () => {},
       T = e => {
         var n = e.classes,
@@ -649,11 +650,11 @@
                   '\u8bc1\u4ef6\u7ec8\u6b62\u65e5\u671f',
                 ]
               : m,
-          p = e.titles,
-          g =
-            void 0 === p
+          g = e.titles,
+          p =
+            void 0 === g
               ? ['\u8d77\u59cb\u65e5\u671f', '\u7ec8\u6b62\u65e5\u671f']
-              : p,
+              : g,
           h = e.placeholders,
           E =
             void 0 === h
@@ -670,8 +671,8 @@
           y = void 0 === j ? new Date(1980, 0, 1, 23, 59, 59) : j,
           C = e.maxDate,
           I = void 0 === C ? new Date(2100, 11, 30, 23, 59, 59) : C,
-          D = Object(s['useState'])(!1),
-          P = Object(c['a'])(D, 2),
+          S = Object(s['useState'])(!1),
+          P = Object(c['a'])(S, 2),
           N = P[0],
           R = P[1];
         Object(s['useEffect'])(() => {
@@ -682,19 +683,19 @@
               n = N ? 'unCheck' : 'check';
             o(e, n), R(e => !e);
           },
-          M = (e, n) => {
+          L = (e, n) => {
             var t = B(e),
               a = [];
             if ('start' === n) {
               if (t > l[1])
                 return i.a.info(
-                  ''.concat(g[0], '\u4e0d\u80fd\u5927\u4e8e').concat(g[1]),
+                  ''.concat(p[0], '\u4e0d\u80fd\u5927\u4e8e').concat(p[1]),
                 );
               a = [t, l[1]];
             } else {
               if (t < l[0])
                 return i.a.info(
-                  ''.concat(g[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(g[0]),
+                  ''.concat(p[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(p[0]),
                 );
               a = [l[0], t];
             }
@@ -704,7 +705,7 @@
           'div',
           { className: t.root },
           d.a.createElement(
-            S.a,
+            D.a,
             null,
             d.a.createElement(
               'div',
@@ -713,10 +714,10 @@
                 w.a,
                 {
                   mode: 'date',
-                  title: g[0],
+                  title: p[0],
                   extra: E[0],
                   value: O(l[0]),
-                  onChange: e => M(e, 'start'),
+                  onChange: e => L(e, 'start'),
                   minDate: y,
                   maxDate: I,
                 },
@@ -737,10 +738,10 @@
                   w.a,
                   {
                     mode: 'date',
-                    title: g[1],
+                    title: p[1],
                     extra: E[1],
                     value: l[1] === x ? void 0 : O(l[1]),
-                    onChange: e => M(e, 'end'),
+                    onChange: e => L(e, 'end'),
                     minDate: y,
                     maxDate: I,
                   },
@@ -764,8 +765,8 @@
           ),
         );
       },
-      M = Object(m['withStyles'])(R)(T),
-      L = Object(m['createStyles'])({
+      L = Object(m['withStyles'])(R)(T),
+      M = Object(m['createStyles'])({
         root: {
           '& .am-list-item': {
             border: '1px solid #F0F0F0',
@@ -788,8 +789,8 @@
         datePicker: { flex: 1 },
         dateValue: { '& .am-list-extra': { color: '#323232 !important' } },
       }),
-      V = L,
-      F = S.a.Item,
+      V = M,
+      F = D.a.Item,
       Q = () => {},
       Y = e => {
         var n = e.classes,
@@ -802,11 +803,11 @@
           s = void 0 === c ? [] : c,
           m = e.onChange,
           u = void 0 === m ? Q : m,
-          p = e.titles,
-          g =
-            void 0 === p
+          g = e.titles,
+          p =
+            void 0 === g
               ? ['\u8d77\u59cb\u65e5\u671f', '\u7ec8\u6b62\u65e5\u671f']
-              : p,
+              : g,
           h = e.placeholders,
           E =
             void 0 === h
@@ -827,13 +828,13 @@
             if ('start' === n) {
               if (t > s[1])
                 return i.a.info(
-                  ''.concat(g[0], '\u4e0d\u80fd\u5927\u4e8e').concat(g[1]),
+                  ''.concat(p[0], '\u4e0d\u80fd\u5927\u4e8e').concat(p[1]),
                 );
               a = [t, s[1]];
             } else {
               if (t < s[0])
                 return i.a.info(
-                  ''.concat(g[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(g[0]),
+                  ''.concat(p[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(p[0]),
                 );
               a = [s[0], t];
             }
@@ -858,7 +859,7 @@
                 w.a,
                 {
                   mode: 'date',
-                  title: g[0],
+                  title: p[0],
                   extra: E[0],
                   value: O(s[0]),
                   onChange: e => C(e, 'start'),
@@ -876,7 +877,7 @@
                 w.a,
                 {
                   mode: 'date',
-                  title: g[1],
+                  title: p[1],
                   extra: E[1],
                   value: O(s[1]),
                   onChange: e => C(e, 'end'),
@@ -943,10 +944,10 @@
         t = Object(r['a'])(n, 2),
         a = t[0],
         c = t[1],
-        p = Object(o['useState'])([]),
-        g = Object(r['a'])(p, 2),
-        h = g[0],
-        E = g[1],
+        g = Object(o['useState'])([]),
+        p = Object(r['a'])(g, 2),
+        h = p[0],
+        E = p[1],
         v = e =>
           new Promise((e, n) => {
             var t = Math.random();
@@ -1186,15 +1187,15 @@
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n    boxSizing: 'border-box',\n    padding: '0 16px 10px 9px',\n    background: '#fff'\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
+                  "import React, { useState } from 'react';\n\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [values, setValues] = useState<Array<string | undefined>>([]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
                 jsx:
-                  "import React, { useState } from 'react';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n    boxSizing: 'border-box',\n    padding: '0 16px 10px 9px',\n    background: '#fff',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [values, setValues] = useState([]); // \u65e5\u671f\u6539\u53d8\n\n  const onChange = (arr, type) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
+                  "import React, { useState } from 'react';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [values, setValues] = useState([]); // \u65e5\u671f\u6539\u53d8\n\n  const onChange = (arr, type) => {\n    console.log('onChange', arr, type);\n    setValues(arr);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange values={values} onChange={onChange} />\n    </div>\n  );\n};\n",
               },
             },
             {
               path: '/_demos/base-2',
               dependencies: {
-                'eco-mobile': '1.0.28',
+                'eco-mobile': '1.0.29',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1236,7 +1237,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.28',
+                'eco-mobile': '1.0.29',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1279,7 +1280,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.28',
+                'eco-mobile': '1.0.29',
                 moment: '2.29.1',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
@@ -1864,14 +1865,7 @@
       r = t.n(l),
       o = t('2YZa'),
       i = t('Wm/2'),
-      c = Object(i['createUseStyles'])({
-        root: {
-          width: '375px',
-          boxSizing: 'border-box',
-          padding: '0 16px 10px 9px',
-          background: '#fff',
-        },
-      });
+      c = Object(i['createUseStyles'])({ root: { width: '375px' } });
     n['default'] = () => {
       var e = c(),
         n = Object(l['useState'])([]),
@@ -1950,7 +1944,7 @@
             {
               path: '/_demos/base',
               dependencies: {
-                'eco-mobile': '1.0.28',
+                'eco-mobile': '1.0.29',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -2575,7 +2569,7 @@
             {
               path: '/_demos/base-1',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.28' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.29' },
               files: {},
             },
           ),
@@ -2611,7 +2605,7 @@
             },
             {
               path: '/_demos/on-upload',
-              dependencies: { 'eco-mobile': '1.0.28' },
+              dependencies: { 'eco-mobile': '1.0.29' },
               files: {},
             },
           ),
@@ -2653,7 +2647,7 @@
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'eco-mobile': '1.0.28',
+                'eco-mobile': '1.0.29',
               },
               files: {},
             },
@@ -2695,7 +2689,7 @@
             {
               path: '/_demos/resize',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.28' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.29' },
               files: {},
             },
           ),

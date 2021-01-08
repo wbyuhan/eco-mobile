@@ -837,12 +837,13 @@ var styles$1 = styles$3.createStyles({
   root: {
     '& .am-list': {
       '& .am-list-body': {
-        '&:before': {
+        '&:before, &:after': {
           display: 'none',
         },
         '& .am-list-item': {
+          paddingLeft: 0,
           '& .am-list-line': {
-            paddingRight: '8px',
+            paddingRight: 0,
             '& .am-list-content, & .am-list-extra': {
               fontSize: '15px !important',
             },
@@ -880,9 +881,9 @@ var styles$1 = styles$3.createStyles({
   },
   forerverBox: {
     whiteSpace: 'nowrap',
-    marginRight: '5px',
+    margin: '0 2px 0 13px',
     position: 'relative',
-    paddingLeft: '8px',
+    paddingLeft: '12px',
     fontSize: '15px',
     color: '#757570',
     overflow: 'initial',
@@ -903,7 +904,7 @@ var styles$1 = styles$3.createStyles({
     height: '14px',
     border: '1px solid #538DED',
     borderRadius: '50%',
-    marginRight: '5px',
+    marginRight: '4px',
     boxSizing: 'border-box',
     position: 'relative',
   },
