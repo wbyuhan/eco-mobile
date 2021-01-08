@@ -45,7 +45,7 @@ const styles = createStyles({
   },
   dateValue: {
     '& .am-list-extra': {
-      color: '#757575 !important',
+      color: '#333333 !important',
     },
   },
   forerverBox: {
