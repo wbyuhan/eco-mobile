@@ -842,6 +842,7 @@ var styles$1 = styles$3.createStyles({
         },
         '& .am-list-item': {
           paddingLeft: 0,
+          minHeight: '50px',
           '& .am-list-line': {
             paddingRight: 0,
             '& .am-list-content, & .am-list-extra': {

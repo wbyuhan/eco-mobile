@@ -4,7 +4,7 @@ import styles from './styles';
 interface ValidRangeProps {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
   values?: Array<string | undefined>;
-  onChange?: (values: Array<string | undefined>, type?: string) => any;
+  onChange?: (values: Array<string | undefined>, type?: string) => void;
   labels?: string[];
   titles?: string[];
   placeholders?: string[];

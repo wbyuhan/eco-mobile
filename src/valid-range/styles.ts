@@ -10,6 +10,7 @@ const styles = createStyles({
         },
         '& .am-list-item': {
           paddingLeft: 0,
+          minHeight: '50px',
           '& .am-list-line': {
             paddingRight: 0,
             '& .am-list-content, & .am-list-extra': {

@@ -15,7 +15,7 @@ interface DateRangeProps {
   label?: string;
   tip?: string;
   values?: Array<string | undefined>;
-  onChange?: (values: Array<string | undefined>, type?: string) => any;
+  onChange?: (values: Array<string | undefined>, type?: string) => void;
   titles?: string[];
   placeholders?: string[];
   minDate?: Date;
