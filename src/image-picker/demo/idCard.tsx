@@ -43,11 +43,11 @@ const styles = createUseStyles({
 });
 
 interface Files {
-  url: string | null; // 图片url
-  preview?: string | null; // 预览图
-  loading?: boolean | null; // 图片是否加载中
-  errorTip?: string | null; // 错误提示
-  name?: string | null; // 图片名称
+  url: string; // 图片url
+  preview?: string; // 预览图
+  loading?: boolean; // 图片是否加载中
+  errorTip?: string; // 错误提示
+  name?: string; // 图片名称
   [index: string]: any;
 }
 

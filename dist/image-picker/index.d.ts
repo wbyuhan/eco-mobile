@@ -2,11 +2,11 @@ import React from 'react';
 import { ClassKeysOfStyles } from '@wonder-ui/styles';
 import styles from './styles';
 interface Files {
-  url: string | null;
-  preview?: string | null;
-  loading?: boolean | null;
-  errorTip?: string | null;
-  name?: string | null;
+  url: string;
+  preview?: string;
+  loading?: boolean;
+  errorTip?: string;
+  name?: string;
   [index: string]: any;
 }
 interface ImagePickerProps {
