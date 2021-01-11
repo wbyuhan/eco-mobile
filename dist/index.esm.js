@@ -1,6 +1,6 @@
 import 'antd-mobile/lib/toast/style/css';
 import _Toast from 'antd-mobile/lib/toast';
-import React, { useRef, useMemo, useState, useEffect } from 'react';
+import React, { forwardRef, useRef, useMemo, useState, useEffect } from 'react';
 import { createStyles, withStyles } from '@wonder-ui/styles';
 import classnames from 'classnames';
 import WxImageViewer from 'react-wx-images-viewer';
@@ -288,7 +288,7 @@ var styles = createStyles({
 
 var noon = function noon() {};
 
-var ImagePicker = function ImagePicker(props) {
+var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
   var _props$classes = props.classes,
     s = _props$classes === void 0 ? {} : _props$classes,
     _props$filesList = props.filesList,
@@ -317,8 +317,8 @@ var ImagePicker = function ImagePicker(props) {
     onFail = _props$onFail === void 0 ? noon : _props$onFail,
     onGetPreviewUrl = props.onGetPreviewUrl,
     resize = props.resize;
-  var ref = useRef(null);
-  var refDom = useRef(null);
+  var refInput = ref || useRef(null);
+  var refSelectDom = useRef(null);
   var refFilesList = useRef(filesList);
   var urlList = [];
   refFilesList.current.forEach(function(item) {
@@ -366,7 +366,7 @@ var ImagePicker = function ImagePicker(props) {
   useEffect(
     function() {
       if (resize) {
-        var calcWidth = getComputedStyle(refDom.current).width;
+        var calcWidth = getComputedStyle(refSelectDom.current).width;
         setRealHeight(calcWidth);
       }
     },
@@ -505,7 +505,7 @@ var ImagePicker = function ImagePicker(props) {
   }; // 选择图片
 
   var inputClick = function inputClick() {
-    ref && ref.current && ref.current.click();
+    refInput && refInput.current && refInput.current.click();
   }; // 删除图片
 
   var onRemove = function onRemove(index) {
@@ -649,7 +649,7 @@ var ImagePicker = function ImagePicker(props) {
     },
     /*#__PURE__*/ React.createElement('input', {
       className: s.hidden,
-      ref: ref,
+      ref: refInput,
       type: 'file',
       accept: accept,
       multiple: multiple,
@@ -759,7 +759,7 @@ var ImagePicker = function ImagePicker(props) {
           style: {
             width: width,
           },
-          ref: refDom,
+          ref: refSelectDom,
           onClick: inputClick,
         },
         children
@@ -808,8 +808,7 @@ var ImagePicker = function ImagePicker(props) {
         urls: urlList,
       }),
   );
-};
-
+});
 var index = withStyles(styles)(ImagePicker);
 
 /**

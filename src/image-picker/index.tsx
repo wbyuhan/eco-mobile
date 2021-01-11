@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, forwardRef } from 'react';
 import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
 import classnames from 'classnames';
 import WxImageViewer from 'react-wx-images-viewer';
@@ -38,7 +38,7 @@ interface ImagePickerProps {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
 
-const ImagePicker = (props: ImagePickerProps) => {
+const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
   const {
     classes: s = {},
     filesList = [],
@@ -60,8 +60,8 @@ const ImagePicker = (props: ImagePickerProps) => {
     resize,
   } = props;
 
-  const ref = useRef<any>(null);
-  const refDom = useRef<any>(null);
+  const refInput = ref || useRef<any>(null);
+  const refSelectDom = useRef<any>(null);
   const refFilesList = useRef<Array<Files>>(filesList);
 
   const urlList: string[] = [];
@@ -92,7 +92,7 @@ const ImagePicker = (props: ImagePickerProps) => {
   // init
   useEffect(() => {
     if (resize) {
-      const calcWidth = getComputedStyle(refDom.current).width;
+      const calcWidth = getComputedStyle(refSelectDom.current).width;
       setRealHeight(calcWidth);
     }
   }, [resize]);
@@ -189,7 +189,7 @@ const ImagePicker = (props: ImagePickerProps) => {
 
   // 选择图片
   const inputClick = () => {
-    ref && ref.current && ref.current.click();
+    refInput && refInput.current && refInput.current.click();
   };
 
   // 删除图片
@@ -274,7 +274,7 @@ const ImagePicker = (props: ImagePickerProps) => {
     >
       <input
         className={s.hidden}
-        ref={ref}
+        ref={refInput}
         type="file"
         accept={accept}
         multiple={multiple}
@@ -332,7 +332,7 @@ const ImagePicker = (props: ImagePickerProps) => {
         <div
           className={classParent}
           style={{ width }}
-          ref={refDom}
+          ref={refSelectDom}
           onClick={inputClick}
         >
           {children ? (
@@ -363,6 +363,6 @@ const ImagePicker = (props: ImagePickerProps) => {
       )}
     </div>
   );
-};
+});
 
 export default withStyles(styles)(ImagePicker);

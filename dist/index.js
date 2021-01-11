@@ -305,7 +305,7 @@ var styles = styles$3.createStyles({
 
 var noon = function noon() {};
 
-var ImagePicker = function ImagePicker(props) {
+var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
   var _props$classes = props.classes,
     s = _props$classes === void 0 ? {} : _props$classes,
     _props$filesList = props.filesList,
@@ -334,8 +334,8 @@ var ImagePicker = function ImagePicker(props) {
     onFail = _props$onFail === void 0 ? noon : _props$onFail,
     onGetPreviewUrl = props.onGetPreviewUrl,
     resize = props.resize;
-  var ref = React.useRef(null);
-  var refDom = React.useRef(null);
+  var refInput = ref || React.useRef(null);
+  var refSelectDom = React.useRef(null);
   var refFilesList = React.useRef(filesList);
   var urlList = [];
   refFilesList.current.forEach(function(item) {
@@ -383,7 +383,7 @@ var ImagePicker = function ImagePicker(props) {
   React.useEffect(
     function() {
       if (resize) {
-        var calcWidth = getComputedStyle(refDom.current).width;
+        var calcWidth = getComputedStyle(refSelectDom.current).width;
         setRealHeight(calcWidth);
       }
     },
@@ -522,7 +522,7 @@ var ImagePicker = function ImagePicker(props) {
   }; // 选择图片
 
   var inputClick = function inputClick() {
-    ref && ref.current && ref.current.click();
+    refInput && refInput.current && refInput.current.click();
   }; // 删除图片
 
   var onRemove = function onRemove(index) {
@@ -666,7 +666,7 @@ var ImagePicker = function ImagePicker(props) {
     },
     /*#__PURE__*/ React__default['default'].createElement('input', {
       className: s.hidden,
-      ref: ref,
+      ref: refInput,
       type: 'file',
       accept: accept,
       multiple: multiple,
@@ -776,7 +776,7 @@ var ImagePicker = function ImagePicker(props) {
           style: {
             width: width,
           },
-          ref: refDom,
+          ref: refSelectDom,
           onClick: inputClick,
         },
         children
@@ -828,8 +828,7 @@ var ImagePicker = function ImagePicker(props) {
         },
       ),
   );
-};
-
+});
 var index = styles$3.withStyles(styles)(ImagePicker);
 
 /**

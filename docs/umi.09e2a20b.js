@@ -222,72 +222,72 @@
       }),
       b = v,
       A = () => {},
-      x = e => {
-        var n = e.classes,
-          t = void 0 === n ? {} : n,
-          a = e.filesList,
-          o = void 0 === a ? [] : a,
-          m = e.max,
-          u = void 0 === m ? 1 : m,
-          p = e.onChange,
-          h = void 0 === p ? A : p,
-          E = e.accept,
-          v = void 0 === E ? 'image/*' : E,
-          b = e.multiple,
-          x = e.capture,
-          j = e.width,
-          y = void 0 === j ? '80px' : j,
-          k = e.height,
-          C = void 0 === k ? '80px' : k,
-          w = e.config,
-          I = void 0 === w ? ['defaultBorder'] : w,
-          D = e.children,
-          S = e.mode,
-          P = void 0 === S ? 'fill' : S,
-          B = e.size,
-          O = e.disabledPreview,
-          N = e.onUpload,
-          R = e.onFail,
-          z = void 0 === R ? A : R,
-          U = e.onGetPreviewUrl,
-          T = e.resize,
-          L = Object(s['useRef'])(null),
-          M = Object(s['useRef'])(null),
-          V = Object(s['useRef'])(o),
-          F = [];
-        V.current.forEach(e => {
-          e.preview ? F.push(e.preview) : e.url && F.push(e.url);
+      x = Object(s['forwardRef'])((e, n) => {
+        var t = e.classes,
+          a = void 0 === t ? {} : t,
+          o = e.filesList,
+          m = void 0 === o ? [] : o,
+          u = e.max,
+          p = void 0 === u ? 1 : u,
+          h = e.onChange,
+          E = void 0 === h ? A : h,
+          v = e.accept,
+          b = void 0 === v ? 'image/*' : v,
+          x = e.multiple,
+          j = e.capture,
+          y = e.width,
+          k = void 0 === y ? '80px' : y,
+          C = e.height,
+          w = void 0 === C ? '80px' : C,
+          I = e.config,
+          D = void 0 === I ? ['defaultBorder'] : I,
+          S = e.children,
+          P = e.mode,
+          B = void 0 === P ? 'fill' : P,
+          O = e.size,
+          N = e.disabledPreview,
+          R = e.onUpload,
+          z = e.onFail,
+          U = void 0 === z ? A : z,
+          T = e.onGetPreviewUrl,
+          L = e.resize,
+          M = n || Object(s['useRef'])(null),
+          V = Object(s['useRef'])(null),
+          F = Object(s['useRef'])(m),
+          Q = [];
+        F.current.forEach(e => {
+          e.preview ? Q.push(e.preview) : e.url && Q.push(e.url);
         });
-        var Q = Object(s['useMemo'])(() => {
-            for (var e = 0, n = 0; n < o.length; n++) {
-              var t = o[n],
+        var Y = Object(s['useMemo'])(() => {
+            for (var e = 0, n = 0; n < m.length; n++) {
+              var t = m[n],
                 a = t.url,
                 l = t.errorTip;
               (a || l) && e++;
             }
             return e;
-          }, [o]),
-          Y = Object(s['useState'])(!1),
-          J = Object(c['a'])(Y, 2),
-          q = J[0],
-          X = J[1],
-          K = Object(s['useState'])(0),
-          H = Object(c['a'])(K, 2),
-          W = H[0],
-          Z = H[1],
-          G = Object(s['useState'])(''),
-          _ = Object(c['a'])(G, 2),
-          $ = _[0],
-          ee = _[1];
+          }, [m]),
+          J = Object(s['useState'])(!1),
+          q = Object(c['a'])(J, 2),
+          X = q[0],
+          K = q[1],
+          H = Object(s['useState'])(0),
+          W = Object(c['a'])(H, 2),
+          Z = W[0],
+          G = W[1],
+          _ = Object(s['useState'])(''),
+          $ = Object(c['a'])(_, 2),
+          ee = $[0],
+          ne = $[1];
         Object(s['useEffect'])(() => {
-          if (T) {
-            var e = getComputedStyle(M.current).width;
-            ee(e);
+          if (L) {
+            var e = getComputedStyle(V.current).width;
+            ne(e);
           }
-        }, [T]);
-        var ne,
-          te,
-          ae = (e, n) =>
+        }, [L]);
+        var te,
+          ae,
+          le = (e, n) =>
             new Promise((t, a) => {
               var l = new FileReader();
               (l.onload = l => {
@@ -298,15 +298,15 @@
               }),
                 l.readAsDataURL(e);
             }),
-          le = e => {
+          re = e => {
             var n = e.target,
               t = n.files;
             if (!t || !t.length) return (n.value = '');
-            var a = u - Q;
+            var a = p - Y;
             t.length > a &&
               i.a.info(
                 '\u56fe\u7247\u6700\u591a\u4e0d\u8d85\u8fc7'.concat(
-                  u,
+                  p,
                   '\u5f20',
                 ),
               );
@@ -315,69 +315,69 @@
               o < l.length;
               o++
             )
-              r.push(ae(l[o], o));
-            V.current = V.current.filter(e => e.url || e.errorTip);
-            var c = V.current.length;
+              r.push(le(l[o], o));
+            F.current = F.current.filter(e => e.url || e.errorTip);
+            var c = F.current.length;
             Promise.all(r)
               .then(e => {
-                'function' === typeof N && e.forEach(e => (e.loading = !0));
+                'function' === typeof R && e.forEach(e => (e.loading = !0));
                 var t = e.filter(e =>
-                  B && e.file.size > 1024 * B * 1024
+                  O && e.file.size > 1024 * O * 1024
                     ? i.a.info(
                         '\u56fe\u7247\u5927\u5c0f\u4e0d\u80fd\u8d85\u8fc7'.concat(
-                          B,
+                          O,
                           'M',
                         ),
                       )
                     : e,
                 );
                 if (
-                  ((V.current = V.current.concat(t)),
-                  h(V.current),
-                  'function' === typeof N)
+                  ((F.current = F.current.concat(t)),
+                  E(F.current),
+                  'function' === typeof R)
                 )
                   for (
                     var a = function(e) {
-                        var n = V.current[e];
+                        var n = F.current[e];
                         e >= c &&
-                          N(n)
+                          R(n)
                             .then(n => {
-                              (V.current[e] = Object.assign(
+                              (F.current[e] = Object.assign(
                                 {},
-                                V.current[e],
+                                F.current[e],
                                 n,
                                 { loading: !1 },
                               )),
-                                (V.current = [...V.current]),
-                                setTimeout(() => h(V.current), 10);
+                                (F.current = [...F.current]),
+                                setTimeout(() => E(F.current), 10);
                             })
                             .catch(n => {
-                              (V.current[e] = Object.assign({}, V.current[e], {
+                              (F.current[e] = Object.assign({}, F.current[e], {
                                 url: '',
                                 loading: !1,
                                 errorTip: n || '\u4e0a\u4f20\u5931\u8d25',
                               })),
-                                (V.current = [...V.current]),
-                                setTimeout(() => h(V.current), 10);
+                                (F.current = [...F.current]),
+                                setTimeout(() => E(F.current), 10);
                             });
                       },
                       l = 0;
-                    l < V.current.length;
+                    l < F.current.length;
                     l++
                   )
                     a(l);
                 n.value = '';
               })
               .catch(e => {
-                z(e), (n.value = '');
+                U(e), (n.value = '');
               });
           },
-          re = () => {
-            L && L.current && L.current.click();
+          oe = () => {
+            M && M.current && M.current.click();
           },
-          oe = e => {
-            for (var n = !0, t = 0; t < V.current.length; t++) {
-              var a = V.current[t].loading;
+          ie = e => {
+            for (var n = !0, t = 0; t < F.current.length; t++) {
+              var a = F.current[t].loading;
               if (a) {
                 n = !1;
                 break;
@@ -387,9 +387,9 @@
               return i.a.info(
                 '\u56fe\u7247\u4e0a\u4f20\u4e2d\uff0c\u8bf7\u7a0d\u540e\u64cd\u4f5c',
               );
-            V.current.splice(e, 1), (V.current = [...V.current]), h(V.current);
+            F.current.splice(e, 1), (F.current = [...F.current]), E(F.current);
           },
-          ie = (function() {
+          ce = (function() {
             var e = Object(r['a'])(
               l.a.mark(function e(n, t) {
                 var a;
@@ -397,24 +397,24 @@
                   while (1)
                     switch ((e.prev = e.next)) {
                       case 0:
-                        if (!O) {
+                        if (!N) {
                           e.next = 2;
                           break;
                         }
                         return e.abrupt('return');
                       case 2:
-                        if (V.current[t].preview || 'function' !== typeof U) {
+                        if (F.current[t].preview || 'function' !== typeof T) {
                           e.next = 9;
                           break;
                         }
-                        return (e.next = 5), U(t);
+                        return (e.next = 5), T(t);
                       case 5:
                         (a = e.sent),
-                          (V.current[t].preview = a),
-                          (V.current = [...V.current]),
-                          h(V.current);
+                          (F.current[t].preview = a),
+                          (F.current = [...F.current]),
+                          E(F.current);
                       case 9:
-                        Z(n), ce();
+                        G(n), se();
                       case 11:
                       case 'end':
                         return e.stop();
@@ -426,123 +426,123 @@
               return e.apply(this, arguments);
             };
           })(),
-          ce = () => X(e => !e);
+          se = () => K(e => !e);
         (function(e) {
           (e['defaultBorder'] = 'defaultBorder'),
             (e['defaultBackGround'] = 'defaultBackGround'),
             (e['defaultDashed'] = 'defaultDashed');
-        })(ne || (ne = {})),
+        })(te || (te = {})),
           (function(e) {
             (e['fill'] = 'fill'),
               (e['cover'] = 'cover'),
               (e['contain'] = 'contain'),
               (e['scale-down'] = 'scale-down');
-          })(te || (te = {}));
-        var se = T ? $ : C,
-          de = 0;
-        if (T) {
-          var me = Math.floor(100 / parseFloat(y));
-          if (o && o.length > 0 && me > 1) {
-            var ue = o.length % me;
-            ue >= 0 &&
-              ue <= me - 1 &&
-              ((de = me - ue - 1), o.length === u && (de += 1));
+          })(ae || (ae = {}));
+        var de = L ? ee : w,
+          me = 0;
+        if (L) {
+          var ue = Math.floor(100 / parseFloat(k));
+          if (m && m.length > 0 && ue > 1) {
+            var fe = m.length % ue;
+            fe >= 0 &&
+              fe <= ue - 1 &&
+              ((me = ue - fe - 1), m.length === p && (me += 1));
           }
         }
-        var fe = f()(t.parent, { [t.noMargin]: 1 === u || o.length < 1 || T });
+        var pe = f()(a.parent, { [a.noMargin]: 1 === p || m.length < 1 || L });
         return d.a.createElement(
           'div',
-          { className: f()(t.root, { [t.justifyContent]: T }) },
+          { className: f()(a.root, { [a.justifyContent]: L }) },
           d.a.createElement('input', {
-            className: t.hidden,
-            ref: L,
+            className: a.hidden,
+            ref: M,
             type: 'file',
-            accept: v,
-            multiple: b,
-            capture: x,
-            onChange: le,
+            accept: b,
+            multiple: x,
+            capture: j,
+            onChange: re,
           }),
-          o &&
-            o.length > 0 &&
-            o.map((e, n) => {
-              var a = e.url,
+          m &&
+            m.length > 0 &&
+            m.map((e, n) => {
+              var t = e.url,
                 l = e.loading,
                 r = e.name,
-                i = e.errorTip;
-              if (a || i) {
+                o = e.errorTip;
+              if (t || o) {
                 for (
-                  var c = o.slice(0, n + 1), s = 0, m = 0;
-                  m < c.length;
-                  m++
+                  var i = m.slice(0, n + 1), c = 0, s = 0;
+                  s < i.length;
+                  s++
                 ) {
-                  var u = c[m].errorTip;
-                  u && s++;
+                  var u = i[s].errorTip;
+                  u && c++;
                 }
-                var p = n - s;
+                var p = n - c;
                 return d.a.createElement(
                   'div',
-                  { key: n, className: fe, style: { width: y } },
+                  { key: n, className: pe, style: { width: k } },
                   d.a.createElement(
                     'div',
                     {
-                      className: f()(t.imgBox, ...I.map(e => t[e])),
-                      style: { height: se },
+                      className: f()(a.imgBox, ...D.map(e => a[e])),
+                      style: { height: de },
                     },
-                    a &&
+                    t &&
                       d.a.createElement('img', {
                         alt: '',
-                        className: t.img,
-                        src: a,
-                        style: { objectFit: P },
-                        onClick: () => ie(p, n),
+                        className: a.img,
+                        src: t,
+                        style: { objectFit: B },
+                        onClick: () => ce(p, n),
                       }),
-                    i && d.a.createElement('div', { className: t.errorTip }, i),
+                    o && d.a.createElement('div', { className: a.errorTip }, o),
                     d.a.createElement('i', {
-                      className: t.iconRemove,
-                      onClick: () => oe(n),
+                      className: a.iconRemove,
+                      onClick: () => ie(n),
                     }),
                     l &&
                       d.a.createElement(
                         'div',
-                        { className: t.loadingBox },
-                        d.a.createElement('i', { className: t.loading }),
+                        { className: a.loadingBox },
+                        d.a.createElement('i', { className: a.loading }),
                       ),
                   ),
-                  r && d.a.createElement('div', { className: t.name }, r),
+                  r && d.a.createElement('div', { className: a.name }, r),
                 );
               }
             }),
-          Q < u &&
+          Y < p &&
             d.a.createElement(
               'div',
-              { className: fe, style: { width: y }, ref: M, onClick: re },
-              D ||
+              { className: pe, style: { width: k }, ref: V, onClick: oe },
+              S ||
                 d.a.createElement('div', {
-                  style: { height: se },
-                  className: f()(t.childrenEle, [...I.map(e => t[e])]),
+                  style: { height: de },
+                  className: f()(a.childrenEle, [...D.map(e => a[e])]),
                 }),
-              1 === u &&
-                o[0] &&
-                o[0].name &&
+              1 === p &&
+                m[0] &&
+                m[0].name &&
                 d.a.createElement(
                   'div',
-                  { className: t.name, style: { width: y } },
-                  o[0].name,
+                  { className: a.name, style: { width: k } },
+                  m[0].name,
                 ),
             ),
-          de > 0 &&
-            new Array(de)
-              .fill(de)
+          me > 0 &&
+            new Array(me)
+              .fill(me)
               .map((e, n) =>
                 d.a.createElement('div', {
                   key: n,
-                  className: fe,
-                  style: { width: y },
+                  className: pe,
+                  style: { width: k },
                 }),
               ),
-          q && d.a.createElement(g.a, { onClose: ce, index: W, urls: F }),
+          X && d.a.createElement(g.a, { onClose: se, index: Z, urls: Q }),
         );
-      },
+      }),
       j = Object(m['withStyles'])(b)(x),
       y = (t('ZyjE'), t('4IZf')),
       k = t.n(y),
@@ -1205,7 +1205,7 @@
             {
               path: '/_demos/base-2',
               dependencies: {
-                'eco-mobile': '1.0.40',
+                'eco-mobile': '1.0.41',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1247,7 +1247,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.40',
+                'eco-mobile': '1.0.41',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1290,7 +1290,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.40',
+                'eco-mobile': '1.0.41',
                 moment: '2.29.1',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
@@ -1954,7 +1954,7 @@
             {
               path: '/_demos/base',
               dependencies: {
-                'eco-mobile': '1.0.40',
+                'eco-mobile': '1.0.41',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -2579,7 +2579,7 @@
             {
               path: '/_demos/base-1',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.40' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.41' },
               files: {},
             },
           ),
@@ -2615,7 +2615,7 @@
             },
             {
               path: '/_demos/on-upload',
-              dependencies: { 'eco-mobile': '1.0.40' },
+              dependencies: { 'eco-mobile': '1.0.41' },
               files: {},
             },
           ),
@@ -2657,7 +2657,7 @@
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'eco-mobile': '1.0.40',
+                'eco-mobile': '1.0.41',
               },
               files: {},
             },
@@ -2699,7 +2699,7 @@
             {
               path: '/_demos/resize',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.40' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.41' },
               files: {},
             },
           ),
@@ -3077,6 +3077,14 @@
                   null,
                   r.a.createElement('code', null, '(msg: string)=> void'),
                 ),
+                r.a.createElement('td', null, '-'),
+              ),
+              r.a.createElement(
+                'tr',
+                null,
+                r.a.createElement('td', null, 'ref'),
+                r.a.createElement('td', null, '\u6302\u8f7dinput'),
+                r.a.createElement('td', null, '-'),
                 r.a.createElement('td', null, '-'),
               ),
             ),

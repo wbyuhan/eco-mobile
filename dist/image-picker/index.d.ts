@@ -30,9 +30,10 @@ interface ImagePickerProps {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
 declare const _default: React.ForwardRefExoticComponent<Pick<
-  ImagePickerProps & {
-    theme?: unknown;
-  } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
+  ImagePickerProps &
+    React.RefAttributes<unknown> & {
+      theme?: unknown;
+    } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
       unknown,
       | 'root'
       | 'justifyContent'
@@ -57,9 +58,6 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'width'
   | 'size'
   | 'multiple'
-  | 'children'
-  | 'theme'
-  | 'classes'
   | 'filesList'
   | 'max'
   | 'onChange'
@@ -67,10 +65,18 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'accept'
   | 'capture'
   | 'config'
+  | 'children'
   | 'mode'
   | 'onFail'
   | 'disabledPreview'
   | 'onGetPreviewUrl'
+  | 'classes'
+  | 'theme'
+  | 'key'
 > &
-  React.RefAttributes<(props: ImagePickerProps) => JSX.Element>>;
+  React.RefAttributes<
+    React.ForwardRefExoticComponent<
+      ImagePickerProps & React.RefAttributes<unknown>
+    >
+  >>;
 export default _default;
