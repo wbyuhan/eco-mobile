@@ -27,6 +27,7 @@ interface ImagePickerProps {
   resize?: boolean;
   disabledPreview?: boolean;
   onGetPreviewUrl?: (index: number) => Promise<string>;
+  showRemove?: boolean;
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
 declare const _default: React.ForwardRefExoticComponent<Pick<
@@ -70,6 +71,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'onFail'
   | 'disabledPreview'
   | 'onGetPreviewUrl'
+  | 'showRemove'
   | 'classes'
   | 'theme'
   | 'key'

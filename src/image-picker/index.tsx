@@ -35,6 +35,7 @@ interface ImagePickerProps {
   resize?: boolean; // 高度是否根据宽度计算
   disabledPreview?: boolean; // 是否禁用预览图片
   onGetPreviewUrl?: (index: number) => Promise<string>; // 获取预览图片方法
+  showRemove?: boolean; // 是否显示删除按钮
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
 
@@ -58,6 +59,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
     onFail = noon,
     onGetPreviewUrl,
     resize,
+    showRemove = true,
   } = props;
 
   const refInput = ref || useRef<any>(null);
@@ -316,7 +318,12 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
                     />
                   )}
                   {errorTip && <div className={s.errorTip}>{errorTip}</div>}
-                  <i className={s.iconRemove} onClick={() => onRemove(index)} />
+                  {showRemove && (
+                    <i
+                      className={s.iconRemove}
+                      onClick={() => onRemove(index)}
+                    />
+                  )}
                   {loading && (
                     <div className={s.loadingBox}>
                       <i className={s.loading} />

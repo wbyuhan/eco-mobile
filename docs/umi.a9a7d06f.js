@@ -245,20 +245,22 @@
           P = e.mode,
           B = void 0 === P ? 'fill' : P,
           O = e.size,
-          N = e.disabledPreview,
-          R = e.onUpload,
+          R = e.disabledPreview,
+          N = e.onUpload,
           z = e.onFail,
           U = void 0 === z ? A : z,
           T = e.onGetPreviewUrl,
           L = e.resize,
-          M = n || Object(s['useRef'])(null),
-          V = Object(s['useRef'])(null),
-          F = Object(s['useRef'])(m),
-          Q = [];
-        F.current.forEach(e => {
-          e.preview ? Q.push(e.preview) : e.url && Q.push(e.url);
+          M = e.showRemove,
+          V = void 0 === M || M,
+          F = n || Object(s['useRef'])(null),
+          Q = Object(s['useRef'])(null),
+          Y = Object(s['useRef'])(m),
+          J = [];
+        Y.current.forEach(e => {
+          e.preview ? J.push(e.preview) : e.url && J.push(e.url);
         });
-        var Y = Object(s['useMemo'])(() => {
+        var q = Object(s['useMemo'])(() => {
             for (var e = 0, n = 0; n < m.length; n++) {
               var t = m[n],
                 a = t.url,
@@ -267,27 +269,27 @@
             }
             return e;
           }, [m]),
-          J = Object(s['useState'])(!1),
-          q = Object(c['a'])(J, 2),
-          X = q[0],
-          K = q[1],
-          H = Object(s['useState'])(0),
-          W = Object(c['a'])(H, 2),
-          Z = W[0],
-          G = W[1],
-          _ = Object(s['useState'])(''),
-          $ = Object(c['a'])(_, 2),
-          ee = $[0],
-          ne = $[1];
+          X = Object(s['useState'])(!1),
+          K = Object(c['a'])(X, 2),
+          H = K[0],
+          W = K[1],
+          Z = Object(s['useState'])(0),
+          G = Object(c['a'])(Z, 2),
+          _ = G[0],
+          $ = G[1],
+          ee = Object(s['useState'])(''),
+          ne = Object(c['a'])(ee, 2),
+          te = ne[0],
+          ae = ne[1];
         Object(s['useEffect'])(() => {
           if (L) {
-            var e = getComputedStyle(V.current).width;
-            ne(e);
+            var e = getComputedStyle(Q.current).width;
+            ae(e);
           }
         }, [L]);
-        var te,
-          ae,
-          le = (e, n) =>
+        var le,
+          re,
+          oe = (e, n) =>
             new Promise((t, a) => {
               var l = new FileReader();
               (l.onload = l => {
@@ -298,11 +300,11 @@
               }),
                 l.readAsDataURL(e);
             }),
-          re = e => {
+          ie = e => {
             var n = e.target,
               t = n.files;
             if (!t || !t.length) return (n.value = '');
-            var a = p - Y;
+            var a = p - q;
             t.length > a &&
               i.a.info(
                 '\u56fe\u7247\u6700\u591a\u4e0d\u8d85\u8fc7'.concat(
@@ -315,12 +317,12 @@
               o < l.length;
               o++
             )
-              r.push(le(l[o], o));
-            F.current = F.current.filter(e => e.url || e.errorTip);
-            var c = F.current.length;
+              r.push(oe(l[o], o));
+            Y.current = Y.current.filter(e => e.url || e.errorTip);
+            var c = Y.current.length;
             Promise.all(r)
               .then(e => {
-                'function' === typeof R && e.forEach(e => (e.loading = !0));
+                'function' === typeof N && e.forEach(e => (e.loading = !0));
                 var t = e.filter(e =>
                   O && e.file.size > 1024 * O * 1024
                     ? i.a.info(
@@ -332,37 +334,37 @@
                     : e,
                 );
                 if (
-                  ((F.current = F.current.concat(t)),
-                  E(F.current),
-                  'function' === typeof R)
+                  ((Y.current = Y.current.concat(t)),
+                  E(Y.current),
+                  'function' === typeof N)
                 )
                   for (
                     var a = function(e) {
-                        var n = F.current[e];
+                        var n = Y.current[e];
                         e >= c &&
-                          R(n)
+                          N(n)
                             .then(n => {
-                              (F.current[e] = Object.assign(
+                              (Y.current[e] = Object.assign(
                                 {},
-                                F.current[e],
+                                Y.current[e],
                                 n,
                                 { loading: !1 },
                               )),
-                                (F.current = [...F.current]),
-                                setTimeout(() => E(F.current), 10);
+                                (Y.current = [...Y.current]),
+                                setTimeout(() => E(Y.current), 10);
                             })
                             .catch(n => {
-                              (F.current[e] = Object.assign({}, F.current[e], {
+                              (Y.current[e] = Object.assign({}, Y.current[e], {
                                 url: '',
                                 loading: !1,
                                 errorTip: n || '\u4e0a\u4f20\u5931\u8d25',
                               })),
-                                (F.current = [...F.current]),
-                                setTimeout(() => E(F.current), 10);
+                                (Y.current = [...Y.current]),
+                                setTimeout(() => E(Y.current), 10);
                             });
                       },
                       l = 0;
-                    l < F.current.length;
+                    l < Y.current.length;
                     l++
                   )
                     a(l);
@@ -372,12 +374,12 @@
                 U(e), (n.value = '');
               });
           },
-          oe = () => {
-            M && M.current && M.current.click();
+          ce = () => {
+            F && F.current && F.current.click();
           },
-          ie = e => {
-            for (var n = !0, t = 0; t < F.current.length; t++) {
-              var a = F.current[t].loading;
+          se = e => {
+            for (var n = !0, t = 0; t < Y.current.length; t++) {
+              var a = Y.current[t].loading;
               if (a) {
                 n = !1;
                 break;
@@ -387,9 +389,9 @@
               return i.a.info(
                 '\u56fe\u7247\u4e0a\u4f20\u4e2d\uff0c\u8bf7\u7a0d\u540e\u64cd\u4f5c',
               );
-            F.current.splice(e, 1), (F.current = [...F.current]), E(F.current);
+            Y.current.splice(e, 1), (Y.current = [...Y.current]), E(Y.current);
           },
-          ce = (function() {
+          de = (function() {
             var e = Object(r['a'])(
               l.a.mark(function e(n, t) {
                 var a;
@@ -397,24 +399,24 @@
                   while (1)
                     switch ((e.prev = e.next)) {
                       case 0:
-                        if (!N) {
+                        if (!R) {
                           e.next = 2;
                           break;
                         }
                         return e.abrupt('return');
                       case 2:
-                        if (F.current[t].preview || 'function' !== typeof T) {
+                        if (Y.current[t].preview || 'function' !== typeof T) {
                           e.next = 9;
                           break;
                         }
                         return (e.next = 5), T(t);
                       case 5:
                         (a = e.sent),
-                          (F.current[t].preview = a),
-                          (F.current = [...F.current]),
-                          E(F.current);
+                          (Y.current[t].preview = a),
+                          (Y.current = [...Y.current]),
+                          E(Y.current);
                       case 9:
-                        G(n), se();
+                        $(n), me();
                       case 11:
                       case 'end':
                         return e.stop();
@@ -426,41 +428,41 @@
               return e.apply(this, arguments);
             };
           })(),
-          se = () => K(e => !e);
+          me = () => W(e => !e);
         (function(e) {
           (e['defaultBorder'] = 'defaultBorder'),
             (e['defaultBackGround'] = 'defaultBackGround'),
             (e['defaultDashed'] = 'defaultDashed');
-        })(te || (te = {})),
+        })(le || (le = {})),
           (function(e) {
             (e['fill'] = 'fill'),
               (e['cover'] = 'cover'),
               (e['contain'] = 'contain'),
               (e['scale-down'] = 'scale-down');
-          })(ae || (ae = {}));
-        var de = L ? ee : w,
-          me = 0;
+          })(re || (re = {}));
+        var ue = L ? te : w,
+          fe = 0;
         if (L) {
-          var ue = Math.floor(100 / parseFloat(k));
-          if (m && m.length > 0 && ue > 1) {
-            var fe = m.length % ue;
-            fe >= 0 &&
-              fe <= ue - 1 &&
-              ((me = ue - fe - 1), m.length === p && (me += 1));
+          var pe = Math.floor(100 / parseFloat(k));
+          if (m && m.length > 0 && pe > 1) {
+            var ge = m.length % pe;
+            ge >= 0 &&
+              ge <= pe - 1 &&
+              ((fe = pe - ge - 1), m.length === p && (fe += 1));
           }
         }
-        var pe = f()(a.parent, { [a.noMargin]: 1 === p || m.length < 1 || L });
+        var he = f()(a.parent, { [a.noMargin]: 1 === p || m.length < 1 || L });
         return d.a.createElement(
           'div',
           { className: f()(a.root, { [a.justifyContent]: L }) },
           d.a.createElement('input', {
             className: a.hidden,
-            ref: M,
+            ref: F,
             type: 'file',
             accept: b,
             multiple: x,
             capture: j,
-            onChange: re,
+            onChange: ie,
           }),
           m &&
             m.length > 0 &&
@@ -481,12 +483,12 @@
                 var p = n - c;
                 return d.a.createElement(
                   'div',
-                  { key: n, className: pe, style: { width: k } },
+                  { key: n, className: he, style: { width: k } },
                   d.a.createElement(
                     'div',
                     {
                       className: f()(a.imgBox, ...D.map(e => a[e])),
-                      style: { height: de },
+                      style: { height: ue },
                     },
                     t &&
                       d.a.createElement('img', {
@@ -494,13 +496,14 @@
                         className: a.img,
                         src: t,
                         style: { objectFit: B },
-                        onClick: () => ce(p, n),
+                        onClick: () => de(p, n),
                       }),
                     o && d.a.createElement('div', { className: a.errorTip }, o),
-                    d.a.createElement('i', {
-                      className: a.iconRemove,
-                      onClick: () => ie(n),
-                    }),
+                    V &&
+                      d.a.createElement('i', {
+                        className: a.iconRemove,
+                        onClick: () => se(n),
+                      }),
                     l &&
                       d.a.createElement(
                         'div',
@@ -512,13 +515,13 @@
                 );
               }
             }),
-          Y < p &&
+          q < p &&
             d.a.createElement(
               'div',
-              { className: pe, style: { width: k }, ref: V, onClick: oe },
+              { className: he, style: { width: k }, ref: Q, onClick: ce },
               S ||
                 d.a.createElement('div', {
-                  style: { height: de },
+                  style: { height: ue },
                   className: f()(a.childrenEle, [...D.map(e => a[e])]),
                 }),
               1 === p &&
@@ -530,17 +533,17 @@
                   m[0].name,
                 ),
             ),
-          me > 0 &&
-            new Array(me)
-              .fill(me)
+          fe > 0 &&
+            new Array(fe)
+              .fill(fe)
               .map((e, n) =>
                 d.a.createElement('div', {
                   key: n,
-                  className: pe,
+                  className: he,
                   style: { width: k },
                 }),
               ),
-          X && d.a.createElement(g.a, { onClose: se, index: Z, urls: Q }),
+          H && d.a.createElement(g.a, { onClose: me, index: _, urls: J }),
         );
       }),
       j = Object(m['withStyles'])(b)(x),
@@ -562,7 +565,7 @@
     var O = e => {
         if (e) return new Date(e);
       },
-      N = Object(m['createStyles'])({
+      R = Object(m['createStyles'])({
         root: {
           '& .am-list': {
             '& .am-list-body': {
@@ -642,7 +645,7 @@
           },
         },
       }),
-      R = N,
+      N = R,
       z = D.a.Item,
       U = () => {},
       T = e => {
@@ -683,15 +686,15 @@
           I = void 0 === C ? new Date(2100, 11, 30, 23, 59, 59) : C,
           S = Object(s['useState'])(!1),
           P = Object(c['a'])(S, 2),
-          N = P[0],
-          R = P[1];
+          R = P[0],
+          N = P[1];
         Object(s['useEffect'])(() => {
-          R(l[1] === x);
+          N(l[1] === x);
         }, [l[1], x]);
         var T = () => {
-            var e = [l[0], N ? '' : x],
-              n = N ? 'unCheck' : 'check';
-            o(e, n), R(e => !e);
+            var e = [l[0], R ? '' : x],
+              n = R ? 'unCheck' : 'check';
+            o(e, n), N(e => !e);
           },
           L = (e, n) => {
             var t = B(e),
@@ -767,7 +770,7 @@
                 k.a,
                 { className: t.forerverBox, onClick: T },
                 d.a.createElement('i', {
-                  className: f()(t.iconCheck, { [t.iconChecked]: N }),
+                  className: f()(t.iconCheck, { [t.iconChecked]: R }),
                 }),
                 d.a.createElement('span', null, b),
               ),
@@ -775,7 +778,7 @@
           ),
         );
       },
-      L = Object(m['withStyles'])(R)(T),
+      L = Object(m['withStyles'])(N)(T),
       M = Object(m['createStyles'])({
         root: {
           '& .am-list-item': {
@@ -1077,6 +1080,7 @@
           o.a,
           null,
           m.a.createElement(u['b'], {
+            showRemove: !1,
             filesList: t,
             onChange: r,
             config: ['defaultDashed'],
@@ -1205,7 +1209,7 @@
             {
               path: '/_demos/base-2',
               dependencies: {
-                'eco-mobile': '1.0.41',
+                'eco-mobile': '1.0.43',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1247,7 +1251,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.41',
+                'eco-mobile': '1.0.43',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1290,7 +1294,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.41',
+                'eco-mobile': '1.0.43',
                 moment: '2.29.1',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
@@ -1954,7 +1958,7 @@
             {
               path: '/_demos/base',
               dependencies: {
-                'eco-mobile': '1.0.41',
+                'eco-mobile': '1.0.43',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -2571,15 +2575,15 @@
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\ninterface Files {\n  url: string; // \u56fe\u7247url\n  preview?: string; // \u9884\u89c8\u56fe\n  loading?: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n  errorTip?: string; // \u9519\u8bef\u63d0\u793a\n  name?: string; // \u56fe\u7247\u540d\u79f0\n  [index: string]: any;\n}\n\nexport default () => {\n  const [filesList, setFilesList] = useState<Array<Files>>([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
+                  "import React, { useState } from 'react';\n\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\ninterface Files {\n  url: string; // \u56fe\u7247url\n  preview?: string; // \u9884\u89c8\u56fe\n  loading?: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n  errorTip?: string; // \u9519\u8bef\u63d0\u793a\n  name?: string; // \u56fe\u7247\u540d\u79f0\n  [index: string]: any;\n}\n\nexport default () => {\n  const [filesList, setFilesList] = useState<Array<Files>>([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          showRemove={false}\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
                 jsx:
-                  "import React, { useState } from 'react';\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]); // \u6570\u7ec4\u6539\u53d8\n\n  const onChange = arr => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} config={['defaultBackGround']} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} config={['defaultDashed']} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
+                  "import React, { useState } from 'react';\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]); // \u6570\u7ec4\u6539\u53d8\n\n  const onChange = arr => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} config={['defaultBackGround']} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          showRemove={false}\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
               },
             },
             {
               path: '/_demos/base-1',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.41' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.43' },
               files: {},
             },
           ),
@@ -2615,7 +2619,7 @@
             },
             {
               path: '/_demos/on-upload',
-              dependencies: { 'eco-mobile': '1.0.41' },
+              dependencies: { 'eco-mobile': '1.0.43' },
               files: {},
             },
           ),
@@ -2657,7 +2661,7 @@
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'eco-mobile': '1.0.41',
+                'eco-mobile': '1.0.43',
               },
               files: {},
             },
@@ -2699,7 +2703,7 @@
             {
               path: '/_demos/resize',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.41' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.43' },
               files: {},
             },
           ),
@@ -3021,6 +3025,26 @@
               r.a.createElement(
                 'tr',
                 null,
+                r.a.createElement('td', null, 'showRemove'),
+                r.a.createElement(
+                  'td',
+                  null,
+                  '\u662f\u5426\u663e\u793a\u5220\u9664\u6309\u94ae',
+                ),
+                r.a.createElement(
+                  'td',
+                  null,
+                  r.a.createElement('code', null, 'boolean'),
+                ),
+                r.a.createElement(
+                  'td',
+                  null,
+                  r.a.createElement('code', null, 'true'),
+                ),
+              ),
+              r.a.createElement(
+                'tr',
+                null,
                 r.a.createElement('td', null, 'mode'),
                 r.a.createElement(
                   'td',
@@ -3083,7 +3107,7 @@
                 'tr',
                 null,
                 r.a.createElement('td', null, 'ref'),
-                r.a.createElement('td', null, '\u6302\u8f7dinput'),
+                r.a.createElement('td', null, '\u6302\u8f7d input'),
                 r.a.createElement('td', null, '-'),
                 r.a.createElement('td', null, '-'),
               ),
@@ -3384,7 +3408,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/image-picker/index.md',
-                updatedTime: 1610101724e3,
+                updatedTime: 1610357708e3,
                 group: {
                   title: 'ImagePicker \u56fe\u7247\u9009\u62e9\u5668',
                   path: '/image-picker',

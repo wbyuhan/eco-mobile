@@ -316,7 +316,9 @@ var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
     _props$onFail = props.onFail,
     onFail = _props$onFail === void 0 ? noon : _props$onFail,
     onGetPreviewUrl = props.onGetPreviewUrl,
-    resize = props.resize;
+    resize = props.resize,
+    _props$showRemove = props.showRemove,
+    showRemove = _props$showRemove === void 0 ? true : _props$showRemove;
   var refInput = ref || useRef(null);
   var refSelectDom = useRef(null);
   var refFilesList = useRef(filesList);
@@ -723,12 +725,13 @@ var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
                   },
                   errorTip,
                 ),
-              /*#__PURE__*/ React.createElement('i', {
-                className: s.iconRemove,
-                onClick: function onClick() {
-                  return onRemove(index);
-                },
-              }),
+              showRemove &&
+                /*#__PURE__*/ React.createElement('i', {
+                  className: s.iconRemove,
+                  onClick: function onClick() {
+                    return onRemove(index);
+                  },
+                }),
               loading &&
                 /*#__PURE__*/ React.createElement(
                   'div',

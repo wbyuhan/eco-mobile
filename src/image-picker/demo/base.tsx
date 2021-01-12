@@ -36,6 +36,7 @@ export default () => {
       </WingBlank>
       <WingBlank>
         <ImagePicker
+          showRemove={false}
           filesList={filesList}
           onChange={onChange}
           config={['defaultDashed']}
