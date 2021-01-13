@@ -1213,7 +1213,7 @@
             {
               path: '/_demos/base-2',
               dependencies: {
-                'eco-mobile': '1.0.45',
+                'eco-mobile': '1.0.46',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1255,7 +1255,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.45',
+                'eco-mobile': '1.0.46',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1298,7 +1298,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.45',
+                'eco-mobile': '1.0.46',
                 moment: '2.29.1',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
@@ -1962,7 +1962,7 @@
             {
               path: '/_demos/base',
               dependencies: {
-                'eco-mobile': '1.0.45',
+                'eco-mobile': '1.0.46',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -2587,7 +2587,7 @@
             {
               path: '/_demos/base-1',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.45' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.46' },
               files: {},
             },
           ),
@@ -2623,7 +2623,7 @@
             },
             {
               path: '/_demos/on-upload',
-              dependencies: { 'eco-mobile': '1.0.45' },
+              dependencies: { 'eco-mobile': '1.0.46' },
               files: {},
             },
           ),
@@ -2665,7 +2665,7 @@
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'eco-mobile': '1.0.45',
+                'eco-mobile': '1.0.46',
               },
               files: {},
             },
@@ -2707,7 +2707,7 @@
             {
               path: '/_demos/resize',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.45' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.46' },
               files: {},
             },
           ),
