@@ -229,6 +229,9 @@ var styles = styles$3.createStyles({
     margin: '0 8px 8px 0',
   },
   noMargin: {
+    margin: 0,
+  },
+  marginBottom: {
     margin: '0 0 8px 0',
   },
   name: {
@@ -306,6 +309,8 @@ var styles = styles$3.createStyles({
 var noon = function noon() {};
 
 var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
+  var _classnames;
+
   var _props$classes = props.classes,
     s = _props$classes === void 0 ? {} : _props$classes,
     _props$filesList = props.filesList,
@@ -652,11 +657,10 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
 
   var classParent = classnames__default['default'](
     s.parent,
-    _defineProperty(
-      {},
-      s.noMargin,
-      max === 1 || filesList.length < 1 || resize,
-    ),
+    ((_classnames = {}),
+    _defineProperty(_classnames, s.noMargin, max === 1 || filesList.length < 1),
+    _defineProperty(_classnames, s.marginBottom, resize),
+    _classnames),
   );
   return /*#__PURE__*/ React__default['default'].createElement(
     'div',

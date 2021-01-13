@@ -3,6 +3,7 @@ declare const styles: import('@wonder-ui/styles').Styles<
   {},
   | 'root'
   | 'justifyContent'
+  | 'marginBottom'
   | 'hidden'
   | 'imgBox'
   | 'img'

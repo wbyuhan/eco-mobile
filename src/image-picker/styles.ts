@@ -52,6 +52,9 @@ const styles = createStyles({
     margin: '0 8px 8px 0',
   },
   noMargin: {
+    margin: 0,
+  },
+  marginBottom: {
     margin: '0 0 8px 0',
   },
   name: {

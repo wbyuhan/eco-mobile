@@ -38,6 +38,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
       unknown,
       | 'root'
       | 'justifyContent'
+      | 'marginBottom'
       | 'hidden'
       | 'imgBox'
       | 'img'

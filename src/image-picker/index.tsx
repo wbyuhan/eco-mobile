@@ -267,7 +267,8 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
 
   // parent样式
   const classParent = classnames(s.parent, {
-    [s.noMargin as string]: max === 1 || filesList.length < 1 || resize,
+    [s.noMargin as string]: max === 1 || filesList.length < 1,
+    [s.marginBottom as string]: resize,
   });
 
   return (
