@@ -247,21 +247,22 @@
           B = void 0 === P ? 'fill' : P,
           O = e.size,
           R = e.disabledPreview,
-          N = e.onUpload,
-          z = e.onFail,
-          U = void 0 === z ? A : z,
-          T = e.onGetPreviewUrl,
-          L = e.resize,
-          M = e.showRemove,
-          V = void 0 === M || M,
-          F = n || Object(s['useRef'])(null),
-          Q = Object(s['useRef'])(null),
-          Y = Object(s['useRef'])(m),
-          J = [];
-        Y.current.forEach(e => {
-          e.preview ? J.push(e.preview) : e.url && J.push(e.url);
+          N = e.disabledSelect,
+          z = e.onUpload,
+          U = e.onFail,
+          T = void 0 === U ? A : U,
+          L = e.onGetPreviewUrl,
+          M = e.resize,
+          V = e.showRemove,
+          F = void 0 === V || V,
+          Q = n || Object(s['useRef'])(null),
+          Y = Object(s['useRef'])(null),
+          J = Object(s['useRef'])(m),
+          q = [];
+        J.current.forEach(e => {
+          e.preview ? q.push(e.preview) : e.url && q.push(e.url);
         });
-        var q = Object(s['useMemo'])(() => {
+        var X = Object(s['useMemo'])(() => {
             for (var e = 0, n = 0; n < m.length; n++) {
               var t = m[n],
                 a = t.url,
@@ -270,27 +271,27 @@
             }
             return e;
           }, [m]),
-          X = Object(s['useState'])(!1),
-          K = Object(c['a'])(X, 2),
-          H = K[0],
-          W = K[1],
-          Z = Object(s['useState'])(0),
-          G = Object(c['a'])(Z, 2),
-          _ = G[0],
-          $ = G[1],
-          ee = Object(s['useState'])(''),
-          ne = Object(c['a'])(ee, 2),
-          te = ne[0],
-          ae = ne[1];
+          K = Object(s['useState'])(!1),
+          H = Object(c['a'])(K, 2),
+          W = H[0],
+          Z = H[1],
+          G = Object(s['useState'])(0),
+          _ = Object(c['a'])(G, 2),
+          $ = _[0],
+          ee = _[1],
+          ne = Object(s['useState'])(''),
+          te = Object(c['a'])(ne, 2),
+          ae = te[0],
+          le = te[1];
         Object(s['useEffect'])(() => {
-          if (L) {
-            var e = getComputedStyle(Q.current).width;
-            ae(e);
+          if (M) {
+            var e = getComputedStyle(Y.current).width;
+            le(e);
           }
-        }, [L]);
-        var le,
-          re,
-          oe = (e, n) =>
+        }, [M]);
+        var re,
+          oe,
+          ie = (e, n) =>
             new Promise((t, a) => {
               var l = new FileReader();
               (l.onload = l => {
@@ -301,11 +302,11 @@
               }),
                 l.readAsDataURL(e);
             }),
-          ie = e => {
+          ce = e => {
             var n = e.target,
               t = n.files;
             if (!t || !t.length) return (n.value = '');
-            var a = g - q;
+            var a = g - X;
             t.length > a &&
               i.a.info(
                 '\u56fe\u7247\u6700\u591a\u4e0d\u8d85\u8fc7'.concat(
@@ -318,12 +319,12 @@
               o < l.length;
               o++
             )
-              r.push(oe(l[o], o));
-            Y.current = Y.current.filter(e => e.url || e.errorTip);
-            var c = Y.current.length;
+              r.push(ie(l[o], o));
+            J.current = J.current.filter(e => e.url || e.errorTip);
+            var c = J.current.length;
             Promise.all(r)
               .then(e => {
-                'function' === typeof N && e.forEach(e => (e.loading = !0));
+                'function' === typeof z && e.forEach(e => (e.loading = !0));
                 var t = e.filter(e =>
                   O && e.file.size > 1024 * O * 1024
                     ? i.a.info(
@@ -335,52 +336,52 @@
                     : e,
                 );
                 if (
-                  ((Y.current = Y.current.concat(t)),
-                  E(Y.current),
-                  'function' === typeof N)
+                  ((J.current = J.current.concat(t)),
+                  E(J.current),
+                  'function' === typeof z)
                 )
                   for (
                     var a = function(e) {
-                        var n = Y.current[e];
+                        var n = J.current[e];
                         e >= c &&
-                          N(n)
+                          z(n)
                             .then(n => {
-                              (Y.current[e] = Object.assign(
+                              (J.current[e] = Object.assign(
                                 {},
-                                Y.current[e],
+                                J.current[e],
                                 n,
                                 { loading: !1 },
                               )),
-                                (Y.current = [...Y.current]),
-                                setTimeout(() => E(Y.current), 10);
+                                (J.current = [...J.current]),
+                                setTimeout(() => E(J.current), 10);
                             })
                             .catch(n => {
-                              (Y.current[e] = Object.assign({}, Y.current[e], {
+                              (J.current[e] = Object.assign({}, J.current[e], {
                                 url: '',
                                 loading: !1,
                                 errorTip: n || '\u4e0a\u4f20\u5931\u8d25',
                               })),
-                                (Y.current = [...Y.current]),
-                                setTimeout(() => E(Y.current), 10);
+                                (J.current = [...J.current]),
+                                setTimeout(() => E(J.current), 10);
                             });
                       },
                       l = 0;
-                    l < Y.current.length;
+                    l < J.current.length;
                     l++
                   )
                     a(l);
                 n.value = '';
               })
               .catch(e => {
-                U(e), (n.value = '');
+                T(e), (n.value = '');
               });
           },
-          ce = () => {
-            F && F.current && F.current.click();
+          se = () => {
+            N || (Q && Q.current && Q.current.click());
           },
-          se = e => {
-            for (var n = !0, t = 0; t < Y.current.length; t++) {
-              var a = Y.current[t].loading;
+          de = e => {
+            for (var n = !0, t = 0; t < J.current.length; t++) {
+              var a = J.current[t].loading;
               if (a) {
                 n = !1;
                 break;
@@ -390,9 +391,9 @@
               return i.a.info(
                 '\u56fe\u7247\u4e0a\u4f20\u4e2d\uff0c\u8bf7\u7a0d\u540e\u64cd\u4f5c',
               );
-            Y.current.splice(e, 1), (Y.current = [...Y.current]), E(Y.current);
+            J.current.splice(e, 1), (J.current = [...J.current]), E(J.current);
           },
-          de = (function() {
+          me = (function() {
             var e = Object(r['a'])(
               l.a.mark(function e(n, t) {
                 var a;
@@ -406,18 +407,18 @@
                         }
                         return e.abrupt('return');
                       case 2:
-                        if (Y.current[t].preview || 'function' !== typeof T) {
+                        if (J.current[t].preview || 'function' !== typeof L) {
                           e.next = 9;
                           break;
                         }
-                        return (e.next = 5), T(t);
+                        return (e.next = 5), L(t);
                       case 5:
                         (a = e.sent),
-                          (Y.current[t].preview = a),
-                          (Y.current = [...Y.current]),
-                          E(Y.current);
+                          (J.current[t].preview = a),
+                          (J.current = [...J.current]),
+                          E(J.current);
                       case 9:
-                        $(n), me();
+                        ee(n), ue();
                       case 11:
                       case 'end':
                         return e.stop();
@@ -429,44 +430,44 @@
               return e.apply(this, arguments);
             };
           })(),
-          me = () => W(e => !e);
+          ue = () => Z(e => !e);
         (function(e) {
           (e['defaultBorder'] = 'defaultBorder'),
             (e['defaultBackGround'] = 'defaultBackGround'),
             (e['defaultDashed'] = 'defaultDashed');
-        })(le || (le = {})),
+        })(re || (re = {})),
           (function(e) {
             (e['fill'] = 'fill'),
               (e['cover'] = 'cover'),
               (e['contain'] = 'contain'),
               (e['scale-down'] = 'scale-down');
-          })(re || (re = {}));
-        var ue = L ? te : w,
-          fe = 0;
-        if (L) {
-          var ge = Math.floor(100 / parseFloat(k));
-          if (m && m.length > 0 && ge > 1) {
-            var pe = m.length % ge;
-            pe >= 0 &&
-              pe <= ge - 1 &&
-              ((fe = ge - pe - 1), m.length === g && (fe += 1));
+          })(oe || (oe = {}));
+        var fe = M ? ae : w,
+          ge = 0;
+        if (M) {
+          var pe = Math.floor(100 / parseFloat(k));
+          if (m && m.length > 0 && pe > 1) {
+            var he = m.length % pe;
+            he >= 0 &&
+              he <= pe - 1 &&
+              ((ge = pe - he - 1), m.length === g && (ge += 1));
           }
         }
-        var he = f()(a.parent, {
+        var Ee = f()(a.parent, {
           [a.noMargin]: 1 === g || m.length < 1,
-          [a.marginBottom]: L,
+          [a.marginBottom]: M,
         });
         return d.a.createElement(
           'div',
-          { className: f()(a.root, { [a.justifyContent]: L }) },
+          { className: f()(a.root, { [a.justifyContent]: M }) },
           d.a.createElement('input', {
             className: a.hidden,
-            ref: F,
+            ref: Q,
             type: 'file',
             accept: b,
             multiple: x,
             capture: j,
-            onChange: ie,
+            onChange: ce,
           }),
           m &&
             m.length > 0 &&
@@ -487,12 +488,12 @@
                 var g = n - c;
                 return d.a.createElement(
                   'div',
-                  { key: n, className: he, style: { width: k } },
+                  { key: n, className: Ee, style: { width: k } },
                   d.a.createElement(
                     'div',
                     {
                       className: f()(a.imgBox, ...D.map(e => a[e])),
-                      style: { height: ue },
+                      style: { height: fe },
                     },
                     t &&
                       d.a.createElement('img', {
@@ -500,13 +501,13 @@
                         className: a.img,
                         src: t,
                         style: { objectFit: B },
-                        onClick: () => de(g, n),
+                        onClick: () => me(g, n),
                       }),
                     o && d.a.createElement('div', { className: a.errorTip }, o),
-                    V &&
+                    F &&
                       d.a.createElement('i', {
                         className: a.iconRemove,
-                        onClick: () => se(n),
+                        onClick: () => de(n),
                       }),
                     l &&
                       d.a.createElement(
@@ -519,13 +520,13 @@
                 );
               }
             }),
-          q < g &&
+          X < g &&
             d.a.createElement(
               'div',
-              { className: he, style: { width: k }, ref: Q, onClick: ce },
+              { className: Ee, style: { width: k }, ref: Y, onClick: se },
               S ||
                 d.a.createElement('div', {
-                  style: { height: ue },
+                  style: { height: fe },
                   className: f()(a.childrenEle, [...D.map(e => a[e])]),
                 }),
               1 === g &&
@@ -537,17 +538,17 @@
                   m[0].name,
                 ),
             ),
-          fe > 0 &&
-            new Array(fe)
-              .fill(fe)
+          ge > 0 &&
+            new Array(ge)
+              .fill(ge)
               .map((e, n) =>
                 d.a.createElement('div', {
                   key: n,
-                  className: he,
+                  className: Ee,
                   style: { width: k },
                 }),
               ),
-          H && d.a.createElement(p.a, { onClose: me, index: _, urls: J }),
+          W && d.a.createElement(p.a, { onClose: ue, index: $, urls: q }),
         );
       }),
       j = Object(m['withStyles'])(b)(x),
@@ -1213,7 +1214,7 @@
             {
               path: '/_demos/base-2',
               dependencies: {
-                'eco-mobile': '1.0.46',
+                'eco-mobile': '1.0.47',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1255,7 +1256,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.46',
+                'eco-mobile': '1.0.47',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1298,7 +1299,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.46',
+                'eco-mobile': '1.0.47',
                 moment: '2.29.1',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
@@ -1962,7 +1963,7 @@
             {
               path: '/_demos/base',
               dependencies: {
-                'eco-mobile': '1.0.46',
+                'eco-mobile': '1.0.47',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -2587,7 +2588,7 @@
             {
               path: '/_demos/base-1',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.46' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.47' },
               files: {},
             },
           ),
@@ -2623,7 +2624,7 @@
             },
             {
               path: '/_demos/on-upload',
-              dependencies: { 'eco-mobile': '1.0.46' },
+              dependencies: { 'eco-mobile': '1.0.47' },
               files: {},
             },
           ),
@@ -2665,7 +2666,7 @@
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'eco-mobile': '1.0.46',
+                'eco-mobile': '1.0.47',
               },
               files: {},
             },
@@ -2707,7 +2708,7 @@
             {
               path: '/_demos/resize',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.46' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.47' },
               files: {},
             },
           ),
@@ -3004,6 +3005,26 @@
                   'td',
                   null,
                   r.a.createElement('code', null, 'default'),
+                ),
+              ),
+              r.a.createElement(
+                'tr',
+                null,
+                r.a.createElement('td', null, 'disabledSelect'),
+                r.a.createElement(
+                  'td',
+                  null,
+                  '\u662f\u5426\u7981\u6b62\u9009\u62e9\u56fe\u7247',
+                ),
+                r.a.createElement(
+                  'td',
+                  null,
+                  r.a.createElement('code', null, 'boolean'),
+                ),
+                r.a.createElement(
+                  'td',
+                  null,
+                  r.a.createElement('code', null, 'false'),
                 ),
               ),
               r.a.createElement(

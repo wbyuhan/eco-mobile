@@ -317,6 +317,7 @@ var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
     mode = _props$mode === void 0 ? 'fill' : _props$mode,
     size = props.size,
     disabledPreview = props.disabledPreview,
+    disabledSelect = props.disabledSelect,
     onUpload = props.onUpload,
     _props$onFail = props.onFail,
     onFail = _props$onFail === void 0 ? noon : _props$onFail,
@@ -512,6 +513,7 @@ var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
   }; // 选择图片
 
   var inputClick = function inputClick() {
+    if (disabledSelect) return;
     refInput && refInput.current && refInput.current.click();
   }; // 删除图片
 

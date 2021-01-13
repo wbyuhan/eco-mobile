@@ -33,6 +33,7 @@ interface ImagePickerProps {
   size?: number; // 图片大小限制，单位: M
   onFail?: (e: any) => void;
   resize?: boolean; // 高度是否根据宽度计算
+  disabledSelect?: boolean; // 是否禁用选择图片
   disabledPreview?: boolean; // 是否禁用预览图片
   onGetPreviewUrl?: (index: number) => Promise<string>; // 获取预览图片方法
   showRemove?: boolean; // 是否显示删除按钮
@@ -55,6 +56,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
     mode = 'fill',
     size,
     disabledPreview,
+    disabledSelect,
     onUpload,
     onFail = noon,
     onGetPreviewUrl,
@@ -191,6 +193,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
 
   // 选择图片
   const inputClick = () => {
+    if (disabledSelect) return;
     refInput && refInput.current && refInput.current.click();
   };
 

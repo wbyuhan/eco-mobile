@@ -25,6 +25,7 @@ interface ImagePickerProps {
   size?: number;
   onFail?: (e: any) => void;
   resize?: boolean;
+  disabledSelect?: boolean;
   disabledPreview?: boolean;
   onGetPreviewUrl?: (index: number) => Promise<string>;
   showRemove?: boolean;
@@ -70,6 +71,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'children'
   | 'mode'
   | 'onFail'
+  | 'disabledSelect'
   | 'disabledPreview'
   | 'onGetPreviewUrl'
   | 'showRemove'
