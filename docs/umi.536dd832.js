@@ -930,10 +930,13 @@
       var e = f(),
         n = u['b'].useForm(),
         t = Object(i['a'])(n, 1),
-        a = t[0],
-        r = () => {
-          a.getFieldsValue();
-        };
+        a = t[0];
+      Object(c['useEffect'])(() => {
+        a.setFieldsValue({ date: [] });
+      }, []);
+      var r = () => {
+        a.getFieldsValue();
+      };
       return s.a.createElement(
         'div',
         { className: e.root },
@@ -1268,7 +1271,7 @@
             {
               path: '/_demos/base-2',
               dependencies: {
-                'eco-mobile': '1.0.52',
+                'eco-mobile': '1.0.53',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1282,13 +1285,13 @@
           { className: 'markdown' },
           r.a.createElement(
             'h2',
-            { id: '\u53d7\u63a7\u7ec4\u4ef6' },
+            { id: '\u7ed3\u5408form\u4f7f\u7528' },
             r.a.createElement(
               'a',
-              { 'aria-hidden': 'true', href: '#\u53d7\u63a7\u7ec4\u4ef6' },
+              { 'aria-hidden': 'true', href: '#\u7ed3\u5408form\u4f7f\u7528' },
               r.a.createElement('span', { className: 'icon icon-link' }),
             ),
-            '\u53d7\u63a7\u7ec4\u4ef6',
+            '\u7ed3\u5408form\u4f7f\u7528',
           ),
         ),
         r.a.createElement(
@@ -1297,9 +1300,9 @@
             {
               source: {
                 tsx:
-                  "import React from 'react';\n\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\nimport Form, { Field } from 'rc-field-form';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n  const [form] = Form.useForm();\n\n  const submit = () => {\n    const values = form.getFieldsValue();\n    console.log(values);\n  }\n\n  return (\n    <div className={s.root}>\n      <Form form={form}>\n        <Field name=\"date\">\n          <ValidRange />\n        </Field>\n      </Form>\n      <WhiteSpace />\n      <Button onClick={submit} size=\"small\" type=\"primary\" inline>Submit</Button>\n    </div>\n  );\n};\n",
+                  "import React, { useEffect } from 'react';\n\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\nimport Form, { Field } from 'rc-field-form';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n  const [form] = Form.useForm();\n\n  useEffect(() => {\n    form.setFieldsValue({date: []})\n  }, []);\n\n  const submit = () => {\n    const values = form.getFieldsValue();\n    console.log(values);\n  };\n\n  return (\n    <div className={s.root}>\n      <Form form={form}>\n        <Field name=\"date\">\n          <ValidRange />\n        </Field>\n      </Form>\n      <WhiteSpace />\n      <Button onClick={submit} size=\"small\" type=\"primary\" inline>\n        Submit\n      </Button>\n    </div>\n  );\n};\n",
                 jsx:
-                  "import React from 'react';\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\nimport Form, { Field } from 'rc-field-form';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [form] = Form.useForm();\n\n  const submit = () => {\n    const values = form.getFieldsValue();\n    console.log(values);\n  };\n\n  return (\n    <div className={s.root}>\n      <Form form={form}>\n        <Field name=\"date\">\n          <ValidRange />\n        </Field>\n      </Form>\n      <WhiteSpace />\n      <Button onClick={submit} size=\"small\" type=\"primary\" inline>\n        Submit\n      </Button>\n    </div>\n  );\n};\n",
+                  "import React, { useEffect } from 'react';\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\nimport Form, { Field } from 'rc-field-form';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [form] = Form.useForm();\n  useEffect(() => {\n    form.setFieldsValue({\n      date: [],\n    });\n  }, []);\n\n  const submit = () => {\n    const values = form.getFieldsValue();\n    console.log(values);\n  };\n\n  return (\n    <div className={s.root}>\n      <Form form={form}>\n        <Field name=\"date\">\n          <ValidRange />\n        </Field>\n      </Form>\n      <WhiteSpace />\n      <Button onClick={submit} size=\"small\" type=\"primary\" inline>\n        Submit\n      </Button>\n    </div>\n  );\n};\n",
               },
             },
             {
@@ -1307,7 +1310,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.52',
+                'eco-mobile': '1.0.53',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
                 'react-dom': '>= 16.9.0',
@@ -1351,7 +1354,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.52',
+                'eco-mobile': '1.0.53',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1394,7 +1397,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.52',
+                'eco-mobile': '1.0.53',
                 moment: '2.29.1',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
@@ -2058,7 +2061,7 @@
             {
               path: '/_demos/base',
               dependencies: {
-                'eco-mobile': '1.0.52',
+                'eco-mobile': '1.0.53',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -2683,7 +2686,7 @@
             {
               path: '/_demos/base-1',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.52' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.53' },
               files: {},
             },
           ),
@@ -2719,7 +2722,7 @@
             },
             {
               path: '/_demos/on-upload',
-              dependencies: { 'eco-mobile': '1.0.52' },
+              dependencies: { 'eco-mobile': '1.0.53' },
               files: {},
             },
           ),
@@ -2761,7 +2764,7 @@
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'eco-mobile': '1.0.52',
+                'eco-mobile': '1.0.53',
               },
               files: {},
             },
@@ -2803,7 +2806,7 @@
             {
               path: '/_demos/resize',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.52' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.53' },
               files: {},
             },
           ),
@@ -3520,7 +3523,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/date-range/index.md',
-                updatedTime: 1610075398e3,
+                updatedTime: 1610636684e3,
                 group: {
                   title: 'DateRange \u65e5\u671f\u8303\u56f4',
                   path: '/date-range',
@@ -3549,7 +3552,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/image-picker/index.md',
-                updatedTime: 161052991e4,
+                updatedTime: 1610636684e3,
                 group: {
                   title: 'ImagePicker \u56fe\u7247\u9009\u62e9\u5668',
                   path: '/image-picker',
@@ -3597,7 +3600,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/valid-range/index.md',
-                updatedTime: 1610075398e3,
+                updatedTime: 1610636684e3,
                 group: {
                   title: 'ValidRange \u8bc1\u4ef6\u6709\u6548\u671f',
                   path: '/valid-range',
@@ -3615,8 +3618,8 @@
                   },
                   {
                     depth: 2,
-                    value: '\u53d7\u63a7\u7ec4\u4ef6',
-                    heading: '\u53d7\u63a7\u7ec4\u4ef6',
+                    value: '\u7ed3\u5408form\u4f7f\u7528',
+                    heading: '\u7ed3\u5408form\u4f7f\u7528',
                   },
                   {
                     depth: 2,

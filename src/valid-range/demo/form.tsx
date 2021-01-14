@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Button, WhiteSpace } from 'antd-mobile';
 import { ValidRange } from 'eco-mobile';
@@ -14,6 +14,10 @@ const styles = createUseStyles({
 export default () => {
   const s = styles();
   const [form] = Form.useForm();
+
+  useEffect(() => {
+    form.setFieldsValue({ date: [] });
+  }, []);
 
   const submit = () => {
     const values = form.getFieldsValue();

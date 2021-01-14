@@ -1,6 +1,6 @@
 {
   "name": "eco-mobile",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "description": "基于react的移动端扩展组件",
   "scripts": {
     "start": "dumi dev",
