@@ -13,7 +13,7 @@ const styles = createUseStyles({
 export default () => {
   const s = styles();
 
-  const [values, setValues] = useState<Array<string | undefined>>([
+  const [value, setValue] = useState<Array<string | undefined>>([
     '2011-12-01',
     '2020-07-20',
   ]);
@@ -21,18 +21,18 @@ export default () => {
   // 日期改变
   const onChange = (arr: Array<string | undefined>, type: string) => {
     console.log('onChange', arr, type);
-    setValues(arr);
+    setValue(arr);
   };
 
   // 外部填充
   const onFill = () => {
-    setValues(['2020-11-10', '2020-12-30']);
+    setValue(['2020-11-10', '2020-12-30']);
   };
 
   return (
     <div className={s.root}>
       <ValidRange
-        values={values}
+        value={value}
         onChange={onChange}
         labels={['开始营业时间:', '结束营业时间:']}
         placeholders={['请选择', '请选择']}

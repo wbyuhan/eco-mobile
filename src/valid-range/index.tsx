@@ -12,8 +12,8 @@ const noon = () => {};
 
 interface ValidRangeProps {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
-  values?: Array<string | undefined>;
-  onChange?: (values: Array<string | undefined>, type: string) => void;
+  value?: Array<string | undefined>;
+  onChange?: (value: Array<string | undefined>, type: string) => void;
   labels?: string[];
   titles?: string[];
   placeholders?: string[];
@@ -26,7 +26,7 @@ interface ValidRangeProps {
 const ValidRange = (props: ValidRangeProps) => {
   const {
     classes: s = {},
-    values = [],
+    value = [],
     onChange = noon,
     labels = ['证件起始日期', '证件终止日期'],
     titles = ['起始日期', '终止日期'],
@@ -41,12 +41,12 @@ const ValidRange = (props: ValidRangeProps) => {
 
   // 监听日期
   useEffect(() => {
-    setCheck(values[1] === foreverDate);
-  }, [values[1], foreverDate]);
+    setCheck(value[1] === foreverDate);
+  }, [value[1], foreverDate]);
 
   // 切换
   const onCheckHandle = () => {
-    const arr = [values[0], check ? '' : foreverDate];
+    const arr = [value[0], check ? '' : foreverDate];
     const type = check ? 'unCheck' : 'check';
     onChange(arr, type);
     setCheck(val => !val);
@@ -57,15 +57,15 @@ const ValidRange = (props: ValidRangeProps) => {
     const val = formatDate(date);
     let arr = [];
     if (type === 'start') {
-      if (val > (values[1] as string)) {
+      if (val > (value[1] as string)) {
         return Toast.info(`${titles[0]}不能大于${titles[1]}`);
       }
-      arr = [val, values[1]];
+      arr = [val, value[1]];
     } else {
-      if (val < (values[0] as string)) {
+      if (val < (value[0] as string)) {
         return Toast.info(`${titles[1]}不能小于${titles[0]}`);
       }
-      arr = [values[0], val];
+      arr = [value[0], val];
     }
     onChange(arr, type);
   };
@@ -73,12 +73,12 @@ const ValidRange = (props: ValidRangeProps) => {
   return (
     <div className={s.root}>
       <List>
-        <div className={classnames({ [s.dateValue as string]: values[0] })}>
+        <div className={classnames({ [s.dateValue as string]: value[0] })}>
           <DatePicker
             mode="date"
             title={titles[0]}
             extra={placeholders[0]}
-            value={judeDate(values[0])}
+            value={judeDate(value[0])}
             onChange={date => onChangeHandle(date, 'start')}
             minDate={minDate}
             maxDate={maxDate}
@@ -89,16 +89,14 @@ const ValidRange = (props: ValidRangeProps) => {
         <Flex>
           <div
             className={classnames(s.datePicker, {
-              [s.dateValue as string]: values[1] && values[1] !== foreverDate,
+              [s.dateValue as string]: value[1] && value[1] !== foreverDate,
             })}
           >
             <DatePicker
               mode="date"
               title={titles[1]}
               extra={placeholders[1]}
-              value={
-                values[1] === foreverDate ? undefined : judeDate(values[1])
-              }
+              value={value[1] === foreverDate ? undefined : judeDate(value[1])}
               onChange={date => onChangeHandle(date, 'end')}
               minDate={minDate}
               maxDate={maxDate}

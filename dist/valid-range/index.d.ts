@@ -3,8 +3,8 @@ import { ClassKeysOfStyles } from '@wonder-ui/styles';
 import styles from './styles';
 interface ValidRangeProps {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
-  values?: Array<string | undefined>;
-  onChange?: (values: Array<string | undefined>, type: string) => void;
+  value?: Array<string | undefined>;
+  onChange?: (value: Array<string | undefined>, type: string) => void;
   labels?: string[];
   titles?: string[];
   placeholders?: string[];
@@ -28,7 +28,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
     >,
   | 'theme'
   | 'classes'
-  | 'values'
+  | 'value'
   | 'onChange'
   | 'labels'
   | 'titles'

@@ -14,8 +14,8 @@ interface DateRangeProps {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
   label?: string;
   tip?: string;
-  values?: Array<string | undefined>;
-  onChange?: (values: Array<string | undefined>, type: string) => void;
+  value?: Array<string | undefined>;
+  onChange?: (value: Array<string | undefined>, type: string) => void;
   titles?: string[];
   placeholders?: string[];
   minDate?: Date;
@@ -28,7 +28,7 @@ const DateRange = (props: DateRangeProps) => {
     classes: s = {},
     label = '自定义日期',
     tip = '时间范围最长30天',
-    values = [],
+    value = [],
     onChange = noon,
     titles = ['起始日期', '终止日期'],
     placeholders = ['请选择起始日期', '请选择终止日期'],
@@ -42,15 +42,15 @@ const DateRange = (props: DateRangeProps) => {
     const val = formatDate(date);
     let arr = [];
     if (type === 'start') {
-      if (val > (values[1] as string)) {
+      if (val > (value[1] as string)) {
         return Toast.info(`${titles[0]}不能大于${titles[1]}`);
       }
-      arr = [val, values[1]];
+      arr = [val, value[1]];
     } else {
-      if (val < (values[0] as string)) {
+      if (val < (value[0] as string)) {
         return Toast.info(`${titles[1]}不能小于${titles[0]}`);
       }
-      arr = [values[0], val];
+      arr = [value[0], val];
     }
     onChange(arr, type);
   };
@@ -64,14 +64,14 @@ const DateRange = (props: DateRangeProps) => {
       <Flex className={s.dateBox}>
         <div
           className={classnames(s.datePicker, {
-            [s.dateValue as string]: values[0],
+            [s.dateValue as string]: value[0],
           })}
         >
           <DatePicker
             mode="date"
             title={titles[0]}
             extra={placeholders[0]}
-            value={judeDate(values[0])}
+            value={judeDate(value[0])}
             onChange={date => onChangeHandle(date, 'start')}
             minDate={minDate}
             maxDate={maxDate}
@@ -82,14 +82,14 @@ const DateRange = (props: DateRangeProps) => {
         <span className={s.splitTxt}>{splitTxt}</span>
         <div
           className={classnames(s.datePicker, {
-            [s.dateValue as string]: values[1],
+            [s.dateValue as string]: value[1],
           })}
         >
           <DatePicker
             mode="date"
             title={titles[1]}
             extra={placeholders[1]}
-            value={judeDate(values[1])}
+            value={judeDate(value[1])}
             onChange={date => onChangeHandle(date, 'end')}
             minDate={minDate}
             maxDate={maxDate}

@@ -37,6 +37,7 @@ interface ImagePickerProps {
   disabledPreview?: boolean; // 是否禁用预览图片
   onGetPreviewUrl?: (index: number) => Promise<string>; // 获取预览图片方法
   showRemove?: boolean; // 是否显示删除按钮
+  replace?: boolean; // 是否显示删除按钮
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
 
@@ -62,6 +63,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
     onGetPreviewUrl,
     resize,
     showRemove = true,
+    replace,
   } = props;
 
   const refInput = ref || useRef<any>(null);
@@ -125,8 +127,8 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
       return (fileSelectorEl.value = '');
     }
     console.log('files', files);
-    const restNum = max - validLength;
-    if (files.length > restNum) {
+    const restNum = max - (replace ? 0 : validLength);
+    if (files.length > (replace ? max : restNum)) {
       Toast.info(`图片最多不超过${max}张`);
     }
     const restFileList = Array.from(files).slice(0, restNum);
@@ -137,7 +139,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
     refFilesList.current = refFilesList.current.filter(
       item => item.url || item.errorTip,
     ); // 过滤有效值
-    const index = refFilesList.current.length;
+    const index = replace ? 0 : refFilesList.current.length;
     Promise.all(imageParsePromiseList)
       .then((imageItems: any[]) => {
         if (typeof onUpload === 'function') {
@@ -150,7 +152,11 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
           }
           return item;
         });
-        refFilesList.current = refFilesList.current.concat(filterList);
+        if (replace) {
+          refFilesList.current = [...filterList];
+        } else {
+          refFilesList.current = refFilesList.current.concat(filterList);
+        }
         onChange(refFilesList.current);
         if (typeof onUpload === 'function') {
           for (let i = 0; i < refFilesList.current.length; i++) {

@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 
-import { DateRange } from 'eco-mobile';
+import { Button } from 'antd-mobile';
+import { ValidRange } from 'eco-mobile';
 import { createUseStyles } from '@wonder-ui/styles';
+import { createForm } from 'rc-form';
 
 const styles = createUseStyles({
   root: {
     width: '375px',
-    padding: '20px',
-    boxSizing: 'border-box',
-    background: '#fff',
-    boxShadow: '0 3px 5px 0 #ccc',
   },
 });
 
-export default () => {
+export default createForm()(({ form }: { form: any }) => {
   const s = styles();
+  const { getFieldProps, getFieldsValue } = form;
 
   const [value, setValue] = useState<Array<string | undefined>>([]);
 
@@ -26,7 +25,9 @@ export default () => {
 
   return (
     <div className={s.root}>
-      <DateRange value={value} onChange={onChange} />
+      {/* <ValidRange value={value} onChange={onChange} /> */}
+      <ValidRange {...getFieldProps('date')} />
+      <Button>submit</Button>
     </div>
   );
-};
+});

@@ -324,7 +324,8 @@ var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
     onGetPreviewUrl = props.onGetPreviewUrl,
     resize = props.resize,
     _props$showRemove = props.showRemove,
-    showRemove = _props$showRemove === void 0 ? true : _props$showRemove;
+    showRemove = _props$showRemove === void 0 ? true : _props$showRemove,
+    replace = props.replace;
   var refInput = ref || useRef(null);
   var refSelectDom = useRef(null);
   var refFilesList = useRef(filesList);
@@ -412,9 +413,9 @@ var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
     }
 
     console.log('files', files);
-    var restNum = max - validLength;
+    var restNum = max - (replace ? 0 : validLength);
 
-    if (files.length > restNum) {
+    if (files.length > (replace ? max : restNum)) {
       _Toast.info(
         '\u56FE\u7247\u6700\u591A\u4E0D\u8D85\u8FC7'.concat(max, '\u5F20'),
       );
@@ -431,7 +432,7 @@ var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
       return item.url || item.errorTip;
     }); // 过滤有效值
 
-    var index = refFilesList.current.length;
+    var index = replace ? 0 : refFilesList.current.length;
     Promise.all(imageParsePromiseList)
       .then(function(imageItems) {
         if (typeof onUpload === 'function') {
@@ -454,7 +455,13 @@ var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
 
           return item;
         });
-        refFilesList.current = refFilesList.current.concat(filterList);
+
+        if (replace) {
+          refFilesList.current = _toConsumableArray(filterList);
+        } else {
+          refFilesList.current = refFilesList.current.concat(filterList);
+        }
+
         onChange(refFilesList.current);
 
         if (typeof onUpload === 'function') {
@@ -937,8 +944,8 @@ var noon$1 = function noon() {};
 var ValidRange = function ValidRange(props) {
   var _props$classes = props.classes,
     s = _props$classes === void 0 ? {} : _props$classes,
-    _props$values = props.values,
-    values = _props$values === void 0 ? [] : _props$values,
+    _props$value = props.value,
+    value = _props$value === void 0 ? [] : _props$value,
     _props$onChange = props.onChange,
     onChange = _props$onChange === void 0 ? noon$1 : _props$onChange,
     _props$labels = props.labels,
@@ -977,13 +984,13 @@ var ValidRange = function ValidRange(props) {
 
   useEffect(
     function() {
-      setCheck(values[1] === foreverDate);
+      setCheck(value[1] === foreverDate);
     },
-    [values[1], foreverDate],
+    [value[1], foreverDate],
   ); // 切换
 
   var onCheckHandle = function onCheckHandle() {
-    var arr = [values[0], check ? '' : foreverDate];
+    var arr = [value[0], check ? '' : foreverDate];
     var type = check ? 'unCheck' : 'check';
     onChange(arr, type);
     setCheck(function(val) {
@@ -996,21 +1003,21 @@ var ValidRange = function ValidRange(props) {
     var arr = [];
 
     if (type === 'start') {
-      if (val > values[1]) {
+      if (val > value[1]) {
         return _Toast.info(
           ''.concat(titles[0], '\u4E0D\u80FD\u5927\u4E8E').concat(titles[1]),
         );
       }
 
-      arr = [val, values[1]];
+      arr = [val, value[1]];
     } else {
-      if (val < values[0]) {
+      if (val < value[0]) {
         return _Toast.info(
           ''.concat(titles[1], '\u4E0D\u80FD\u5C0F\u4E8E').concat(titles[0]),
         );
       }
 
-      arr = [values[0], val];
+      arr = [value[0], val];
     }
 
     onChange(arr, type);
@@ -1027,7 +1034,7 @@ var ValidRange = function ValidRange(props) {
       /*#__PURE__*/ React.createElement(
         'div',
         {
-          className: classnames(_defineProperty({}, s.dateValue, values[0])),
+          className: classnames(_defineProperty({}, s.dateValue, value[0])),
         },
         /*#__PURE__*/ React.createElement(
           _DatePicker,
@@ -1035,7 +1042,7 @@ var ValidRange = function ValidRange(props) {
             mode: 'date',
             title: titles[0],
             extra: placeholders[0],
-            value: judeDate(values[0]),
+            value: judeDate(value[0]),
             onChange: function onChange(date) {
               return onChangeHandle(date, 'start');
             },
@@ -1062,7 +1069,7 @@ var ValidRange = function ValidRange(props) {
               _defineProperty(
                 {},
                 s.dateValue,
-                values[1] && values[1] !== foreverDate,
+                value[1] && value[1] !== foreverDate,
               ),
             ),
           },
@@ -1072,8 +1079,7 @@ var ValidRange = function ValidRange(props) {
               mode: 'date',
               title: titles[1],
               extra: placeholders[1],
-              value:
-                values[1] === foreverDate ? undefined : judeDate(values[1]),
+              value: value[1] === foreverDate ? undefined : judeDate(value[1]),
               onChange: function onChange(date) {
                 return onChangeHandle(date, 'end');
               },
@@ -1164,8 +1170,8 @@ var DateRange = function DateRange(props) {
     label = _props$label === void 0 ? '自定义日期' : _props$label,
     _props$tip = props.tip,
     tip = _props$tip === void 0 ? '时间范围最长30天' : _props$tip,
-    _props$values = props.values,
-    values = _props$values === void 0 ? [] : _props$values,
+    _props$value = props.value,
+    value = _props$value === void 0 ? [] : _props$value,
     _props$onChange = props.onChange,
     onChange = _props$onChange === void 0 ? noon$2 : _props$onChange,
     _props$titles = props.titles,
@@ -1194,21 +1200,21 @@ var DateRange = function DateRange(props) {
     var arr = [];
 
     if (type === 'start') {
-      if (val > values[1]) {
+      if (val > value[1]) {
         return _Toast.info(
           ''.concat(titles[0], '\u4E0D\u80FD\u5927\u4E8E').concat(titles[1]),
         );
       }
 
-      arr = [val, values[1]];
+      arr = [val, value[1]];
     } else {
-      if (val < values[0]) {
+      if (val < value[0]) {
         return _Toast.info(
           ''.concat(titles[1], '\u4E0D\u80FD\u5C0F\u4E8E').concat(titles[0]),
         );
       }
 
-      arr = [values[0], val];
+      arr = [value[0], val];
     }
 
     onChange(arr, type);
@@ -1249,7 +1255,7 @@ var DateRange = function DateRange(props) {
         {
           className: classnames(
             s.datePicker,
-            _defineProperty({}, s.dateValue, values[0]),
+            _defineProperty({}, s.dateValue, value[0]),
           ),
         },
         /*#__PURE__*/ React.createElement(
@@ -1258,7 +1264,7 @@ var DateRange = function DateRange(props) {
             mode: 'date',
             title: titles[0],
             extra: placeholders[0],
-            value: judeDate(values[0]),
+            value: judeDate(value[0]),
             onChange: function onChange(date) {
               return onChangeHandle(date, 'start');
             },
@@ -1282,7 +1288,7 @@ var DateRange = function DateRange(props) {
         {
           className: classnames(
             s.datePicker,
-            _defineProperty({}, s.dateValue, values[1]),
+            _defineProperty({}, s.dateValue, value[1]),
           ),
         },
         /*#__PURE__*/ React.createElement(
@@ -1291,7 +1297,7 @@ var DateRange = function DateRange(props) {
             mode: 'date',
             title: titles[1],
             extra: placeholders[1],
-            value: judeDate(values[1]),
+            value: judeDate(value[1]),
             onChange: function onChange(date) {
               return onChangeHandle(date, 'end');
             },

@@ -14,7 +14,7 @@ const styles = createUseStyles({
 export default () => {
   const s = styles();
 
-  const [values, setValues] = useState<Array<string | undefined>>([]);
+  const [value, setValue] = useState<Array<string | undefined>>([]);
 
   // 日期改变
   const onChange = (arr: Array<string | undefined>, type: string) => {
@@ -29,12 +29,12 @@ export default () => {
         return Toast.info('结束日期不能小于今天');
       }
     }
-    setValues(arr);
+    setValue(arr);
   };
 
   return (
     <div className={s.root}>
-      <ValidRange values={values} onChange={onChange} />
+      <ValidRange value={value} onChange={onChange} />
     </div>
   );
 };

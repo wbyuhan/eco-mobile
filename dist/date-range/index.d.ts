@@ -5,8 +5,8 @@ interface DateRangeProps {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
   label?: string;
   tip?: string;
-  values?: Array<string | undefined>;
-  onChange?: (values: Array<string | undefined>, type: string) => void;
+  value?: Array<string | undefined>;
+  onChange?: (value: Array<string | undefined>, type: string) => void;
   titles?: string[];
   placeholders?: string[];
   minDate?: Date;
@@ -31,7 +31,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'splitTxt'
   | 'theme'
   | 'classes'
-  | 'values'
+  | 'value'
   | 'onChange'
   | 'titles'
   | 'placeholders'
