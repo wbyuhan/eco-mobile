@@ -690,19 +690,24 @@
           j = void 0 === x ? new Date(1980, 0, 1, 23, 59, 59) : x,
           C = e.maxDate,
           S = void 0 === C ? new Date(2100, 11, 30, 23, 59, 59) : C,
-          D = Object(s['useState'])(!1),
-          P = Object(c['a'])(D, 2),
-          R = P[0],
-          N = P[1];
+          D = e.cache,
+          P = Object(s['useState'])(!1),
+          R = Object(c['a'])(P, 2),
+          N = R[0],
+          T = R[1],
+          F = Object(s['useState'])(),
+          L = Object(c['a'])(F, 2),
+          M = L[0],
+          V = L[1];
         Object(s['useEffect'])(() => {
-          N(l[1] === y);
+          T(l[1] === y), D && l[1] && l[1] !== y && V(l[1]);
         }, [l[1], y]);
-        var T = () => {
-            var e = [l[0], R ? '' : y],
-              n = R ? 'unCheck' : 'check';
-            o(e, n), N(e => !e);
+        var Q = () => {
+            var e = [l[0], N ? M || '' : y],
+              n = N ? 'unCheck' : 'check';
+            o(e, n), T(e => !e);
           },
-          F = (e, n) => {
+          Y = (e, n) => {
             var t = B(e),
               a = [];
             if ('start' === n) {
@@ -736,7 +741,7 @@
                   title: g[0],
                   extra: E[0],
                   value: O(l[0]),
-                  onChange: e => F(e, 'start'),
+                  onChange: e => Y(e, 'start'),
                   minDate: j,
                   maxDate: S,
                 },
@@ -760,7 +765,7 @@
                     title: g[1],
                     extra: E[1],
                     value: l[1] === y ? void 0 : O(l[1]),
-                    onChange: e => F(e, 'end'),
+                    onChange: e => Y(e, 'end'),
                     minDate: j,
                     maxDate: S,
                   },
@@ -774,9 +779,9 @@
               ),
               m.a.createElement(
                 k.a,
-                { className: t.forerverBox, onClick: T },
+                { className: t.forerverBox, onClick: Q },
                 m.a.createElement('i', {
-                  className: f()(t.iconCheck, { [t.iconChecked]: R }),
+                  className: f()(t.iconCheck, { [t.iconChecked]: N }),
                 }),
                 m.a.createElement('span', null, b),
               ),
@@ -1271,7 +1276,7 @@
             {
               path: '/_demos/base-2',
               dependencies: {
-                'eco-mobile': '1.0.53',
+                'eco-mobile': '1.0.55',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1285,13 +1290,16 @@
           { className: 'markdown' },
           r.a.createElement(
             'h2',
-            { id: '\u7ed3\u5408form\u4f7f\u7528' },
+            { id: '\u7ed3\u5408-form-\u4f7f\u7528' },
             r.a.createElement(
               'a',
-              { 'aria-hidden': 'true', href: '#\u7ed3\u5408form\u4f7f\u7528' },
+              {
+                'aria-hidden': 'true',
+                href: '#\u7ed3\u5408-form-\u4f7f\u7528',
+              },
               r.a.createElement('span', { className: 'icon icon-link' }),
             ),
-            '\u7ed3\u5408form\u4f7f\u7528',
+            '\u7ed3\u5408 form \u4f7f\u7528',
           ),
         ),
         r.a.createElement(
@@ -1300,7 +1308,7 @@
             {
               source: {
                 tsx:
-                  "import React, { useEffect } from 'react';\n\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\nimport Form, { Field } from 'rc-field-form';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n  const [form] = Form.useForm();\n\n  useEffect(() => {\n    form.setFieldsValue({date: []})\n  }, []);\n\n  const submit = () => {\n    const values = form.getFieldsValue();\n    console.log(values);\n  };\n\n  return (\n    <div className={s.root}>\n      <Form form={form}>\n        <Field name=\"date\">\n          <ValidRange />\n        </Field>\n      </Form>\n      <WhiteSpace />\n      <Button onClick={submit} size=\"small\" type=\"primary\" inline>\n        Submit\n      </Button>\n    </div>\n  );\n};\n",
+                  "import React, { useEffect } from 'react';\n\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\nimport Form, { Field } from 'rc-field-form';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n  const [form] = Form.useForm();\n\n  useEffect(() => {\n    form.setFieldsValue({ date: [] });\n  }, []);\n\n  const submit = () => {\n    const values = form.getFieldsValue();\n    console.log(values);\n  };\n\n  return (\n    <div className={s.root}>\n      <Form form={form}>\n        <Field name=\"date\">\n          <ValidRange />\n        </Field>\n      </Form>\n      <WhiteSpace />\n      <Button onClick={submit} size=\"small\" type=\"primary\" inline>\n        Submit\n      </Button>\n    </div>\n  );\n};\n",
                 jsx:
                   "import React, { useEffect } from 'react';\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\nimport Form, { Field } from 'rc-field-form';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [form] = Form.useForm();\n  useEffect(() => {\n    form.setFieldsValue({\n      date: [],\n    });\n  }, []);\n\n  const submit = () => {\n    const values = form.getFieldsValue();\n    console.log(values);\n  };\n\n  return (\n    <div className={s.root}>\n      <Form form={form}>\n        <Field name=\"date\">\n          <ValidRange />\n        </Field>\n      </Form>\n      <WhiteSpace />\n      <Button onClick={submit} size=\"small\" type=\"primary\" inline>\n        Submit\n      </Button>\n    </div>\n  );\n};\n",
               },
@@ -1310,7 +1318,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.53',
+                'eco-mobile': '1.0.55',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
                 'react-dom': '>= 16.9.0',
@@ -1344,9 +1352,9 @@
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [value, setValue] = useState<Array<string | undefined>>([\n    '2011-12-01',\n    '2020-07-20',\n  ]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValue(arr);\n  };\n\n  // \u5916\u90e8\u586b\u5145\n  const onFill = () => {\n    setValue(['2020-11-10', '2020-12-30']);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange\n        value={value}\n        onChange={onChange}\n        labels={['\u5f00\u59cb\u8425\u4e1a\u65f6\u95f4:', '\u7ed3\u675f\u8425\u4e1a\u65f6\u95f4:']}\n        placeholders={['\u8bf7\u9009\u62e9', '\u8bf7\u9009\u62e9']}\n        titles={['\u5f00\u59cb\u65e5\u671f', '\u7ed3\u675f\u65e5\u671f']}\n        forerverTxt=\"\u6c38\u4e45\"\n        foreverDate=\"2999-12-31\"\n        minDate={new Date(2010, 0, 1, 23, 59, 59)}\n        maxDate={new Date(2020, 9, 28, 23, 59, 59)}\n      />\n      <WhiteSpace />\n      <Button onClick={onFill} inline type=\"primary\" size=\"small\">\n        \u5916\u90e8\u586b\u5145\n      </Button>\n    </div>\n  );\n};\n",
+                  "import React, { useState } from 'react';\n\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\n\nexport default () => {\n  const s = styles();\n\n  const [value, setValue] = useState<Array<string | undefined>>([\n    '2011-12-01',\n    '2020-07-20',\n  ]);\n\n  // \u65e5\u671f\u6539\u53d8\n  const onChange = (arr: Array<string | undefined>, type: string) => {\n    console.log('onChange', arr, type);\n    setValue(arr);\n  };\n\n  // \u5916\u90e8\u586b\u5145\n  const onFill = () => {\n    setValue(['2020-11-10', '2020-12-30']);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange\n        value={value}\n        onChange={onChange}\n        labels={['\u5f00\u59cb\u8425\u4e1a\u65f6\u95f4:', '\u7ed3\u675f\u8425\u4e1a\u65f6\u95f4:']}\n        placeholders={['\u8bf7\u9009\u62e9', '\u8bf7\u9009\u62e9']}\n        titles={['\u5f00\u59cb\u65e5\u671f', '\u7ed3\u675f\u65e5\u671f']}\n        forerverTxt=\"\u6c38\u4e45\"\n        foreverDate=\"2999-12-31\"\n        minDate={new Date(2010, 0, 1, 23, 59, 59)}\n        maxDate={new Date(2020, 9, 28, 23, 59, 59)}\n        cache\n      />\n      <WhiteSpace />\n      <Button onClick={onFill} inline type=\"primary\" size=\"small\">\n        \u5916\u90e8\u586b\u5145\n      </Button>\n    </div>\n  );\n};\n",
                 jsx:
-                  "import React, { useState } from 'react';\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [value, setValue] = useState(['2011-12-01', '2020-07-20']); // \u65e5\u671f\u6539\u53d8\n\n  const onChange = (arr, type) => {\n    console.log('onChange', arr, type);\n    setValue(arr);\n  }; // \u5916\u90e8\u586b\u5145\n\n  const onFill = () => {\n    setValue(['2020-11-10', '2020-12-30']);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange\n        value={value}\n        onChange={onChange}\n        labels={['\u5f00\u59cb\u8425\u4e1a\u65f6\u95f4:', '\u7ed3\u675f\u8425\u4e1a\u65f6\u95f4:']}\n        placeholders={['\u8bf7\u9009\u62e9', '\u8bf7\u9009\u62e9']}\n        titles={['\u5f00\u59cb\u65e5\u671f', '\u7ed3\u675f\u65e5\u671f']}\n        forerverTxt=\"\u6c38\u4e45\"\n        foreverDate=\"2999-12-31\"\n        minDate={new Date(2010, 0, 1, 23, 59, 59)}\n        maxDate={new Date(2020, 9, 28, 23, 59, 59)}\n      />\n      <WhiteSpace />\n      <Button onClick={onFill} inline type=\"primary\" size=\"small\">\n        \u5916\u90e8\u586b\u5145\n      </Button>\n    </div>\n  );\n};\n",
+                  "import React, { useState } from 'react';\nimport { Button, WhiteSpace } from 'antd-mobile';\nimport { ValidRange } from 'eco-mobile';\nimport { createUseStyles } from '@wonder-ui/styles';\n\nconst styles = createUseStyles({\n  root: {\n    width: '375px',\n  },\n});\nexport default () => {\n  const s = styles();\n  const [value, setValue] = useState(['2011-12-01', '2020-07-20']); // \u65e5\u671f\u6539\u53d8\n\n  const onChange = (arr, type) => {\n    console.log('onChange', arr, type);\n    setValue(arr);\n  }; // \u5916\u90e8\u586b\u5145\n\n  const onFill = () => {\n    setValue(['2020-11-10', '2020-12-30']);\n  };\n\n  return (\n    <div className={s.root}>\n      <ValidRange\n        value={value}\n        onChange={onChange}\n        labels={['\u5f00\u59cb\u8425\u4e1a\u65f6\u95f4:', '\u7ed3\u675f\u8425\u4e1a\u65f6\u95f4:']}\n        placeholders={['\u8bf7\u9009\u62e9', '\u8bf7\u9009\u62e9']}\n        titles={['\u5f00\u59cb\u65e5\u671f', '\u7ed3\u675f\u65e5\u671f']}\n        forerverTxt=\"\u6c38\u4e45\"\n        foreverDate=\"2999-12-31\"\n        minDate={new Date(2010, 0, 1, 23, 59, 59)}\n        maxDate={new Date(2020, 9, 28, 23, 59, 59)}\n        cache\n      />\n      <WhiteSpace />\n      <Button onClick={onFill} inline type=\"primary\" size=\"small\">\n        \u5916\u90e8\u586b\u5145\n      </Button>\n    </div>\n  );\n};\n",
               },
             },
             {
@@ -1354,7 +1362,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.53',
+                'eco-mobile': '1.0.55',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -1397,7 +1405,7 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.53',
+                'eco-mobile': '1.0.55',
                 moment: '2.29.1',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
@@ -1642,6 +1650,26 @@
                     null,
                     'new Date(2100, 11, 30, 23, 59, 59)',
                   ),
+                ),
+              ),
+              r.a.createElement(
+                'tr',
+                null,
+                r.a.createElement('td', null, 'cache'),
+                r.a.createElement(
+                  'td',
+                  null,
+                  '\u5207\u6362\u957f\u671f\u6309\u94ae\u662f\u5426\u6062\u590d\u539f\u503c',
+                ),
+                r.a.createElement(
+                  'td',
+                  null,
+                  r.a.createElement('code', null, 'boolean'),
+                ),
+                r.a.createElement(
+                  'td',
+                  null,
+                  r.a.createElement('code', null, 'false'),
                 ),
               ),
             ),
@@ -2061,7 +2089,7 @@
             {
               path: '/_demos/base',
               dependencies: {
-                'eco-mobile': '1.0.53',
+                'eco-mobile': '1.0.55',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
               },
@@ -2391,6 +2419,7 @@
           foreverDate: '2999-12-31',
           minDate: new Date(2010, 0, 1, 23, 59, 59),
           maxDate: new Date(2020, 9, 28, 23, 59, 59),
+          cache: !0,
         }),
         s.a.createElement(o.a, null),
         s.a.createElement(
@@ -2686,7 +2715,7 @@
             {
               path: '/_demos/base-1',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.53' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.55' },
               files: {},
             },
           ),
@@ -2722,7 +2751,7 @@
             },
             {
               path: '/_demos/on-upload',
-              dependencies: { 'eco-mobile': '1.0.53' },
+              dependencies: { 'eco-mobile': '1.0.55' },
               files: {},
             },
           ),
@@ -2764,7 +2793,7 @@
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'eco-mobile': '1.0.53',
+                'eco-mobile': '1.0.55',
               },
               files: {},
             },
@@ -2806,7 +2835,7 @@
             {
               path: '/_demos/resize',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.53' },
+              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.55' },
               files: {},
             },
           ),
@@ -3600,7 +3629,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/valid-range/index.md',
-                updatedTime: 1610636684e3,
+                updatedTime: 1610637961e3,
                 group: {
                   title: 'ValidRange \u8bc1\u4ef6\u6709\u6548\u671f',
                   path: '/valid-range',
@@ -3618,8 +3647,8 @@
                   },
                   {
                     depth: 2,
-                    value: '\u7ed3\u5408form\u4f7f\u7528',
-                    heading: '\u7ed3\u5408form\u4f7f\u7528',
+                    value: '\u7ed3\u5408 form \u4f7f\u7528',
+                    heading: '\u7ed3\u5408-form-\u4f7f\u7528',
                   },
                   {
                     depth: 2,

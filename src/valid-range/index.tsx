@@ -21,6 +21,7 @@ interface ValidRangeProps {
   foreverDate?: string;
   minDate?: Date;
   maxDate?: Date;
+  cache?: boolean;
 }
 
 const ValidRange = (props: ValidRangeProps) => {
@@ -35,18 +36,23 @@ const ValidRange = (props: ValidRangeProps) => {
     foreverDate = '9999-12-31',
     minDate = new Date(1980, 0, 1, 23, 59, 59),
     maxDate = new Date(2100, 11, 30, 23, 59, 59),
+    cache,
   } = props;
 
   const [check, setCheck] = useState<boolean>(false);
+  const [cacheVal, setcacheVal] = useState<string>();
 
   // 监听日期
   useEffect(() => {
     setCheck(value[1] === foreverDate);
+    if (cache && value[1] && value[1] !== foreverDate) {
+      setcacheVal(value[1]);
+    }
   }, [value[1], foreverDate]);
 
   // 切换
   const onCheckHandle = () => {
-    const arr = [value[0], check ? '' : foreverDate];
+    const arr = [value[0], check ? (cacheVal ? cacheVal : '') : foreverDate];
     const type = check ? 'unCheck' : 'check';
     onChange(arr, type);
     setCheck(val => !val);

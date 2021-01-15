@@ -995,22 +995,32 @@ var ValidRange = function ValidRange(props) {
     maxDate =
       _props$maxDate === void 0
         ? new Date(2100, 11, 30, 23, 59, 59)
-        : _props$maxDate;
+        : _props$maxDate,
+    cache = props.cache;
 
   var _useState = React.useState(false),
     _useState2 = _slicedToArray(_useState, 2),
     check = _useState2[0],
-    setCheck = _useState2[1]; // 监听日期
+    setCheck = _useState2[1];
+
+  var _useState3 = React.useState(),
+    _useState4 = _slicedToArray(_useState3, 2),
+    cacheVal = _useState4[0],
+    setcacheVal = _useState4[1]; // 监听日期
 
   React.useEffect(
     function() {
       setCheck(value[1] === foreverDate);
+
+      if (cache && value[1] && value[1] !== foreverDate) {
+        setcacheVal(value[1]);
+      }
     },
     [value[1], foreverDate],
   ); // 切换
 
   var onCheckHandle = function onCheckHandle() {
-    var arr = [value[0], check ? '' : foreverDate];
+    var arr = [value[0], check ? (cacheVal ? cacheVal : '') : foreverDate];
     var type = check ? 'unCheck' : 'check';
     onChange(arr, type);
     setCheck(function(val) {

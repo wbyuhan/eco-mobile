@@ -12,6 +12,7 @@ interface ValidRangeProps {
   foreverDate?: string;
   minDate?: Date;
   maxDate?: Date;
+  cache?: boolean;
 }
 declare const _default: React.ForwardRefExoticComponent<Pick<
   ValidRangeProps & {
@@ -37,6 +38,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'foreverDate'
   | 'minDate'
   | 'maxDate'
+  | 'cache'
 > &
   React.RefAttributes<(props: ValidRangeProps) => JSX.Element>>;
 export default _default;
