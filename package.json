@@ -1,6 +1,6 @@
 {
   "name": "eco-mobile",
-  "version": "1.0.57",
+  "version": "1.0.58",
   "description": "基于react的移动端扩展组件",
   "scripts": {
     "start": "dumi dev",
@@ -47,14 +47,18 @@
   ],
   "peerDependencies": {
     "@wonder-ui/styles": "^2.0.0-beta.9",
-    "antd-mobile": "^2.3.4",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": ">= 16.9.0",
+    "react-dom": ">= 16.9.0"
   },
   "dependencies": {
+    "@wonder-ui/styles": "^2.0.0-beta.9",
+    "antd-mobile": "^2.3.4",
     "classnames": "^2.2.6",
+    "compressorjs": "^1.0.7",
     "moment": "^2.29.1",
     "rc-field-form": "^1.17.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-wx-images-viewer": "^1.0.6"
   },
   "devDependencies": {

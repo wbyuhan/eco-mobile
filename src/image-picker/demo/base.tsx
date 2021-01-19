@@ -23,7 +23,7 @@ export default () => {
   return (
     <Flex direction="row" wrap="wrap">
       <WingBlank>
-        <ImagePicker filesList={filesList} onChange={onChange} />
+        <ImagePicker filesList={filesList} onChange={onChange} quality={0.1} />
         <WhiteSpace />
       </WingBlank>
       <WingBlank>

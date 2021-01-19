@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo, forwardRef } from 'react';
 import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
 import classnames from 'classnames';
+import Compressor from 'compressorjs';
 import WxImageViewer from 'react-wx-images-viewer';
 import { Toast } from 'antd-mobile';
 
@@ -38,6 +39,7 @@ interface ImagePickerProps {
   onGetPreviewUrl?: (index: number) => Promise<string>; // 获取预览图片方法
   showRemove?: boolean; // 是否显示删除按钮
   replace?: boolean; // 是否显示删除按钮
+  quality?: number; // 图片压缩比例
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
 
@@ -64,6 +66,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
     resize,
     showRemove = true,
     replace,
+    quality,
   } = props;
 
   const refInput = ref || useRef<any>(null);
@@ -103,8 +106,26 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
     }
   }, [resize]);
 
+  // 图片压缩
+  const compress = (file: File | Blob) => {
+    return new Promise(resolve => {
+      new Compressor(file, {
+        quality,
+        success: (result: Blob) => {
+          resolve(result);
+        },
+      });
+    });
+  };
+
   // 图片处理
-  const parseFile = (file: any, index: number) => {
+  const parseFile = async (file: any, index: number) => {
+    let data: any = file;
+    if (quality) {
+      console.log('压缩前', file);
+      data = await compress(file);
+      console.log('compress data', data);
+    }
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = e => {
@@ -115,7 +136,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
         }
         resolve({ file, url: dataURL });
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(data);
     });
   };
 

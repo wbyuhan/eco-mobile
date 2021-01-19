@@ -7,6 +7,7 @@ var _Toast = require('antd-mobile/lib/toast');
 var React = require('react');
 var styles$3 = require('@wonder-ui/styles');
 var classnames = require('classnames');
+var Compressor = require('compressorjs');
 var WxImageViewer = require('react-wx-images-viewer');
 require('antd-mobile/lib/flex/style/css');
 var _Flex = require('antd-mobile/lib/flex');
@@ -23,6 +24,7 @@ function _interopDefaultLegacy(e) {
 var _Toast__default = /*#__PURE__*/ _interopDefaultLegacy(_Toast);
 var React__default = /*#__PURE__*/ _interopDefaultLegacy(React);
 var classnames__default = /*#__PURE__*/ _interopDefaultLegacy(classnames);
+var Compressor__default = /*#__PURE__*/ _interopDefaultLegacy(Compressor);
 var WxImageViewer__default = /*#__PURE__*/ _interopDefaultLegacy(WxImageViewer);
 var _Flex__default = /*#__PURE__*/ _interopDefaultLegacy(_Flex);
 var _DatePicker__default = /*#__PURE__*/ _interopDefaultLegacy(_DatePicker);
@@ -342,7 +344,8 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
     resize = props.resize,
     _props$showRemove = props.showRemove,
     showRemove = _props$showRemove === void 0 ? true : _props$showRemove,
-    replace = props.replace;
+    replace = props.replace,
+    quality = props.quality;
   var refInput = ref || React.useRef(null);
   var refSelectDom = React.useRef(null);
   var refFilesList = React.useRef(filesList);
@@ -397,29 +400,79 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
       }
     },
     [resize],
-  ); // 图片处理
+  ); // 图片压缩
 
-  var parseFile = function parseFile(file, index) {
-    return new Promise(function(resolve, reject) {
-      var reader = new FileReader();
-
-      reader.onload = function(e) {
-        var dataURL = e.target.result;
-
-        if (!dataURL) {
-          reject('Fail to get the '.concat(index, ' image'));
-          return;
-        }
-
-        resolve({
-          file: file,
-          url: dataURL,
-        });
-      };
-
-      reader.readAsDataURL(file);
+  var compress = function compress(file) {
+    return new Promise(function(resolve) {
+      new Compressor__default['default'](file, {
+        quality: quality,
+        success: function success(result) {
+          resolve(result);
+        },
+      });
     });
-  }; // 图片改变
+  }; // 图片处理
+
+  var parseFile = /*#__PURE__*/ (function() {
+    var _ref = _asyncToGenerator(
+      /*#__PURE__*/ regeneratorRuntime.mark(function _callee(file, index) {
+        var data;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch ((_context.prev = _context.next)) {
+              case 0:
+                data = file;
+
+                if (!quality) {
+                  _context.next = 7;
+                  break;
+                }
+
+                console.log('压缩前', file);
+                _context.next = 5;
+                return compress(file);
+
+              case 5:
+                data = _context.sent;
+                console.log('compress data', data);
+
+              case 7:
+                return _context.abrupt(
+                  'return',
+                  new Promise(function(resolve, reject) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                      var dataURL = e.target.result;
+
+                      if (!dataURL) {
+                        reject('Fail to get the '.concat(index, ' image'));
+                        return;
+                      }
+
+                      resolve({
+                        file: file,
+                        url: dataURL,
+                      });
+                    };
+
+                    reader.readAsDataURL(data);
+                  }),
+                );
+
+              case 8:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }),
+    );
+
+    return function parseFile(_x, _x2) {
+      return _ref.apply(this, arguments);
+    };
+  })(); // 图片改变
 
   var onChangeHandle = function onChangeHandle(e) {
     var fileSelectorEl = e.target;
@@ -563,22 +616,22 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
   }; // 预览图片
 
   var onPreview = /*#__PURE__*/ (function() {
-    var _ref = _asyncToGenerator(
-      /*#__PURE__*/ regeneratorRuntime.mark(function _callee(
+    var _ref2 = _asyncToGenerator(
+      /*#__PURE__*/ regeneratorRuntime.mark(function _callee2(
         currentIndex,
         index,
       ) {
         var preview;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
-            switch ((_context.prev = _context.next)) {
+            switch ((_context2.prev = _context2.next)) {
               case 0:
                 if (!disabledPreview) {
-                  _context.next = 2;
+                  _context2.next = 2;
                   break;
                 }
 
-                return _context.abrupt('return');
+                return _context2.abrupt('return');
 
               case 2:
                 if (
@@ -587,15 +640,15 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
                     typeof onGetPreviewUrl === 'function'
                   )
                 ) {
-                  _context.next = 9;
+                  _context2.next = 9;
                   break;
                 }
 
-                _context.next = 5;
+                _context2.next = 5;
                 return onGetPreviewUrl(index);
 
               case 5:
-                preview = _context.sent;
+                preview = _context2.sent;
                 refFilesList.current[index].preview = preview;
                 refFilesList.current = _toConsumableArray(refFilesList.current);
                 onChange(refFilesList.current);
@@ -607,15 +660,15 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
 
               case 12:
               case 'end':
-                return _context.stop();
+                return _context2.stop();
             }
           }
-        }, _callee);
+        }, _callee2);
       }),
     );
 
-    return function onPreview(_x, _x2) {
-      return _ref.apply(this, arguments);
+    return function onPreview(_x3, _x4) {
+      return _ref2.apply(this, arguments);
     };
   })(); // 关闭图片预览
 

@@ -93,32 +93,35 @@
   '2YZa': function(e, n, t) {
     'use strict';
     t.d(n, 'b', function() {
-      return y;
+      return k;
     }),
       t.d(n, 'c', function() {
-        return F;
+        return M;
       }),
       t.d(n, 'a', function() {
-        return J;
+        return X;
       });
-    var a = t('o0o1'),
+    t('TttT');
+    var a = t('Kl5d'),
       l = t.n(a),
-      r = t('HaE+'),
-      o = (t('TttT'), t('Kl5d')),
-      i = t.n(o),
+      r = t('o0o1'),
+      o = t.n(r),
+      i = t('HaE+'),
       c = t('ODXe'),
-      s = t('ODnx'),
+      s = t('q1tI'),
       m = t.n(s),
       d = t('Wm/2'),
       u = t('TSYQ'),
       f = t.n(u),
-      p = t('U0F3'),
+      p = t('fI17'),
       g = t.n(p),
-      h =
+      E = t('U0F3'),
+      h = t.n(E),
+      v =
         'data:image/png;base64,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',
-      E =
+      b =
         'data:image/png;base64,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',
-      v = Object(d['createStyles'])({
+      A = Object(d['createStyles'])({
         root: { display: 'flex', flexWrap: 'wrap' },
         justifyContent: { justifyContent: 'space-between' },
         hidden: { display: 'none' },
@@ -154,7 +157,7 @@
           right: 0,
           top: 0,
           zIndex: 99,
-          backgroundImage: 'url('.concat(E, ')'),
+          backgroundImage: 'url('.concat(b, ')'),
           backgroundSize: '100% 100%',
         },
         parent: { overflow: 'hidden', margin: '0 8px 8px 0' },
@@ -212,7 +215,7 @@
         loading: {
           width: '35px',
           height: '35px',
-          backgroundImage: 'url('.concat(h, ')'),
+          backgroundImage: 'url('.concat(v, ')'),
           backgroundSize: '100% 100%',
           animation: '$myRound 1s linear infinite',
         },
@@ -221,49 +224,50 @@
           '100%': { transform: 'rotate(360deg)' },
         },
       }),
-      b = v,
+      y = A,
       x = () => {},
-      A = Object(s['forwardRef'])((e, n) => {
+      j = Object(s['forwardRef'])((e, n) => {
         var t = e.classes,
           a = void 0 === t ? {} : t,
-          o = e.filesList,
-          d = void 0 === o ? [] : o,
+          r = e.filesList,
+          d = void 0 === r ? [] : r,
           u = e.max,
           p = void 0 === u ? 1 : u,
-          h = e.onChange,
-          E = void 0 === h ? x : h,
-          v = e.accept,
-          b = void 0 === v ? 'image/*' : v,
-          A = e.multiple,
-          y = e.capture,
-          j = e.width,
-          k = void 0 === j ? '80px' : j,
-          C = e.height,
-          w = void 0 === C ? '80px' : C,
-          D = e.config,
-          S = void 0 === D ? ['defaultBorder'] : D,
-          O = e.children,
-          P = e.mode,
-          I = void 0 === P ? 'fill' : P,
-          B = e.size,
-          R = e.disabledPreview,
-          N = e.disabledSelect,
-          z = e.onUpload,
-          U = e.onFail,
-          T = void 0 === U ? x : U,
-          F = e.onGetPreviewUrl,
-          L = e.resize,
-          M = e.showRemove,
-          V = void 0 === M || M,
+          E = e.onChange,
+          v = void 0 === E ? x : E,
+          b = e.accept,
+          A = void 0 === b ? 'image/*' : b,
+          y = e.multiple,
+          j = e.capture,
+          k = e.width,
+          C = void 0 === k ? '80px' : k,
+          w = e.height,
+          S = void 0 === w ? '80px' : w,
+          I = e.config,
+          D = void 0 === I ? ['defaultBorder'] : I,
+          P = e.children,
+          B = e.mode,
+          O = void 0 === B ? 'fill' : B,
+          R = e.size,
+          N = e.disabledPreview,
+          z = e.disabledSelect,
+          U = e.onUpload,
+          T = e.onFail,
+          F = void 0 === T ? x : T,
+          L = e.onGetPreviewUrl,
+          M = e.resize,
+          V = e.showRemove,
+          q = void 0 === V || V,
           Q = e.replace,
-          Y = n || Object(s['useRef'])(null),
-          J = Object(s['useRef'])(null),
-          X = Object(s['useRef'])(d),
-          K = [];
-        X.current.forEach(e => {
-          e.preview ? K.push(e.preview) : e.url && K.push(e.url);
+          Y = e.quality,
+          J = n || Object(s['useRef'])(null),
+          X = Object(s['useRef'])(null),
+          K = Object(s['useRef'])(d),
+          W = [];
+        K.current.forEach(e => {
+          e.preview ? W.push(e.preview) : e.url && W.push(e.url);
         });
-        var W = Object(s['useMemo'])(() => {
+        var H = Object(s['useMemo'])(() => {
             for (var e = 0, n = 0; n < d.length; n++) {
               var t = d[n],
                 a = t.url,
@@ -272,154 +276,192 @@
             }
             return e;
           }, [d]),
-          H = Object(s['useState'])(!1),
-          q = Object(c['a'])(H, 2),
-          Z = q[0],
-          G = q[1],
-          _ = Object(s['useState'])(0),
-          $ = Object(c['a'])(_, 2),
-          ee = $[0],
-          ne = $[1],
-          te = Object(s['useState'])(''),
-          ae = Object(c['a'])(te, 2),
-          le = ae[0],
-          re = ae[1];
+          Z = Object(s['useState'])(!1),
+          G = Object(c['a'])(Z, 2),
+          _ = G[0],
+          $ = G[1],
+          ee = Object(s['useState'])(0),
+          ne = Object(c['a'])(ee, 2),
+          te = ne[0],
+          ae = ne[1],
+          le = Object(s['useState'])(''),
+          re = Object(c['a'])(le, 2),
+          oe = re[0],
+          ie = re[1];
         Object(s['useEffect'])(() => {
-          if (L) {
-            var e = getComputedStyle(J.current).width;
-            re(e);
+          if (M) {
+            var e = getComputedStyle(X.current).width;
+            ie(e);
           }
-        }, [L]);
-        var oe,
-          ie,
-          ce = (e, n) =>
-            new Promise((t, a) => {
-              var l = new FileReader();
-              (l.onload = l => {
-                var r = l.target.result;
-                r
-                  ? t({ file: e, url: r })
-                  : a('Fail to get the '.concat(n, ' image'));
-              }),
-                l.readAsDataURL(e);
+        }, [M]);
+        var ce,
+          se,
+          me = e =>
+            new Promise(n => {
+              new g.a(e, {
+                quality: Y,
+                success: e => {
+                  n(e);
+                },
+              });
             }),
-          se = e => {
+          de = (function() {
+            var e = Object(i['a'])(
+              o.a.mark(function e(n, t) {
+                var a;
+                return o.a.wrap(function(e) {
+                  while (1)
+                    switch ((e.prev = e.next)) {
+                      case 0:
+                        if (((a = n), !Y)) {
+                          e.next = 5;
+                          break;
+                        }
+                        return (e.next = 4), me(n);
+                      case 4:
+                        a = e.sent;
+                      case 5:
+                        return e.abrupt(
+                          'return',
+                          new Promise((e, l) => {
+                            var r = new FileReader();
+                            (r.onload = a => {
+                              var r = a.target.result;
+                              r
+                                ? e({ file: n, url: r })
+                                : l('Fail to get the '.concat(t, ' image'));
+                            }),
+                              r.readAsDataURL(a);
+                          }),
+                        );
+                      case 6:
+                      case 'end':
+                        return e.stop();
+                    }
+                }, e);
+              }),
+            );
+            return function(n, t) {
+              return e.apply(this, arguments);
+            };
+          })(),
+          ue = e => {
             var n = e.target,
               t = n.files;
             if (!t || !t.length) return (n.value = '');
-            var a = p - (Q ? 0 : W);
+            var a = p - (Q ? 0 : H);
             t.length > (Q ? p : a) &&
-              i.a.info(
+              l.a.info(
                 '\u56fe\u7247\u6700\u591a\u4e0d\u8d85\u8fc7'.concat(
                   p,
                   '\u5f20',
                 ),
               );
             for (
-              var l = Array.from(t).slice(0, a), r = [], o = 0;
-              o < l.length;
-              o++
+              var r = Array.from(t).slice(0, a), o = [], i = 0;
+              i < r.length;
+              i++
             )
-              r.push(ce(l[o], o));
-            X.current = X.current.filter(e => e.url || e.errorTip);
-            var c = Q ? 0 : X.current.length;
-            Promise.all(r)
+              o.push(de(r[i], i));
+            K.current = K.current.filter(e => e.url || e.errorTip);
+            var c = Q ? 0 : K.current.length;
+            Promise.all(o)
               .then(e => {
-                'function' === typeof z && e.forEach(e => (e.loading = !0));
+                'function' === typeof U && e.forEach(e => (e.loading = !0));
                 var t = e.filter(e =>
-                  B && e.file.size > 1024 * B * 1024
-                    ? i.a.info(
+                  R && e.file.size > 1024 * R * 1024
+                    ? l.a.info(
                         '\u56fe\u7247\u5927\u5c0f\u4e0d\u80fd\u8d85\u8fc7'.concat(
-                          B,
+                          R,
                           'M',
                         ),
                       )
                     : e,
                 );
                 if (
-                  ((X.current = Q ? [...t] : X.current.concat(t)),
-                  E(X.current),
-                  'function' === typeof z)
+                  ((K.current = Q ? [...t] : K.current.concat(t)),
+                  v(K.current),
+                  'function' === typeof U)
                 )
                   for (
                     var a = function(e) {
-                        var n = X.current[e];
+                        var n = K.current[e];
                         e >= c &&
-                          z(n)
+                          U(n)
                             .then(n => {
-                              (X.current[e] = Object.assign(
+                              (K.current[e] = Object.assign(
                                 {},
-                                X.current[e],
+                                K.current[e],
                                 n,
                                 { loading: !1 },
                               )),
-                                (X.current = [...X.current]),
-                                setTimeout(() => E(X.current), 10);
+                                (K.current = [...K.current]),
+                                setTimeout(() => v(K.current), 10);
                             })
                             .catch(n => {
-                              (X.current[e] = Object.assign({}, X.current[e], {
+                              (K.current[e] = Object.assign({}, K.current[e], {
                                 url: '',
                                 loading: !1,
                                 errorTip: n || '\u4e0a\u4f20\u5931\u8d25',
                               })),
-                                (X.current = [...X.current]),
-                                setTimeout(() => E(X.current), 10);
+                                (K.current = [...K.current]),
+                                setTimeout(() => v(K.current), 10);
                             });
                       },
-                      l = 0;
-                    l < X.current.length;
-                    l++
+                      r = 0;
+                    r < K.current.length;
+                    r++
                   )
-                    a(l);
+                    a(r);
                 n.value = '';
               })
               .catch(e => {
-                T(e), (n.value = '');
+                F(e), (n.value = '');
               });
           },
-          me = () => {
-            N || (Y && Y.current && Y.current.click());
+          fe = () => {
+            z || (J && J.current && J.current.click());
           },
-          de = e => {
-            for (var n = !0, t = 0; t < X.current.length; t++) {
-              var a = X.current[t].loading;
+          pe = e => {
+            for (var n = !0, t = 0; t < K.current.length; t++) {
+              var a = K.current[t].loading;
               if (a) {
                 n = !1;
                 break;
               }
             }
             if (!n)
-              return i.a.info(
+              return l.a.info(
                 '\u56fe\u7247\u4e0a\u4f20\u4e2d\uff0c\u8bf7\u7a0d\u540e\u64cd\u4f5c',
               );
-            X.current.splice(e, 1), (X.current = [...X.current]), E(X.current);
+            K.current.splice(e, 1), (K.current = [...K.current]), v(K.current);
           },
-          ue = (function() {
-            var e = Object(r['a'])(
-              l.a.mark(function e(n, t) {
+          ge = (function() {
+            var e = Object(i['a'])(
+              o.a.mark(function e(n, t) {
                 var a;
-                return l.a.wrap(function(e) {
+                return o.a.wrap(function(e) {
                   while (1)
                     switch ((e.prev = e.next)) {
                       case 0:
-                        if (!R) {
+                        if (!N) {
                           e.next = 2;
                           break;
                         }
                         return e.abrupt('return');
                       case 2:
-                        if (X.current[t].preview || 'function' !== typeof F) {
+                        if (K.current[t].preview || 'function' !== typeof L) {
                           e.next = 9;
                           break;
                         }
-                        return (e.next = 5), F(t);
+                        return (e.next = 5), L(t);
                       case 5:
                         (a = e.sent),
-                          (X.current[t].preview = a),
-                          (X.current = [...X.current]),
-                          E(X.current);
+                          (K.current[t].preview = a),
+                          (K.current = [...K.current]),
+                          v(K.current);
                       case 9:
-                        ne(n), fe();
+                        ae(n), Ee();
                       case 11:
                       case 'end':
                         return e.stop();
@@ -431,44 +473,44 @@
               return e.apply(this, arguments);
             };
           })(),
-          fe = () => G(e => !e);
+          Ee = () => $(e => !e);
         (function(e) {
           (e['defaultBorder'] = 'defaultBorder'),
             (e['defaultBackGround'] = 'defaultBackGround'),
             (e['defaultDashed'] = 'defaultDashed');
-        })(oe || (oe = {})),
+        })(ce || (ce = {})),
           (function(e) {
             (e['fill'] = 'fill'),
               (e['cover'] = 'cover'),
               (e['contain'] = 'contain'),
               (e['scale-down'] = 'scale-down');
-          })(ie || (ie = {}));
-        var pe = L ? le : w,
-          ge = 0;
-        if (L) {
-          var he = Math.floor(100 / parseFloat(k));
-          if (d && d.length > 0 && he > 1) {
-            var Ee = d.length % he;
-            Ee >= 0 &&
-              Ee <= he - 1 &&
-              ((ge = he - Ee - 1), d.length === p && (ge += 1));
+          })(se || (se = {}));
+        var he = M ? oe : S,
+          ve = 0;
+        if (M) {
+          var be = Math.floor(100 / parseFloat(C));
+          if (d && d.length > 0 && be > 1) {
+            var Ae = d.length % be;
+            Ae >= 0 &&
+              Ae <= be - 1 &&
+              ((ve = be - Ae - 1), d.length === p && (ve += 1));
           }
         }
-        var ve = f()(a.parent, {
+        var ye = f()(a.parent, {
           [a.noMargin]: 1 === p || d.length < 1,
-          [a.marginBottom]: L,
+          [a.marginBottom]: M,
         });
         return m.a.createElement(
           'div',
-          { className: f()(a.root, { [a.justifyContent]: L }) },
+          { className: f()(a.root, { [a.justifyContent]: M }) },
           m.a.createElement('input', {
             className: a.hidden,
-            ref: Y,
+            ref: J,
             type: 'file',
-            accept: b,
-            multiple: A,
-            capture: y,
-            onChange: se,
+            accept: A,
+            multiple: y,
+            capture: j,
+            onChange: ue,
           }),
           d &&
             d.length > 0 &&
@@ -489,26 +531,26 @@
                 var p = n - c;
                 return m.a.createElement(
                   'div',
-                  { key: n, className: ve, style: { width: k } },
+                  { key: n, className: ye, style: { width: C } },
                   m.a.createElement(
                     'div',
                     {
-                      className: f()(a.imgBox, ...S.map(e => a[e])),
-                      style: { height: pe },
+                      className: f()(a.imgBox, ...D.map(e => a[e])),
+                      style: { height: he },
                     },
                     t &&
                       m.a.createElement('img', {
                         alt: '',
                         className: a.img,
                         src: t,
-                        style: { objectFit: I },
-                        onClick: () => ue(p, n),
+                        style: { objectFit: O },
+                        onClick: () => ge(p, n),
                       }),
                     o && m.a.createElement('div', { className: a.errorTip }, o),
-                    V &&
+                    q &&
                       m.a.createElement('i', {
                         className: a.iconRemove,
-                        onClick: () => de(n),
+                        onClick: () => pe(n),
                       }),
                     l &&
                       m.a.createElement(
@@ -521,57 +563,57 @@
                 );
               }
             }),
-          W < p &&
+          H < p &&
             m.a.createElement(
               'div',
-              { className: ve, style: { width: k }, ref: J, onClick: me },
-              O ||
+              { className: ye, style: { width: C }, ref: X, onClick: fe },
+              P ||
                 m.a.createElement('div', {
-                  style: { height: pe },
-                  className: f()(a.childrenEle, [...S.map(e => a[e])]),
+                  style: { height: he },
+                  className: f()(a.childrenEle, [...D.map(e => a[e])]),
                 }),
               1 === p &&
                 d[0] &&
                 d[0].name &&
                 m.a.createElement(
                   'div',
-                  { className: a.name, style: { width: k } },
+                  { className: a.name, style: { width: C } },
                   d[0].name,
                 ),
             ),
-          ge > 0 &&
-            new Array(ge)
-              .fill(ge)
+          ve > 0 &&
+            new Array(ve)
+              .fill(ve)
               .map((e, n) =>
                 m.a.createElement('div', {
                   key: n,
-                  className: ve,
-                  style: { width: k },
+                  className: ye,
+                  style: { width: C },
                 }),
               ),
-          Z && m.a.createElement(g.a, { onClose: fe, index: ee, urls: K }),
+          _ && m.a.createElement(h.a, { onClose: Ee, index: te, urls: W }),
         );
       }),
-      y = Object(d['withStyles'])(b)(A),
-      j = (t('ZyjE'), t('4IZf')),
-      k = t.n(j),
-      C = (t('DNw3'), t('rxJx')),
+      k = Object(d['withStyles'])(y)(j),
+      C = (t('ZyjE'), t('4IZf')),
       w = t.n(C),
+      S = (t('DNw3'), t('rxJx')),
+      I = t.n(S),
       D = (t('cn7L'), t('jeTP')),
-      S = t.n(D),
-      O = t('wd/R'),
-      P = t.n(O);
-    function I(e) {
+      P = t.n(D),
+      B = t('wd/R'),
+      O = t.n(B);
+    function R(e) {
       var n =
         arguments.length > 1 && void 0 !== arguments[1]
           ? arguments[1]
           : 'YYYY-MM-DD';
-      return P()(e).format(n);
+      return O()(e).format(n);
     }
-    var B = e => {
+    var N = e => {
         if (e) return new Date(e);
       },
-      R = Object(d['createStyles'])({
+      z = Object(d['createStyles'])({
         root: {
           '& .am-list': {
             '& .am-list-body': {
@@ -651,16 +693,16 @@
           },
         },
       }),
-      N = R,
-      z = S.a.Item,
-      U = () => {},
-      T = e => {
+      U = z,
+      T = P.a.Item,
+      F = () => {},
+      L = e => {
         var n = e.classes,
           t = void 0 === n ? {} : n,
           a = e.value,
-          l = void 0 === a ? [] : a,
-          r = e.onChange,
-          o = void 0 === r ? U : r,
+          r = void 0 === a ? [] : a,
+          o = e.onChange,
+          i = void 0 === o ? F : o,
           d = e.labels,
           u =
             void 0 === d
@@ -674,103 +716,103 @@
             void 0 === p
               ? ['\u8d77\u59cb\u65e5\u671f', '\u7ec8\u6b62\u65e5\u671f']
               : p,
-          h = e.placeholders,
-          E =
-            void 0 === h
+          E = e.placeholders,
+          h =
+            void 0 === E
               ? [
                   '\u8bf7\u9009\u62e9\u8d77\u59cb\u65e5\u671f',
                   '\u8bf7\u9009\u62e9\u7ec8\u6b62\u65e5\u671f',
                 ]
-              : h,
+              : E,
           v = e.forerverTxt,
           b = void 0 === v ? '\u957f\u671f' : v,
-          x = e.foreverDate,
-          A = void 0 === x ? '9999-12-31' : x,
-          y = e.minDate,
-          j = void 0 === y ? new Date(1980, 0, 1, 23, 59, 59) : y,
-          C = e.maxDate,
-          D = void 0 === C ? new Date(2060, 11, 30, 23, 59, 59) : C,
-          O = e.cache,
-          P = Object(s['useState'])(!1),
-          R = Object(c['a'])(P, 2),
-          N = R[0],
-          T = R[1],
-          F = Object(s['useState'])(),
-          L = Object(c['a'])(F, 2),
+          A = e.foreverDate,
+          y = void 0 === A ? '9999-12-31' : A,
+          x = e.minDate,
+          j = void 0 === x ? new Date(1980, 0, 1, 23, 59, 59) : x,
+          k = e.maxDate,
+          C = void 0 === k ? new Date(2060, 11, 30, 23, 59, 59) : k,
+          S = e.cache,
+          D = Object(s['useState'])(!1),
+          B = Object(c['a'])(D, 2),
+          O = B[0],
+          z = B[1],
+          U = Object(s['useState'])(),
+          L = Object(c['a'])(U, 2),
           M = L[0],
           V = L[1];
         Object(s['useEffect'])(() => {
-          T(l[1] === A), O && l[1] && l[1] !== A && V(l[1]);
-        }, [l[1], A]);
-        var Q = () => {
-            var e = [l[0], N ? M || '' : A],
-              n = N ? 'unCheck' : 'check';
-            o(e, n), T(e => !e);
+          z(r[1] === y), S && r[1] && r[1] !== y && V(r[1]);
+        }, [r[1], y]);
+        var q = () => {
+            var e = [r[0], O ? M || '' : y],
+              n = O ? 'unCheck' : 'check';
+            i(e, n), z(e => !e);
           },
-          Y = (e, n) => {
-            var t = I(e),
+          Q = (e, n) => {
+            var t = R(e),
               a = [];
             if ('start' === n) {
-              if (t > l[1])
-                return i.a.info(
+              if (t > r[1])
+                return l.a.info(
                   ''.concat(g[0], '\u4e0d\u80fd\u5927\u4e8e').concat(g[1]),
                 );
-              a = [t, l[1]];
+              a = [t, r[1]];
             } else {
-              if (t < l[0])
-                return i.a.info(
+              if (t < r[0])
+                return l.a.info(
                   ''.concat(g[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(g[0]),
                 );
-              a = [l[0], t];
+              a = [r[0], t];
             }
-            o(a, n);
+            i(a, n);
           };
         return m.a.createElement(
           'div',
           { className: t.root },
           m.a.createElement(
-            S.a,
+            P.a,
             null,
             m.a.createElement(
               'div',
-              { className: f()({ [t.dateValue]: l[0] }) },
+              { className: f()({ [t.dateValue]: r[0] }) },
               m.a.createElement(
-                w.a,
+                I.a,
                 {
                   mode: 'date',
                   title: g[0],
-                  extra: E[0],
-                  value: B(l[0]),
-                  onChange: e => Y(e, 'start'),
+                  extra: h[0],
+                  value: N(r[0]),
+                  onChange: e => Q(e, 'start'),
                   minDate: j,
-                  maxDate: D,
+                  maxDate: C,
                 },
-                m.a.createElement(z, { arrow: 'horizontal' }, u[0]),
+                m.a.createElement(T, { arrow: 'horizontal' }, u[0]),
               ),
             ),
             m.a.createElement(
-              k.a,
+              w.a,
               null,
               m.a.createElement(
                 'div',
                 {
                   className: f()(t.datePicker, {
-                    [t.dateValue]: l[1] && l[1] !== A,
+                    [t.dateValue]: r[1] && r[1] !== y,
                   }),
                 },
                 m.a.createElement(
-                  w.a,
+                  I.a,
                   {
                     mode: 'date',
                     title: g[1],
-                    extra: E[1],
-                    value: l[1] === A ? void 0 : B(l[1]),
-                    onChange: e => Y(e, 'end'),
+                    extra: h[1],
+                    value: r[1] === y ? void 0 : N(r[1]),
+                    onChange: e => Q(e, 'end'),
                     minDate: j,
-                    maxDate: D,
+                    maxDate: C,
                   },
                   m.a.createElement(
-                    z,
+                    T,
                     { className: t.itemEnd, arrow: 'horizontal' },
                     u[1],
                     ' ',
@@ -778,10 +820,10 @@
                 ),
               ),
               m.a.createElement(
-                k.a,
-                { className: t.forerverBox, onClick: Q },
+                w.a,
+                { className: t.forerverBox, onClick: q },
                 m.a.createElement('i', {
-                  className: f()(t.iconCheck, { [t.iconChecked]: N }),
+                  className: f()(t.iconCheck, { [t.iconChecked]: O }),
                 }),
                 m.a.createElement('span', null, b),
               ),
@@ -789,8 +831,8 @@
           ),
         );
       },
-      F = Object(d['withStyles'])(N)(T),
-      L = Object(d['createStyles'])({
+      M = Object(d['withStyles'])(U)(L),
+      V = Object(d['createStyles'])({
         root: {
           '& .am-list-item': {
             border: '1px solid #F0F0F0',
@@ -813,51 +855,51 @@
         datePicker: { flex: 1 },
         dateValue: { '& .am-list-extra': { color: '#323232 !important' } },
       }),
-      M = L,
-      V = S.a.Item,
-      Q = () => {},
-      Y = e => {
+      q = V,
+      Q = P.a.Item,
+      Y = () => {},
+      J = e => {
         var n = e.classes,
           t = void 0 === n ? {} : n,
           a = e.label,
-          l = void 0 === a ? '\u81ea\u5b9a\u4e49\u65e5\u671f' : a,
-          r = e.tip,
-          o = void 0 === r ? '\u65f6\u95f4\u8303\u56f4\u6700\u957f30\u5929' : r,
+          r = void 0 === a ? '\u81ea\u5b9a\u4e49\u65e5\u671f' : a,
+          o = e.tip,
+          i = void 0 === o ? '\u65f6\u95f4\u8303\u56f4\u6700\u957f30\u5929' : o,
           c = e.value,
           s = void 0 === c ? [] : c,
           d = e.onChange,
-          u = void 0 === d ? Q : d,
+          u = void 0 === d ? Y : d,
           p = e.titles,
           g =
             void 0 === p
               ? ['\u8d77\u59cb\u65e5\u671f', '\u7ec8\u6b62\u65e5\u671f']
               : p,
-          h = e.placeholders,
-          E =
-            void 0 === h
+          E = e.placeholders,
+          h =
+            void 0 === E
               ? [
                   '\u8bf7\u9009\u62e9\u8d77\u59cb\u65e5\u671f',
                   '\u8bf7\u9009\u62e9\u7ec8\u6b62\u65e5\u671f',
                 ]
-              : h,
+              : E,
           v = e.minDate,
           b = void 0 === v ? new Date(1980, 0, 1, 23, 59, 59) : v,
-          x = e.maxDate,
-          A = void 0 === x ? new Date(2060, 11, 30, 23, 59, 59) : x,
-          y = e.splitTxt,
-          j = void 0 === y ? '\u81f3' : y,
-          C = (e, n) => {
-            var t = I(e),
+          A = e.maxDate,
+          y = void 0 === A ? new Date(2060, 11, 30, 23, 59, 59) : A,
+          x = e.splitTxt,
+          j = void 0 === x ? '\u81f3' : x,
+          k = (e, n) => {
+            var t = R(e),
               a = [];
             if ('start' === n) {
               if (t > s[1])
-                return i.a.info(
+                return l.a.info(
                   ''.concat(g[0], '\u4e0d\u80fd\u5927\u4e8e').concat(g[1]),
                 );
               a = [t, s[1]];
             } else {
               if (t < s[0])
-                return i.a.info(
+                return l.a.info(
                   ''.concat(g[1], '\u4e0d\u80fd\u5c0f\u4e8e').concat(g[0]),
                 );
               a = [s[0], t];
@@ -868,29 +910,29 @@
           'div',
           { className: t.root },
           m.a.createElement(
-            k.a,
+            w.a,
             { justify: 'between' },
-            m.a.createElement('span', { className: t.label }, l),
-            m.a.createElement('span', { className: t.tip }, o),
+            m.a.createElement('span', { className: t.label }, r),
+            m.a.createElement('span', { className: t.tip }, i),
           ),
           m.a.createElement(
-            k.a,
+            w.a,
             { className: t.dateBox },
             m.a.createElement(
               'div',
               { className: f()(t.datePicker, { [t.dateValue]: s[0] }) },
               m.a.createElement(
-                w.a,
+                I.a,
                 {
                   mode: 'date',
                   title: g[0],
-                  extra: E[0],
-                  value: B(s[0]),
-                  onChange: e => C(e, 'start'),
+                  extra: h[0],
+                  value: N(s[0]),
+                  onChange: e => k(e, 'start'),
                   minDate: b,
-                  maxDate: A,
+                  maxDate: y,
                 },
-                m.a.createElement(V, { arrow: 'down' }),
+                m.a.createElement(Q, { arrow: 'down' }),
               ),
             ),
             m.a.createElement('span', { className: t.splitTxt }, j),
@@ -898,23 +940,23 @@
               'div',
               { className: f()(t.datePicker, { [t.dateValue]: s[1] }) },
               m.a.createElement(
-                w.a,
+                I.a,
                 {
                   mode: 'date',
                   title: g[1],
-                  extra: E[1],
-                  value: B(s[1]),
-                  onChange: e => C(e, 'end'),
+                  extra: h[1],
+                  value: N(s[1]),
+                  onChange: e => k(e, 'end'),
                   minDate: b,
-                  maxDate: A,
+                  maxDate: y,
                 },
-                m.a.createElement(V, { arrow: 'down' }),
+                m.a.createElement(Q, { arrow: 'down' }),
               ),
             ),
           ),
         );
       },
-      J = Object(d['withStyles'])(M)(Y);
+      X = Object(d['withStyles'])(q)(J);
   },
   '7tPC': function(e, n, t) {
     'use strict';
@@ -925,7 +967,7 @@
       r = (t('dlV3'), t('4cdd')),
       o = t.n(r),
       i = t('ODXe'),
-      c = t('ODnx'),
+      c = t('q1tI'),
       s = t.n(c),
       m = t('2YZa'),
       d = t('Wm/2'),
@@ -982,7 +1024,7 @@
     var a = t('4IZf'),
       l = t.n(a),
       r = t('ODXe'),
-      o = t('ODnx'),
+      o = t('q1tI'),
       i = t.n(o),
       c = t('Wm/2'),
       s = t('2YZa'),
@@ -1017,8 +1059,8 @@
         c = t[1],
         p = Object(o['useState'])([]),
         g = Object(r['a'])(p, 2),
-        h = g[0],
-        E = g[1],
+        E = g[0],
+        h = g[1],
         v = e =>
           new Promise((e, n) => {
             var t = Math.random();
@@ -1030,8 +1072,8 @@
         b = e => {
           c(e);
         },
-        x = e => {
-          E(e);
+        A = e => {
+          h(e);
         };
       return i.a.createElement(
         'div',
@@ -1067,8 +1109,8 @@
           i.a.createElement(
             s['b'],
             {
-              filesList: h,
-              onChange: x,
+              filesList: E,
+              onChange: A,
               mode: 'cover',
               width: '100%',
               height: '90px',
@@ -1104,7 +1146,7 @@
       i = (t('dlV3'), t('4cdd')),
       c = t.n(i),
       s = t('ODXe'),
-      m = t('ODnx'),
+      m = t('q1tI'),
       d = t.n(m),
       u = t('2YZa');
     n['default'] = () => {
@@ -1121,7 +1163,11 @@
         d.a.createElement(
           o.a,
           null,
-          d.a.createElement(u['b'], { filesList: t, onChange: r }),
+          d.a.createElement(u['b'], {
+            filesList: t,
+            onChange: r,
+            quality: 0.1,
+          }),
           d.a.createElement(c.a, null),
         ),
         d.a.createElement(
@@ -1191,13 +1237,13 @@
     'use strict';
     t.r(n);
     var a = t('wx14'),
-      l = t('ODnx'),
+      l = t('q1tI'),
       r = t.n(l),
       o = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
       i = t.n(o),
       c = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('ODnx')),
+          n = e(t('q1tI')),
           a = e(t('UI3I')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -1206,7 +1252,7 @@
       }),
       s = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('ODnx')),
+          n = e(t('q1tI')),
           a = e(t('7tPC')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -1215,7 +1261,7 @@
       }),
       m = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('ODnx')),
+          n = e(t('q1tI')),
           a = e(t('aGEZ')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -1224,7 +1270,7 @@
       }),
       d = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('ODnx')),
+          n = e(t('q1tI')),
           a = e(t('YYIF')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -1275,13 +1321,11 @@
             },
             {
               path: '/_demos/base-2',
-              CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'antd-mobile': '^2.3.4',
-                react: '^17.0.1',
-                'react-dom': '^17.0.1',
-                'eco-mobile': '1.0.57',
+                react: '>= 16.9.0',
+                'react-dom': '>= 16.9.0',
+                'eco-mobile': '1.0.58',
               },
               files: {},
             },
@@ -1322,9 +1366,9 @@
               dependencies: {
                 'antd-mobile': '2.3.4',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                react: '^17.0.1',
-                'react-dom': '^17.0.1',
-                'eco-mobile': '1.0.57',
+                react: '>= 16.9.0',
+                'react-dom': '>= 16.9.0',
+                'eco-mobile': '1.0.58',
                 'rc-field-form': '1.17.4',
               },
               files: {},
@@ -1366,9 +1410,9 @@
               dependencies: {
                 'antd-mobile': '2.3.4',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                react: '^17.0.1',
-                'react-dom': '^17.0.1',
-                'eco-mobile': '1.0.57',
+                react: '>= 16.9.0',
+                'react-dom': '>= 16.9.0',
+                'eco-mobile': '1.0.58',
               },
               files: {},
             },
@@ -1410,9 +1454,9 @@
               dependencies: {
                 'antd-mobile': '2.3.4',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                react: '^17.0.1',
-                'react-dom': '^17.0.1',
-                'eco-mobile': '1.0.57',
+                react: '>= 16.9.0',
+                'react-dom': '>= 16.9.0',
+                'eco-mobile': '1.0.58',
                 moment: '2.29.1',
               },
               files: {},
@@ -1687,7 +1731,7 @@
     'use strict';
     t.r(n);
     var a = t('ODXe'),
-      l = t('ODnx'),
+      l = t('q1tI'),
       r = t.n(l),
       o = t('2YZa'),
       i = t('Wm/2'),
@@ -2011,7 +2055,7 @@
     'use strict';
     t.r(n);
     var a = t('ODXe'),
-      l = t('ODnx'),
+      l = t('q1tI'),
       r = t.n(l),
       o = t('2YZa'),
       i = t('Wm/2'),
@@ -2036,13 +2080,13 @@
     'use strict';
     t.r(n);
     var a = t('wx14'),
-      l = t('ODnx'),
+      l = t('q1tI'),
       r = t.n(l),
       o = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
       i = t.n(o),
       c = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('ODnx')),
+          n = e(t('q1tI')),
           a = e(t('M4Bu')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2093,13 +2137,11 @@
             },
             {
               path: '/_demos/base',
-              CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'antd-mobile': '^2.3.4',
-                react: '^17.0.1',
-                'react-dom': '^17.0.1',
-                'eco-mobile': '1.0.57',
+                react: '>= 16.9.0',
+                'react-dom': '>= 16.9.0',
+                'eco-mobile': '1.0.58',
               },
               files: {},
             },
@@ -2352,7 +2394,7 @@
     var a = t('Kl5d'),
       l = t.n(a),
       r = t('ODXe'),
-      o = t('ODnx'),
+      o = t('q1tI'),
       i = t.n(o),
       c = t('2YZa'),
       s = t('wd/R'),
@@ -2394,7 +2436,7 @@
       r = (t('dlV3'), t('4cdd')),
       o = t.n(r),
       i = t('ODXe'),
-      c = t('ODnx'),
+      c = t('q1tI'),
       s = t.n(c),
       m = t('2YZa'),
       d = t('Wm/2'),
@@ -2461,7 +2503,7 @@
     var a = t('Kl5d'),
       l = t.n(a),
       r = t('ODXe'),
-      o = t('ODnx'),
+      o = t('q1tI'),
       i = t.n(o),
       c = t('2YZa');
     n['default'] = () => {
@@ -2503,7 +2545,7 @@
   gql7: function(e, n, t) {
     'use strict';
     t.r(n);
-    var a = t('ODnx'),
+    var a = t('q1tI'),
       l = t.n(a),
       r = (t('B2uJ'), t('+su7'), t('qOys')),
       o = t.n(r);
@@ -2605,7 +2647,7 @@
     'use strict';
     t.r(n);
     var a = t('ODXe'),
-      l = t('ODnx'),
+      l = t('q1tI'),
       r = t.n(l),
       o = t('2YZa');
     n['default'] = () => {
@@ -2638,13 +2680,13 @@
     'use strict';
     t.r(n);
     var a = t('wx14'),
-      l = t('ODnx'),
+      l = t('q1tI'),
       r = t.n(l),
       o = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
       i = t.n(o),
       c = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('ODnx')),
+          n = e(t('q1tI')),
           a = e(t('FKBv')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2653,7 +2695,7 @@
       }),
       s = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('ODnx')),
+          n = e(t('q1tI')),
           a = e(t('jQK9')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2662,7 +2704,7 @@
       }),
       m = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('ODnx')),
+          n = e(t('q1tI')),
           a = e(t('CK2m')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2671,7 +2713,7 @@
       }),
       d = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('ODnx')),
+          n = e(t('q1tI')),
           a = e(t('cazh')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2715,9 +2757,9 @@
             {
               source: {
                 tsx:
-                  "import React, { useState } from 'react';\n\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\ninterface Files {\n  url: string; // \u56fe\u7247url\n  preview?: string; // \u9884\u89c8\u56fe\n  loading?: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n  errorTip?: string; // \u9519\u8bef\u63d0\u793a\n  name?: string; // \u56fe\u7247\u540d\u79f0\n  [index: string]: any;\n}\n\nexport default () => {\n  const [filesList, setFilesList] = useState<Array<Files>>([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          showRemove={false}\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
+                  "import React, { useState } from 'react';\n\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\ninterface Files {\n  url: string; // \u56fe\u7247url\n  preview?: string; // \u9884\u89c8\u56fe\n  loading?: boolean; // \u56fe\u7247\u662f\u5426\u52a0\u8f7d\u4e2d\n  errorTip?: string; // \u9519\u8bef\u63d0\u793a\n  name?: string; // \u56fe\u7247\u540d\u79f0\n  [index: string]: any;\n}\n\nexport default () => {\n  const [filesList, setFilesList] = useState<Array<Files>>([]);\n\n  // \u6570\u7ec4\u6539\u53d8\n  const onChange = (arr: Array<Files>) => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} quality={0.1} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          showRemove={false}\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
                 jsx:
-                  "import React, { useState } from 'react';\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]); // \u6570\u7ec4\u6539\u53d8\n\n  const onChange = arr => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} config={['defaultBackGround']} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          showRemove={false}\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
+                  "import React, { useState } from 'react';\nimport { WhiteSpace, Flex, WingBlank } from 'antd-mobile';\nimport { ImagePicker } from 'eco-mobile';\n\nexport default () => {\n  const [filesList, setFilesList] = useState([]); // \u6570\u7ec4\u6539\u53d8\n\n  const onChange = arr => {\n    setFilesList(arr);\n  };\n\n  return (\n    <Flex direction=\"row\" wrap=\"wrap\">\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} quality={0.1} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker filesList={filesList} onChange={onChange} config={['defaultBackGround']} />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          showRemove={false}\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultBorder', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n      <WingBlank>\n        <ImagePicker\n          filesList={filesList}\n          onChange={onChange}\n          config={['defaultDashed', 'defaultBackGround']}\n        />\n        <WhiteSpace />\n      </WingBlank>\n    </Flex>\n  );\n};\n",
               },
             },
             {
@@ -2726,9 +2768,9 @@
               dependencies: {
                 'antd-mobile': '2.3.4',
                 '@wonder-ui/styles': '^2.0.0-beta.9',
-                react: '^17.0.1',
-                'react-dom': '^17.0.1',
-                'eco-mobile': '1.0.57',
+                react: '>= 16.9.0',
+                'react-dom': '>= 16.9.0',
+                'eco-mobile': '1.0.58',
               },
               files: {},
             },
@@ -2765,13 +2807,11 @@
             },
             {
               path: '/_demos/on-upload',
-              CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 '@wonder-ui/styles': '^2.0.0-beta.9',
-                'antd-mobile': '^2.3.4',
-                react: '^17.0.1',
-                'react-dom': '^17.0.1',
-                'eco-mobile': '1.0.57',
+                react: '>= 16.9.0',
+                'react-dom': '>= 16.9.0',
+                'eco-mobile': '1.0.58',
               },
               files: {},
             },
@@ -2814,8 +2854,8 @@
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'react-dom': '^17.0.1',
-                'eco-mobile': '1.0.57',
+                'react-dom': '>= 16.9.0',
+                'eco-mobile': '1.0.58',
               },
               files: {},
             },
@@ -2860,9 +2900,9 @@
               dependencies: {
                 'antd-mobile': '2.3.4',
                 '@wonder-ui/styles': '^2.0.0-beta.9',
-                react: '^17.0.1',
-                'react-dom': '^17.0.1',
-                'eco-mobile': '1.0.57',
+                react: '>= 16.9.0',
+                'react-dom': '>= 16.9.0',
+                'eco-mobile': '1.0.58',
               },
               files: {},
             },
@@ -2958,6 +2998,30 @@
                   'td',
                   null,
                   r.a.createElement('code', null, '1'),
+                ),
+              ),
+              r.a.createElement(
+                'tr',
+                null,
+                r.a.createElement('td', null, 'quality'),
+                r.a.createElement(
+                  'td',
+                  null,
+                  '\u56fe\u7247\u538b\u7f29\u6bd4\u4f8b,0~1',
+                ),
+                r.a.createElement(
+                  'td',
+                  null,
+                  r.a.createElement('code', null, 'number'),
+                ),
+                r.a.createElement(
+                  'td',
+                  null,
+                  r.a.createElement(
+                    'code',
+                    null,
+                    '\u9ed8\u8ba4\u4e0d\u538b\u7f29',
+                  ),
                 ),
               ),
               r.a.createElement(
@@ -3523,7 +3587,7 @@
         {
           path: '/',
           component: e =>
-            t('ODnx').createElement(
+            t('q1tI').createElement(
               t('09U7').default,
               Object(i['a'])(
                 Object(i['a'])(
