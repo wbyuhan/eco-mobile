@@ -391,6 +391,10 @@ var ImagePicker = /*#__PURE__*/ forwardRef(function(props, ref) {
         success: function success(result) {
           resolve(result);
         },
+        error: function error(err) {
+          console.log('图片压缩失败,将返回原文件：', err.message);
+          resolve(file);
+        },
       });
     });
   }; // 图片处理

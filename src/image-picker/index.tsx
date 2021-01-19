@@ -114,6 +114,10 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
         success: (result: Blob) => {
           resolve(result);
         },
+        error: err => {
+          console.log('图片压缩失败,将返回原文件：', err.message);
+          resolve(file);
+        },
       });
     });
   };
