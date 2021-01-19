@@ -35,7 +35,7 @@ const ValidRange = (props: ValidRangeProps) => {
     forerverTxt = '长期',
     foreverDate = '9999-12-31',
     minDate = new Date(1980, 0, 1, 23, 59, 59),
-    maxDate = new Date(2100, 11, 30, 23, 59, 59),
+    maxDate = new Date(2060, 11, 30, 23, 59, 59),
     cache,
   } = props;
 

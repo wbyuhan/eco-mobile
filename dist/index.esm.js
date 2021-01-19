@@ -974,7 +974,7 @@ var ValidRange = function ValidRange(props) {
     _props$maxDate = props.maxDate,
     maxDate =
       _props$maxDate === void 0
-        ? new Date(2100, 11, 30, 23, 59, 59)
+        ? new Date(2060, 11, 30, 23, 59, 59)
         : _props$maxDate,
     cache = props.cache;
 
@@ -1200,7 +1200,7 @@ var DateRange = function DateRange(props) {
     _props$maxDate = props.maxDate,
     maxDate =
       _props$maxDate === void 0
-        ? new Date(2100, 11, 30, 23, 59, 59)
+        ? new Date(2060, 11, 30, 23, 59, 59)
         : _props$maxDate,
     _props$splitTxt = props.splitTxt,
     splitTxt = _props$splitTxt === void 0 ? '至' : _props$splitTxt; // 日期改变

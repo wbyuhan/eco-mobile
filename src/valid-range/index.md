@@ -35,5 +35,5 @@ group:
 | forerverTxt  | checked 的文本显示       | `string`                | `长期`                                 |
 | foreverDate  | checked 的日期显示       | `Array`                 | `9999-12-31`                           |
 | minDate      | 最小可选日期             | `Date`                  | `new Date(1980, 0, 1, 23, 59, 59)`     |
-| maxDate      | 最大可选日期             | `Date`                  | `new Date(2100, 11, 30, 23, 59, 59)`   |
+| maxDate      | 最大可选日期             | `Date`                  | `new Date(2060, 11, 30, 23, 59, 59)`   |
 | cache        | 切换长期按钮是否恢复原值 | `boolean`               | `false`                                |
