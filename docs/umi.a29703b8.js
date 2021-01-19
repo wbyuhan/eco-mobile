@@ -93,13 +93,13 @@
   '2YZa': function(e, n, t) {
     'use strict';
     t.d(n, 'b', function() {
-      return x;
+      return y;
     }),
       t.d(n, 'c', function() {
         return F;
       }),
       t.d(n, 'a', function() {
-        return q;
+        return J;
       });
     var a = t('o0o1'),
       l = t.n(a),
@@ -107,7 +107,7 @@
       o = (t('TttT'), t('Kl5d')),
       i = t.n(o),
       c = t('ODXe'),
-      s = t('q1tI'),
+      s = t('ODnx'),
       m = t.n(s),
       d = t('Wm/2'),
       u = t('TSYQ'),
@@ -222,8 +222,8 @@
         },
       }),
       b = v,
-      A = () => {},
-      y = Object(s['forwardRef'])((e, n) => {
+      x = () => {},
+      A = Object(s['forwardRef'])((e, n) => {
         var t = e.classes,
           a = void 0 === t ? {} : t,
           o = e.filesList,
@@ -231,39 +231,39 @@
           u = e.max,
           p = void 0 === u ? 1 : u,
           h = e.onChange,
-          E = void 0 === h ? A : h,
+          E = void 0 === h ? x : h,
           v = e.accept,
           b = void 0 === v ? 'image/*' : v,
-          y = e.multiple,
-          x = e.capture,
+          A = e.multiple,
+          y = e.capture,
           j = e.width,
           k = void 0 === j ? '80px' : j,
           C = e.height,
           w = void 0 === C ? '80px' : C,
-          S = e.config,
-          I = void 0 === S ? ['defaultBorder'] : S,
-          D = e.children,
+          D = e.config,
+          S = void 0 === D ? ['defaultBorder'] : D,
+          O = e.children,
           P = e.mode,
-          B = void 0 === P ? 'fill' : P,
-          O = e.size,
+          I = void 0 === P ? 'fill' : P,
+          B = e.size,
           R = e.disabledPreview,
           N = e.disabledSelect,
           z = e.onUpload,
           U = e.onFail,
-          T = void 0 === U ? A : U,
+          T = void 0 === U ? x : U,
           F = e.onGetPreviewUrl,
           L = e.resize,
           M = e.showRemove,
           V = void 0 === M || M,
           Q = e.replace,
           Y = n || Object(s['useRef'])(null),
-          q = Object(s['useRef'])(null),
-          J = Object(s['useRef'])(d),
-          X = [];
-        J.current.forEach(e => {
-          e.preview ? X.push(e.preview) : e.url && X.push(e.url);
+          J = Object(s['useRef'])(null),
+          X = Object(s['useRef'])(d),
+          K = [];
+        X.current.forEach(e => {
+          e.preview ? K.push(e.preview) : e.url && K.push(e.url);
         });
-        var K = Object(s['useMemo'])(() => {
+        var W = Object(s['useMemo'])(() => {
             for (var e = 0, n = 0; n < d.length; n++) {
               var t = d[n],
                 a = t.url,
@@ -272,10 +272,10 @@
             }
             return e;
           }, [d]),
-          W = Object(s['useState'])(!1),
-          H = Object(c['a'])(W, 2),
-          Z = H[0],
-          G = H[1],
+          H = Object(s['useState'])(!1),
+          q = Object(c['a'])(H, 2),
+          Z = q[0],
+          G = q[1],
           _ = Object(s['useState'])(0),
           $ = Object(c['a'])(_, 2),
           ee = $[0],
@@ -286,7 +286,7 @@
           re = ae[1];
         Object(s['useEffect'])(() => {
           if (L) {
-            var e = getComputedStyle(q.current).width;
+            var e = getComputedStyle(J.current).width;
             re(e);
           }
         }, [L]);
@@ -307,7 +307,7 @@
             var n = e.target,
               t = n.files;
             if (!t || !t.length) return (n.value = '');
-            var a = p - (Q ? 0 : K);
+            var a = p - (Q ? 0 : W);
             t.length > (Q ? p : a) &&
               i.a.info(
                 '\u56fe\u7247\u6700\u591a\u4e0d\u8d85\u8fc7'.concat(
@@ -321,53 +321,53 @@
               o++
             )
               r.push(ce(l[o], o));
-            J.current = J.current.filter(e => e.url || e.errorTip);
-            var c = Q ? 0 : J.current.length;
+            X.current = X.current.filter(e => e.url || e.errorTip);
+            var c = Q ? 0 : X.current.length;
             Promise.all(r)
               .then(e => {
                 'function' === typeof z && e.forEach(e => (e.loading = !0));
                 var t = e.filter(e =>
-                  O && e.file.size > 1024 * O * 1024
+                  B && e.file.size > 1024 * B * 1024
                     ? i.a.info(
                         '\u56fe\u7247\u5927\u5c0f\u4e0d\u80fd\u8d85\u8fc7'.concat(
-                          O,
+                          B,
                           'M',
                         ),
                       )
                     : e,
                 );
                 if (
-                  ((J.current = Q ? [...t] : J.current.concat(t)),
-                  E(J.current),
+                  ((X.current = Q ? [...t] : X.current.concat(t)),
+                  E(X.current),
                   'function' === typeof z)
                 )
                   for (
                     var a = function(e) {
-                        var n = J.current[e];
+                        var n = X.current[e];
                         e >= c &&
                           z(n)
                             .then(n => {
-                              (J.current[e] = Object.assign(
+                              (X.current[e] = Object.assign(
                                 {},
-                                J.current[e],
+                                X.current[e],
                                 n,
                                 { loading: !1 },
                               )),
-                                (J.current = [...J.current]),
-                                setTimeout(() => E(J.current), 10);
+                                (X.current = [...X.current]),
+                                setTimeout(() => E(X.current), 10);
                             })
                             .catch(n => {
-                              (J.current[e] = Object.assign({}, J.current[e], {
+                              (X.current[e] = Object.assign({}, X.current[e], {
                                 url: '',
                                 loading: !1,
                                 errorTip: n || '\u4e0a\u4f20\u5931\u8d25',
                               })),
-                                (J.current = [...J.current]),
-                                setTimeout(() => E(J.current), 10);
+                                (X.current = [...X.current]),
+                                setTimeout(() => E(X.current), 10);
                             });
                       },
                       l = 0;
-                    l < J.current.length;
+                    l < X.current.length;
                     l++
                   )
                     a(l);
@@ -381,8 +381,8 @@
             N || (Y && Y.current && Y.current.click());
           },
           de = e => {
-            for (var n = !0, t = 0; t < J.current.length; t++) {
-              var a = J.current[t].loading;
+            for (var n = !0, t = 0; t < X.current.length; t++) {
+              var a = X.current[t].loading;
               if (a) {
                 n = !1;
                 break;
@@ -392,7 +392,7 @@
               return i.a.info(
                 '\u56fe\u7247\u4e0a\u4f20\u4e2d\uff0c\u8bf7\u7a0d\u540e\u64cd\u4f5c',
               );
-            J.current.splice(e, 1), (J.current = [...J.current]), E(J.current);
+            X.current.splice(e, 1), (X.current = [...X.current]), E(X.current);
           },
           ue = (function() {
             var e = Object(r['a'])(
@@ -408,16 +408,16 @@
                         }
                         return e.abrupt('return');
                       case 2:
-                        if (J.current[t].preview || 'function' !== typeof F) {
+                        if (X.current[t].preview || 'function' !== typeof F) {
                           e.next = 9;
                           break;
                         }
                         return (e.next = 5), F(t);
                       case 5:
                         (a = e.sent),
-                          (J.current[t].preview = a),
-                          (J.current = [...J.current]),
-                          E(J.current);
+                          (X.current[t].preview = a),
+                          (X.current = [...X.current]),
+                          E(X.current);
                       case 9:
                         ne(n), fe();
                       case 11:
@@ -466,8 +466,8 @@
             ref: Y,
             type: 'file',
             accept: b,
-            multiple: y,
-            capture: x,
+            multiple: A,
+            capture: y,
             onChange: se,
           }),
           d &&
@@ -493,7 +493,7 @@
                   m.a.createElement(
                     'div',
                     {
-                      className: f()(a.imgBox, ...I.map(e => a[e])),
+                      className: f()(a.imgBox, ...S.map(e => a[e])),
                       style: { height: pe },
                     },
                     t &&
@@ -501,7 +501,7 @@
                         alt: '',
                         className: a.img,
                         src: t,
-                        style: { objectFit: B },
+                        style: { objectFit: I },
                         onClick: () => ue(p, n),
                       }),
                     o && m.a.createElement('div', { className: a.errorTip }, o),
@@ -521,14 +521,14 @@
                 );
               }
             }),
-          K < p &&
+          W < p &&
             m.a.createElement(
               'div',
-              { className: ve, style: { width: k }, ref: q, onClick: me },
-              D ||
+              { className: ve, style: { width: k }, ref: J, onClick: me },
+              O ||
                 m.a.createElement('div', {
                   style: { height: pe },
-                  className: f()(a.childrenEle, [...I.map(e => a[e])]),
+                  className: f()(a.childrenEle, [...S.map(e => a[e])]),
                 }),
               1 === p &&
                 d[0] &&
@@ -549,26 +549,26 @@
                   style: { width: k },
                 }),
               ),
-          Z && m.a.createElement(g.a, { onClose: fe, index: ee, urls: X }),
+          Z && m.a.createElement(g.a, { onClose: fe, index: ee, urls: K }),
         );
       }),
-      x = Object(d['withStyles'])(b)(y),
+      y = Object(d['withStyles'])(b)(A),
       j = (t('ZyjE'), t('4IZf')),
       k = t.n(j),
       C = (t('DNw3'), t('rxJx')),
       w = t.n(C),
-      S = (t('cn7L'), t('jeTP')),
-      I = t.n(S),
-      D = t('wd/R'),
-      P = t.n(D);
-    function B(e) {
+      D = (t('cn7L'), t('jeTP')),
+      S = t.n(D),
+      O = t('wd/R'),
+      P = t.n(O);
+    function I(e) {
       var n =
         arguments.length > 1 && void 0 !== arguments[1]
           ? arguments[1]
           : 'YYYY-MM-DD';
       return P()(e).format(n);
     }
-    var O = e => {
+    var B = e => {
         if (e) return new Date(e);
       },
       R = Object(d['createStyles'])({
@@ -652,7 +652,7 @@
         },
       }),
       N = R,
-      z = I.a.Item,
+      z = S.a.Item,
       U = () => {},
       T = e => {
         var n = e.classes,
@@ -684,13 +684,13 @@
               : h,
           v = e.forerverTxt,
           b = void 0 === v ? '\u957f\u671f' : v,
-          A = e.foreverDate,
-          y = void 0 === A ? '9999-12-31' : A,
-          x = e.minDate,
-          j = void 0 === x ? new Date(1980, 0, 1, 23, 59, 59) : x,
+          x = e.foreverDate,
+          A = void 0 === x ? '9999-12-31' : x,
+          y = e.minDate,
+          j = void 0 === y ? new Date(1980, 0, 1, 23, 59, 59) : y,
           C = e.maxDate,
-          S = void 0 === C ? new Date(2060, 11, 30, 23, 59, 59) : C,
-          D = e.cache,
+          D = void 0 === C ? new Date(2060, 11, 30, 23, 59, 59) : C,
+          O = e.cache,
           P = Object(s['useState'])(!1),
           R = Object(c['a'])(P, 2),
           N = R[0],
@@ -700,15 +700,15 @@
           M = L[0],
           V = L[1];
         Object(s['useEffect'])(() => {
-          T(l[1] === y), D && l[1] && l[1] !== y && V(l[1]);
-        }, [l[1], y]);
+          T(l[1] === A), O && l[1] && l[1] !== A && V(l[1]);
+        }, [l[1], A]);
         var Q = () => {
-            var e = [l[0], N ? M || '' : y],
+            var e = [l[0], N ? M || '' : A],
               n = N ? 'unCheck' : 'check';
             o(e, n), T(e => !e);
           },
           Y = (e, n) => {
-            var t = B(e),
+            var t = I(e),
               a = [];
             if ('start' === n) {
               if (t > l[1])
@@ -729,7 +729,7 @@
           'div',
           { className: t.root },
           m.a.createElement(
-            I.a,
+            S.a,
             null,
             m.a.createElement(
               'div',
@@ -740,10 +740,10 @@
                   mode: 'date',
                   title: g[0],
                   extra: E[0],
-                  value: O(l[0]),
+                  value: B(l[0]),
                   onChange: e => Y(e, 'start'),
                   minDate: j,
-                  maxDate: S,
+                  maxDate: D,
                 },
                 m.a.createElement(z, { arrow: 'horizontal' }, u[0]),
               ),
@@ -755,7 +755,7 @@
                 'div',
                 {
                   className: f()(t.datePicker, {
-                    [t.dateValue]: l[1] && l[1] !== y,
+                    [t.dateValue]: l[1] && l[1] !== A,
                   }),
                 },
                 m.a.createElement(
@@ -764,10 +764,10 @@
                     mode: 'date',
                     title: g[1],
                     extra: E[1],
-                    value: l[1] === y ? void 0 : O(l[1]),
+                    value: l[1] === A ? void 0 : B(l[1]),
                     onChange: e => Y(e, 'end'),
                     minDate: j,
-                    maxDate: S,
+                    maxDate: D,
                   },
                   m.a.createElement(
                     z,
@@ -814,7 +814,7 @@
         dateValue: { '& .am-list-extra': { color: '#323232 !important' } },
       }),
       M = L,
-      V = I.a.Item,
+      V = S.a.Item,
       Q = () => {},
       Y = e => {
         var n = e.classes,
@@ -842,12 +842,12 @@
               : h,
           v = e.minDate,
           b = void 0 === v ? new Date(1980, 0, 1, 23, 59, 59) : v,
-          A = e.maxDate,
-          y = void 0 === A ? new Date(2060, 11, 30, 23, 59, 59) : A,
-          x = e.splitTxt,
-          j = void 0 === x ? '\u81f3' : x,
+          x = e.maxDate,
+          A = void 0 === x ? new Date(2060, 11, 30, 23, 59, 59) : x,
+          y = e.splitTxt,
+          j = void 0 === y ? '\u81f3' : y,
           C = (e, n) => {
-            var t = B(e),
+            var t = I(e),
               a = [];
             if ('start' === n) {
               if (t > s[1])
@@ -885,10 +885,10 @@
                   mode: 'date',
                   title: g[0],
                   extra: E[0],
-                  value: O(s[0]),
+                  value: B(s[0]),
                   onChange: e => C(e, 'start'),
                   minDate: b,
-                  maxDate: y,
+                  maxDate: A,
                 },
                 m.a.createElement(V, { arrow: 'down' }),
               ),
@@ -903,10 +903,10 @@
                   mode: 'date',
                   title: g[1],
                   extra: E[1],
-                  value: O(s[1]),
+                  value: B(s[1]),
                   onChange: e => C(e, 'end'),
                   minDate: b,
-                  maxDate: y,
+                  maxDate: A,
                 },
                 m.a.createElement(V, { arrow: 'down' }),
               ),
@@ -914,7 +914,7 @@
           ),
         );
       },
-      q = Object(d['withStyles'])(M)(Y);
+      J = Object(d['withStyles'])(M)(Y);
   },
   '7tPC': function(e, n, t) {
     'use strict';
@@ -925,7 +925,7 @@
       r = (t('dlV3'), t('4cdd')),
       o = t.n(r),
       i = t('ODXe'),
-      c = t('q1tI'),
+      c = t('ODnx'),
       s = t.n(c),
       m = t('2YZa'),
       d = t('Wm/2'),
@@ -982,7 +982,7 @@
     var a = t('4IZf'),
       l = t.n(a),
       r = t('ODXe'),
-      o = t('q1tI'),
+      o = t('ODnx'),
       i = t.n(o),
       c = t('Wm/2'),
       s = t('2YZa'),
@@ -1030,7 +1030,7 @@
         b = e => {
           c(e);
         },
-        A = e => {
+        x = e => {
           E(e);
         };
       return i.a.createElement(
@@ -1068,7 +1068,7 @@
             s['b'],
             {
               filesList: h,
-              onChange: A,
+              onChange: x,
               mode: 'cover',
               width: '100%',
               height: '90px',
@@ -1104,7 +1104,7 @@
       i = (t('dlV3'), t('4cdd')),
       c = t.n(i),
       s = t('ODXe'),
-      m = t('q1tI'),
+      m = t('ODnx'),
       d = t.n(m),
       u = t('2YZa');
     n['default'] = () => {
@@ -1191,13 +1191,13 @@
     'use strict';
     t.r(n);
     var a = t('wx14'),
-      l = t('q1tI'),
+      l = t('ODnx'),
       r = t.n(l),
       o = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
       i = t.n(o),
       c = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('q1tI')),
+          n = e(t('ODnx')),
           a = e(t('UI3I')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -1206,7 +1206,7 @@
       }),
       s = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('q1tI')),
+          n = e(t('ODnx')),
           a = e(t('7tPC')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -1215,7 +1215,7 @@
       }),
       m = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('q1tI')),
+          n = e(t('ODnx')),
           a = e(t('aGEZ')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -1224,7 +1224,7 @@
       }),
       d = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('q1tI')),
+          n = e(t('ODnx')),
           a = e(t('YYIF')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -1275,10 +1275,13 @@
             },
             {
               path: '/_demos/base-2',
+              CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
-                'eco-mobile': '1.0.56',
-                react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
+                'antd-mobile': '^2.3.4',
+                react: '^17.0.1',
+                'react-dom': '^17.0.1',
+                'eco-mobile': '1.0.57',
               },
               files: {},
             },
@@ -1318,10 +1321,10 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.56',
-                react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'react-dom': '>= 16.9.0',
+                react: '^17.0.1',
+                'react-dom': '^17.0.1',
+                'eco-mobile': '1.0.57',
                 'rc-field-form': '1.17.4',
               },
               files: {},
@@ -1362,9 +1365,10 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.56',
-                react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
+                react: '^17.0.1',
+                'react-dom': '^17.0.1',
+                'eco-mobile': '1.0.57',
               },
               files: {},
             },
@@ -1405,10 +1409,11 @@
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
                 'antd-mobile': '2.3.4',
-                'eco-mobile': '1.0.56',
-                moment: '2.29.1',
-                react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
+                react: '^17.0.1',
+                'react-dom': '^17.0.1',
+                'eco-mobile': '1.0.57',
+                moment: '2.29.1',
               },
               files: {},
             },
@@ -1682,7 +1687,7 @@
     'use strict';
     t.r(n);
     var a = t('ODXe'),
-      l = t('q1tI'),
+      l = t('ODnx'),
       r = t.n(l),
       o = t('2YZa'),
       i = t('Wm/2'),
@@ -2006,7 +2011,7 @@
     'use strict';
     t.r(n);
     var a = t('ODXe'),
-      l = t('q1tI'),
+      l = t('ODnx'),
       r = t.n(l),
       o = t('2YZa'),
       i = t('Wm/2'),
@@ -2031,13 +2036,13 @@
     'use strict';
     t.r(n);
     var a = t('wx14'),
-      l = t('q1tI'),
+      l = t('ODnx'),
       r = t.n(l),
       o = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
       i = t.n(o),
       c = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('q1tI')),
+          n = e(t('ODnx')),
           a = e(t('M4Bu')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2088,10 +2093,13 @@
             },
             {
               path: '/_demos/base',
+              CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
               dependencies: {
-                'eco-mobile': '1.0.56',
-                react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
+                'antd-mobile': '^2.3.4',
+                react: '^17.0.1',
+                'react-dom': '^17.0.1',
+                'eco-mobile': '1.0.57',
               },
               files: {},
             },
@@ -2344,7 +2352,7 @@
     var a = t('Kl5d'),
       l = t.n(a),
       r = t('ODXe'),
-      o = t('q1tI'),
+      o = t('ODnx'),
       i = t.n(o),
       c = t('2YZa'),
       s = t('wd/R'),
@@ -2386,7 +2394,7 @@
       r = (t('dlV3'), t('4cdd')),
       o = t.n(r),
       i = t('ODXe'),
-      c = t('q1tI'),
+      c = t('ODnx'),
       s = t.n(c),
       m = t('2YZa'),
       d = t('Wm/2'),
@@ -2453,7 +2461,7 @@
     var a = t('Kl5d'),
       l = t.n(a),
       r = t('ODXe'),
-      o = t('q1tI'),
+      o = t('ODnx'),
       i = t.n(o),
       c = t('2YZa');
     n['default'] = () => {
@@ -2495,7 +2503,7 @@
   gql7: function(e, n, t) {
     'use strict';
     t.r(n);
-    var a = t('q1tI'),
+    var a = t('ODnx'),
       l = t.n(a),
       r = (t('B2uJ'), t('+su7'), t('qOys')),
       o = t.n(r);
@@ -2597,7 +2605,7 @@
     'use strict';
     t.r(n);
     var a = t('ODXe'),
-      l = t('q1tI'),
+      l = t('ODnx'),
       r = t.n(l),
       o = t('2YZa');
     n['default'] = () => {
@@ -2630,13 +2638,13 @@
     'use strict';
     t.r(n);
     var a = t('wx14'),
-      l = t('q1tI'),
+      l = t('ODnx'),
       r = t.n(l),
       o = (t('B2uJ'), t('+su7'), t('qOys'), t('5Yjd')),
       i = t.n(o),
       c = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('q1tI')),
+          n = e(t('ODnx')),
           a = e(t('FKBv')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2645,7 +2653,7 @@
       }),
       s = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('q1tI')),
+          n = e(t('ODnx')),
           a = e(t('jQK9')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2654,7 +2662,7 @@
       }),
       m = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('q1tI')),
+          n = e(t('ODnx')),
           a = e(t('CK2m')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2663,7 +2671,7 @@
       }),
       d = r.a.memo(function() {
         var e = t('TqRt'),
-          n = e(t('q1tI')),
+          n = e(t('ODnx')),
           a = e(t('cazh')),
           l = function() {
             return n['default'].createElement(a['default'], null);
@@ -2715,7 +2723,13 @@
             {
               path: '/_demos/base-1',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.56' },
+              dependencies: {
+                'antd-mobile': '2.3.4',
+                '@wonder-ui/styles': '^2.0.0-beta.9',
+                react: '^17.0.1',
+                'react-dom': '^17.0.1',
+                'eco-mobile': '1.0.57',
+              },
               files: {},
             },
           ),
@@ -2751,7 +2765,14 @@
             },
             {
               path: '/_demos/on-upload',
-              dependencies: { 'eco-mobile': '1.0.56' },
+              CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
+              dependencies: {
+                '@wonder-ui/styles': '^2.0.0-beta.9',
+                'antd-mobile': '^2.3.4',
+                react: '^17.0.1',
+                'react-dom': '^17.0.1',
+                'eco-mobile': '1.0.57',
+              },
               files: {},
             },
           ),
@@ -2793,7 +2814,8 @@
                 'antd-mobile': '2.3.4',
                 react: '>=16.8.0',
                 '@wonder-ui/styles': '2.0.0-beta.9',
-                'eco-mobile': '1.0.56',
+                'react-dom': '^17.0.1',
+                'eco-mobile': '1.0.57',
               },
               files: {},
             },
@@ -2835,7 +2857,13 @@
             {
               path: '/_demos/resize',
               CSSInDependencies: ['antd-mobile/dist/antd-mobile.css'],
-              dependencies: { 'antd-mobile': '2.3.4', 'eco-mobile': '1.0.56' },
+              dependencies: {
+                'antd-mobile': '2.3.4',
+                '@wonder-ui/styles': '^2.0.0-beta.9',
+                react: '^17.0.1',
+                'react-dom': '^17.0.1',
+                'eco-mobile': '1.0.57',
+              },
               files: {},
             },
           ),
@@ -3495,7 +3523,7 @@
         {
           path: '/',
           component: e =>
-            t('q1tI').createElement(
+            t('ODnx').createElement(
               t('09U7').default,
               Object(i['a'])(
                 Object(i['a'])(
@@ -3552,7 +3580,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/date-range/index.md',
-                updatedTime: 1610636684e3,
+                updatedTime: 1611025891e3,
                 group: {
                   title: 'DateRange \u65e5\u671f\u8303\u56f4',
                   path: '/date-range',
@@ -3629,7 +3657,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/valid-range/index.md',
-                updatedTime: 1610704864e3,
+                updatedTime: 1611025891e3,
                 group: {
                   title: 'ValidRange \u8bc1\u4ef6\u6709\u6548\u671f',
                   path: '/valid-range',
