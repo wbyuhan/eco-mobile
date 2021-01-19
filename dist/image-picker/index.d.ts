@@ -14,6 +14,7 @@ interface ImagePickerProps {
   max?: number;
   onChange?: (arr: Array<Files>) => void;
   onUpload?: (file: any) => Promise<object | undefined>;
+  onInit?: (index: number) => Promise<object | undefined>;
   accept?: string;
   multiple?: boolean;
   capture?: string;
@@ -67,6 +68,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'max'
   | 'onChange'
   | 'onUpload'
+  | 'onInit'
   | 'accept'
   | 'capture'
   | 'config'

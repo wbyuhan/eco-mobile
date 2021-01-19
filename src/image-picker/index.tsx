@@ -23,6 +23,7 @@ interface ImagePickerProps {
   max?: number; // 图片最大个数
   onChange?: (arr: Array<Files>) => void; // 图片列表改变
   onUpload?: (file: any) => Promise<object | undefined>; // 图片上传方法
+  onInit?: (index: number) => Promise<object | undefined>; // 图片初始化加载方法
   accept?: string; // 选择的图片类型
   multiple?: boolean; // 是否多选
   capture?: string; // 图片选择的方式
@@ -61,6 +62,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
     disabledPreview,
     disabledSelect,
     onUpload,
+    onInit,
     onFail = noon,
     onGetPreviewUrl,
     resize,
@@ -97,6 +99,52 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
   const [isOpen, setOpen] = useState<boolean>(false);
   const [index, setIndex] = useState<number>(0);
   const [realHeight, setRealHeight] = useState<string>('');
+
+  // 初始化
+  const init = (index: number) => {
+    if (onInit) {
+      onInit(index)
+        .then((res: any) => {
+          refFilesList.current[index] = Object.assign(
+            {},
+            refFilesList.current[index],
+            res,
+            { loading: false },
+          );
+          refFilesList.current = [...refFilesList.current];
+          setTimeout(() => onChange(refFilesList.current), 10);
+        })
+        .catch(err => {
+          refFilesList.current[index] = Object.assign(
+            {},
+            refFilesList.current[index],
+            {
+              url: '',
+              loading: false,
+              errorTip: err || '加载失败',
+            },
+          );
+          refFilesList.current = [...refFilesList.current];
+          setTimeout(() => onChange(refFilesList.current), 10);
+        });
+    }
+  };
+
+  // 处理初始化加载
+  useEffect(() => {
+    // 处理初始化加载
+    if (typeof onInit === 'function') {
+      for (let i = 0; i < refFilesList.current.length; i++) {
+        refFilesList.current.forEach((item: Files) => {
+          item.loading = true;
+          item.isInit = true;
+        });
+        refFilesList.current = [...refFilesList.current];
+        onChange(refFilesList.current);
+        init(i);
+      }
+    }
+  }, []);
 
   // init
   useEffect(() => {
@@ -138,7 +186,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
           reject(`Fail to get the ${index} image`);
           return;
         }
-        resolve({ file, url: dataURL });
+        resolve({ file: data, url: dataURL });
       };
       reader.readAsDataURL(data);
     });
@@ -321,8 +369,8 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
       {filesList &&
         filesList.length > 0 &&
         filesList.map((item: Files, index: number) => {
-          const { url, loading, name, errorTip } = item;
-          if (url || errorTip) {
+          const { url, loading, name, errorTip, isInit } = item;
+          if (url || errorTip || isInit) {
             const currentArr = filesList.slice(0, index + 1);
             let errorNum = 0;
             for (let i = 0; i < currentArr.length; i++) {

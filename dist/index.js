@@ -338,6 +338,7 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
     disabledPreview = props.disabledPreview,
     disabledSelect = props.disabledSelect,
     onUpload = props.onUpload,
+    onInit = props.onInit,
     _props$onFail = props.onFail,
     onFail = _props$onFail === void 0 ? noon : _props$onFail,
     onGetPreviewUrl = props.onGetPreviewUrl,
@@ -390,7 +391,57 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
   var _useState5 = React.useState(''),
     _useState6 = _slicedToArray(_useState5, 2),
     realHeight = _useState6[0],
-    setRealHeight = _useState6[1]; // init
+    setRealHeight = _useState6[1]; // 初始化
+
+  var init = function init(index) {
+    if (onInit) {
+      onInit(index)
+        .then(function(res) {
+          refFilesList.current[index] = Object.assign(
+            {},
+            refFilesList.current[index],
+            res,
+            {
+              loading: false,
+            },
+          );
+          refFilesList.current = _toConsumableArray(refFilesList.current);
+          setTimeout(function() {
+            return onChange(refFilesList.current);
+          }, 10);
+        })
+        .catch(function(err) {
+          refFilesList.current[index] = Object.assign(
+            {},
+            refFilesList.current[index],
+            {
+              url: '',
+              loading: false,
+              errorTip: err || '加载失败',
+            },
+          );
+          refFilesList.current = _toConsumableArray(refFilesList.current);
+          setTimeout(function() {
+            return onChange(refFilesList.current);
+          }, 10);
+        });
+    }
+  }; // 处理初始化加载
+
+  React.useEffect(function() {
+    // 处理初始化加载
+    if (typeof onInit === 'function') {
+      for (var i = 0; i < refFilesList.current.length; i++) {
+        refFilesList.current.forEach(function(item) {
+          item.loading = true;
+          item.isInit = true;
+        });
+        refFilesList.current = _toConsumableArray(refFilesList.current);
+        onChange(refFilesList.current);
+        init(i);
+      }
+    }
+  }, []); // init
 
   React.useEffect(
     function() {
@@ -455,7 +506,7 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
                       }
 
                       resolve({
-                        file: file,
+                        file: data,
                         url: dataURL,
                       });
                     };
@@ -751,9 +802,10 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
         var url = item.url,
           loading = item.loading,
           name = item.name,
-          errorTip = item.errorTip;
+          errorTip = item.errorTip,
+          isInit = item.isInit;
 
-        if (url || errorTip) {
+        if (url || errorTip || isInit) {
           var currentArr = filesList.slice(0, index + 1);
           var errorNum = 0;
 
