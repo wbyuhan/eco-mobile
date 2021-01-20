@@ -41,7 +41,7 @@ export default () => {
         foreverDate="2999-12-31"
         minDate={new Date(2010, 0, 1, 23, 59, 59)}
         maxDate={new Date(2030, 9, 28, 23, 59, 59)}
-        cache
+        cache={false}
       />
       <WhiteSpace />
       <Button onClick={onFill} inline type="primary" size="small">

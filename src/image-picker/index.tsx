@@ -29,9 +29,9 @@ interface ImagePickerProps {
   capture?: string; // 图片选择的方式
   width?: string; // 图片宽度，默认80px
   height?: string | number; // 图片高度，默认80px
-  config?: string[]; // 图片的额外扩展项,defaultBackGround: 显示默认背景色, defaultDashed: 显示虚线边框, defaultBorder: 显示实线边框
+  config?: Array<'defaultBackGround' | 'defaultDashed' | 'defaultBorder'>; // 图片的额外扩展项,defaultBackGround: 显示默认背景色, defaultDashed: 显示虚线边框, defaultBorder: 显示实线边框
   children?: React.ReactNode; // 选择图片元素，默认为+
-  mode?: string; // 图片裁切类型, fill, cover, contain, scale-down
+  mode?: 'fill' | 'cover' | 'contain' | 'scale-down'; // 图片裁切类型, fill, cover, contain, scale-down
   size?: number; // 图片大小限制，单位: M
   onFail?: (e: any) => void;
   resize?: boolean; // 高度是否根据宽度计算
@@ -171,7 +171,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
   };
 
   // 图片处理
-  const parseFile = async (file: any, index: number) => {
+  const parseFile = async (file: any, index: number, validLength: number) => {
     let data: any = file;
     if (quality) {
       console.log('压缩前', file);
@@ -186,7 +186,13 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
           reject(`Fail to get the ${index} image`);
           return;
         }
-        resolve({ file: data, url: dataURL });
+        console.log('validLength + index', validLength + index, filesList);
+        resolve(
+          Object.assign({}, filesList[validLength + index], {
+            file: data,
+            url: dataURL,
+          }),
+        );
       };
       reader.readAsDataURL(data);
     });
@@ -205,9 +211,10 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
       Toast.info(`图片最多不超过${max}张`);
     }
     const restFileList = Array.from(files).slice(0, restNum);
+    console.log('restFileList**', restFileList, restNum);
     const imageParsePromiseList = [];
     for (let i = 0; i < restFileList.length; i++) {
-      imageParsePromiseList.push(parseFile(restFileList[i], i));
+      imageParsePromiseList.push(parseFile(restFileList[i], i, validLength));
     }
     refFilesList.current = refFilesList.current.filter(
       item => item.url || item.errorTip,
@@ -315,19 +322,6 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
   // 关闭图片预览
   const onClose = () => setOpen(val => !val);
 
-  enum configProp {
-    defaultBorder = 'defaultBorder',
-    defaultBackGround = 'defaultBackGround',
-    defaultDashed = 'defaultDashed',
-  }
-
-  enum objectFitProp {
-    fill = 'fill',
-    cover = 'cover',
-    contain = 'contain',
-    'scale-down' = 'scale-down',
-  }
-
   // 计算高度
   const calcHeight = resize ? realHeight : height;
 
@@ -386,7 +380,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
                   className={classnames(
                     s.imgBox,
                     ...config.map(todo => {
-                      return s[todo as configProp];
+                      return s[todo];
                     }),
                   )}
                   style={{ height: calcHeight }}
@@ -396,7 +390,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
                       alt=""
                       className={s.img}
                       src={url}
-                      style={{ objectFit: mode as objectFitProp }}
+                      style={{ objectFit: mode }}
                       onClick={() => onPreview(currentIndex, index)}
                     />
                   )}
@@ -432,7 +426,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
               style={{ height: calcHeight }}
               className={classnames(s.childrenEle, [
                 ...config.map(todo => {
-                  return s[todo as configProp];
+                  return s[todo];
                 }),
               ])}
             />

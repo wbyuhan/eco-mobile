@@ -54,8 +54,18 @@ interface Files {
 export default () => {
   const s = styles();
 
-  const [idCard, setIdCard] = useState<Array<Files>>([]);
-  const [idCardBack, setIdCardBack] = useState<Array<Files>>([]);
+  const [idCard, setIdCard] = useState<Array<Files>>([
+    {
+      name: '人像',
+      url: '',
+    },
+  ]);
+  const [idCardBack, setIdCardBack] = useState<Array<Files>>([
+    {
+      name: '国徽',
+      url: '',
+    },
+  ]);
 
   // 实时上传方法
   const onUpload = (item: any): Promise<object | undefined> => {

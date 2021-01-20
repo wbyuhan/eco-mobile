@@ -20,9 +20,9 @@ interface ImagePickerProps {
   capture?: string;
   width?: string;
   height?: string | number;
-  config?: string[];
+  config?: Array<'defaultBackGround' | 'defaultDashed' | 'defaultBorder'>;
   children?: React.ReactNode;
-  mode?: string;
+  mode?: 'fill' | 'cover' | 'contain' | 'scale-down';
   size?: number;
   onFail?: (e: any) => void;
   resize?: boolean;
@@ -40,6 +40,9 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
       theme?: unknown;
     } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
       unknown,
+      | 'defaultBackGround'
+      | 'defaultDashed'
+      | 'defaultBorder'
       | 'root'
       | 'justifyContent'
       | 'marginBottom'
@@ -52,9 +55,6 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
       | 'noMargin'
       | 'name'
       | 'childrenEle'
-      | 'defaultDashed'
-      | 'defaultBackGround'
-      | 'defaultBorder'
       | 'loadingBox'
       | 'loading'
       | '@keyframes myRound'
