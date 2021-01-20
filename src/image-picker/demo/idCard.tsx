@@ -55,16 +55,10 @@ export default () => {
   const s = styles();
 
   const [idCard, setIdCard] = useState<Array<Files>>([
-    {
-      name: '人像',
-      url: '',
-    },
+    { name: '人像', url: '' },
   ]);
   const [idCardBack, setIdCardBack] = useState<Array<Files>>([
-    {
-      name: '国徽',
-      url: '',
-    },
+    { name: '国徽', url: '' },
   ]);
 
   // 实时上传方法
@@ -85,11 +79,19 @@ export default () => {
   // 人像面改变
   const onChangeIdCard = (arr: Array<Files>) => {
     console.log('onChangeIdCard', arr);
+    if (arr.length === 0) {
+      arr.push({ name: '人像', url: '' });
+      return setIdCard(arr);
+    }
     setIdCard(arr);
   };
 
   // 国徽面改变
   const onChangeIdCardBack = (arr: Array<Files>) => {
+    if (arr.length === 0) {
+      arr.push({ name: '国徽', url: '' });
+      return setIdCardBack(arr);
+    }
     setIdCardBack(arr);
   };
 
