@@ -99,7 +99,7 @@ export default () => {
     <div className={s.root}>
       <div className={s.item}>
         <ImagePicker
-          filesList={idCard}
+          value={idCard}
           onChange={onChangeIdCard}
           mode="cover"
           width="100%"
@@ -114,7 +114,7 @@ export default () => {
       </div>
       <div className={s.item}>
         <ImagePicker
-          filesList={idCardBack}
+          value={idCardBack}
           onChange={onChangeIdCardBack}
           mode="cover"
           width="100%"

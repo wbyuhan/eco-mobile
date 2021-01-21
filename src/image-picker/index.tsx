@@ -19,7 +19,7 @@ interface Files {
 }
 
 interface ImagePickerProps {
-  filesList?: Array<Files>; // 图片列表
+  value?: Array<Files>; // 图片列表
   max?: number; // 图片最大个数
   onChange?: (arr: Array<Files>) => void; // 图片列表改变
   onUpload?: (file: any) => Promise<object | undefined>; // 图片上传方法
@@ -47,7 +47,7 @@ interface ImagePickerProps {
 const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
   const {
     classes: s = {},
-    filesList = [],
+    value = [],
     max = 1,
     onChange = noon,
     accept = 'image/*',
@@ -73,7 +73,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
 
   const refInput = ref || useRef<any>(null);
   const refSelectDom = useRef<any>(null);
-  const refFilesList = useRef<Array<Files>>(filesList);
+  const refFilesList = useRef<Array<Files>>(value);
 
   const urlList: string[] = [];
   refFilesList.current.forEach((item: Files) => {
@@ -87,14 +87,14 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
   // 有效个数
   const validLength = useMemo(() => {
     let num = 0;
-    for (let i = 0; i < filesList.length; i++) {
-      const { url, errorTip } = filesList[i];
+    for (let i = 0; i < value.length; i++) {
+      const { url, errorTip } = value[i];
       if (url || errorTip) {
         num++;
       }
     }
     return num;
-  }, [filesList]);
+  }, [value]);
 
   const [isOpen, setOpen] = useState<boolean>(false);
   const [index, setIndex] = useState<number>(0);
@@ -186,9 +186,9 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
           reject(`Fail to get the ${index} image`);
           return;
         }
-        console.log('validLength + index', validLength + index, filesList);
+        console.log('validLength + index', validLength + index, value);
         resolve(
-          Object.assign({}, filesList[validLength + index], {
+          Object.assign({}, value[validLength + index], {
             file: data,
             url: dataURL,
           }),
@@ -329,11 +329,11 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
   let spaceNum = 0;
   if (resize) {
     const rowNum = Math.floor(100 / parseFloat(width));
-    if (filesList && filesList.length > 0 && rowNum > 1) {
-      const restNum = filesList.length % rowNum;
+    if (value && value.length > 0 && rowNum > 1) {
+      const restNum = value.length % rowNum;
       if (restNum >= 0 && restNum <= rowNum - 1) {
         spaceNum = rowNum - restNum - 1;
-        if (filesList.length === max) {
+        if (value.length === max) {
           spaceNum += 1;
         }
       }
@@ -343,7 +343,7 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
 
   // parent样式
   const classParent = classnames(s.parent, {
-    [s.noMargin as string]: max === 1 || filesList.length < 1,
+    [s.noMargin as string]: max === 1 || value.length < 1,
     [s.marginBottom as string]: resize,
   });
 
@@ -360,12 +360,12 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
         capture={capture}
         onChange={onChangeHandle}
       />
-      {filesList &&
-        filesList.length > 0 &&
-        filesList.map((item: Files, index: number) => {
+      {value &&
+        value.length > 0 &&
+        value.map((item: Files, index: number) => {
           const { url, loading, name, errorTip, isInit } = item;
           if (url || errorTip || isInit) {
-            const currentArr = filesList.slice(0, index + 1);
+            const currentArr = value.slice(0, index + 1);
             let errorNum = 0;
             for (let i = 0; i < currentArr.length; i++) {
               const { errorTip } = currentArr[i];
@@ -431,9 +431,9 @@ const ImagePicker = forwardRef((props: ImagePickerProps, ref: any) => {
               ])}
             />
           )}
-          {max === 1 && filesList[0] && filesList[0].name && (
+          {max === 1 && value[0] && value[0].name && (
             <div className={s.name} style={{ width }}>
-              {filesList[0].name}
+              {value[0].name}
             </div>
           )}
         </div>

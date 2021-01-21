@@ -9,6 +9,10 @@ group:
 
 <code src="./demo/base" />
 
+## 结合 form
+
+<code src="./demo/form" />
+
 ## 多选+实时上传
 
 <code src="./demo/onUpload" />
@@ -31,10 +35,10 @@ group:
 
 | 属性            | 说明                                                                                                                                                                                       | 类型                                     | 默认值          |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- | --------------- |
-| filesList       | 图片文件数组,元素为对象,包含属性 `url`: 图片路径(必填), `preview`: 图片预览图, `loading`: 图片加载状态, `errorTip`: 图片加载失败提示文案,`name`: 图片底部显示的名称;以及业务需要的其它属性 | `Array`                                  | `[]`            |
+| value           | 图片文件数组,元素为对象,包含属性 `url`: 图片路径(必填), `preview`: 图片预览图, `loading`: 图片加载状态, `errorTip`: 图片加载失败提示文案,`name`: 图片底部显示的名称;以及业务需要的其它属性 | `Array`                                  | `[]`            |
+| onChange        | files 值发生变化触发的回调函数                                                                                                                                                             | `(arr: Array<Files>) => void`            | -               |
 | max             | 最大上传文件数量                                                                                                                                                                           | `number`                                 | `1`             |
 | quality         | 图片压缩比例,0~1                                                                                                                                                                           | `number`                                 | `默认不压缩`    |
-| onChange        | files 值发生变化触发的回调函数                                                                                                                                                             | `(arr: Array<Files>) => void`            | -               |
 | onUpload        | 图片实时上传方法                                                                                                                                                                           | `(file) => Promise<object or undefined>` | -               |
 | onInit          | 图片初始化加载                                                                                                                                                                             | `(file) => Promise<object or undefined>` | -               |
 | onGetPreviewUrl | 获取预览图片方法                                                                                                                                                                           | `(index: number) => Promise<string>`     | -               |

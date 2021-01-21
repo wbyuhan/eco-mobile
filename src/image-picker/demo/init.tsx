@@ -13,7 +13,7 @@ interface Files {
 }
 
 export default () => {
-  const [filesList, setFilesList] = useState<Array<Files>>([
+  const [value, setValue] = useState<Array<Files>>([
     {
       url: '',
       fssid: 'id-1',
@@ -28,12 +28,12 @@ export default () => {
   const onChange = (arr: Array<Files>) => {
     console.log('onChange', arr);
     arr.forEach((item, index) => (item.name = `示例图${index}`));
-    setFilesList(arr);
+    setValue(arr);
   };
 
   // 初始化方法
   const onInit = (index: number) => {
-    console.log('index', index, filesList[index].fssid);
+    console.log('index', index, value[index].fssid);
     return new Promise((resolve, reject) => {
       const rate = Math.random();
       setTimeout(() => {
@@ -62,7 +62,7 @@ export default () => {
 
   return (
     <ImagePicker
-      filesList={filesList}
+      value={value}
       onChange={onChange}
       multiple
       max={10}

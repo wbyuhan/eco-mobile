@@ -14,7 +14,7 @@ const styles = createUseStyles({
   },
 });
 
-const stepList = ['Step1', 'Step2', 'Step3', 'Step4'];
+const dataList = ['Step1', 'Step2', 'Step3', 'Step4'];
 
 export default () => {
   const s = styles();
@@ -27,14 +27,14 @@ export default () => {
       if (current === 0) return;
       setCurrent(val => val - 1);
     } else if (type === 'next') {
-      if (current === stepList.length - 1) return;
+      if (current === dataList.length - 1) return;
       setCurrent(val => val + 1);
     }
   };
 
   return (
     <div className={s.root}>
-      <Steps current={current} stepList={stepList} />
+      <Steps current={current} dataList={dataList} />
       <WhiteSpace size="lg" />
       <Button
         onClick={() => onChange('prev')}

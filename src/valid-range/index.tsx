@@ -18,7 +18,7 @@ interface ValidRangeProps {
   labels?: string[];
   titles?: string[];
   placeholders?: string[];
-  forerverTxt?: string;
+  forerverText?: string;
   foreverDate?: string;
   minDate?: Date;
   maxDate?: Date;
@@ -33,7 +33,7 @@ const ValidRange = (props: ValidRangeProps) => {
     labels = ['证件起始日期', '证件终止日期'],
     titles = ['起始日期', '终止日期'],
     placeholders = ['请选择起始日期', '请选择终止日期'],
-    forerverTxt = '长期',
+    forerverText = '长期',
     foreverDate = '9999-12-31',
     minDate = new Date(1980, 0, 1, 23, 59, 59),
     maxDate = new Date(2060, 11, 30, 23, 59, 59),
@@ -119,7 +119,7 @@ const ValidRange = (props: ValidRangeProps) => {
                 [s.iconChecked as string]: check,
               })}
             />
-            <span>{forerverTxt}</span>
+            <span>{forerverText}</span>
           </Flex>
         </Flex>
       </List>

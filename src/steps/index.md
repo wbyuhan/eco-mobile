@@ -16,4 +16,4 @@ group:
 | 属性     | 说明       | 类型            | 默认值 |
 | -------- | ---------- | --------------- | ------ |
 | current  | 当前 index | `number`        | `0`    |
-| stepList | 步骤列表   | `Array[string]` | `[]`   |
+| dataList | 步骤列表   | `Array[string]` | `[]`   |

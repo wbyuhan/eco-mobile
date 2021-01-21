@@ -11,7 +11,7 @@ interface DateRangeProps {
   placeholders?: string[];
   minDate?: Date;
   maxDate?: Date;
-  splitTxt?: string;
+  splitText?: string;
 }
 declare const _default: React.ForwardRefExoticComponent<Pick<
   DateRangeProps & {
@@ -22,13 +22,13 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
       | 'label'
       | 'tip'
       | 'dateBox'
-      | 'splitTxt'
+      | 'splitText'
       | 'datePicker'
       | 'dateValue'
     >,
   | 'label'
   | 'tip'
-  | 'splitTxt'
+  | 'splitText'
   | 'theme'
   | 'classes'
   | 'value'

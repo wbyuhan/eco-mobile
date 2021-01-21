@@ -12,13 +12,13 @@ interface Files {
 }
 
 export default () => {
-  const [filesList, setFilesList] = useState<Array<Files>>([]);
+  const [value, setValue] = useState<Array<Files>>([]);
 
   // 数组改变
   const onChange = (arr: Array<Files>) => {
     console.log('onChange', arr);
     arr.forEach((item, index) => (item.name = `示例图${index}`));
-    setFilesList(arr);
+    setValue(arr);
   };
 
   // 实时上传方法
@@ -37,7 +37,7 @@ export default () => {
 
   return (
     <ImagePicker
-      filesList={filesList}
+      value={value}
       onChange={onChange}
       multiple
       max={10}

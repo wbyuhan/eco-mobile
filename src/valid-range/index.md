@@ -32,7 +32,7 @@ group:
 | labels       | 开始结束标签名           | `Array`                 | `['证件起始日期:', '证件终止日期:']`   |
 | titles       | 开始结束日期弹窗标题     | `Array`                 | `['起始日期', '终止日期']`             |
 | placeholders | 开始结束日期 placeholder | `Array`                 | `['请选择起始日期', '请选择终止日期']` |
-| forerverTxt  | checked 的文本显示       | `string`                | `长期`                                 |
+| forerverText | checked 的文本显示       | `string`                | `长期`                                 |
 | foreverDate  | checked 的日期显示       | `Array`                 | `9999-12-31`                           |
 | minDate      | 最小可选日期             | `Date`                  | `new Date(1980, 0, 1, 23, 59, 59)`     |
 | maxDate      | 最大可选日期             | `Date`                  | `new Date(2060, 11, 30, 23, 59, 59)`   |

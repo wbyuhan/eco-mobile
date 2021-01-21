@@ -13,22 +13,22 @@ interface Files {
 }
 
 export default () => {
-  const [filesList, setFilesList] = useState<Array<Files>>([]);
+  const [value, setValue] = useState<Array<Files>>([]);
 
   // 数组改变
   const onChange = (arr: Array<Files>) => {
-    setFilesList(arr);
+    setValue(arr);
   };
 
   return (
     <Flex direction="row" wrap="wrap">
       <WingBlank>
-        <ImagePicker filesList={filesList} onChange={onChange} quality={0.1} />
+        <ImagePicker value={value} onChange={onChange} quality={0.1} />
         <WhiteSpace />
       </WingBlank>
       <WingBlank>
         <ImagePicker
-          filesList={filesList}
+          value={value}
           onChange={onChange}
           config={['defaultBackGround']}
         />
@@ -37,7 +37,7 @@ export default () => {
       <WingBlank>
         <ImagePicker
           showRemove={false}
-          filesList={filesList}
+          value={value}
           onChange={onChange}
           config={['defaultDashed']}
         />
@@ -45,7 +45,7 @@ export default () => {
       </WingBlank>
       <WingBlank>
         <ImagePicker
-          filesList={filesList}
+          value={value}
           onChange={onChange}
           config={['defaultBorder', 'defaultBackGround']}
         />
@@ -53,7 +53,7 @@ export default () => {
       </WingBlank>
       <WingBlank>
         <ImagePicker
-          filesList={filesList}
+          value={value}
           onChange={onChange}
           config={['defaultDashed', 'defaultBackGround']}
         />

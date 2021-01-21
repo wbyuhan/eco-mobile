@@ -363,8 +363,8 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
 
   var _props$classes = props.classes,
     s = _props$classes === void 0 ? {} : _props$classes,
-    _props$filesList = props.filesList,
-    filesList = _props$filesList === void 0 ? [] : _props$filesList,
+    _props$value = props.value,
+    value = _props$value === void 0 ? [] : _props$value,
     _props$max = props.max,
     max = _props$max === void 0 ? 1 : _props$max,
     _props$onChange = props.onChange,
@@ -397,7 +397,7 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
     quality = props.quality;
   var refInput = ref || React.useRef(null);
   var refSelectDom = React.useRef(null);
-  var refFilesList = React.useRef(filesList);
+  var refFilesList = React.useRef(value);
   var urlList = [];
   refFilesList.current.forEach(function(item) {
     if (item.preview) {
@@ -411,10 +411,10 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
     function() {
       var num = 0;
 
-      for (var i = 0; i < filesList.length; i++) {
-        var _filesList$i = filesList[i],
-          url = _filesList$i.url,
-          errorTip = _filesList$i.errorTip;
+      for (var i = 0; i < value.length; i++) {
+        var _value$i = value[i],
+          url = _value$i.url,
+          errorTip = _value$i.errorTip;
 
         if (url || errorTip) {
           num++;
@@ -423,7 +423,7 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
 
       return num;
     },
-    [filesList],
+    [value],
   );
 
   var _useState = React.useState(false),
@@ -560,10 +560,10 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
                       console.log(
                         'validLength + index',
                         validLength + index,
-                        filesList,
+                        value,
                       );
                       resolve(
-                        Object.assign({}, filesList[validLength + index], {
+                        Object.assign({}, value[validLength + index], {
                           file: data,
                           url: dataURL,
                         }),
@@ -800,13 +800,13 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
   if (resize) {
     var rowNum = Math.floor(100 / parseFloat(width));
 
-    if (filesList && filesList.length > 0 && rowNum > 1) {
-      var restNum = filesList.length % rowNum;
+    if (value && value.length > 0 && rowNum > 1) {
+      var restNum = value.length % rowNum;
 
       if (restNum >= 0 && restNum <= rowNum - 1) {
         spaceNum = rowNum - restNum - 1;
 
-        if (filesList.length === max) {
+        if (value.length === max) {
           spaceNum += 1;
         }
       }
@@ -818,7 +818,7 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
   var classParent = classnames__default['default'](
     s.parent,
     ((_classnames = {}),
-    _defineProperty(_classnames, s.noMargin, max === 1 || filesList.length < 1),
+    _defineProperty(_classnames, s.noMargin, max === 1 || value.length < 1),
     _defineProperty(_classnames, s.marginBottom, resize),
     _classnames),
   );
@@ -839,9 +839,9 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
       capture: capture,
       onChange: onChangeHandle,
     }),
-    filesList &&
-      filesList.length > 0 &&
-      filesList.map(function(item, index) {
+    value &&
+      value.length > 0 &&
+      value.map(function(item, index) {
         var url = item.url,
           loading = item.loading,
           name = item.name,
@@ -849,7 +849,7 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
           isInit = item.isInit;
 
         if (url || errorTip || isInit) {
-          var currentArr = filesList.slice(0, index + 1);
+          var currentArr = value.slice(0, index + 1);
           var errorNum = 0;
 
           for (var i = 0; i < currentArr.length; i++) {
@@ -963,8 +963,8 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
               ),
             }),
         max === 1 &&
-          filesList[0] &&
-          filesList[0].name &&
+          value[0] &&
+          value[0].name &&
           /*#__PURE__*/ React__default['default'].createElement(
             'div',
             {
@@ -973,7 +973,7 @@ var ImagePicker = /*#__PURE__*/ React.forwardRef(function(props, ref) {
                 width: width,
               },
             },
-            filesList[0].name,
+            value[0].name,
           ),
       ),
     spaceNum > 0 &&
@@ -1133,8 +1133,9 @@ var ValidRange = function ValidRange(props) {
       _props$placeholders === void 0
         ? ['请选择起始日期', '请选择终止日期']
         : _props$placeholders,
-    _props$forerverTxt = props.forerverTxt,
-    forerverTxt = _props$forerverTxt === void 0 ? '长期' : _props$forerverTxt,
+    _props$forerverText = props.forerverText,
+    forerverText =
+      _props$forerverText === void 0 ? '长期' : _props$forerverText,
     _props$foreverDate = props.foreverDate,
     foreverDate =
       _props$foreverDate === void 0 ? '9999-12-31' : _props$foreverDate,
@@ -1297,7 +1298,7 @@ var ValidRange = function ValidRange(props) {
           /*#__PURE__*/ React__default['default'].createElement(
             'span',
             null,
-            forerverTxt,
+            forerverText,
           ),
         ),
       ),
@@ -1334,7 +1335,7 @@ var styles$2 = styles$b.createStyles({
   dateBox: {
     marginTop: '10px',
   },
-  splitTxt: {
+  splitText: {
     margin: '0 10px',
     color: '#666',
   },
@@ -1381,8 +1382,8 @@ var DateRange = function DateRange(props) {
       _props$maxDate === void 0
         ? new Date(2060, 11, 30, 23, 59, 59)
         : _props$maxDate,
-    _props$splitTxt = props.splitTxt,
-    splitTxt = _props$splitTxt === void 0 ? '至' : _props$splitTxt; // 日期改变
+    _props$splitText = props.splitText,
+    splitText = _props$splitText === void 0 ? '至' : _props$splitText; // 日期改变
 
   var onChangeHandle = function onChangeHandle(date, type) {
     var val = formatDate(date);
@@ -1468,9 +1469,9 @@ var DateRange = function DateRange(props) {
       /*#__PURE__*/ React__default['default'].createElement(
         'span',
         {
-          className: s.splitTxt,
+          className: s.splitText,
         },
-        splitTxt,
+        splitText,
       ),
       /*#__PURE__*/ React__default['default'].createElement(
         'div',
@@ -1583,8 +1584,8 @@ var Steps = function Steps(props) {
     s = _props$classes === void 0 ? {} : _props$classes,
     _props$current = props.current,
     current = _props$current === void 0 ? 0 : _props$current,
-    _props$stepList = props.stepList,
-    stepList = _props$stepList === void 0 ? [] : _props$stepList;
+    _props$dataList = props.dataList,
+    dataList = _props$dataList === void 0 ? [] : _props$dataList;
   return /*#__PURE__*/ React__default['default'].createElement(
     'div',
     {
@@ -1595,13 +1596,13 @@ var Steps = function Steps(props) {
       {
         className: classnames__default['default'](s.steps, s.stepsIcon),
       },
-      stepList.map(function(item, index) {
+      dataList.map(function(item, index) {
         return /*#__PURE__*/ React__default['default'].createElement(
           'div',
           {
             className: classnames__default['default'](
               s.step,
-              _defineProperty({}, s.stepLine, index < stepList.length - 1),
+              _defineProperty({}, s.stepLine, index < dataList.length - 1),
               _defineProperty({}, s.stepActiveLine, index < current),
             ),
             key: index,
@@ -1621,7 +1622,7 @@ var Steps = function Steps(props) {
       {
         className: s.steps,
       },
-      stepList.map(function(item, index) {
+      dataList.map(function(item, index) {
         return /*#__PURE__*/ React__default['default'].createElement(
           'div',
           {

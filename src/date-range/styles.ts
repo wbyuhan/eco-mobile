@@ -27,7 +27,7 @@ const styles = createStyles({
   dateBox: {
     marginTop: '10px',
   },
-  splitTxt: {
+  splitText: {
     margin: '0 10px',
     color: '#666',
   },

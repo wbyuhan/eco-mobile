@@ -13,12 +13,12 @@ interface Files {
 }
 
 export default () => {
-  const [filesList, setFilesList] = useState<Array<Files>>([]);
+  const [value, setValue] = useState<Array<Files>>([]);
 
   // 数组改变
   const onChange = (arr: Array<Files>) => {
     console.log('onChange', arr);
-    setFilesList(arr);
+    setValue(arr);
   };
 
   // 实时上传方法
@@ -42,14 +42,14 @@ export default () => {
       Toast.loading('Loading...');
       setTimeout(() => {
         Toast.hide();
-        resolve(filesList[index].url);
+        resolve(value[index].url);
       }, 1000);
     });
   };
 
   return (
     <ImagePicker
-      filesList={filesList}
+      value={value}
       onChange={onChange}
       multiple
       max={12}

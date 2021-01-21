@@ -21,7 +21,7 @@ interface DateRangeProps {
   placeholders?: string[];
   minDate?: Date;
   maxDate?: Date;
-  splitTxt?: string;
+  splitText?: string;
 }
 
 const DateRange = (props: DateRangeProps) => {
@@ -35,7 +35,7 @@ const DateRange = (props: DateRangeProps) => {
     placeholders = ['请选择起始日期', '请选择终止日期'],
     minDate = new Date(1980, 0, 1, 23, 59, 59),
     maxDate = new Date(2060, 11, 30, 23, 59, 59),
-    splitTxt = '至',
+    splitText = '至',
   } = props;
 
   // 日期改变
@@ -80,7 +80,7 @@ const DateRange = (props: DateRangeProps) => {
             <Item arrow="down" />
           </DatePicker>
         </div>
-        <span className={s.splitTxt}>{splitTxt}</span>
+        <span className={s.splitText}>{splitText}</span>
         <div
           className={classnames(s.datePicker, {
             [s.dateValue as string]: value[1],

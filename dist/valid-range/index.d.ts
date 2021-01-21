@@ -8,7 +8,7 @@ interface ValidRangeProps {
   labels?: string[];
   titles?: string[];
   placeholders?: string[];
-  forerverTxt?: string;
+  forerverText?: string;
   foreverDate?: string;
   minDate?: Date;
   maxDate?: Date;
@@ -34,7 +34,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'labels'
   | 'titles'
   | 'placeholders'
-  | 'forerverTxt'
+  | 'forerverText'
   | 'foreverDate'
   | 'minDate'
   | 'maxDate'

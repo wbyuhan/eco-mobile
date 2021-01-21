@@ -4,7 +4,7 @@ import styles from './styles';
 interface Props {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
   current?: number;
-  stepList?: string[];
+  dataList?: string[];
 }
 declare const _default: React.ForwardRefExoticComponent<Pick<
   Props & {
@@ -23,7 +23,7 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
       | 'stepActiveLine'
       | 'stepActive'
     >,
-  'theme' | 'classes' | 'current' | 'stepList'
+  'theme' | 'classes' | 'current' | 'dataList'
 > &
   React.RefAttributes<(props: Props) => JSX.Element>>;
 export default _default;
