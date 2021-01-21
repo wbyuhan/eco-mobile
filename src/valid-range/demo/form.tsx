@@ -8,6 +8,7 @@ import Form, { Field } from 'rc-field-form';
 const styles = createUseStyles({
   root: {
     width: '375px',
+    boxShadow: '0 3px 5px 0 #efefef',
   },
 });
 

@@ -11,12 +11,10 @@ var Compressor = require('compressorjs');
 var WxImageViewer = require('react-wx-images-viewer');
 require('antd-mobile/lib/flex/style/css');
 var _Flex = require('antd-mobile/lib/flex');
-require('antd-mobile/lib/date-picker/style/css');
-var _DatePicker = require('antd-mobile/lib/date-picker');
 require('antd-mobile/lib/list/style/css');
 var _List = require('antd-mobile/lib/list');
-var moment = require('moment');
 var core = require('@wonder-ui/core');
+var moment = require('moment');
 require('antd-mobile/lib/modal/style/css');
 var _Modal = require('antd-mobile/lib/modal');
 require('antd-mobile/lib/input-item/style/css');
@@ -32,7 +30,6 @@ var classnames__default = /*#__PURE__*/ _interopDefaultLegacy(classnames);
 var Compressor__default = /*#__PURE__*/ _interopDefaultLegacy(Compressor);
 var WxImageViewer__default = /*#__PURE__*/ _interopDefaultLegacy(WxImageViewer);
 var _Flex__default = /*#__PURE__*/ _interopDefaultLegacy(_Flex);
-var _DatePicker__default = /*#__PURE__*/ _interopDefaultLegacy(_DatePicker);
 var _List__default = /*#__PURE__*/ _interopDefaultLegacy(_List);
 var moment__default = /*#__PURE__*/ _interopDefaultLegacy(moment);
 var _Modal__default = /*#__PURE__*/ _interopDefaultLegacy(_Modal);
@@ -1225,7 +1222,7 @@ var ValidRange = function ValidRange(props) {
           ),
         },
         /*#__PURE__*/ React__default['default'].createElement(
-          _DatePicker__default['default'],
+          core.DatePicker,
           {
             mode: 'date',
             title: titles[0],
@@ -1262,7 +1259,7 @@ var ValidRange = function ValidRange(props) {
             ),
           },
           /*#__PURE__*/ React__default['default'].createElement(
-            _DatePicker__default['default'],
+            core.DatePicker,
             {
               mode: 'date',
               title: titles[1],
@@ -1451,7 +1448,7 @@ var DateRange = function DateRange(props) {
           ),
         },
         /*#__PURE__*/ React__default['default'].createElement(
-          _DatePicker__default['default'],
+          core.DatePicker,
           {
             mode: 'date',
             title: titles[0],
@@ -1484,7 +1481,7 @@ var DateRange = function DateRange(props) {
           ),
         },
         /*#__PURE__*/ React__default['default'].createElement(
-          _DatePicker__default['default'],
+          core.DatePicker,
           {
             mode: 'date',
             title: titles[1],

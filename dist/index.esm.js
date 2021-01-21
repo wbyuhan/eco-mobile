@@ -14,17 +14,16 @@ import Compressor from 'compressorjs';
 import WxImageViewer from 'react-wx-images-viewer';
 import 'antd-mobile/lib/flex/style/css';
 import _Flex from 'antd-mobile/lib/flex';
-import 'antd-mobile/lib/date-picker/style/css';
-import _DatePicker from 'antd-mobile/lib/date-picker';
 import 'antd-mobile/lib/list/style/css';
 import _List from 'antd-mobile/lib/list';
-import moment from 'moment';
 import {
+  DatePicker,
   ActivityIndicator,
   withStyles as withStyles$1,
   Drawer,
   Flex,
 } from '@wonder-ui/core';
+import moment from 'moment';
 import 'antd-mobile/lib/modal/style/css';
 import _Modal from 'antd-mobile/lib/modal';
 import 'antd-mobile/lib/input-item/style/css';
@@ -1212,7 +1211,7 @@ var ValidRange = function ValidRange(props) {
           className: classnames(_defineProperty({}, s.dateValue, value[0])),
         },
         /*#__PURE__*/ React.createElement(
-          _DatePicker,
+          DatePicker,
           {
             mode: 'date',
             title: titles[0],
@@ -1249,7 +1248,7 @@ var ValidRange = function ValidRange(props) {
             ),
           },
           /*#__PURE__*/ React.createElement(
-            _DatePicker,
+            DatePicker,
             {
               mode: 'date',
               title: titles[1],
@@ -1434,7 +1433,7 @@ var DateRange = function DateRange(props) {
           ),
         },
         /*#__PURE__*/ React.createElement(
-          _DatePicker,
+          DatePicker,
           {
             mode: 'date',
             title: titles[0],
@@ -1467,7 +1466,7 @@ var DateRange = function DateRange(props) {
           ),
         },
         /*#__PURE__*/ React.createElement(
-          _DatePicker,
+          DatePicker,
           {
             mode: 'date',
             title: titles[1],

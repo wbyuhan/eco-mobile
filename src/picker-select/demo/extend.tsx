@@ -10,7 +10,7 @@ const styles = createUseStyles({
     padding: '20px',
     boxSizing: 'border-box',
     background: '#fff',
-    boxShadow: '0 3px 5px 0 #ccc',
+    boxShadow: '0 3px 5px 0 #efefef',
   },
   content: {
     padding: '30px 20px 100px',
