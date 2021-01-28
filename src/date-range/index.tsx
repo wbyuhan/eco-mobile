@@ -1,8 +1,7 @@
 import React from 'react';
 import { List, Flex, Toast } from 'antd-mobile';
-import { DatePicker } from '@wonder-ui/core';
+import { DatePicker, withStyles, ClassKeysOfStyles } from '@wonder-ui/core';
 import classnames from 'classnames';
-import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
 import { formatDate, judeDate } from '@/utils/tools';
 
 import styles from './styles';

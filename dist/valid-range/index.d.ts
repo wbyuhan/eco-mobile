@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassKeysOfStyles } from '@wonder-ui/styles';
+import { ClassKeysOfStyles } from '@wonder-ui/core';
 import styles from './styles';
 interface ValidRangeProps {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
@@ -14,21 +14,8 @@ interface ValidRangeProps {
   maxDate?: Date;
   cache?: boolean;
 }
-declare const _default: React.ForwardRefExoticComponent<Pick<
-  ValidRangeProps & {
-    theme?: unknown;
-  } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
-      unknown,
-      | 'root'
-      | 'itemEnd'
-      | 'datePicker'
-      | 'dateValue'
-      | 'forerverBox'
-      | 'iconCheck'
-      | 'iconChecked'
-    >,
-  | 'theme'
-  | 'classes'
+declare const _default: React.ComponentType<Pick<
+  ValidRangeProps,
   | 'value'
   | 'onChange'
   | 'labels'
@@ -40,5 +27,21 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'maxDate'
   | 'cache'
 > &
-  React.RefAttributes<(props: ValidRangeProps) => JSX.Element>>;
+  Partial<
+    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+      import('@wonder-ui/core').Styles<
+        import('@wonder-ui/core').DefaultTheme,
+        {},
+        | 'root'
+        | 'itemEnd'
+        | 'datePicker'
+        | 'dateValue'
+        | 'forerverBox'
+        | 'iconCheck'
+        | 'iconChecked'
+      >
+    >
+  > & {
+    innerRef?: React.RefObject<any> | ((instance: any) => void) | undefined;
+  }>;
 export default _default;

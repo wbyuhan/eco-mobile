@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { Button, WhiteSpace } from 'antd-mobile';
 import { ValidRange } from 'eco-mobile';
-import { createUseStyles } from '@wonder-ui/styles';
+import { createUseStyles } from '@wonder-ui/core';
 import Form, { Field } from 'rc-field-form';
 
 const styles = createUseStyles({

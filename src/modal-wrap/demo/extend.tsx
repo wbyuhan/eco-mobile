@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Button } from 'antd-mobile';
 import { ModalWrap } from 'eco-mobile';
-import { createUseStyles } from '@wonder-ui/styles';
+import { createUseStyles } from '@wonder-ui/core';
 
 const styles = createUseStyles({
   root: {

@@ -1,7 +1,10 @@
 import React from 'react';
 
-import { ActivityIndicator } from '@wonder-ui/core';
-import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
+import {
+  ActivityIndicator,
+  withStyles,
+  ClassKeysOfStyles,
+} from '@wonder-ui/core';
 
 import styles from './styles';
 

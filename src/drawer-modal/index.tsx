@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Drawer, Flex, withStyles } from '@wonder-ui/core';
-import { ClassKeysOfStyles } from '@wonder-ui/styles';
+import { Drawer, Flex, withStyles, ClassKeysOfStyles } from '@wonder-ui/core';
 import styles from './styles';
 
 const DrawerWrap = withStyles(() => ({

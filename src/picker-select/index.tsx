@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect, useRef } from 'react';
 
-import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
+import { withStyles, ClassKeysOfStyles } from '@wonder-ui/core';
 import Empty from '../empty';
 import DrawerModal from '../drawer-modal';
 

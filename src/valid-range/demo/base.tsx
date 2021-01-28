@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { ValidRange } from 'eco-mobile';
-import { createUseStyles } from '@wonder-ui/styles';
+import { createUseStyles } from '@wonder-ui/core';
 
 const styles = createUseStyles({
   root: {

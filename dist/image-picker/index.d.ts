@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassKeysOfStyles } from '@wonder-ui/styles';
+import { ClassKeysOfStyles } from '@wonder-ui/core';
 import styles from './styles';
 interface Files {
   url: string;
@@ -34,36 +34,14 @@ interface ImagePickerProps {
   quality?: number;
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
-declare const _default: React.ForwardRefExoticComponent<Pick<
-  ImagePickerProps &
-    React.RefAttributes<unknown> & {
-      theme?: unknown;
-    } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
-      unknown,
-      | 'defaultBackGround'
-      | 'defaultDashed'
-      | 'defaultBorder'
-      | 'root'
-      | 'justifyContent'
-      | 'marginBottom'
-      | 'hidden'
-      | 'imgBox'
-      | 'img'
-      | 'errorTip'
-      | 'iconRemove'
-      | 'parent'
-      | 'noMargin'
-      | 'name'
-      | 'childrenEle'
-      | 'loadingBox'
-      | 'loading'
-      | '@keyframes myRound'
-    >,
+declare const _default: React.ComponentType<Pick<
+  ImagePickerProps & React.RefAttributes<unknown>,
   | 'height'
   | 'resize'
   | 'width'
   | 'size'
   | 'multiple'
+  | 'ref'
   | 'value'
   | 'max'
   | 'onChange'
@@ -81,13 +59,34 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'showRemove'
   | 'replace'
   | 'quality'
-  | 'classes'
-  | 'theme'
   | 'key'
 > &
-  React.RefAttributes<
-    React.ForwardRefExoticComponent<
-      ImagePickerProps & React.RefAttributes<unknown>
+  Partial<
+    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+      import('@wonder-ui/core').Styles<
+        import('@wonder-ui/core').DefaultTheme,
+        {},
+        | 'defaultBackGround'
+        | 'defaultDashed'
+        | 'defaultBorder'
+        | 'root'
+        | 'justifyContent'
+        | 'marginBottom'
+        | 'hidden'
+        | 'imgBox'
+        | 'img'
+        | 'errorTip'
+        | 'iconRemove'
+        | 'parent'
+        | 'noMargin'
+        | 'name'
+        | 'childrenEle'
+        | 'loadingBox'
+        | 'loading'
+        | '@keyframes myRound'
+      >
     >
-  >>;
+  > & {
+    innerRef?: React.RefObject<any> | ((instance: any) => void) | undefined;
+  }>;
 export default _default;

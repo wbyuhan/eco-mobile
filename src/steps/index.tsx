@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
+import { withStyles, ClassKeysOfStyles } from '@wonder-ui/core';
 
 import styles from './styles';
 

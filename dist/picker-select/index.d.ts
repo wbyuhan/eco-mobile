@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassKeysOfStyles } from '@wonder-ui/styles';
+import { ClassKeysOfStyles } from '@wonder-ui/core';
 import styles from './styles';
 interface Item {
   value: string;
@@ -17,24 +17,27 @@ interface Props {
   placeholder?: string;
   height?: number | string;
 }
-declare const _default: React.ForwardRefExoticComponent<Pick<
-  Props & {
-    theme?: unknown;
-  } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
-      unknown,
-      'root' | 'pickerTitle' | 'searhInputBox' | 'pickerContent'
-    >,
+declare const _default: React.ComponentType<Pick<
+  Props,
   | 'height'
   | 'visible'
-  | 'title'
-  | 'theme'
-  | 'classes'
   | 'dataList'
   | 'onOk'
   | 'onCancel'
+  | 'title'
   | 'value'
   | 'showSearchBox'
   | 'placeholder'
 > &
-  React.RefAttributes<(props: Props) => JSX.Element>>;
+  Partial<
+    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+      import('@wonder-ui/core').Styles<
+        import('@wonder-ui/core').DefaultTheme,
+        {},
+        'root' | 'pickerTitle' | 'searhInputBox' | 'pickerContent'
+      >
+    >
+  > & {
+    innerRef?: React.RefObject<any> | ((instance: any) => void) | undefined;
+  }>;
 export default _default;

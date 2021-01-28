@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Toast } from 'antd-mobile';
 import { ValidRange } from 'eco-mobile';
 import moment from 'moment';
-import { createUseStyles } from '@wonder-ui/styles';
+import { createUseStyles } from '@wonder-ui/core';
 
 const styles = createUseStyles({
   root: {

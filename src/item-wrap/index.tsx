@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
+import { withStyles, ClassKeysOfStyles } from '@wonder-ui/core';
 
 import { List } from 'antd-mobile';
 import styles from './styles';

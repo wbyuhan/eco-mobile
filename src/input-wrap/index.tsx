@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
+import { withStyles, ClassKeysOfStyles } from '@wonder-ui/core';
 
 import { InputItem } from 'antd-mobile';
 import styles from './styles';

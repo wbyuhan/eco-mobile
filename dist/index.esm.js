@@ -8,7 +8,14 @@ import React, {
   useEffect,
   useCallback,
 } from 'react';
-import { createStyles, withStyles } from '@wonder-ui/styles';
+import {
+  createStyles,
+  withStyles,
+  DatePicker,
+  ActivityIndicator,
+  Drawer,
+  Flex,
+} from '@wonder-ui/core';
 import classnames from 'classnames';
 import Compressor from 'compressorjs';
 import WxImageViewer from 'react-wx-images-viewer';
@@ -16,13 +23,6 @@ import 'antd-mobile/lib/flex/style/css';
 import _Flex from 'antd-mobile/lib/flex';
 import 'antd-mobile/lib/list/style/css';
 import _List from 'antd-mobile/lib/list';
-import {
-  DatePicker,
-  ActivityIndicator,
-  withStyles as withStyles$1,
-  Drawer,
-  Flex,
-} from '@wonder-ui/core';
 import moment from 'moment';
 import 'antd-mobile/lib/modal/style/css';
 import _Modal from 'antd-mobile/lib/modal';
@@ -1756,7 +1756,7 @@ var ModalWrap = function ModalWrap(props) {
   );
 };
 
-var index$4 = withStyles$1(styles$5)(ModalWrap);
+var index$4 = withStyles(styles$5)(ModalWrap);
 
 /**
  * styles
@@ -1791,7 +1791,7 @@ var styles$6 = createStyles({
   },
 });
 
-var DrawerWrap = withStyles$1(function() {
+var DrawerWrap = withStyles(function() {
   return {
     root: {
       backgroundColor: '#fff',
@@ -1847,7 +1847,7 @@ var DrawerModal = function DrawerModal(props) {
   );
 };
 
-var DrawerModal$1 = withStyles$1(styles$6)(DrawerModal);
+var DrawerModal$1 = withStyles(styles$6)(DrawerModal);
 
 var styles$7 = createStyles({
   root: {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Empty } from 'eco-mobile';
-import { createUseStyles } from '@wonder-ui/styles';
+import { createUseStyles } from '@wonder-ui/core';
 
 const styles = createUseStyles({
   root: {

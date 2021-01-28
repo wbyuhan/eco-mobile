@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { List } from 'antd-mobile';
 import { PickerSelect } from 'eco-mobile';
-import { createUseStyles } from '@wonder-ui/styles';
+import { createUseStyles } from '@wonder-ui/core';
 
 const styles = createUseStyles({
   root: {

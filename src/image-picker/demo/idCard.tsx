@@ -2,7 +2,7 @@
  * compact: true
  */
 import React, { useState } from 'react';
-import { createUseStyles } from '@wonder-ui/styles';
+import { createUseStyles } from '@wonder-ui/core';
 
 import { Flex } from 'antd-mobile';
 import { ImagePicker } from 'eco-mobile';

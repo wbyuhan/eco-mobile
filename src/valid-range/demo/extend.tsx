@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Button, WhiteSpace } from 'antd-mobile';
 import { ValidRange } from 'eco-mobile';
-import { createUseStyles } from '@wonder-ui/styles';
+import { createUseStyles } from '@wonder-ui/core';
 
 const styles = createUseStyles({
   root: {

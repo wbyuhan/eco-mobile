@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassKeysOfStyles } from '@wonder-ui/styles';
+import { ClassKeysOfStyles } from '@wonder-ui/core';
 import styles from './styles';
 interface DateRangeProps {
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
@@ -13,24 +13,11 @@ interface DateRangeProps {
   maxDate?: Date;
   splitText?: string;
 }
-declare const _default: React.ForwardRefExoticComponent<Pick<
-  DateRangeProps & {
-    theme?: unknown;
-  } & import('@wonder-ui/styles/dist/withStyles').StyledComponentProps<
-      unknown,
-      | 'root'
-      | 'label'
-      | 'tip'
-      | 'dateBox'
-      | 'splitText'
-      | 'datePicker'
-      | 'dateValue'
-    >,
+declare const _default: React.ComponentType<Pick<
+  DateRangeProps,
   | 'label'
   | 'tip'
   | 'splitText'
-  | 'theme'
-  | 'classes'
   | 'value'
   | 'onChange'
   | 'titles'
@@ -38,5 +25,21 @@ declare const _default: React.ForwardRefExoticComponent<Pick<
   | 'minDate'
   | 'maxDate'
 > &
-  React.RefAttributes<(props: DateRangeProps) => JSX.Element>>;
+  Partial<
+    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+      import('@wonder-ui/core').Styles<
+        import('@wonder-ui/core').DefaultTheme,
+        {},
+        | 'root'
+        | 'label'
+        | 'tip'
+        | 'dateBox'
+        | 'splitText'
+        | 'datePicker'
+        | 'dateValue'
+      >
+    >
+  > & {
+    innerRef?: React.RefObject<any> | ((instance: any) => void) | undefined;
+  }>;
 export default _default;

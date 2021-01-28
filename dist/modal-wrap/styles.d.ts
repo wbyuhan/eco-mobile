@@ -1,5 +1,5 @@
-declare const styles: import('@wonder-ui/styles').Styles<
-  import('@wonder-ui/styles').DefaultTheme,
+declare const styles: import('@wonder-ui/core').Styles<
+  import('@wonder-ui/core').DefaultTheme,
   {},
   'root' | 'red' | 'title'
 >;

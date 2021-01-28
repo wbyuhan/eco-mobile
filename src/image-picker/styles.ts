@@ -1,4 +1,4 @@
-import { createStyles } from '@wonder-ui/styles';
+import { createStyles } from '@wonder-ui/core';
 import { iconRemove, iconLoading } from '../assets/icon';
 
 const styles = createStyles({

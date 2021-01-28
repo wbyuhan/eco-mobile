@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo, forwardRef } from 'react';
-import { withStyles, ClassKeysOfStyles } from '@wonder-ui/styles';
+import { withStyles, ClassKeysOfStyles } from '@wonder-ui/core';
 import classnames from 'classnames';
 import Compressor from 'compressorjs';
 import WxImageViewer from 'react-wx-images-viewer';

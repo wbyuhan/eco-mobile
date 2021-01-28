@@ -1,4 +1,4 @@
-import { createStyles } from '@wonder-ui/styles';
+import { createStyles } from '@wonder-ui/core';
 
 import { close, check, search } from '../assets/icon';
 

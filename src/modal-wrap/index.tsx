@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Modal } from 'antd-mobile';
-import { withStyles } from '@wonder-ui/core';
-import { ClassKeysOfStyles } from '@wonder-ui/styles';
+import { withStyles, ClassKeysOfStyles } from '@wonder-ui/core';
 import styles from './styles';
 
 const noon = () => {};

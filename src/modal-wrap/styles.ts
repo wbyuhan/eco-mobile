@@ -1,7 +1,7 @@
 /**
  * styles
  */
-import { createStyles } from '@wonder-ui/styles';
+import { createStyles } from '@wonder-ui/core';
 
 const styles = createStyles({
   root: {
