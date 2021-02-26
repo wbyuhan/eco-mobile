@@ -6,9 +6,9 @@ interface Props {
   text?: string | React.ReactElement;
   loading?: boolean;
 }
-declare const _default: React.ComponentType<Pick<Props, 'text' | 'loading'> &
+declare const _default: React.ComponentType<Omit<Props, 'classes'> &
   Partial<
-    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+    import('@wonder-ui/core').WithStylesProps<
       import('@wonder-ui/core').Styles<
         import('@wonder-ui/core').DefaultTheme,
         {},

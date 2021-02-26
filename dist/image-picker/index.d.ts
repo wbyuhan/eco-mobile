@@ -34,35 +34,12 @@ interface ImagePickerProps {
   quality?: number;
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }
-declare const _default: React.ComponentType<Pick<
+declare const _default: React.ComponentType<Omit<
   ImagePickerProps & React.RefAttributes<unknown>,
-  | 'height'
-  | 'resize'
-  | 'width'
-  | 'size'
-  | 'multiple'
-  | 'ref'
-  | 'value'
-  | 'max'
-  | 'onChange'
-  | 'onUpload'
-  | 'onInit'
-  | 'accept'
-  | 'capture'
-  | 'config'
-  | 'children'
-  | 'mode'
-  | 'onFail'
-  | 'disabledSelect'
-  | 'disabledPreview'
-  | 'onGetPreviewUrl'
-  | 'showRemove'
-  | 'replace'
-  | 'quality'
-  | 'key'
+  'classes'
 > &
   Partial<
-    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+    import('@wonder-ui/core').WithStylesProps<
       import('@wonder-ui/core').Styles<
         import('@wonder-ui/core').DefaultTheme,
         {},

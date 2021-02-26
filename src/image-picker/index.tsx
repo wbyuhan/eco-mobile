@@ -39,7 +39,7 @@ interface ImagePickerProps {
   disabledPreview?: boolean; // 是否禁用预览图片
   onGetPreviewUrl?: (index: number) => Promise<string>; // 获取预览图片方法
   showRemove?: boolean; // 是否显示删除按钮
-  replace?: boolean; // 是否显示删除按钮
+  replace?: boolean; // 是否替换图片列表
   quality?: number; // 图片压缩比例
   classes?: Partial<ClassKeysOfStyles<typeof styles>>;
 }

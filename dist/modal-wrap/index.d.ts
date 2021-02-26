@@ -11,9 +11,9 @@ interface Props {
   footer?: any[];
   [index: string]: any;
 }
-declare const _default: React.ComponentType<Pick<Props, string | number> &
+declare const _default: React.ComponentType<Omit<Props, 'classes'> &
   Partial<
-    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+    import('@wonder-ui/core').WithStylesProps<
       import('@wonder-ui/core').Styles<
         import('@wonder-ui/core').DefaultTheme,
         {},

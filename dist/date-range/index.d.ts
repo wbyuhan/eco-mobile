@@ -13,20 +13,9 @@ interface DateRangeProps {
   maxDate?: Date;
   splitText?: string;
 }
-declare const _default: React.ComponentType<Pick<
-  DateRangeProps,
-  | 'label'
-  | 'tip'
-  | 'splitText'
-  | 'value'
-  | 'onChange'
-  | 'titles'
-  | 'placeholders'
-  | 'minDate'
-  | 'maxDate'
-> &
+declare const _default: React.ComponentType<Omit<DateRangeProps, 'classes'> &
   Partial<
-    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+    import('@wonder-ui/core').WithStylesProps<
       import('@wonder-ui/core').Styles<
         import('@wonder-ui/core').DefaultTheme,
         {},

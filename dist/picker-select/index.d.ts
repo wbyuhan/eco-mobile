@@ -17,20 +17,9 @@ interface Props {
   placeholder?: string;
   height?: number | string;
 }
-declare const _default: React.ComponentType<Pick<
-  Props,
-  | 'height'
-  | 'visible'
-  | 'dataList'
-  | 'onOk'
-  | 'onCancel'
-  | 'title'
-  | 'value'
-  | 'showSearchBox'
-  | 'placeholder'
-> &
+declare const _default: React.ComponentType<Omit<Props, 'classes'> &
   Partial<
-    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+    import('@wonder-ui/core').WithStylesProps<
       import('@wonder-ui/core').Styles<
         import('@wonder-ui/core').DefaultTheme,
         {},

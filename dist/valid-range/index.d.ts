@@ -14,21 +14,9 @@ interface ValidRangeProps {
   maxDate?: Date;
   cache?: boolean;
 }
-declare const _default: React.ComponentType<Pick<
-  ValidRangeProps,
-  | 'value'
-  | 'onChange'
-  | 'labels'
-  | 'titles'
-  | 'placeholders'
-  | 'forerverText'
-  | 'foreverDate'
-  | 'minDate'
-  | 'maxDate'
-  | 'cache'
-> &
+declare const _default: React.ComponentType<Omit<ValidRangeProps, 'classes'> &
   Partial<
-    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+    import('@wonder-ui/core').WithStylesProps<
       import('@wonder-ui/core').Styles<
         import('@wonder-ui/core').DefaultTheme,
         {},

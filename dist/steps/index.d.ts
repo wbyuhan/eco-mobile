@@ -6,12 +6,9 @@ interface Props {
   current?: number;
   dataList?: string[];
 }
-declare const _default: React.ComponentType<Pick<
-  Props,
-  'current' | 'dataList'
-> &
+declare const _default: React.ComponentType<Omit<Props, 'classes'> &
   Partial<
-    import('@wonder-ui/styles/dist/withStyles').WithStylesProps<
+    import('@wonder-ui/core').WithStylesProps<
       import('@wonder-ui/core').Styles<
         import('@wonder-ui/core').DefaultTheme,
         {},
